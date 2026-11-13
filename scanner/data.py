@@ -37,7 +37,7 @@ def load_universe():
         columns={"Company Name": "Name"})
 
 
-def download(symbols, period="3y", chunk=100):
+def download(symbols, period="5y", chunk=100):
     """Returns {symbol: OHLCV DataFrame}. Symbols are NSE codes without .NS."""
     out = {}
     for i in range(0, len(symbols), chunk):

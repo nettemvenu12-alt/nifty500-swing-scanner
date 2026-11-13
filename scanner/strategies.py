@@ -66,6 +66,20 @@ def btst(d):
     )
 
 
+def results_gap(d):
+    """Earnings-gap momentum: a big gap-up on 3x volume (usually results/news), then
+    price holds above the gap-day low and breaks the gap-day high within 10 days."""
+    gap = ((d["Open"] > d["High"].shift() * 1.02) & (d["Close"] > d["Open"])
+           & (d["vol_ratio"] >= 3) & (d["close_pos"] >= 0.5))
+    gh = d["High"].where(gap).ffill(limit=10)
+    gl = d["Low"].where(gap).ffill(limit=10)
+    recent = gap.astype(float).rolling(10, min_periods=1).max() > 0
+    held = d["Low"].rolling(5).min() >= gl
+    first = gap & (d["close_pos"] >= 0.75)
+    follow = recent & ~gap & held & (d["Close"] > gh) & (d["Close"].shift() <= gh)
+    return _liquid(d) & (d["ema50"] > d["ema200"]) & (first | follow)
+
+
 def a_plus(d):
     """Best combo found in research: any setup + near 52W high + strong RS + stage 2."""
     any_setup = swing_breakout(d) | high52_breakout(d) | squeeze_breakout(d) | pullback_buy(d)
@@ -74,6 +88,7 @@ def a_plus(d):
 
 SWING = {
     "A+ Momentum": a_plus,
+    "Results Gap": results_gap,
     "Breakout": swing_breakout,
     "52W High": high52_breakout,
     "Squeeze": squeeze_breakout,

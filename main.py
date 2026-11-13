@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 from scanner import backtest as bt
-from scanner import data, fundamentals, model, news, portfolio, report
+from scanner import data, fundamentals, model, news, portfolio, report, risk
 from scanner import indicators as ind
 from scanner import strategies as stg
 
@@ -27,7 +27,10 @@ CONFIG = os.path.join(ROOT, "config.json")
 
 
 def load_config():
-    cfg = {"capital": 100000, "risk_per_trade_pct": 1.0, "max_position_pct": 20}
+    cfg = {"capital": 100000, "risk_per_trade_pct": 1.0, "max_position_pct": 20,
+           "max_positions": 5, "max_per_sector": 2,
+           # smart sizing: risk multiplier per signal quality
+           "risk_mult": {"mode85": 1.5, "high_conviction": 1.25, "buy": 1.0, "other": 0.5}}
     try:
         cfg.update(json.load(open(CONFIG)))
     except Exception:
@@ -35,9 +38,9 @@ def load_config():
     return cfg
 
 
-def position_size(entry, stop, cfg):
+def position_size(entry, stop, cfg, mult=1.0):
     """Shares to buy so that hitting the stop loses only risk_per_trade_pct of capital."""
-    risk_amt = cfg["capital"] * cfg["risk_per_trade_pct"] / 100
+    risk_amt = cfg["capital"] * cfg["risk_per_trade_pct"] / 100 * mult
     per_share = max(entry - stop, 0.01)
     qty = int(min(risk_amt / per_share, cfg["capital"] * cfg["max_position_pct"] / 100 / entry))
     return {"qty": qty, "invest": round(qty * entry), "max_loss": round(qty * per_share)}
@@ -241,6 +244,8 @@ def main():
                 d.iloc[-1, d.columns.get_loc("Volume")] *= pace
         print(f"Intraday run: {mins:.0f} min into session, volume pace x{pace:.2f}")
 
+    surv = risk.surveillance()
+    print(f"NSE surveillance list: {len(surv)} stocks")
     rows, swing_bt, btst_bt, samples = [], {k: [] for k in stg.SWING}, [], []
     for sym, raw in prices.items():
         try:
@@ -276,12 +281,32 @@ def main():
             "symbol": sym, "name": meta[sym]["Name"], "industry": meta[sym]["Industry"],
             "row": r, "signals": [k for k, v in sigs.items() if v], "btst": bool(b.iloc[-1]),
             "trend": bool(stg.trend_template(d).iloc[-1]), "bt": per_stock,
-            "tech": stg.tech_score(r), "feat": F.iloc[-1],
+            "tech": stg.tech_score(r), "feat": F.iloc[-1], "redflags": risk.red_flags(d),
             "patterns": [v for k, v in PATTERNS.items() if bool(r.get(k, False))],
             "spark": [round(x, 2) for x in d.Close.tail(60).tolist()],
         })
 
     swing_stats = {k: bt.summarize_swing(v) for k, v in swing_bt.items()}
+
+    # Auto-learning: pause setups that stopped working (last 12 months of history,
+    # or 10+ closed live picks losing money). They come back when they recover.
+    prev_track, _ = update_tracker(prices, [], "__none__")
+    cutoff = pd.Timestamp(last_date) - pd.Timedelta(days=365)
+    setup_status = {}
+    for k, v in swing_bt.items():
+        recent = [t for t in v if t["complete"] and t["date"] >= cutoff]
+        rs = bt.summarize_swing(recent)
+        live_rets = []
+        if len(prev_track):
+            closed = prev_track[prev_track.status.isin(["STOP", "T1 + TRAIL EXIT", "T1 + EXIT AT COST", "EXPIRED"])]
+            live_rets = closed[closed.setup.astype(str).str.contains(k, regex=False)].ret.tolist()
+        bad_hist = rs["n"] >= 30 and (rs["avg"] < 0 or rs["profit"] < 52)
+        bad_live = len(live_rets) >= 10 and np.mean(live_rets) < 0
+        setup_status[k] = {"recent_n": rs["n"], "recent_win": rs.get("win5"), "recent_avg": rs.get("avg"),
+                           "live_n": len(live_rets), "active": not (bad_hist or bad_live),
+                           "why": "losing lately" if bad_hist else "losing live" if bad_live else ""}
+    paused = {k for k, v in setup_status.items() if not v["active"]}
+    print("Paused setups:", paused or "none")
     btst_stats = bt.summarize_btst(btst_bt)
     print("Backtest swing:", swing_stats)
     print("Backtest BTST:", btst_stats)
@@ -294,6 +319,8 @@ def main():
 
     # Relative strength percentile across the whole universe (0-10 pts)
     df = pd.DataFrame(rows)
+    df["all_signals"] = df.signals
+    df["signals"] = df.signals.apply(lambda s: [k for k in s if k not in paused])
     rsraw = [0.4 * x["row"].ret63 + 0.2 * x["row"].ret126 + 0.2 * x["row"].ret21
              + 0.2 * (x["row"].get("rs63", 0) or 0) for x in rows]
     df["rs_rank"] = pd.Series(rsraw).rank(pct=True).fillna(0).values * 100
@@ -327,6 +354,8 @@ def main():
     # never drop a stock that could qualify for 85% mode
     m85c = df[(df.signals.str.len() > 0) & (df.ml_prob >= ml_rep.get("m85_threshold", 1))]
     cand = pd.concat([cand, m85c[~m85c.symbol.isin(cand.symbol)]])
+    skipped = sorted(set(cand.symbol) & set(surv))
+    cand = cand[~cand.symbol.isin(surv)]  # NSE ASM/GSM surveillance = avoid
     btst_c = df[df.btst].copy()
     enrich = set(cand.symbol) | set(btst_c.symbol)
 
@@ -367,6 +396,11 @@ def main():
         if rid is not None and 0 <= rid <= 7:
             total -= 5
             warn.append(f"Results in {rid} days – event risk")
+        if x.redflags:
+            total -= 5
+            warn += x.redflags
+        if "Results Gap" in x.signals:
+            total += 3  # strongest setup in the 5-year backtest
         if x.row.rsi > 75:
             warn.append("RSI overbought – wait for dip")
         if x.row.ret5 > 12:
@@ -405,7 +439,15 @@ def main():
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
-    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", not p["high_conviction"], -p["score"], p["symbol"]))
+    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", not p["mode85"], not p["high_conviction"],
+                              -p["score"], p["symbol"]))
+    # Smart sizing: more for proven-quality signals, less for ordinary ones
+    for p in picks:
+        tier = ("mode85" if p["mode85"] else "high_conviction" if p["high_conviction"]
+                else "buy" if p["label"] in ("STRONG BUY", "BUY") else "other")
+        p["size_tier"] = tier
+        p.update(position_size(p["entry"], p["stop"], cfg, cfg["risk_mult"][tier]))
+        p["m85_qty"] = position_size(p["entry"], p["m85_stop"], cfg, cfg["risk_mult"]["mode85"])["qty"]
 
     btst = []
     for _, x in btst_c.iterrows():
@@ -437,6 +479,30 @@ def main():
                 hold_reviews.append(portfolio.review(h, ind.add_all(d)))
             except Exception as e:
                 print("holding review failed", h["symbol"], e)
+
+    # Portfolio rules: max positions, max per sector, pause new buys in risky markets
+    held = {h["symbol"] for h in hold_reviews}
+    sec_count = {}
+    for s in held:
+        ind_ = meta.get(s, {}).get("Industry", "?")
+        sec_count[ind_] = sec_count.get(ind_, 0) + 1
+    slots = max(0, cfg["max_positions"] - len(held))
+    pause_new = regime["label"] == "BEARISH" or regime.get("vix", 0) >= 20
+    buy_list = []
+    for p in picks:
+        p["in_buy_list"] = False
+        good = p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
+        if pause_new or len(buy_list) >= slots or not good or p["symbol"] in held:
+            continue
+        if sec_count.get(p["industry"], 0) >= cfg["max_per_sector"]:
+            continue
+        if any("Results in" in w for w in p["warnings"]):
+            continue
+        if p.get("qty", 0) <= 0:
+            continue  # share price too high for your capital / risk settings
+        p["in_buy_list"] = True
+        buy_list.append(p["symbol"])
+        sec_count[p["industry"]] = sec_count.get(p["industry"], 0) + 1
 
     # Friday end-of-day: weekly summary of the picks tracker
     weekly = None
@@ -473,7 +539,8 @@ def main():
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
-        "weekly": weekly, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
+        "weekly": weekly, "buy_list": buy_list, "slots": slots, "pause_new": pause_new,
+        "setup_status": setup_status, "surveillance_skipped": skipped, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
         "regime": regime, "breadth": breadth, "universe": len(df),
         "swing_backtest": swing_stats, "btst_backtest": btst_stats,
         "picks": picks, "btst": btst[:15], "live": live,

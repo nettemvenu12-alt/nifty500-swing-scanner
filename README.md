@@ -51,6 +51,15 @@ Buy near close · Stop = higher of 10-day low / 2.5×ATR (3–10% risk) ·
 - 5:00 PM IST — final end-of-day swing scan
 - Run any time: Actions → *Nifty 500 scan* → *Run workflow*
 
+## Risk & portfolio rules
+- **Results Gap** setup: big gap-up on 3× volume (usually results), then breakout of the gap-day high. Best setup in the 5-year backtest (~74% hit +5% before stop).
+- **NSE ASM/GSM surveillance** stocks are skipped automatically; circuit-like, very volatile or low-price stocks get a penalty.
+- **Buy list**: max 5 positions, max 2 per sector, skips stocks you already hold (from `/buy`) and stocks with results within 7 days.
+- **No new buys** when the market trend is bearish or India VIX ≥ 20.
+- **Smart quantity**: risk ×1.5 for 🎯 85% mode, ×1.25 for 🔥 high conviction, ×1 for BUY, ×0.5 for others.
+- **Auto-learning**: a setup is paused automatically if it lost money over the last 12 months (≥30 trades) or in 10+ closed live picks.
+- History is now **5 years**; the AI retrains on every run.
+
 ## Your capital
 Edit `config.json` (`capital`, `risk_per_trade_pct`, `max_position_pct`) to get the right quantity per pick.
 

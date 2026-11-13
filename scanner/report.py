@@ -113,6 +113,10 @@ def html(o):
     bb = o["btst_backtest"]
     bbt = (f"<p class='muted'>BTST history: {bb['n']} trades · next-day gap-up {bb['gap_up']}% · "
            f"touched +1% {bb['hit1']}%</p>") if bb.get("n") else ""
+    setsec = "<h2>🧠 Setup health (last 12 months)</h2><table><tr><th>Setup</th><th>Trades</th><th>+5% hit</th><th>Avg</th><th>Status</th></tr>" + "".join(
+        f"<tr><td>{H.escape(k)}</td><td>{v['recent_n']}</td><td>{v['recent_win']}%</td><td>{v['recent_avg']}%</td>"
+        f"<td>{'✅ active' if v['active'] else '⏸ paused – ' + v['why']}</td></tr>"
+        for k, v in (o.get("setup_status") or {}).items()) + "</table>"
     m = o.get("ml") or {}
     mlsec = ""
     if m.get("auc"):
@@ -154,7 +158,7 @@ table{{width:100%;border-collapse:collapse;font-size:12.5px}}td,th{{padding:5px;
 <h2>Swing picks · hold ≤60 days · target +5% / +10%</h2>{cards}
 <h2>⚡ BTST · buy near 3:20 PM, sell next morning</h2><table><tr><th>Stock</th><th>Rating</th><th>Close</th><th>Day</th><th>Vol</th><th>Stop</th><th>Target</th></tr>{btst}</table>
 <h2>🧪 Backtest (3 yrs, Nifty 500)</h2><table><tr><th>Setup</th><th>Trades</th><th>+5% before stop</th><th>+10%</th><th>Profitable</th><th>Avg</th></tr>{bt}</table>{bbt}
-{mlsec}<h2>📒 Live track record</h2>{live}<table><tr><th>Date</th><th>Stock</th><th>Entry</th><th>Status</th><th>Ret %</th></tr>{trk}</table>
+{mlsec}{setsec}<h2>📒 Live track record</h2>{live}<table><tr><th>Date</th><th>Stock</th><th>Entry</th><th>Status</th><th>Ret %</th></tr>{trk}</table>
 <p class="muted">{DISCLAIMER}</p></body></html>"""
 
 
@@ -196,6 +200,20 @@ def telegram_text(o):
         L.append("\n🆕 <b>New setups this hour</b>")
         for p in new[:6]:
             L.append(f"{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])} · ₹{p['close']} ({p['chg']}%)")
+    if o.get("pause_new"):
+        L.append("\n⏸ <b>No new buys today</b> – market is risky (bearish trend or VIX ≥ 20). Protect capital.")
+    elif o.get("buy_list"):
+        bl = [p for p in o["picks"] if p.get("in_buy_list")]
+        L.append(f"\n✅ <b>Today's buy list</b> ({len(bl)} of {o.get('slots')} free slots · max 2 per sector)")
+        for p in bl:
+            L.append(f"• <b>{_esc(p['symbol'])}</b> qty {p.get('qty')} @ ~{p['entry']} · SL {p['stop']} · "
+                     f"{'🎯' if p.get('mode85') else '🔥' if p.get('high_conviction') else '⭐'} {_esc(p['setup'])}")
+    elif o.get("slots") == 0:
+        L.append("\n📦 Portfolio full (5 positions) – manage existing trades, no new buys.")
+    ss = o.get("setup_status") or {}
+    off = [k for k, v in ss.items() if not v.get("active")]
+    if off:
+        L.append("🧠 Auto-paused setups (losing lately): " + ", ".join(off))
     m = o.get("ml") or {}
     m85 = [p for p in o["picks"] if p.get("mode85")]
     if m.get("m85_win"):
