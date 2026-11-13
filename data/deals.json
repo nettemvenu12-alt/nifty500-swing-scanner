@@ -1,0 +1,1460 @@
+[
+{
+"date": "2026-11-13",
+"symbol": "AAATECH",
+"kind": "bulk",
+"client": "VAIBHAV RAJENDRA DOSHI",
+"side": "BUY",
+"qty": 80083.0,
+"price": 90.63
+},
+{
+"date": "2026-11-13",
+"symbol": "AAATECH",
+"kind": "bulk",
+"client": "VAIBHAV RAJENDRA DOSHI",
+"side": "SELL",
+"qty": 80083.0,
+"price": 89.53
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 95589.0,
+"price": 941.01
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 109747.0,
+"price": 950.14
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 123544.0,
+"price": 937.65
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "BUY",
+"qty": 102709.0,
+"price": 943.46
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 109747.0,
+"price": 951.83
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 95558.0,
+"price": 941.65
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "SELL",
+"qty": 102709.0,
+"price": 943.86
+},
+{
+"date": "2026-11-13",
+"symbol": "ALICON",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 123544.0,
+"price": 937.74
+},
+{
+"date": "2026-11-13",
+"symbol": "AMBER",
+"kind": "bulk",
+"client": "GRAVITON RESEARCH CAPITAL LLP",
+"side": "BUY",
+"qty": 295139.0,
+"price": 6620.16
+},
+{
+"date": "2026-11-13",
+"symbol": "AMBER",
+"kind": "bulk",
+"client": "GRAVITON RESEARCH CAPITAL LLP",
+"side": "SELL",
+"qty": 298240.0,
+"price": 6635.72
+},
+{
+"date": "2026-11-13",
+"symbol": "BCSSL",
+"kind": "bulk",
+"client": "PINKAL SHAILESHKUMAR JOGANI",
+"side": "BUY",
+"qty": 325000.0,
+"price": 81.25
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 465484.0,
+"price": 504.63
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 374531.0,
+"price": 504.17
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "IRAGE BROKING SERVICES LLP",
+"side": "BUY",
+"qty": 268393.0,
+"price": 504.16
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 514165.0,
+"price": 504.26
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "BUY",
+"qty": 348480.0,
+"price": 505.19
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 514165.0,
+"price": 504.88
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "IRAGE BROKING SERVICES LLP",
+"side": "SELL",
+"qty": 213212.0,
+"price": 503.58
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 373880.0,
+"price": 504.66
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "SELL",
+"qty": 348480.0,
+"price": 505.48
+},
+{
+"date": "2026-11-13",
+"symbol": "BFUTILITIE",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 465484.0,
+"price": 505.05
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MATHISYS QUANTCAP LLP",
+"side": "BUY",
+"qty": 972049.0,
+"price": 260.59
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "BUY",
+"qty": 1252333.0,
+"price": 262.11
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "JUMP TRADING FINANCIAL INDIA PRIVATE LIMITED",
+"side": "BUY",
+"qty": 825482.0,
+"price": 262.01
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "BLITZQUANT RESEARCH LLP",
+"side": "BUY",
+"qty": 575572.0,
+"price": 262.5
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 1763975.0,
+"price": 262.86
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "IRAGE BROKING SERVICES LLP",
+"side": "BUY",
+"qty": 758783.0,
+"price": 266.85
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "IMC INDIA SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 880204.0,
+"price": 263.49
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 2553662.0,
+"price": 262.93
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MAHAVEER COMSTOCK TRADIND LLP",
+"side": "BUY",
+"qty": 328912.0,
+"price": 264.96
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "BUY",
+"qty": 618010.0,
+"price": 263.85
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "J4S FINANCIAL SOLUTIONS LLP",
+"side": "BUY",
+"qty": 382738.0,
+"price": 263.86
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "CLT RESEARCH TECH PRIVATE LTD",
+"side": "BUY",
+"qty": 443080.0,
+"price": 268.86
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "J4S FINANCIAL SOLUTIONS LLP",
+"side": "BUY",
+"qty": 401038.0,
+"price": 264.29
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MARWADI SHARES AND FINANCE LTD.",
+"side": "BUY",
+"qty": 318559.0,
+"price": 262.05
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "DIPAN MEHTA COMMODITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 614418.0,
+"price": 263.14
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 2441818.0,
+"price": 264.06
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 1829458.0,
+"price": 263.26
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "PLUTUS WEALTH MANAGEMENT LLP",
+"side": "BUY",
+"qty": 3883186.0,
+"price": 265.12
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2553662.0,
+"price": 263.05
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MAHAVEER COMSTOCK TRADIND LLP",
+"side": "SELL",
+"qty": 308912.0,
+"price": 264.63
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "SELL",
+"qty": 618010.0,
+"price": 264.02
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2441818.0,
+"price": 264.4
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "J4S FINANCIAL SOLUTIONS LLP",
+"side": "SELL",
+"qty": 382738.0,
+"price": 264.01
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "CLT RESEARCH TECH PRIVATE LTD",
+"side": "SELL",
+"qty": 443080.0,
+"price": 268.96
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "BLITZQUANT RESEARCH LLP",
+"side": "SELL",
+"qty": 575572.0,
+"price": 262.61
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "J4S FINANCIAL SOLUTIONS LLP",
+"side": "SELL",
+"qty": 401038.0,
+"price": 264.36
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "DIPAN MEHTA COMMODITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 606418.0,
+"price": 263.17
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MARWADI SHARES AND FINANCE LTD.",
+"side": "SELL",
+"qty": 300257.0,
+"price": 263.6
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "PLUTUS WEALTH MANAGEMENT LLP",
+"side": "SELL",
+"qty": 3883186.0,
+"price": 265.23
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "IMC INDIA SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 766014.0,
+"price": 265.66
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 1833792.0,
+"price": 263.39
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "JUMP TRADING FINANCIAL INDIA PRIVATE LIMITED",
+"side": "SELL",
+"qty": 825482.0,
+"price": 259.51
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "SELL",
+"qty": 899688.0,
+"price": 259.71
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "MATHISYS QUANTCAP LLP",
+"side": "SELL",
+"qty": 961950.0,
+"price": 260.5
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "IRAGE BROKING SERVICES LLP",
+"side": "SELL",
+"qty": 547258.0,
+"price": 265.25
+},
+{
+"date": "2026-11-13",
+"symbol": "BLSPOLY",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 1818564.0,
+"price": 261.87
+},
+{
+"date": "2026-11-13",
+"symbol": "DCI",
+"kind": "bulk",
+"client": "SETU SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 138910.0,
+"price": 333.43
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 4404674.0,
+"price": 39.5
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 4661724.0,
+"price": 39.3
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 2834766.0,
+"price": 38.92
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "BUY",
+"qty": 3184192.0,
+"price": 39.43
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 5431286.0,
+"price": 39.25
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 4653122.0,
+"price": 39.33
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 2831929.0,
+"price": 38.95
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+"side": "SELL",
+"qty": 3184192.0,
+"price": 39.46
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 4404674.0,
+"price": 39.52
+},
+{
+"date": "2026-11-13",
+"symbol": "DHANBANK",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 5431286.0,
+"price": 39.28
+},
+{
+"date": "2026-11-13",
+"symbol": "GCSL",
+"kind": "bulk",
+"client": "MANSUKH SECURITIES & FINANCE LIMITED",
+"side": "BUY",
+"qty": 27744.0,
+"price": 812.47
+},
+{
+"date": "2026-11-13",
+"symbol": "GCSL",
+"kind": "bulk",
+"client": "MANSUKH SECURITIES & FINANCE LIMITED",
+"side": "SELL",
+"qty": 135488.0,
+"price": 819.55
+},
+{
+"date": "2026-11-13",
+"symbol": "HGSINDIALT",
+"kind": "bulk",
+"client": "NEO APEX SHARE BROKING SERVICES LLP",
+"side": "BUY",
+"qty": 57600.0,
+"price": 214.35
+},
+{
+"date": "2026-11-13",
+"symbol": "IIFLCAPS",
+"kind": "bulk",
+"client": "ALPHA ALTERNATIVES FINANCIAL SERVICES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2369139.0,
+"price": 354.74
+},
+{
+"date": "2026-11-13",
+"symbol": "IIFLCAPS",
+"kind": "bulk",
+"client": "NEO TREASURY PLUS FUND",
+"side": "SELL",
+"qty": 1865000.0,
+"price": 355.78
+},
+{
+"date": "2026-11-13",
+"symbol": "IIFLCAPS",
+"kind": "bulk",
+"client": "ARVESTA FINANCIAL SERVICES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2081589.0,
+"price": 354.22
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 139238.0,
+"price": 411.68
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 143916.0,
+"price": 409.57
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 195815.0,
+"price": 412.66
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "PLUTUS WEALTH MANAGEMENT LLP",
+"side": "BUY",
+"qty": 120015.0,
+"price": 412.25
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 139641.0,
+"price": 412.3
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "PLUTUS WEALTH MANAGEMENT LLP",
+"side": "SELL",
+"qty": 120015.0,
+"price": 412.32
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 195815.0,
+"price": 413.14
+},
+{
+"date": "2026-11-13",
+"symbol": "JARO",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 148117.0,
+"price": 412.33
+},
+{
+"date": "2026-11-13",
+"symbol": "KKJEWELS",
+"kind": "bulk",
+"client": "SARTH AJITBHAI SANTOKI",
+"side": "BUY",
+"qty": 55000.0,
+"price": 182.0
+},
+{
+"date": "2026-11-13",
+"symbol": "LAMOSAIC",
+"kind": "bulk",
+"client": "BHAVIN S KAMANI",
+"side": "BUY",
+"qty": 37800.0,
+"price": 47.52
+},
+{
+"date": "2026-11-13",
+"symbol": "LAMOSAIC",
+"kind": "bulk",
+"client": "BHAVIN S KAMANI",
+"side": "SELL",
+"qty": 70200.0,
+"price": 47.0
+},
+{
+"date": "2026-11-13",
+"symbol": "MANAKCOAT",
+"kind": "bulk",
+"client": "ARIHANT CAPITAL MARKETS LIMITED",
+"side": "BUY",
+"qty": 757724.0,
+"price": 176.13
+},
+{
+"date": "2026-11-13",
+"symbol": "MANAKCOAT",
+"kind": "bulk",
+"client": "ARIHANT CAPITAL MARKETS LIMITED",
+"side": "SELL",
+"qty": 920999.0,
+"price": 177.21
+},
+{
+"date": "2026-11-13",
+"symbol": "MANAKCOAT",
+"kind": "bulk",
+"client": "TIGER STRATEGIES FUND -I",
+"side": "SELL",
+"qty": 600000.0,
+"price": 175.04
+},
+{
+"date": "2026-11-13",
+"symbol": "MARKOLINES",
+"kind": "bulk",
+"client": "VISTAAR TRADING SERVICE PRIVATE LIMITED",
+"side": "BUY",
+"qty": 110772.0,
+"price": 162.83
+},
+{
+"date": "2026-11-13",
+"symbol": "MARKOLINES",
+"kind": "bulk",
+"client": "VISTAAR TRADING SERVICE PRIVATE LIMITED",
+"side": "SELL",
+"qty": 111524.0,
+"price": 162.91
+},
+{
+"date": "2026-11-13",
+"symbol": "MAXENGS",
+"kind": "bulk",
+"client": "NEO APEX SHARE BROKING SERVICES LLP",
+"side": "SELL",
+"qty": 85600.0,
+"price": 276.06
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "bulk",
+"client": "SVF II MEERKAT (DE) LLC",
+"side": "SELL",
+"qty": 76400000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "ADITYA BIRLA SUN LIFE MUTUAL FUND",
+"side": "BUY",
+"qty": 4200000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "WILLIAM BLAIR EMERGING MARKETS EX CHINA GROWTH FUND",
+"side": "BUY",
+"qty": 61297.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "BNP PARIBAS FINANCIAL MARKETS",
+"side": "BUY",
+"qty": 3817000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "EDELWEISS MUTUAL FUND",
+"side": "BUY",
+"qty": 1015000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FGTFEBP FIAM SELECT EMERGING MARKETS EQUITY COMMINGLED POOL",
+"side": "BUY",
+"qty": 3847600.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIAM SELECT EMERGING MARKETS EQUITY FUND LP",
+"side": "BUY",
+"qty": 540000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY INVESTMENT TR FIDELITY SAI SUSTAINABLE EMERGING MARKETS EQUITY FD",
+"side": "BUY",
+"qty": 137000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY INVESTMENT TRUST FIDELITY SERIES EMERGING MARKETS FUND",
+"side": "BUY",
+"qty": 7610300.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY INVESTMENT TRUST FIDELITY SUSTAINABLE EMERGING MARKETS EQUITY FUND",
+"side": "BUY",
+"qty": 40000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY RUTLAND SQUARE TRUST II STRATEGIC ADVISERS FID EMG MARKETS FUND",
+"side": "BUY",
+"qty": 8475900.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY RUTLAND SQUARE TRUST II: STRATEGIC ADVISERS EMERGING MARKETS FUND",
+"side": "BUY",
+"qty": 2296700.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "FIDELITY SELECT EMERGING MARKETS EQUITY INSTITUTIONAL TRUST",
+"side": "BUY",
+"qty": 277500.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "GHISALLO MASTER FUND LP",
+"side": "BUY",
+"qty": 3435000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "GOLDMAN SACHS BANK EUROPE SE",
+"side": "BUY",
+"qty": 3626000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "GOVERNMENT OF SINGAPORE",
+"side": "BUY",
+"qty": 2177506.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "HDFC MUTUAL FUND",
+"side": "BUY",
+"qty": 1410000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "MONETARY AUTHORITY OF SINGAPORE",
+"side": "BUY",
+"qty": 497494.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "MORGAN STANLEY ASIA SINGAPORE PTE",
+"side": "BUY",
+"qty": 4199000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "MORGAN STANLEY ASIA SINGAPORE PTE",
+"side": "BUY",
+"qty": 5725000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "MOTILAL OSWAL MUTUAL FUND",
+"side": "BUY",
+"qty": 5250000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "NORGES BANK ON ACCOUNT OF THE GOVERNMENT PENSION FUND GLOBAL",
+"side": "BUY",
+"qty": 1015000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "SOCIETE GENERALE",
+"side": "BUY",
+"qty": 14778000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "BAJAJ ALLIANZ LIFE INSURANCE COMPANY LIMITED",
+"side": "BUY",
+"qty": 1015000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "TEXAS MUNICIPAL RETIREMENT SYSTEM",
+"side": "BUY",
+"qty": 329789.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "WILLIAM BLAIR EMERGING MARKETS EX CHINA GROWTH COLLECTIVE INVESTMENT FUND",
+"side": "BUY",
+"qty": 623914.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MEESHO",
+"kind": "block",
+"client": "SVF II MEERKAT (DE) LLC",
+"side": "SELL",
+"qty": 76400000.0,
+"price": 246.75
+},
+{
+"date": "2026-11-13",
+"symbol": "MOS",
+"kind": "bulk",
+"client": "KULDEEP BHARATBHAI KHACHAR",
+"side": "BUY",
+"qty": 1656000.0,
+"price": 8.35
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "BUY",
+"qty": 196633.0,
+"price": 784.97
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "BUY",
+"qty": 209141.0,
+"price": 777.36
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 269224.0,
+"price": 784.44
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "BUY",
+"qty": 261733.0,
+"price": 786.96
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "ALPHAGREP SECURITIES PRIVATE LIMITED",
+"side": "SELL",
+"qty": 261733.0,
+"price": 787.13
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+"side": "SELL",
+"qty": 196892.0,
+"price": 785.13
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "SELL",
+"qty": 176515.0,
+"price": 781.27
+},
+{
+"date": "2026-11-13",
+"symbol": "MVELECTRO",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 277518.0,
+"price": 783.64
+},
+{
+"date": "2026-11-13",
+"symbol": "MWL",
+"kind": "bulk",
+"client": "BULLPULSE MARKETEDGE PRIVATE LIMITED",
+"side": "BUY",
+"qty": 2244269.0,
+"price": 39.82
+},
+{
+"date": "2026-11-13",
+"symbol": "MWL",
+"kind": "bulk",
+"client": "BULLPULSE MARKETEDGE PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2244269.0,
+"price": 40.27
+},
+{
+"date": "2026-11-13",
+"symbol": "NECCLTD",
+"kind": "bulk",
+"client": "PRAJAL BHANDARI",
+"side": "BUY",
+"qty": 885561.0,
+"price": 22.58
+},
+{
+"date": "2026-11-13",
+"symbol": "NECCLTD",
+"kind": "bulk",
+"client": "PRAJAL BHANDARI",
+"side": "SELL",
+"qty": 232233.0,
+"price": 22.5
+},
+{
+"date": "2026-11-13",
+"symbol": "PASHUPATI",
+"kind": "bulk",
+"client": "NEO APEX SHARE BROKING SERVICES LLP",
+"side": "BUY",
+"qty": 1800000.0,
+"price": 35.15
+},
+{
+"date": "2026-11-13",
+"symbol": "PASHUPATI",
+"kind": "bulk",
+"client": "NEO APEX SHARE BROKING SERVICES LLP",
+"side": "SELL",
+"qty": 1800000.0,
+"price": 35.14
+},
+{
+"date": "2026-11-13",
+"symbol": "PROLIFE",
+"kind": "bulk",
+"client": "GYANENDRA KUMAR",
+"side": "SELL",
+"qty": 26000.0,
+"price": 68.59
+},
+{
+"date": "2026-11-13",
+"symbol": "RALLIS",
+"kind": "bulk",
+"client": "ASK INVESTMENT MANAGERS LIMITED",
+"side": "SELL",
+"qty": 1279684.0,
+"price": 189.42
+},
+{
+"date": "2026-11-13",
+"symbol": "SABAR",
+"kind": "bulk",
+"client": "ALEGULA MADHU BABU",
+"side": "BUY",
+"qty": 410000.0,
+"price": 9.24
+},
+{
+"date": "2026-11-13",
+"symbol": "SABAR",
+"kind": "bulk",
+"client": "KUNJIT MAHESHBHAI PATEL",
+"side": "SELL",
+"qty": 400000.0,
+"price": 9.25
+},
+{
+"date": "2026-11-13",
+"symbol": "SSRETAIL",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 405200.0,
+"price": 734.46
+},
+{
+"date": "2026-11-13",
+"symbol": "SSRETAIL",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 407852.0,
+"price": 731.86
+},
+{
+"date": "2026-11-13",
+"symbol": "STLNETWORK",
+"kind": "bulk",
+"client": "RAMDOOT REALTORS PVT LTD",
+"side": "BUY",
+"qty": 2572345.0,
+"price": 46.12
+},
+{
+"date": "2026-11-13",
+"symbol": "STLNETWORK",
+"kind": "bulk",
+"client": "RAMDOOT REALTORS PVT LTD",
+"side": "SELL",
+"qty": 2394383.0,
+"price": 46.25
+},
+{
+"date": "2026-11-13",
+"symbol": "STYLEBAAZA",
+"kind": "bulk",
+"client": "MANSI SHARE AND STOCK BROKING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 381699.0,
+"price": 455.31
+},
+{
+"date": "2026-11-13",
+"symbol": "STYLEBAAZA",
+"kind": "bulk",
+"client": "MANSI SHARE AND STOCK BROKING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 381699.0,
+"price": 466.95
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "BUY",
+"qty": 1589792.0,
+"price": 660.88
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 2981475.0,
+"price": 663.1
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 2178340.0,
+"price": 664.04
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 2973851.0,
+"price": 660.9
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "HRTI PRIVATE LIMITED",
+"side": "SELL",
+"qty": 1760496.0,
+"price": 663.54
+},
+{
+"date": "2026-11-13",
+"symbol": "TDPOWERSYS",
+"kind": "bulk",
+"client": "MICROCURVES TRADING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2178340.0,
+"price": 664.54
+},
+{
+"date": "2026-11-13",
+"symbol": "TECHNOCRAF",
+"kind": "bulk",
+"client": "ACME CAPITAL MARKET LIMITED",
+"side": "BUY",
+"qty": 330591.0,
+"price": 502.24
+},
+{
+"date": "2026-11-13",
+"symbol": "TECHNOCRAF",
+"kind": "bulk",
+"client": "ACME CAPITAL MARKET LIMITED",
+"side": "SELL",
+"qty": 330591.0,
+"price": 504.12
+},
+{
+"date": "2026-11-13",
+"symbol": "TEXINFRA",
+"kind": "bulk",
+"client": "MANSI SHARE AND STOCK BROKING PRIVATE LIMITED",
+"side": "BUY",
+"qty": 826455.0,
+"price": 123.02
+},
+{
+"date": "2026-11-13",
+"symbol": "TEXINFRA",
+"kind": "bulk",
+"client": "ACQUARIO WEALTH ADVISORS LLP",
+"side": "SELL",
+"qty": 918078.0,
+"price": 123.03
+},
+{
+"date": "2026-11-13",
+"symbol": "TEXINFRA",
+"kind": "bulk",
+"client": "MANSI SHARE AND STOCK BROKING PRIVATE LIMITED",
+"side": "SELL",
+"qty": 826455.0,
+"price": 123.83
+},
+{
+"date": "2026-11-13",
+"symbol": "URBAN-RE",
+"kind": "bulk",
+"client": "RAMESH KHUSHALCHAND MANTRI",
+"side": "BUY",
+"qty": 61600.0,
+"price": 12.05
+},
+{
+"date": "2026-11-13",
+"symbol": "URBAN-RE",
+"kind": "bulk",
+"client": "DEVENDRA BANKATLAL RATHI",
+"side": "BUY",
+"qty": 72000.0,
+"price": 12.05
+},
+{
+"date": "2026-11-13",
+"symbol": "V2RETAIL",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "BUY",
+"qty": 1909220.0,
+"price": 173.77
+},
+{
+"date": "2026-11-13",
+"symbol": "V2RETAIL",
+"kind": "bulk",
+"client": "F3 ADVISORS PRIVATE LIMITED",
+"side": "BUY",
+"qty": 2173610.0,
+"price": 176.01
+},
+{
+"date": "2026-11-13",
+"symbol": "V2RETAIL",
+"kind": "bulk",
+"client": "QE SECURITIES LLP",
+"side": "SELL",
+"qty": 1779009.0,
+"price": 173.3
+},
+{
+"date": "2026-11-13",
+"symbol": "V2RETAIL",
+"kind": "bulk",
+"client": "F3 ADVISORS PRIVATE LIMITED",
+"side": "SELL",
+"qty": 2157065.0,
+"price": 175.94
+}
+]

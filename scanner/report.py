@@ -95,6 +95,7 @@ Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('m
 Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
 <div class="muted">Limit-buy option ₹{p.get('dip_buy', '-')} · Exit: T1 → sell half, SL to cost; rest on close below 20 EMA (₹{p.get('ema20', '-')})</div>
 {f'<div class="green">🎯 85% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m85_target"]} (+5%) · SL ₹{p["m85_stop"]} (-15%) · qty {p["m85_qty"]}</div>' if p.get('mode85') else ''}
+{f'<div class="green">💰 Big investors bought ₹{p["smart"]["net_cr"]} Cr in bulk/block deals (10 days): {e(", ".join(p["smart"]["buyers"]))}</div>' if (p.get("smart") or {}).get("tag") == "buy" else ''}
 <div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
 
 
@@ -200,8 +201,11 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
             p = bysym[sym]
             n += 1
             L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
-                     f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}\n"
+                     f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}"
+                     f"{'  💰' if (p.get('smart') or {}).get('tag') == 'buy' else ''}\n"
                      f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
+    if any((bysym[s].get("smart") or {}).get("tag") == "buy" for v in (o.get("segments") or {}).values() for s in v["buy"]):
+        L.append("\n💰 = big investors bought in bulk/block deals (last 10 days)")
     if n == 0:
         L.append("\nNo stock passes all checks today. Waiting is also a good trade.")
     else:
@@ -238,6 +242,18 @@ def telegram_text(o):
         L.append("\n⚡ <b>BTST</b> (buy ~3:20 PM, sell next morning)" + (" – forming, confirm at 3:15" if live else ""))
         for k, p in enumerate(o["btst"][:3], 1):
             L.append(f"{k}. <b>{_esc(p['symbol'])}</b> ₹{p['close']} ({p['chg']:+.1f}%) · SL ₹{p['stop']} · Target ₹{p['target']}")
+    w = o.get("weekly")
+    if w:
+        L.append(f"\n📊 <b>WEEKLY REPORT</b> – how the picks did")
+        L.append(f"New picks this week: {w['week_new']} · tracked so far: {w['total']}")
+        L.append(f"🎯 Target 1 hit: {w['target_hit']} · 🛑 Stop hit: {w['stopped']} · ⏳ Running: {w['running']}")
+        if w.get("avg_ret") is not None:
+            L.append(f"Average return per pick: {w['avg_ret']:+.2f}%"
+                     + (f" · closed trades won {w['win_rate']}% ({w['closed']})" if w.get("closed") else ""))
+        if w.get("best"):
+            L.append("Best: " + ", ".join(f"{_esc(b['symbol'])} {b['ret']:+.1f}%" for b in w["best"]))
+        if w.get("worst"):
+            L.append("Worst: " + ", ".join(f"{_esc(b['symbol'])} {b['ret']:+.1f}%" for b in w["worst"]))
     if live:
         L.append("\n<i>Live: today's candle not closed yet.</i>")
     L.append(f'\n<a href="{PAGES}">Full details</a> · Not advice – always use SL.')

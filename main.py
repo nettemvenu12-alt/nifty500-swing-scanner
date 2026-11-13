@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 from scanner import backtest as bt
-from scanner import data, fundamentals, model, news, portfolio, regime as regime_mod, report, risk
+from scanner import data, fundamentals, model, news, portfolio, regime as regime_mod, report, risk, smart
 from scanner import indicators as ind
 from scanner import strategies as stg
 
@@ -196,7 +196,8 @@ def load_state(today):
     except Exception:
         st = {}
     if st.get("date") != today:
-        st = {"date": today, "seen": {}, "status": st.get("status", {})}
+        st = {"date": today, "seen": {}, "status": st.get("status", {}),
+              "weekly_sent": st.get("weekly_sent")}
     return st
 
 
@@ -251,6 +252,9 @@ def main():
         print(f"Intraday run: {mins:.0f} min into session, volume pace x{pace:.2f}")
 
     surv = risk.surveillance()
+    big_deals = smart.deals(now.date())
+    rescal = smart.results_calendar(now.date())
+    print(f"Bulk/block deals: {len(big_deals)} stocks · results calendar: {len(rescal)} stocks")
     print(f"NSE surveillance list: {len(surv)} stocks")
     rows, swing_bt, btst_bt, samples = [], {k: [] for k in stg.SWING}, [], []
     for sym, raw in prices.items():
@@ -407,7 +411,10 @@ def main():
                 warn.append("Trading below today's VWAP – wait")
             else:
                 total += 1
-        rid = f.get("results_in_days")
+        rid = rescal.get(x.symbol, f.get("results_in_days"))  # NSE calendar first, Yahoo as backup
+        sm = big_deals.get(x.symbol)
+        if sm and sm["tag"] == "sell":
+            warn.append(f"Big sellers in bulk/block deals (₹{-sm['net_cr']:.0f} Cr net sold, 10 days)")
         # ---- your checklist (only rules that helped in the 10-year test are hard rules) ----
         fails = []
         if x.row.ret63 - n50_ret63 <= 0:
@@ -483,7 +490,7 @@ def main():
                 and x.ml_prob >= ml_rep.get("hc_threshold", 1) and x.row.wk_up
                 and not (rid is not None and 0 <= rid <= 7) and total >= 70
                 and not (iv and not iv["above_vwap"])),
-            "rule_fails": fails,
+            "rule_fails": fails, "smart": sm, "results_in_days": rid,
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
@@ -526,7 +533,16 @@ def main():
             d = data.download([h["symbol"]]).get(h["symbol"])
         if d is not None:
             try:
-                hold_reviews.append(portfolio.review(h, ind.add_all(d), bench["Close"]))
+                rv = portfolio.review(h, ind.add_all(d), bench["Close"])
+                rd = rescal.get(h["symbol"])
+                if rd is not None and 0 <= rd <= 7:
+                    rv["results_in_days"] = rd
+                    rv["action"] += f" · ⚠️ Results {'TODAY' if rd == 0 else f'in {rd} day' + ('s' if rd > 1 else '')} – book part or tighten SL"
+                sm = big_deals.get(h["symbol"])
+                if sm and sm["tag"]:
+                    rv["action"] += (f" · 💰 big buyers ₹{sm['net_cr']:.0f} Cr" if sm["tag"] == "buy"
+                                     else f" · ⚠️ big sellers ₹{-sm['net_cr']:.0f} Cr")
+                hold_reviews.append(rv)
             except Exception as e:
                 print("holding review failed", h["symbol"], e)
 
@@ -568,14 +584,6 @@ def main():
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]
         seg_lists[name] = {"buy": [p["symbol"] for p in ps[:6]], "watch": watch}
 
-    # Friday end-of-day: weekly summary of the picks tracker
-    weekly = None
-    if not intraday and now.weekday() == 4 and len(track):
-        wk = track[pd.to_datetime(track.date) >= pd.Timestamp(now.date()) - pd.Timedelta(days=6)]
-        weekly = {"new_picks": int(len(wk)),
-                  "best": track.sort_values("ret", ascending=False).head(3)[["symbol", "ret", "status"]].to_dict("records"),
-                  **live}
-
     # New-since-last-report flags and target / stop alerts for tracked picks
     state = load_state(today)
     stamp = now.strftime("%H:%M")
@@ -590,6 +598,12 @@ def main():
         if prev is not None and t["status"] != prev:
             alerts.append({**t, "prev": prev})
         state["status"][k] = t["status"]
+    # Friday after close: weekly performance report, sent once per week
+    weekly, week_id = None, now.strftime("%G-W%V")
+    if not intraday and ((now.weekday() == 4 and mins > 375) or now.weekday() >= 5) and state.get("weekly_sent") != week_id:
+        weekly = smart.weekly_summary(track, now.date())
+        if weekly:
+            state["weekly_sent"] = week_id
     with open(STATE, "w") as fh:
         json.dump(state, fh, indent=1)
 

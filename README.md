@@ -90,3 +90,9 @@ python main.py --no-news  # faster
 > ⚠️ Educational screener, not investment advice. No method wins 99% of the time —
 > the backtest table on the dashboard shows the real historical hit rates. Always use the stop-loss
 > and keep each position small.
+
+## Smart money, results alerts, weekly report
+
+- **💰 Smart money tag** – NSE bulk and block deals are saved every run (`data/deals.json`). A stock gets 💰 when big investors net bought ₹5 Cr+ in the last 10 days; net selling of ₹5 Cr+ shows as a warning. It is a tag only and does not change the score (not backtested).
+- **Results alert** – result dates come from the NSE event calendar (Yahoo as backup). A holding with results within 7 days gets a ⚠️ line in every report.
+- **Weekly report** – once a week after Friday's close, Telegram gets a summary of the tracked picks: targets hit, stops hit, running, average return, best and worst.
