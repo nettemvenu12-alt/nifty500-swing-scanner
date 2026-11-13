@@ -117,6 +117,17 @@ def html(o):
         f"<tr><td>{H.escape(k)}</td><td>{v['recent_n']}</td><td>{v['recent_win']}%</td><td>{v['recent_avg']}%</td>"
         f"<td>{'✅ active' if v['active'] else '⏸ paused – ' + v['why']}</td></tr>"
         for k, v in (o.get("setup_status") or {}).items()) + "</table>"
+    segsec = ""
+    bysym = {p["symbol"]: p for p in o["picks"]}
+    for name, v in (o.get("segments") or {}).items():
+        note = " <span class='warn'>(extra strict, half qty)</span>" if name == "Smallcap 250" else ""
+        rows_ = "".join(f"<tr><td><b>{H.escape(s)}</b></td><td>{bysym[s]['stars']}</td><td>{bysym[s]['score']}</td>"
+                        f"<td>{H.escape(bysym[s]['setup'])}</td><td>{bysym[s]['entry']}</td><td class='red'>{bysym[s]['stop']}</td>"
+                        f"<td class='green'>{bysym[s]['target1']}</td><td>{bysym[s].get('qty')}</td></tr>" for s in v["buy"])
+        rows_ = rows_ or "<tr><td colspan=8>No clean buy setup today</td></tr>"
+        watch = f"<p class='muted'>Watch: {', '.join(H.escape(x) for x in v['watch'])}</p>" if v["watch"] else ""
+        segsec += (f"<h2>{H.escape(name)}{note}</h2><table><tr><th>Stock</th><th>Rating</th><th>Score</th><th>Setup</th>"
+                   f"<th>Buy</th><th>SL</th><th>T1</th><th>Qty</th></tr>{rows_}</table>{watch}")
     m = o.get("ml") or {}
     mlsec = ""
     if m.get("auc"):
@@ -154,7 +165,7 @@ table{{width:100%;border-collapse:collapse;font-size:12.5px}}td,th{{padding:5px;
 <h1>📈 Nifty 500 Swing & BTST Scanner</h1><div class="muted">Data {o['data_date']} · generated {o['generated']} · {o['universe']} stocks scanned</div>
 <div class="box"><div>Market <b class="{regcol}">{r['label']}</b></div><div>Nifty 500 {r['close']} ({r['ret21']}% 1M)</div>
 <div>&gt;50 EMA {b['above_ema50']}%</div><div>&gt;200 EMA {b['above_ema200']}%</div><div>52W highs {b['new_52w_high']}</div></div>
-{live_badge}<h2>⭐ Top pick today</h2>{top_html}{sectors}
+{live_badge}<h2>⭐ Top pick today</h2>{top_html}{segsec}{sectors}
 <h2>Swing picks · hold ≤60 days · target +5% / +10%</h2>{cards}
 <h2>⚡ BTST · buy near 3:20 PM, sell next morning</h2><table><tr><th>Stock</th><th>Rating</th><th>Close</th><th>Day</th><th>Vol</th><th>Stop</th><th>Target</th></tr>{btst}</table>
 <h2>🧪 Backtest (3 yrs, Nifty 500)</h2><table><tr><th>Setup</th><th>Trades</th><th>+5% before stop</th><th>+10%</th><th>Profitable</th><th>Avg</th></tr>{bt}</table>{bbt}
@@ -210,6 +221,23 @@ def telegram_text(o):
                      f"{'🎯' if p.get('mode85') else '🔥' if p.get('high_conviction') else '⭐'} {_esc(p['setup'])}")
     elif o.get("slots") == 0:
         L.append("\n📦 Portfolio full (5 positions) – manage existing trades, no new buys.")
+    segs = o.get("segments") or {}
+    if segs:
+        bysym = {p["symbol"]: p for p in o["picks"]}
+        icons = {"Nifty 50": "🏛", "Nifty Next 50": "🏢", "Midcap 150": "📈", "Smallcap 250": "⚠️"}
+        for name, v in segs.items():
+            L.append(f"\n{icons.get(name, '•')} <b>{name}</b>"
+                     + (" – extra strict: score ≥75, ≥₹20 Cr/day, no red flags, HALF qty" if name == "Smallcap 250" else ""))
+            if v["buy"]:
+                for s in v["buy"]:
+                    p = bysym[s]
+                    tag = "🎯" if p.get("mode85") else "🔥" if p.get("high_conviction") else p["stars"]
+                    L.append(f"{tag} <b>{_esc(s)}</b> {p['score']} · {_esc(p['setup'])}\n"
+                             f"   Buy {p['entry']} · SL {p['stop']} · T1 {p['target1']} · Qty {p.get('qty')} · AI {p.get('ml_prob')}%")
+            else:
+                L.append("No clean buy setup today – don't force it.")
+            if v["watch"]:
+                L.append("👀 Watch: " + ", ".join(_esc(x) for x in v["watch"]))
     ss = o.get("setup_status") or {}
     off = [k for k, v in ss.items() if not v.get("active")]
     if off:

@@ -22,6 +22,8 @@ from scanner import strategies as stg
 ROOT = os.path.dirname(os.path.abspath(__file__))
 IST = ZoneInfo("Asia/Kolkata")
 TOP_N_ENRICH = 40
+SEG_N = 12          # candidates analysed per index segment
+SMALLCAP_MIN_TURNOVER_CR = 20
 LOG = os.path.join(ROOT, "data", "pick_log.csv")
 CONFIG = os.path.join(ROOT, "config.json")
 
@@ -218,6 +220,7 @@ def main():
     if args.limit:
         universe = universe.head(args.limit)
     meta = universe.set_index("Symbol").to_dict("index")
+    segment = data.load_segments()
     print(f"Universe: {len(universe)} stocks")
 
     bench = data.download([data.BENCH]).get(data.BENCH)
@@ -349,8 +352,12 @@ def main():
     df["edge_pts"], df["hist_win"] = e[0], e[1]
     df["pre"] = df.tech + df.rs_pts + df.edge_pts + 5 * (df.signals.str.len() > 0)
 
+    df["segment"] = df.symbol.map(segment).fillna("Other")
     cand = df[(df.signals.str.len() > 0) | (df.trend & (df.tech >= 45))]
-    cand = cand.sort_values("pre", ascending=False).head(TOP_N_ENRICH).copy()
+    # best candidates overall + the best of EACH segment, so every list gets filled
+    per_seg = cand.sort_values("pre", ascending=False).groupby("segment").head(SEG_N)
+    cand = cand.sort_values("pre", ascending=False).head(TOP_N_ENRICH)
+    cand = pd.concat([cand, per_seg[~per_seg.symbol.isin(cand.symbol)]]).copy()
     # never drop a stock that could qualify for 85% mode
     m85c = df[(df.signals.str.len() > 0) & (df.ml_prob >= ml_rep.get("m85_threshold", 1))]
     cand = pd.concat([cand, m85c[~m85c.symbol.isin(cand.symbol)]])
@@ -399,6 +406,18 @@ def main():
         if x.redflags:
             total -= 5
             warn += x.redflags
+        small = x.segment == "Smallcap 250"
+        small_ok = True
+        if small:
+            # Small caps: extra care – more liquidity, zero red flags, stricter score
+            if x.row.turnover_cr < SMALLCAP_MIN_TURNOVER_CR:
+                small_ok = False
+                warn.append(f"Smallcap: low liquidity (₹{x.row.turnover_cr:.0f} Cr/day < ₹{SMALLCAP_MIN_TURNOVER_CR} Cr)")
+            if x.redflags:
+                small_ok = False
+            if x.row.from_high < -20:
+                small_ok = False
+                warn.append("Smallcap: >20% below 52W high")
         if "Results Gap" in x.signals:
             total += 3  # strongest setup in the 5-year backtest
         if x.row.rsi > 75:
@@ -413,6 +432,7 @@ def main():
         plan.update(position_size(plan["entry"], plan["stop"], cfg))
         picks.append({
             "symbol": x.symbol, "name": x["name"], "industry": x.industry,
+            "segment": x.segment, "smallcap_ok": small_ok,
             "setup": ", ".join(x.signals) or "Uptrend",
             "score": total, "stars": stars, "label": label, **plan,
             "close": round(x.row.Close, 2), "chg": round(x.row.day_chg, 2),
@@ -447,7 +467,8 @@ def main():
         tier = ("mode85" if p["mode85"] else "high_conviction" if p["high_conviction"]
                 else "buy" if p["label"] in ("STRONG BUY", "BUY") else "other")
         p["size_tier"] = tier
-        p.update(position_size(p["entry"], p["stop"], cfg, cfg["risk_mult"][tier]))
+        mult = cfg["risk_mult"][tier] * (0.5 if p["segment"] == "Smallcap 250" else 1.0)  # half size in small caps
+        p.update(position_size(p["entry"], p["stop"], cfg, mult))
         p["m85_qty"] = position_size(p["entry"], p["m85_stop"], cfg, cfg["risk_mult"]["mode85"])["qty"]
 
     btst = []
@@ -493,6 +514,8 @@ def main():
     for p in picks:
         p["in_buy_list"] = False
         good = p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
+        if p["segment"] == "Smallcap 250" and (not p["smallcap_ok"] or p["score"] < 75):
+            good = False
         if pause_new or len(buy_list) >= slots or not good or p["symbol"] in held:
             continue
         if sec_count.get(p["industry"], 0) >= cfg["max_per_sector"]:
@@ -504,6 +527,15 @@ def main():
         p["in_buy_list"] = True
         buy_list.append(p["symbol"])
         sec_count[p["industry"]] = sec_count.get(p["industry"], 0) + 1
+
+    # Separate lists per index segment (small caps get stricter rules)
+    seg_lists = {}
+    for name, _ in data.SEGMENTS:
+        ps = [p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")]
+        if name == "Smallcap 250":
+            ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
+        watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]
+        seg_lists[name] = {"buy": [p["symbol"] for p in ps[:6]], "watch": watch}
 
     # Friday end-of-day: weekly summary of the picks tracker
     weekly = None
@@ -540,7 +572,7 @@ def main():
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
-        "weekly": weekly, "buy_list": buy_list, "slots": slots, "pause_new": pause_new,
+        "weekly": weekly, "buy_list": buy_list, "segments": seg_lists, "slots": slots, "pause_new": pause_new,
         "setup_status": setup_status, "surveillance_skipped": skipped, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
         "regime": regime, "breadth": breadth, "universe": len(df),
         "swing_backtest": swing_stats, "btst_backtest": btst_stats,

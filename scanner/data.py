@@ -96,3 +96,27 @@ def intraday(symbols):
         except Exception:
             pass
     return out
+
+
+SEGMENTS = [("Nifty 50", "nifty50"), ("Nifty Next 50", "niftynext50"),
+            ("Midcap 150", "niftymidcap150"), ("Smallcap 250", "niftysmallcap250")]
+
+
+def load_segments():
+    """{symbol: segment name} from NSE index lists (cached copies in data/ as fallback)."""
+    seg = {}
+    for name, key in SEGMENTS:
+        path = os.path.join(HERE, "data", f"ind_{key}.csv")
+        try:
+            r = requests.get(f"https://archives.nseindia.com/content/indices/ind_{key}list.csv",
+                             headers=UA, timeout=20)
+            if r.ok and "Symbol" in r.text[:300]:
+                open(path, "w").write(r.text)
+        except Exception:
+            pass
+        try:
+            for s in pd.read_csv(path)["Symbol"]:
+                seg.setdefault(str(s).strip(), name)
+        except Exception as e:
+            print("segment list missing", key, e)
+    return seg
