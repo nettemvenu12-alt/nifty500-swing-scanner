@@ -52,7 +52,8 @@ def train(samples):
         q90 = float(np.quantile(p, 0.9))
         rep["m85_threshold"] = round(q90, 3)
         if "ret85" in te:
-            sel = te[(p >= q90) & (te.wk_up > 0)]
+            # + strong relative strength (rs63 > 15): best extra filter in tools/edge_research.py
+            sel = te[(p >= q90) & (te.wk_up > 0) & (te.rs63 > 15)]
             if len(sel):
                 rep["m85_n"] = int(len(sel))
                 rep["m85_win"] = round(float((sel.ret85 > 0).mean()) * 100, 1)

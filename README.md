@@ -41,7 +41,7 @@ Technical 65 · Relative strength 10 · Fundamentals 15 · News 5 · Backtest ed
 Buy near close · Stop = higher of 10-day low / 2.5×ATR (3–10% risk) ·
 **T1 +5%: book half, move stop to cost** · rest exits on a daily close below the 20 EMA (max 60 days). Chosen by `tools/upgrade_research.py`: on unseen 2025-26 data this nearly doubled average profit vs a fixed +10% exit.
 
-**🎯 85% mode** = entry trigger + AI probability in its top 10% + weekly uptrend + no results within 7 days. Plan: sell ALL at +5%, stop -15%, max 60 days. On unseen 2025-26 data: ~86% wins in ~100 trades, avg about +2.2% per trade. High win rate comes from the wide stop — one loss costs about three wins, so size small.
+**🎯 85% mode** = entry trigger + AI probability in its top 10% + weekly uptrend + 3-month relative strength > 15% + no results within 7 days. Plan: sell ALL at +5%, stop -15%, max 60 days. On unseen 2025-26 data: ~86% wins in ~100 trades, avg about +2.2% per trade. High win rate comes from the wide stop — one loss costs about three wins, so size small.
 
 **🔥 High conviction** = entry trigger + AI probability in its top 30% + weekly uptrend + no results within 7 days + score ≥70 + above VWAP (live). On unseen data these won ~62% vs ~58% for all setups.
 

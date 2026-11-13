@@ -428,6 +428,7 @@ def main():
             "mode85": bool(
                 x.signals and ml_rep.get("m85_win", 0) >= 80 and not np.isnan(x.ml_prob)
                 and x.ml_prob >= ml_rep.get("m85_threshold", 1) and x.row.wk_up
+                and x.row.rs63 > 15
                 and not (rid is not None and 0 <= rid <= 7)),
             "m85_target": round(x.row.Close * 1.05, 2), "m85_stop": round(x.row.Close * 0.85, 2),
             "m85_qty": position_size(x.row.Close, x.row.Close * 0.85, cfg)["qty"],
