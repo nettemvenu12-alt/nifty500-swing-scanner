@@ -217,6 +217,19 @@ def main():
     args = ap.parse_args()
 
     now = dt.datetime.now(IST)
+    # cron-job.org starts the scans on time. GitHub's own timer is only a backup and often
+    # fires hours late: skip it when it is outside market hours or a report just went out.
+    if os.getenv("GITHUB_EVENT_NAME") == "schedule":
+        try:
+            last = dt.datetime.strptime(json.load(open(os.path.join(ROOT, "docs", "picks.json")))["generated"],
+                                        "%Y-%m-%d %H:%M IST").replace(tzinfo=IST)
+        except Exception:
+            last = None
+        late = now.weekday() >= 5 or not (dt.time(9, 0) <= now.time() <= dt.time(17, 45))
+        recent = last is not None and (now - last).total_seconds() < 45 * 60
+        if late or recent:
+            print(f"Backup timer run skipped ({'outside market hours' if late else 'a report went out recently'}).")
+            return
     universe = data.load_universe()
     if args.limit:
         universe = universe.head(args.limit)
