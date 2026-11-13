@@ -16,6 +16,12 @@ mobile-friendly dashboard (GitHub Pages) with rated picks, trade plans, news and
 | News | Last 7 days Google News headlines + sentiment |
 | Market regime | Nifty 500 trend + breadth (% stocks above 50/200 EMA) |
 | Backtest | Every setup re-tested on 3 years of history across all stocks |
+| AI model | Gradient-boosting model trained on ~5,000 past setups, walk-forward tested; gives each pick a win probability |
+| Multi-timeframe | Weekly trend confirmation (last completed week) |
+| Live intraday | Projected full-day volume, VWAP, opening-range breakout (15-min bars) |
+| Candles | Bullish engulfing, hammer, inside-bar and NR7 breakouts |
+| Sectors | Sector relative-strength ranking, bonus for leading sectors |
+| Position size | Qty per pick from `config.json` (capital, 1% risk per trade) |
 | Live tracker | Every pick is logged and its real outcome tracked (`data/pick_log.csv`) |
 
 ## Setups
@@ -27,7 +33,7 @@ mobile-friendly dashboard (GitHub Pages) with rated picks, trade plans, news and
 - **BTST** – strong close near day high, 2× volume, 20-day breakout (buy ~3:20 PM, sell next morning)
 
 ## Score (0–100) → rating
-Technical 65 · Relative strength 10 · Fundamentals 15 · News 5 · Backtest edge 5.
+Technical 65 · Relative strength 10 · Fundamentals 15 · News 5 · Backtest edge 5 · AI model 10 (scaled to 100), plus sector/candle/VWAP bonuses and weekly-trend/results-date penalties.
 ≥80 ★★★★★ STRONG BUY · ≥70 ★★★★ BUY · ≥60 ★★★ ACCUMULATE · ≥50 WATCH.
 `WATCHLIST` = strong stock but no entry trigger today.
 
@@ -36,12 +42,16 @@ Buy near close · Stop = higher of 10-day low / 2.5×ATR (3–10% risk) ·
 **T1 +5%: book half, move stop to cost** · T2 +10%: exit rest · exit anything left on day 60.
 
 ## Schedule
+- 9:15, 10:15, 11:15, 12:15, 1:15, 2:30 IST — LIVE hourly Telegram report (new setups, BTST forming, target/SL alerts)
 - 3:15 PM IST — BTST window scan
 - 5:00 PM IST — final end-of-day swing scan
 - Run any time: Actions → *Nifty 500 scan* → *Run workflow*
 
+## Your capital
+Edit `config.json` (`capital`, `risk_per_trade_pct`, `max_position_pct`) to get the right quantity per pick.
+
 ## Telegram alerts (optional)
-Add repo secrets `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
+Add repo secrets `TELEGRAM_BOT_TOKEN` (from @BotFather) and `TELEGRAM_CHAT_ID` (your id from @userinfobot; comma-separate several). Send /start to your bot once.
 
 ## Run locally
 ```

@@ -107,4 +107,55 @@ def add_all(df, bench_close=None):
         df["rs_line"] = rs_line
         df["rs_new_high"] = rs_line >= rs_line.rolling(126, min_periods=60).max() * 0.98
         df["rs63"] = (c.pct_change(63) - b.pct_change(63)) * 100
+    add_weekly(df)
+    add_candles(df)
     return df
+
+
+def add_weekly(df):
+    """Multi-timeframe: last COMPLETED week's trend mapped onto daily bars."""
+    w = df["Close"].resample("W-FRI").last()
+    e10, e30 = ema(w, 10), ema(w, 30)
+    wk_up = ((w > e10) & (e10 > e30)).shift(1)  # previous completed week (no lookahead)
+    wk_rsi = rsi(w).shift(1)
+    df["wk_up"] = wk_up.reindex(df.index, method="ffill").fillna(False).astype(bool)
+    df["wk_rsi"] = wk_rsi.reindex(df.index, method="ffill")
+    return df
+
+
+def add_candles(df):
+    """Bullish candlestick / price-action patterns."""
+    o, h, l, c = df["Open"], df["High"], df["Low"], df["Close"]
+    body = (c - o).abs()
+    rng = (h - l).replace(0, np.nan)
+    po, pc = o.shift(), c.shift()
+    df["engulf"] = (c > o) & (pc < po) & (c >= po) & (o <= pc)
+    df["hammer"] = (body / rng < 0.35) & ((np.minimum(o, c) - l) / rng > 0.55) & (c >= o)
+    df["inside_brk"] = (h.shift() < h.shift(2)) & (l.shift() > l.shift(2)) & (c > h.shift())
+    nr = rng.rolling(7).min()
+    df["nr7"] = (rng.shift() <= nr.shift()) & (c > h.shift())
+    return df
+
+
+def features(df, bench_ind=None):
+    """Numeric feature matrix for the ML model (one row per day)."""
+    c = df["Close"]
+    f = pd.DataFrame(index=df.index)
+    for col in ["rsi", "adx", "atr_pct", "from_high", "from_low", "vol_ratio", "ret5", "ret21",
+                "ret63", "ret126", "vcp", "bbw_rank", "close_pos", "day_chg", "wk_rsi"]:
+        f[col] = df[col]
+    f["rs63"] = df.get("rs63", 0)
+    for n in (20, 50, 200):
+        f[f"d_ema{n}"] = (c / df[f"ema{n}"] - 1) * 100
+    f["macd_n"] = df["macd_hist"] / c * 100
+    f["st"] = df["st"]
+    f["obv_up"] = df["obv_up"].astype(float)
+    f["wk_up"] = df["wk_up"].astype(float)
+    f["di_spread"] = df["pdi"] - df["mdi"]
+    f["log_turnover"] = np.log1p(df["turnover_cr"])
+    if bench_ind is not None:
+        b = bench_ind.reindex(df.index).ffill()
+        f["mkt_ret21"] = b["ret21"]
+        f["mkt_d_ema50"] = (b["Close"] / b["ema50"] - 1) * 100
+        f["mkt_rsi"] = b["rsi"]
+    return f

@@ -63,3 +63,35 @@ def download(symbols, period="3y", chunk=100):
             except Exception:
                 pass
     return out
+
+
+def intraday(symbols):
+    """Today's 15-min bars -> VWAP and opening-range (first 15 min) breakout status."""
+    out = {}
+    if not symbols:
+        return out
+    try:
+        raw = yf.download([f"{s}.NS" for s in symbols], period="1d", interval="15m",
+                          group_by="ticker", auto_adjust=False, threads=True, progress=False)
+    except Exception as e:
+        print("intraday download failed", e)
+        return out
+    for s in symbols:
+        try:
+            d = raw[f"{s}.NS"] if len(symbols) > 1 else raw
+            if isinstance(d.columns, pd.MultiIndex):
+                d = d.droplevel(0, axis=1)
+            d = d.dropna(subset=["Close"])
+            if d.empty or d.Volume.sum() == 0:
+                continue
+            tp = (d.High + d.Low + d.Close) / 3
+            vwap = float((tp * d.Volume).sum() / d.Volume.sum())
+            last = float(d.Close.iloc[-1])
+            orb_h, orb_l = float(d.High.iloc[0]), float(d.Low.iloc[0])
+            out[s] = {"vwap": round(vwap, 2), "last": round(last, 2),
+                      "above_vwap": last > vwap,
+                      "orb": "above" if last > orb_h else "below" if last < orb_l else "inside",
+                      "day_high": round(float(d.High.max()), 2)}
+        except Exception:
+            pass
+    return out

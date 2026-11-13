@@ -1,0 +1,5 @@
+{
+  "capital": 100000,
+  "risk_per_trade_pct": 1.0,
+  "max_position_pct": 20
+}

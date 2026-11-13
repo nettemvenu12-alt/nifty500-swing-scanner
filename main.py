@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 from scanner import backtest as bt
-from scanner import data, fundamentals, news, report
+from scanner import data, fundamentals, model, news, report
 from scanner import indicators as ind
 from scanner import strategies as stg
 
@@ -23,6 +23,49 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 IST = ZoneInfo("Asia/Kolkata")
 TOP_N_ENRICH = 40
 LOG = os.path.join(ROOT, "data", "pick_log.csv")
+CONFIG = os.path.join(ROOT, "config.json")
+
+
+def load_config():
+    cfg = {"capital": 100000, "risk_per_trade_pct": 1.0, "max_position_pct": 20}
+    try:
+        cfg.update(json.load(open(CONFIG)))
+    except Exception:
+        pass
+    return cfg
+
+
+def position_size(entry, stop, cfg):
+    """Shares to buy so that hitting the stop loses only risk_per_trade_pct of capital."""
+    risk_amt = cfg["capital"] * cfg["risk_per_trade_pct"] / 100
+    per_share = max(entry - stop, 0.01)
+    qty = int(min(risk_amt / per_share, cfg["capital"] * cfg["max_position_pct"] / 100 / entry))
+    return {"qty": qty, "invest": round(qty * entry), "max_loss": round(qty * per_share)}
+
+
+PATTERNS = {"engulf": "Bullish engulfing", "hammer": "Hammer", "inside_brk": "Inside-bar breakout",
+            "nr7": "NR7 breakout"}
+
+
+def reasons(r, signals, rs_rank, sector_top):
+    why = []
+    if "A+ Momentum" in signals:
+        why.append("A+ setup: near 52W high with strong relative strength")
+    if r.Close > r.hh55:
+        why.append("Broke 55-day high")
+    if r.vol_ratio >= 1.5:
+        why.append(f"Volume {r.vol_ratio:.1f}x average")
+    if r.ema50 > r.ema200 and r.Close > r.ema50:
+        why.append("Price > 50 EMA > 200 EMA (uptrend)")
+    if r.wk_up:
+        why.append("Weekly trend up")
+    if rs_rank >= 80:
+        why.append(f"Top {100 - rs_rank:.0f}% relative strength in Nifty 500")
+    if r.vcp < 0.5:
+        why.append("Tight base (volatility contraction)")
+    if sector_top:
+        why.append("Sector is among market leaders")
+    return why[:6]
 
 
 def market_regime(bench):
@@ -97,15 +140,51 @@ def update_tracker(prices, today_picks, today):
 
 
 def telegram(text):
-    tok, chat = os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
-    if not (tok and chat):
+    """Sends to every chat id in TELEGRAM_CHAT_ID (comma separated), split into
+    4000-char chunks on line breaks."""
+    tok, chats = os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID", "")
+    if not (tok and chats):
+        print("Telegram not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID)")
         return
+    parts, cur = [], ""
+    for line in text.split("\n"):
+        if len(cur) + len(line) > 3900:
+            parts.append(cur)
+            cur = ""
+        cur += line + "\n"
+    parts.append(cur)
+    for chat in [c.strip() for c in chats.split(",") if c.strip()]:
+        for part in parts:
+            try:
+                r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
+                                  data={"chat_id": chat, "text": part, "parse_mode": "HTML",
+                                        "disable_web_page_preview": "true"}, timeout=20)
+                if not r.ok:
+                    print("telegram error", r.status_code, r.text[:200])
+            except Exception as e:
+                print("telegram failed", e)
+
+
+STATE = os.path.join(ROOT, "data", "state.json")
+
+
+def load_state(today):
     try:
-        requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
-                      data={"chat_id": chat, "text": text[:4000], "parse_mode": "HTML",
-                            "disable_web_page_preview": "true"}, timeout=20)
-    except Exception as e:
-        print("telegram failed", e)
+        st = json.load(open(STATE))
+    except Exception:
+        st = {}
+    if st.get("date") != today:
+        st = {"date": today, "seen": {}, "status": st.get("status", {})}
+    return st
+
+
+def market_session(now):
+    """(is_open, minutes elapsed since 9:15 IST)."""
+    if now.weekday() >= 5:
+        return False, 0
+    start = now.replace(hour=9, minute=15, second=0, microsecond=0)
+    mins = (now - start).total_seconds() / 60
+    return 0 <= mins <= 375, mins
 
 
 def main():
@@ -125,13 +204,27 @@ def main():
     if bench is None:
         bench = data.download([data.NIFTY]).get(data.NIFTY)
     regime = market_regime(bench)
+    bench_ind = ind.add_all(bench)
+    cfg = load_config()
     print("Market:", regime)
 
     prices = data.download(universe.Symbol.tolist())
     print(f"Downloaded {len(prices)} stocks")
     last_date = max(d.index[-1] for d in prices.values()).date()
+    is_open, mins = market_session(now)
+    intraday = is_open and last_date == now.date()
+    pace = 1.0
+    if intraday:
+        # Volume so far only covers part of the day: project full-day volume
+        # (U-shaped intraday volume, so early hours get a softer multiplier).
+        frac = min(1.0, max(mins, 15) / 375)
+        pace = min(1 / (frac ** 0.85), 20.0)
+        for d in prices.values():
+            if d.index[-1].date() == last_date:
+                d.iloc[-1, d.columns.get_loc("Volume")] *= pace
+        print(f"Intraday run: {mins:.0f} min into session, volume pace x{pace:.2f}")
 
-    rows, swing_bt, btst_bt = [], {k: [] for k in stg.SWING}, []
+    rows, swing_bt, btst_bt, samples = [], {k: [] for k in stg.SWING}, [], []
     for sym, raw in prices.items():
         try:
             d = ind.add_all(raw, bench["Close"])
@@ -140,15 +233,24 @@ def main():
             continue
         if d.index[-1].date() < last_date - dt.timedelta(days=5):
             continue  # stale / suspended
-        sigs, per_stock = {}, {}
+        sigs, per_stock, union = {}, {}, None
         for name, fn in stg.SWING.items():
             s = fn(d)
+            union = s if union is None else (union | s)
             trades = bt.swing_trades(d, s)
             swing_bt[name] += trades
             per_stock[name] = bt.summarize_swing(trades)
             sigs[name] = bool(s.iloc[-1])
         b = stg.btst(d)
         btst_bt += bt.btst_trades(d, b)
+        F = ind.features(d, bench_ind)
+        done = [t for t in bt.swing_trades(d, union) if t["complete"]]
+        if done:
+            sm = F.loc[[t["date"] for t in done]].copy()
+            sm["date"] = [t["date"] for t in done]
+            sm["win5"] = [int(t["win5"]) for t in done]
+            sm["ret"] = [t["ret"] for t in done]
+            samples.append(sm)
         r = d.iloc[-1].copy()
         r["ema200_up"] = d.ema200.iloc[-1] > d.ema200.iloc[-22]
         r["macd_hist_prev"] = d.macd_hist.iloc[-2]
@@ -156,7 +258,8 @@ def main():
             "symbol": sym, "name": meta[sym]["Name"], "industry": meta[sym]["Industry"],
             "row": r, "signals": [k for k, v in sigs.items() if v], "btst": bool(b.iloc[-1]),
             "trend": bool(stg.trend_template(d).iloc[-1]), "bt": per_stock,
-            "tech": stg.tech_score(r),
+            "tech": stg.tech_score(r), "feat": F.iloc[-1],
+            "patterns": [v for k, v in PATTERNS.items() if bool(r.get(k, False))],
             "spark": [round(x, 2) for x in d.Close.tail(60).tolist()],
         })
 
@@ -165,12 +268,23 @@ def main():
     print("Backtest swing:", swing_stats)
     print("Backtest BTST:", btst_stats)
 
+    ml, ml_rep = model.train(pd.concat(samples) if samples else pd.DataFrame())
+    print("ML model:", ml_rep)
+
     # Relative strength percentile across the whole universe (0-10 pts)
     df = pd.DataFrame(rows)
     rsraw = [0.4 * x["row"].ret63 + 0.2 * x["row"].ret126 + 0.2 * x["row"].ret21
              + 0.2 * (x["row"].get("rs63", 0) or 0) for x in rows]
     df["rs_rank"] = pd.Series(rsraw).rank(pct=True).fillna(0).values * 100
     df["rs_pts"] = df.rs_rank / 10
+    df["day"] = df.row.apply(lambda r: r.day_chg)
+    df["ml_prob"] = model.predict(ml, pd.DataFrame(df.feat.tolist())) if ml is not None else np.nan
+    sec = df.groupby("industry").agg(rs=("rs_rank", "mean"), day=("day", "mean"),
+                                     n=("symbol", "size"))
+    sec = sec[sec.n >= 3].sort_values("rs", ascending=False)
+    top_sectors = list(sec.index[:5])
+    sectors = [{"name": k, "rs": round(v.rs), "day": round(v.day, 2), "n": int(v.n)}
+               for k, v in sec.head(8).iterrows()]
 
     def edge(x):
         """Backtest edge 0-5: win rate (target +5% before stop) of this stock's
@@ -192,6 +306,7 @@ def main():
     btst_c = df[df.btst].copy()
     enrich = set(cand.symbol) | set(btst_c.symbol)
 
+    intra = data.intraday(sorted(enrich)) if intraday else {}
     fund, nws = {}, {}
     for sym in enrich:
         if args.no_news:
@@ -206,8 +321,24 @@ def main():
         sent = news.sentiment(h)
         fpts = fundamentals.score(f) if f else 7.5
         npts = news.score(sent)
-        total = (x.tech + x.rs_pts + x.edge_pts + fpts + npts) * regime["mult"]
+        mlpts = model.points(x.ml_prob, ml_rep)
+        # weights: tech 65, RS 10, fundamentals 15, news 5, backtest 5, ML 10 -> scaled to 100
+        total = (x.tech + x.rs_pts + x.edge_pts + fpts + npts + mlpts) / 110 * 100 * regime["mult"]
+        if x.industry in top_sectors:
+            total += 3  # leading sector tailwind
+        if x.patterns:
+            total += 2
         warn = []
+        if not x.row.wk_up:
+            total -= 3
+            warn.append("Weekly trend not confirmed")
+        iv = intra.get(x.symbol)
+        if iv:
+            if not iv["above_vwap"]:
+                total -= 3
+                warn.append("Trading below today's VWAP – wait")
+            else:
+                total += 1
         rid = f.get("results_in_days")
         if rid is not None and 0 <= rid <= 7:
             total -= 5
@@ -221,6 +352,7 @@ def main():
         if not x.signals and total >= 60:
             label = "WATCHLIST"  # strong trend but no entry trigger today
         plan = stg.trade_plan(x.row)
+        plan.update(position_size(plan["entry"], plan["stop"], cfg))
         picks.append({
             "symbol": x.symbol, "name": x["name"], "industry": x.industry,
             "setup": ", ".join(x.signals) or "Uptrend",
@@ -230,7 +362,11 @@ def main():
             "vol_x": round(x.row.vol_ratio, 2), "from_high": round(x.row.from_high, 1),
             "rs_rank": round(x.rs_rank), "hist_win5": None if np.isnan(x.hist_win) else round(x.hist_win, 1),
             "parts": {"Technical": round(x.tech), "Rel. Strength": round(x.rs_pts, 1),
-                      "Fundamentals": round(fpts, 1), "News": npts, "Backtest": round(x.edge_pts, 1)},
+                      "Fundamentals": round(fpts, 1), "News": npts, "Backtest": round(x.edge_pts, 1),
+                      "AI model": round(mlpts, 1)},
+            "ml_prob": None if np.isnan(x.ml_prob) else round(float(x.ml_prob) * 100, 1),
+            "patterns": x.patterns, "weekly_up": bool(x.row.wk_up), "intra": iv,
+            "why": reasons(x.row, x.signals, x.rs_rank, x.industry in top_sectors),
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
@@ -255,6 +391,23 @@ def main():
     tracked = [p for p in picks if p["score"] >= 70 and p["setup"] != "Uptrend"][:10]
     track, live = update_tracker(prices, tracked, today)
 
+    # New-since-last-report flags and target / stop alerts for tracked picks
+    state = load_state(today)
+    stamp = now.strftime("%H:%M")
+    for p in picks + btst:
+        key = ("B:" if "target" in p and "target1" not in p else "S:") + p["symbol"]
+        p["new"] = key not in state["seen"] and p.get("label") != "WATCHLIST"
+        state["seen"].setdefault(key, stamp)
+    alerts = []
+    for t in (track.to_dict("records") if len(track) else []):
+        k = f"{t['date']}:{t['symbol']}"
+        prev = state["status"].get(k)
+        if prev is not None and t["status"] != prev:
+            alerts.append({**t, "prev": prev})
+        state["status"][k] = t["status"]
+    with open(STATE, "w") as fh:
+        json.dump(state, fh, indent=1)
+
     breadth = {
         "above_ema50": round((df.row.apply(lambda r: r.Close > r.ema50)).mean() * 100, 1),
         "above_ema200": round((df.row.apply(lambda r: r.Close > r.ema200)).mean() * 100, 1),
@@ -263,6 +416,8 @@ def main():
     }
     out = {
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
+        "intraday": intraday, "session_min": round(mins), "sectors": sectors,
+        "alerts": alerts, "ml": ml_rep, "config": cfg, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
         "regime": regime, "breadth": breadth, "universe": len(df),
         "swing_backtest": swing_stats, "btst_backtest": btst_stats,
         "picks": picks, "btst": btst[:15], "live": live,

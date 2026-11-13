@@ -77,7 +77,12 @@ def _card(p, top=False):
     parts = " ".join(f'<span class="chip">{e(k)} {v}</span>' for k, v in p["parts"].items())
     warn = "".join(f'<div class="warn">⚠ {e(w)}</div>' for w in p["warnings"])
     cls = "card top" if top else "card"
-    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>
+    iv = p.get("intra")
+    intra = (f" · VWAP ₹{iv['vwap']} {'✅ above' if iv['above_vwap'] else '❌ below'} · ORB {iv['orb']}"
+             if iv else "")
+    pats = (" · 🕯 " + ", ".join(e(x) for x in p["patterns"])) if p.get("patterns") else ""
+    why = "".join(f"<span>✔ {e(w)}</span>" for w in p.get("why", []))
+    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}
 <span class="muted">{e(p['name'])}</span><br><span class="stars">{p['stars']}</span>
 <span class="lab l{p['label'][:2]}">{p['label']}</span> <b>{p['score']}</b>/100</div>{_spark(p['spark'])}</div>
 <div class="muted">{e(p['setup'])} · {e(str(p['industry']))} · ₹{p['close']} ({p['chg']}%)</div>
@@ -85,7 +90,10 @@ def _card(p, top=False):
 <span class="green">T1 ₹{p['target1']}</span><span class="green">T2 ₹{p['target2']}</span></div>
 <div class="muted">RSI {p['rsi']} · ADX {p['adx']} · Vol {p['vol_x']}x · {p['from_high']}% from 52W high ·
 RS rank {p['rs_rank']} · Hist win {p['hist_win5'] if p['hist_win5'] is not None else '-'}%</div>
-<div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
+<div class="muted">🤖 AI win chance <b>{p.get('ml_prob') if p.get('ml_prob') is not None else '-'}%</b> ·
+Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('max_loss', '-')}) ·
+Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
+<div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
 
 
 def html(o):
@@ -103,12 +111,26 @@ def html(o):
     bb = o["btst_backtest"]
     bbt = (f"<p class='muted'>BTST history: {bb['n']} trades · next-day gap-up {bb['gap_up']}% · "
            f"touched +1% {bb['hit1']}%</p>") if bb.get("n") else ""
+    m = o.get("ml") or {}
+    mlsec = ""
+    if m.get("auc"):
+        q = " · ".join(f"Q{i + 1} {v}%" for i, v in enumerate(m.get("quintiles", [])))
+        mlsec = (f"<h2>🤖 AI model (gradient boosting, walk-forward tested)</h2><p class='muted'>"
+                 f"Trained on {m['train_n']} past setups, tested on {m['test_n']} newer ones (from {m['test_from']}). "
+                 f"Test AUC {m['auc']} · normal win {m['base_rate']}% → top-20% AI picks win {m['top20_win']}% "
+                 f"(avg {m['top20_avg_ret']}% vs {m['all_avg_ret']}%). Win rate by AI score: {q}. "
+                 f"{'Model is used in the score.' if m.get('useful') else 'Model did not beat baseline, so it is ignored.'}</p>")
     lv = o.get("live") or {}
     live = (f"<p>Closed {lv['closed']} · Win {lv['win_rate']}% · Avg {lv['avg_ret']}% · Open {lv.get('open', 0)}</p>"
             if lv.get("closed") else f"<p class='muted'>Tracking {lv.get('open', 0)} open picks — results appear as they close.</p>")
     trk = "".join(
         f"<tr><td>{t['date']}</td><td>{t['symbol']}</td><td>{t['entry']}</td><td>{t['status']}</td><td>{t['ret']}</td></tr>"
         for t in reversed(o.get("tracker", [])))
+    live_badge = (f"<p class='amber'>⏱ LIVE intraday view ({o.get('session_min', 0)} min into session) – "
+                  "today's candle is still forming; final signals at 5 PM.</p>") if o.get("intraday") else ""
+    sectors = ("<h2>🏭 Leading sectors</h2><table><tr><th>Sector</th><th>RS rank</th><th>Today</th></tr>" + "".join(
+        f"<tr><td>{H.escape(x['name'])}</td><td>{x['rs']}</td><td>{x['day']:+.2f}%</td></tr>"
+        for x in o.get("sectors", [])) + "</table>") if o.get("sectors") else ""
     regcol = {"BULLISH": "green", "POSITIVE": "green", "NEUTRAL": "amber"}.get(r["label"], "red")
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Swing Scanner {o['data_date']}</title>
@@ -120,29 +142,73 @@ h1{{font-size:20px}}h2{{font-size:16px;margin-top:22px;border-bottom:1px solid #
 .lab{{padding:1px 6px;border-radius:6px;font-size:11px;background:#334155}}.lST{{background:#15803d}}.lBU{{background:#16a34a}}
 .lAC{{background:#0e7490}}.lWA{{background:#475569}}.plan{{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}}.green{{color:#4ade80}}.red{{color:#f87171}}.amber{{color:#fbbf24}}
 .chip{{display:inline-block;background:#1e293b;border-radius:6px;padding:1px 6px;margin:2px;font-size:11.5px}}
-.warn{{color:#fbbf24;font-size:12.5px}}ul{{padding-left:18px;margin:4px 0}}li{{font-size:12.5px}}a{{color:#93c5fd}}
+.why span{{display:inline-block;font-size:12px;color:#a7f3d0;margin-right:8px}}.warn{{color:#fbbf24;font-size:12.5px}}ul{{padding-left:18px;margin:4px 0}}li{{font-size:12.5px}}a{{color:#93c5fd}}
 table{{width:100%;border-collapse:collapse;font-size:12.5px}}td,th{{padding:5px;border-bottom:1px solid #1f2937;text-align:left}}
 .box{{display:flex;gap:8px;flex-wrap:wrap}}.box div{{background:#111a2e;border-radius:10px;padding:8px 10px}}</style></head><body>
 <h1>📈 Nifty 500 Swing & BTST Scanner</h1><div class="muted">Data {o['data_date']} · generated {o['generated']} · {o['universe']} stocks scanned</div>
 <div class="box"><div>Market <b class="{regcol}">{r['label']}</b></div><div>Nifty 500 {r['close']} ({r['ret21']}% 1M)</div>
 <div>&gt;50 EMA {b['above_ema50']}%</div><div>&gt;200 EMA {b['above_ema200']}%</div><div>52W highs {b['new_52w_high']}</div></div>
-<h2>⭐ Top pick today</h2>{top_html}
+{live_badge}<h2>⭐ Top pick today</h2>{top_html}{sectors}
 <h2>Swing picks · hold ≤60 days · target +5% / +10%</h2>{cards}
 <h2>⚡ BTST · buy near 3:20 PM, sell next morning</h2><table><tr><th>Stock</th><th>Rating</th><th>Close</th><th>Day</th><th>Vol</th><th>Stop</th><th>Target</th></tr>{btst}</table>
 <h2>🧪 Backtest (3 yrs, Nifty 500)</h2><table><tr><th>Setup</th><th>Trades</th><th>+5% before stop</th><th>+10%</th><th>Profitable</th><th>Avg</th></tr>{bt}</table>{bbt}
-<h2>📒 Live track record</h2>{live}<table><tr><th>Date</th><th>Stock</th><th>Entry</th><th>Status</th><th>Ret %</th></tr>{trk}</table>
+{mlsec}<h2>📒 Live track record</h2>{live}<table><tr><th>Date</th><th>Stock</th><th>Entry</th><th>Status</th><th>Ret %</th></tr>{trk}</table>
 <p class="muted">{DISCLAIMER}</p></body></html>"""
 
 
+PAGES = "https://nettemvenu12-alt.github.io/nifty500-swing-scanner/"
+
+
+def _esc(x):
+    return H.escape(str(x), quote=False)
+
+
 def telegram_text(o):
-    r = o["regime"]
-    L = [f"<b>📈 Swing scan {o['data_date']}</b> · Market {r['label']}"]
-    for p in o["picks"][:8]:
-        L.append(f"{p['stars']} <b>{p['symbol']}</b> {p['score']} {p['label']} · {p['setup']}\n"
-                 f"   Buy {p['entry']} SL {p['stop']} T1 {p['target1']} T2 {p['target2']}")
+    r, b = o["regime"], o["breadth"]
+    live = o.get("intraday")
+    head = (f"⏱ <b>LIVE {o['generated'][-9:-4]} report</b>" if live
+            else f"📈 <b>End-of-day scan {o['data_date']}</b>")
+    L = [head,
+         f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} · Adv {o.get('adv', 0)} / Dec {o.get('dec', 0)}"
+         f" · &gt;50EMA {b['above_ema50']}%"]
+    if o.get("alerts"):
+        L.append("\n🔔 <b>Your picks – updates</b>")
+        for a in o["alerts"]:
+            icon = "🎯" if "TARGET" in a["status"] or "T1" in a["status"] else "🛑" if a["status"] == "STOP" else "ℹ️"
+            L.append(f"{icon} <b>{_esc(a['symbol'])}</b> {_esc(a['status'])} · {a['ret']}% (bought {a['entry']} on {a['date']})")
+    buys = [p for p in o["picks"] if p["label"] not in ("WATCHLIST", "AVOID")]
+    new = [p for p in buys if p.get("new")]
+    if live and new:
+        L.append("\n🆕 <b>New setups this hour</b>")
+        for p in new[:6]:
+            L.append(f"{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])} · ₹{p['close']} ({p['chg']}%)")
+    top = buys[:1]
+    if top:
+        p = top[0]
+        L.append(f"\n⭐ <b>Best buy now: {_esc(p['symbol'])}</b> {p['stars']} {p['label']} ({p['score']}/100)\n"
+                 f"Buy ~{p['entry']} · SL {p['stop']} (-{p['risk_pct']}%) · T1 {p['target1']} · T2 {p['target2']}\n"
+                 f"Qty {p.get('qty')} (₹{p.get('invest')}, max loss ₹{p.get('max_loss')}) · 🤖 AI {p.get('ml_prob')}%")
+        if p.get("why"):
+            L.append("✔ " + " · ".join(_esc(w) for w in p["why"][:3]))
+        iv = p.get("intra")
+        if iv:
+            L.append(f"Live: ₹{iv['last']} vs VWAP ₹{iv['vwap']} {'✅' if iv['above_vwap'] else '❌ wait'}")
+    L.append("\n📊 <b>Swing picks (≤60 days, +5% / +10%)</b>")
+    for p in buys[1:8]:
+        tag = "🆕 " if p.get("new") and live else ""
+        L.append(f"{tag}{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])}\n"
+                 f"   Buy {p['entry']} SL {p['stop']} T1 {p['target1']} T2 {p['target2']} · Qty {p.get('qty')} · AI {p.get('ml_prob')}%")
+    if len(buys) <= 1:
+        L.append("No fresh entry triggers yet – see watchlist on dashboard.")
+    if o.get("sectors"):
+        L.append("\n🏭 <b>Strong sectors</b>: " + ", ".join(
+            f"{_esc(x['name'])} ({x['day']:+.1f}%)" for x in o["sectors"][:4]))
     if o["btst"]:
-        L.append("\n<b>⚡ BTST</b>")
+        L.append("\n⚡ <b>BTST " + ("forming (confirm at 3:15 PM)" if live else "") + "</b>")
         for p in o["btst"][:5]:
-            L.append(f"{p['symbol']} {p['close']} ({p['chg']}%) SL {p['stop']} T {p['target']}")
-    L.append("\n" + DISCLAIMER)
+            L.append(f"{_esc(p['symbol'])} {p['close']} ({p['chg']:+.1f}%) vol {p['vol_x']}x · SL {p['stop']} T {p['target']}")
+    if live:
+        L.append("\n<i>Live = candle not closed yet; volume projected for full day. "
+                 "Signals confirm at close.</i>")
+    L.append(f'\n<a href="{PAGES}">Full dashboard</a> · Not advice, always use SL.')
     return "\n".join(L)
