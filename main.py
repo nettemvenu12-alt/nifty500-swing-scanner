@@ -531,7 +531,8 @@ def main():
     # Separate lists per index segment (small caps get stricter rules)
     seg_lists = {}
     for name, _ in data.SEGMENTS:
-        ps = [p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")]
+        ps = sorted([p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")],
+                    key=lambda p: -p["score"])
         if name == "Smallcap 250":
             ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]

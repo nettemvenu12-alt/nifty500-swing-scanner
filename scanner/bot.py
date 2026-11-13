@@ -151,6 +151,27 @@ def portfolio_text(holdings):
     return portfolio.text(revs)
 
 
+def morning(st):
+    """Once per weekday at ~8:40 IST: numbered buy list from last evening's final scan."""
+    from zoneinfo import ZoneInfo
+    from scanner import report
+    now = dt.datetime.now(ZoneInfo("Asia/Kolkata"))
+    today = str(now.date())
+    if now.weekday() >= 5 or st.get("morning_sent") == today or not (8 * 60 + 40 <= now.hour * 60 + now.minute <= 9 * 60 + 40):
+        return
+    try:
+        o = json.load(open(PICKS))
+    except Exception:
+        return
+    text = (f"🌅 <b>Good morning!</b> Buy list from the final scan of {o['data_date']}\n"
+            f"Market {o['regime']['label']} · VIX {o['regime'].get('vix', '-')}"
+            + report.simple_list(o, "🛒 <b>Today's swing BUY LIST</b>")
+            + "\n\nTip: buy after 9:30 if the stock is above its opening price. Live updates every hour.")
+    for chat in CHATS:
+        send(chat, text)
+    st["morning_sent"] = today
+
+
 def main():
     if not TOK or not CHATS:
         print("Telegram not configured")
@@ -175,6 +196,7 @@ def main():
         send(chat, reply)
     if json.dumps(holdings) != before:
         portfolio.save(holdings)
+    morning(st)
     json.dump(st, open(STATE, "w"))
 
 

@@ -125,7 +125,7 @@ def html(o):
                         f"<td>{H.escape(bysym[s]['setup'])}</td><td>{bysym[s]['entry']}</td><td class='red'>{bysym[s]['stop']}</td>"
                         f"<td class='green'>{bysym[s]['target1']}</td><td>{bysym[s].get('qty')}</td></tr>" for s in v["buy"])
         rows_ = rows_ or "<tr><td colspan=8>No clean buy setup today</td></tr>"
-        watch = f"<p class='muted'>Watch: {', '.join(H.escape(x) for x in v['watch'])}</p>" if v["watch"] else ""
+        watch = ""
         segsec += (f"<h2>{H.escape(name)}{note}</h2><table><tr><th>Stock</th><th>Rating</th><th>Score</th><th>Setup</th>"
                    f"<th>Buy</th><th>SL</th><th>T1</th><th>Qty</th></tr>{rows_}</table>{watch}")
     m = o.get("ml") or {}
@@ -180,114 +180,65 @@ def _esc(x):
     return H.escape(str(x), quote=False)
 
 
+SEG_ICONS = {"Nifty 50": "🏛", "Nifty Next 50": "🏢", "Midcap 150": "📈", "Smallcap 250": "⚠️"}
+
+
+def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
+    """Numbered buy list per index segment: 1. MCX, 2. PAYTM ... (no watchlist)."""
+    bysym = {p["symbol"]: p for p in o["picks"]}
+    L, n = [f"\n{title}"], 0
+    if o.get("pause_new"):
+        L.append("⏸ Market is risky today – no new buys.")
+        return "\n".join(L)
+    for name, v in (o.get("segments") or {}).items():
+        L.append(f"\n{SEG_ICONS.get(name, '•')} <b>{name}</b>"
+                 + (" (strict rules, half qty)" if name == "Smallcap 250" else ""))
+        if not v["buy"]:
+            L.append("   No buy today")
+            continue
+        for sym in v["buy"]:
+            p = bysym[sym]
+            n += 1
+            L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
+                     f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}\n"
+                     f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
+    if n == 0:
+        L.append("\nNo stock passes all checks today. Waiting is also a good trade.")
+    else:
+        L.append("\nRule: at Target 1 sell half + move SL to buy price; sell rest when a day closes below 20 EMA.")
+    return "\n".join(L)
+
+
 def telegram_text(o):
+    """Short, simple Telegram report: market line, your holdings, numbered buy list, BTST."""
     r, b = o["regime"], o["breadth"]
     live = o.get("intraday")
     head = (f"⏱ <b>LIVE {o['generated'][-9:-4]} report</b>" if live
-            else f"📈 <b>End-of-day scan {o['data_date']}</b>")
-    L = [head,
-         f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} · Adv {o.get('adv', 0)} / Dec {o.get('dec', 0)}"
-         f" · &gt;50EMA {b['above_ema50']}%"
-         + (f"\nIndia VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
+            else f"📈 <b>Swing report {o['data_date']}</b>")
+    L = [head, f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} ({r.get('day', 0):+.2f}%)"
+               + (f" · VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
+    if o.get("alerts"):
+        L.append("\n🔔 <b>Tracked picks – updates</b>")
+        for a in o["alerts"]:
+            L.append(f"• <b>{_esc(a['symbol'])}</b> {_esc(a['status'])} ({a['ret']}%)")
     hr = o.get("holdings") or []
-    act = [h for h in hr if not h["action"].startswith("✅")]
     if hr:
         tot = sum(h["pnl_rs"] for h in hr)
-        L.append(f"\n💼 <b>Your holdings</b> ({len(hr)}) · P&amp;L ₹{tot:+,}")
-        for h in (act or hr)[:8]:
-            L.append(f"<b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
-    wk = o.get("weekly")
-    if wk:
-        L.append(f"\n📅 <b>Week summary</b>: {wk['new_picks']} new picks · closed {wk.get('closed', 0)}"
-                 f" · win {wk.get('win_rate', '-')}% · avg {wk.get('avg_ret', '-')}%")
-    if o.get("alerts"):
-        L.append("\n🔔 <b>Your picks – updates</b>")
-        for a in o["alerts"]:
-            icon = "🎯" if "TARGET" in a["status"] or "T1" in a["status"] else "🛑" if a["status"] == "STOP" else "ℹ️"
-            L.append(f"{icon} <b>{_esc(a['symbol'])}</b> {_esc(a['status'])} · {a['ret']}% (bought {a['entry']} on {a['date']})")
-    buys = [p for p in o["picks"] if p["label"] not in ("WATCHLIST", "AVOID")]
-    new = [p for p in buys if p.get("new")]
-    if live and new:
-        L.append("\n🆕 <b>New setups this hour</b>")
-        for p in new[:6]:
-            L.append(f"{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])} · ₹{p['close']} ({p['chg']}%)")
-    if o.get("pause_new"):
-        L.append("\n⏸ <b>No new buys today</b> – market is risky (bearish trend or VIX ≥ 20). Protect capital.")
-    elif o.get("buy_list"):
-        bl = [p for p in o["picks"] if p.get("in_buy_list")]
-        L.append(f"\n✅ <b>Today's buy list</b> ({len(bl)} of {o.get('slots')} free slots · max 2 per sector)")
-        for p in bl:
-            L.append(f"• <b>{_esc(p['symbol'])}</b> qty {p.get('qty')} @ ~{p['entry']} · SL {p['stop']} · "
-                     f"{'🎯' if p.get('mode85') else '🔥' if p.get('high_conviction') else '⭐'} {_esc(p['setup'])}")
-    elif o.get("slots") == 0:
-        L.append("\n📦 Portfolio full (5 positions) – manage existing trades, no new buys.")
-    segs = o.get("segments") or {}
-    if segs:
-        bysym = {p["symbol"]: p for p in o["picks"]}
-        icons = {"Nifty 50": "🏛", "Nifty Next 50": "🏢", "Midcap 150": "📈", "Smallcap 250": "⚠️"}
-        for name, v in segs.items():
-            L.append(f"\n{icons.get(name, '•')} <b>{name}</b>"
-                     + (" – extra strict: score ≥75, ≥₹20 Cr/day, no red flags, HALF qty" if name == "Smallcap 250" else ""))
-            if v["buy"]:
-                for s in v["buy"]:
-                    p = bysym[s]
-                    tag = "🎯" if p.get("mode85") else "🔥" if p.get("high_conviction") else p["stars"]
-                    L.append(f"{tag} <b>{_esc(s)}</b> {p['score']} · {_esc(p['setup'])}\n"
-                             f"   Buy {p['entry']} · SL {p['stop']} · T1 {p['target1']} · Qty {p.get('qty')} · AI {p.get('ml_prob')}%")
-            else:
-                L.append("No clean buy setup today – don't force it.")
-            if v["watch"]:
-                L.append("👀 Watch: " + ", ".join(_esc(x) for x in v["watch"]))
-    ss = o.get("setup_status") or {}
-    off = [k for k, v in ss.items() if not v.get("active")]
-    if off:
-        L.append("🧠 Auto-paused setups (losing lately): " + ", ".join(off))
+        L.append(f"\n💼 <b>Your holdings</b> · P&amp;L ₹{tot:+,}")
+        for h in hr:
+            L.append(f"• <b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
+    L.append(simple_list(o))
     m = o.get("ml") or {}
     m85 = [p for p in o["picks"] if p.get("mode85")]
-    if m.get("m85_win"):
-        L.append(f"\n🎯 <b>85% MODE</b> (unseen-data test: {m['m85_win']}% wins in {m.get('m85_n')} trades, "
-                 f"avg {m.get('m85_avg'):+.2f}%/trade)")
-        if m85:
-            for p in m85[:5]:
-                L.append(f"✅ <b>{_esc(p['symbol'])}</b> Buy {p['entry']} · Target {p['m85_target']} (+5%) · "
-                         f"SL {p['m85_stop']} (-15%) · Qty {p['m85_qty']} · AI {p.get('ml_prob')}%")
-            L.append("Rule: sell ALL at +5%. Wide SL = wins often, but one loss = -15%, so keep qty small.")
-        else:
-            L.append("No stock qualifies right now – wait, don't force a trade.")
-    hc = [p for p in buys if p.get("high_conviction")]
-    if hc:
-        L.append(f"\n🔥 <b>HIGH CONVICTION ({len(hc)})</b> – AI top 30% + weekly up + all checks passed")
-    else:
-        L.append("\n🔥 No high-conviction trade right now. Skipping weak setups protects profit.")
-    top = (hc or buys)[:1]
-    if top:
-        p = top[0]
-        L.append(f"\n{'🔥' if p.get('high_conviction') else '⭐'} <b>Best buy now: {_esc(p['symbol'])}</b> {p['stars']} {p['label']} ({p['score']}/100)\n"
-                 f"Buy ~{p['entry']} · SL {p['stop']} (-{p['risk_pct']}%) · T1 {p['target1']} · T2 {p['target2']}\n"
-                 f"Qty {p.get('qty')} (₹{p.get('invest')}, max loss ₹{p.get('max_loss')}) · 🤖 AI {p.get('ml_prob')}%\n"
-                 f"Lower-risk limit buy: {p.get('dip_buy')}\n"
-                 f"Exit: at T1 sell half + SL to cost; sell rest when a day closes below 20 EMA (now {p.get('ema20')})")
-        if p.get("why"):
-            L.append("✔ " + " · ".join(_esc(w) for w in p["why"][:3]))
-        iv = p.get("intra")
-        if iv:
-            L.append(f"Live: ₹{iv['last']} vs VWAP ₹{iv['vwap']} {'✅' if iv['above_vwap'] else '❌ wait'}")
-    L.append("\n📊 <b>Swing picks (≤60 days, +5% / +10%)</b>")
-    for p in buys[1:8]:
-        tag = ("🔥 " if p.get("high_conviction") else "") + ("🆕 " if p.get("new") and live else "")
-        L.append(f"{tag}{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])}\n"
-                 f"   Buy {p['entry']} SL {p['stop']} T1 {p['target1']} T2 {p['target2']} · Qty {p.get('qty')} · AI {p.get('ml_prob')}%")
-    if len(buys) <= 1:
-        L.append("No fresh entry triggers yet – see watchlist on dashboard.")
-    if o.get("sectors"):
-        L.append("\n🏭 <b>Strong sectors</b>: " + ", ".join(
-            f"{_esc(x['name'])} ({x['day']:+.1f}%)" for x in o["sectors"][:4]))
+    if m85:
+        L.append(f"\n🎯 <b>85% MODE</b> (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
+        for k, p in enumerate(m85[:3], 1):
+            L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}")
     if o["btst"]:
-        L.append("\n⚡ <b>BTST " + ("forming (confirm at 3:15 PM)" if live else "") + "</b>")
-        for p in o["btst"][:5]:
-            L.append(f"{_esc(p['symbol'])} {p['close']} ({p['chg']:+.1f}%) vol {p['vol_x']}x · SL {p['stop']} T {p['target']}")
+        L.append("\n⚡ <b>BTST</b> (buy ~3:20 PM, sell next morning)" + (" – forming, confirm at 3:15" if live else ""))
+        for k, p in enumerate(o["btst"][:3], 1):
+            L.append(f"{k}. <b>{_esc(p['symbol'])}</b> ₹{p['close']} ({p['chg']:+.1f}%) · SL ₹{p['stop']} · Target ₹{p['target']}")
     if live:
-        L.append("\n<i>Live = candle not closed yet; volume projected for full day. "
-                 "Signals confirm at close.</i>")
-    L.append(f'\n<a href="{PAGES}">Full dashboard</a> · Not advice, always use SL.')
+        L.append("\n<i>Live: today's candle not closed yet.</i>")
+    L.append(f'\n<a href="{PAGES}">Full details</a> · Not advice – always use SL.')
     return "\n".join(L)
