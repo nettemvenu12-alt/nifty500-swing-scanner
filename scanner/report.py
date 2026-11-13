@@ -172,7 +172,19 @@ def telegram_text(o):
             else f"📈 <b>End-of-day scan {o['data_date']}</b>")
     L = [head,
          f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} · Adv {o.get('adv', 0)} / Dec {o.get('dec', 0)}"
-         f" · &gt;50EMA {b['above_ema50']}%"]
+         f" · &gt;50EMA {b['above_ema50']}%"
+         + (f"\nIndia VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
+    hr = o.get("holdings") or []
+    act = [h for h in hr if not h["action"].startswith("✅")]
+    if hr:
+        tot = sum(h["pnl_rs"] for h in hr)
+        L.append(f"\n💼 <b>Your holdings</b> ({len(hr)}) · P&amp;L ₹{tot:+,}")
+        for h in (act or hr)[:8]:
+            L.append(f"<b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
+    wk = o.get("weekly")
+    if wk:
+        L.append(f"\n📅 <b>Week summary</b>: {wk['new_picks']} new picks · closed {wk.get('closed', 0)}"
+                 f" · win {wk.get('win_rate', '-')}% · avg {wk.get('avg_ret', '-')}%")
     if o.get("alerts"):
         L.append("\n🔔 <b>Your picks – updates</b>")
         for a in o["alerts"]:

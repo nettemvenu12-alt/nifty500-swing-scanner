@@ -16,6 +16,7 @@ NSE_URLS = [
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 BENCH = "^CRSLDX"  # Nifty 500 index on Yahoo
 NIFTY = "^NSEI"
+VIX = "^INDIAVIX"
 
 
 def load_universe():

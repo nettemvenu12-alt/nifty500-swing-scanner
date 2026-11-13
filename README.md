@@ -57,6 +57,19 @@ Edit `config.json` (`capital`, `risk_per_trade_pct`, `max_position_pct`) to get 
 ## Telegram alerts (optional)
 Add repo secrets `TELEGRAM_BOT_TOKEN` (from @BotFather) and `TELEGRAM_CHAT_ID` (your id from @userinfobot; comma-separate several). Send /start to your bot once.
 
+## Telegram commands (answered every ~10 min, 7:30 AM–11:30 PM)
+| Command | What it does |
+|---|---|
+| `/check TATAMOTORS` | Full analysis + AI win chance + plan for any NSE stock |
+| `/top` | Today's best picks |
+| `/buy MCX 3720 3` | Save a real buy; SL/targets set automatically, hourly alerts |
+| `/half MCX` | Mark half booked at T1 (SL moves to cost) |
+| `/sell MCX [qty]` | Remove all or part of a holding |
+| `/portfolio` | Live P&L and what to do for each holding |
+
+Holdings are stored **encrypted** (`data/holdings.enc`, key derived from the bot token secret), and the bot only answers your own chat id.
+Market risk also includes **India VIX** (≥20 = trade smaller). Friday's 5 PM report adds a **weekly summary**.
+
 ## Run locally
 ```
 pip install -r requirements.txt

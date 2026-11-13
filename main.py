@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 from scanner import backtest as bt
-from scanner import data, fundamentals, model, news, report
+from scanner import data, fundamentals, model, news, portfolio, report
 from scanner import indicators as ind
 from scanner import strategies as stg
 
@@ -74,8 +74,22 @@ def market_regime(bench):
     pts = int(r.Close > r.ema50) + int(r.ema50 > r.ema200) + int(r.Close > r.ema20) + int(r.st > 0)
     label = {4: "BULLISH", 3: "POSITIVE", 2: "NEUTRAL"}.get(pts, "BEARISH")
     mult = {4: 1.0, 3: 1.0, 2: 0.95}.get(pts, 0.9)
-    return {"label": label, "mult": mult, "close": round(float(r.Close), 2),
-            "ret21": round(float(r.ret21), 2), "rsi": round(float(r.rsi), 1)}
+    out = {"label": label, "mult": mult, "close": round(float(r.Close), 2),
+           "ret21": round(float(r.ret21), 2), "rsi": round(float(r.rsi), 1),
+           "day": round(float(r.day_chg), 2)}
+    # India VIX (fear gauge): high VIX = bigger swings, stops hit more often
+    try:
+        v = data.download([data.VIX], period="1y").get(data.VIX)
+        if v is not None:
+            vix, avg = float(v.Close.iloc[-1]), float(v.Close.tail(50).mean())
+            out["vix"] = round(vix, 2)
+            out["vix_note"] = ("HIGH – trade smaller" if vix >= 20 else
+                               "rising – be careful" if vix > avg * 1.15 else "calm")
+            if vix >= 20:
+                out["mult"] = round(out["mult"] * 0.95, 3)
+    except Exception as e:
+        print("vix failed", e)
+    return out
 
 
 def rating(score):
@@ -273,6 +287,9 @@ def main():
     print("Backtest BTST:", btst_stats)
 
     ml, ml_rep = model.train(pd.concat(samples) if samples else pd.DataFrame())
+    if ml is not None:
+        import joblib
+        joblib.dump(ml, os.path.join(ROOT, "data", "ml.pkl"))  # used by the Telegram /check command
     print("ML model:", ml_rep)
 
     # Relative strength percentile across the whole universe (0-10 pts)
@@ -409,6 +426,26 @@ def main():
     tracked = [p for p in picks if p["score"] >= 70 and p["setup"] != "Uptrend"][:10]
     track, live = update_tracker(prices, tracked, today)
 
+    # Your real holdings (saved via Telegram /buy) – reviewed every run
+    hold_reviews = []
+    for h in portfolio.load():
+        d = prices.get(h["symbol"])
+        if d is None:
+            d = data.download([h["symbol"]]).get(h["symbol"])
+        if d is not None:
+            try:
+                hold_reviews.append(portfolio.review(h, ind.add_all(d)))
+            except Exception as e:
+                print("holding review failed", h["symbol"], e)
+
+    # Friday end-of-day: weekly summary of the picks tracker
+    weekly = None
+    if not intraday and now.weekday() == 4 and len(track):
+        wk = track[pd.to_datetime(track.date) >= pd.Timestamp(now.date()) - pd.Timedelta(days=6)]
+        weekly = {"new_picks": int(len(wk)),
+                  "best": track.sort_values("ret", ascending=False).head(3)[["symbol", "ret", "status"]].to_dict("records"),
+                  **live}
+
     # New-since-last-report flags and target / stop alerts for tracked picks
     state = load_state(today)
     stamp = now.strftime("%H:%M")
@@ -435,7 +472,8 @@ def main():
     out = {
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
-        "alerts": alerts, "ml": ml_rep, "config": cfg, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
+        "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
+        "weekly": weekly, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
         "regime": regime, "breadth": breadth, "universe": len(df),
         "swing_backtest": swing_stats, "btst_backtest": btst_stats,
         "picks": picks, "btst": btst[:15], "live": live,
