@@ -28,7 +28,7 @@ def train(samples):
     if HistGradientBoostingClassifier is None or len(samples) < 800:
         return None, {"enabled": False, "reason": "not enough data or sklearn missing"}
     s = samples.sort_values("date").reset_index(drop=True)
-    feats = [c for c in s.columns if c not in ("date", "win5", "ret", "symbol")]
+    feats = [c for c in s.columns if c not in ("date", "win5", "ret", "ret85", "symbol")]
     cut = s.date.quantile(0.75)
     tr = s[s.date < cut - pd.Timedelta(days=EMBARGO_DAYS)]
     te = s[s.date >= cut]
@@ -48,6 +48,15 @@ def train(samples):
         rep["quintiles"] = [round(float(te.win5[(p >= bins[i]) & (p <= bins[i + 1])].mean()) * 100, 1)
                             for i in range(5)]
         rep["hc_threshold"] = round(float(np.quantile(p, 0.7)), 3)  # top-30% cut-off
+        # 85% mode: AI top 10% + weekly uptrend, +5% target / -15% stop, checked on unseen data
+        q90 = float(np.quantile(p, 0.9))
+        rep["m85_threshold"] = round(q90, 3)
+        if "ret85" in te:
+            sel = te[(p >= q90) & (te.wk_up > 0)]
+            if len(sel):
+                rep["m85_n"] = int(len(sel))
+                rep["m85_win"] = round(float((sel.ret85 > 0).mean()) * 100, 1)
+                rep["m85_avg"] = round(float(sel.ret85.mean()), 2)
         # useful = clearly better than average on unseen data (win rate AND profit)
         rep["useful"] = bool(rep["auc"] >= 0.53 and rep["top20_win"] >= rep["base_rate"] + 3
                              and rep["top20_avg_ret"] > rep["all_avg_ret"])

@@ -253,6 +253,7 @@ def main():
             sm["date"] = [t["date"] for t in done]
             sm["win5"] = [int(t["win5"]) for t in done]
             sm["ret"] = [t["ret"] for t in done]
+            sm["ret85"] = [bt.fixed_outcome(d, d.index.get_loc(t["date"])) for t in done]
             samples.append(sm)
         r = d.iloc[-1].copy()
         r["ema200_up"] = d.ema200.iloc[-1] > d.ema200.iloc[-22]
@@ -306,6 +307,9 @@ def main():
 
     cand = df[(df.signals.str.len() > 0) | (df.trend & (df.tech >= 45))]
     cand = cand.sort_values("pre", ascending=False).head(TOP_N_ENRICH).copy()
+    # never drop a stock that could qualify for 85% mode
+    m85c = df[(df.signals.str.len() > 0) & (df.ml_prob >= ml_rep.get("m85_threshold", 1))]
+    cand = pd.concat([cand, m85c[~m85c.symbol.isin(cand.symbol)]])
     btst_c = df[df.btst].copy()
     enrich = set(cand.symbol) | set(btst_c.symbol)
 
@@ -370,6 +374,12 @@ def main():
             "ml_prob": None if np.isnan(x.ml_prob) else round(float(x.ml_prob) * 100, 1),
             "patterns": x.patterns, "weekly_up": bool(x.row.wk_up), "intra": iv,
             "why": reasons(x.row, x.signals, x.rs_rank, x.industry in top_sectors),
+            "mode85": bool(
+                x.signals and ml_rep.get("m85_win", 0) >= 80 and not np.isnan(x.ml_prob)
+                and x.ml_prob >= ml_rep.get("m85_threshold", 1) and x.row.wk_up
+                and not (rid is not None and 0 <= rid <= 7)),
+            "m85_target": round(x.row.Close * 1.05, 2), "m85_stop": round(x.row.Close * 0.85, 2),
+            "m85_qty": position_size(x.row.Close, x.row.Close * 0.85, cfg)["qty"],
             "high_conviction": bool(
                 x.signals and ml_rep.get("useful") and not np.isnan(x.ml_prob)
                 and x.ml_prob >= ml_rep.get("hc_threshold", 1) and x.row.wk_up

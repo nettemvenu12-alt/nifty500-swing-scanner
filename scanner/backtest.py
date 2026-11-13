@@ -55,6 +55,18 @@ def swing_trades(d, signal):
     return res
 
 
+def fixed_outcome(d, i, target=5, stop=15, hold=HOLD):
+    """+target% before -stop% within hold bars (85% mode rule). Returns return %."""
+    hi, lo, cl = d["High"].values, d["Low"].values, d["Close"].values
+    e, end = cl[i], min(i + hold, len(d) - 1)
+    for j in range(i + 1, end + 1):
+        if lo[j] <= e * (1 - stop / 100):
+            return -float(stop)
+        if hi[j] >= e * (1 + target / 100):
+            return float(target)
+    return (cl[end] / e - 1) * 100
+
+
 def btst_trades(d, signal):
     idx = np.flatnonzero(signal.fillna(False).values)
     o, h, c = d["Open"].values, d["High"].values, d["Close"].values

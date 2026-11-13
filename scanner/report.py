@@ -82,7 +82,7 @@ def _card(p, top=False):
              if iv else "")
     pats = (" · 🕯 " + ", ".join(e(x) for x in p["patterns"])) if p.get("patterns") else ""
     why = "".join(f"<span>✔ {e(w)}</span>" for w in p.get("why", []))
-    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}{' <span class="lab hc">🔥 HIGH CONVICTION</span>' if p.get('high_conviction') else ''}
+    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}{' <span class="lab hc">🔥 HIGH CONVICTION</span>' if p.get('high_conviction') else ''}{' <span class="lab lST">🎯 85% MODE</span>' if p.get('mode85') else ''}
 <span class="muted">{e(p['name'])}</span><br><span class="stars">{p['stars']}</span>
 <span class="lab l{p['label'][:2]}">{p['label']}</span> <b>{p['score']}</b>/100</div>{_spark(p['spark'])}</div>
 <div class="muted">{e(p['setup'])} · {e(str(p['industry']))} · ₹{p['close']} ({p['chg']}%)</div>
@@ -94,6 +94,7 @@ RS rank {p['rs_rank']} · Hist win {p['hist_win5'] if p['hist_win5'] is not None
 Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('max_loss', '-')}) ·
 Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
 <div class="muted">Limit-buy option ₹{p.get('dip_buy', '-')} · Exit: T1 → sell half, SL to cost; rest on close below 20 EMA (₹{p.get('ema20', '-')})</div>
+{f'<div class="green">🎯 85% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m85_target"]} (+5%) · SL ₹{p["m85_stop"]} (-15%) · qty {p["m85_qty"]}</div>' if p.get('mode85') else ''}
 <div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
 
 
@@ -183,6 +184,18 @@ def telegram_text(o):
         L.append("\n🆕 <b>New setups this hour</b>")
         for p in new[:6]:
             L.append(f"{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])} · ₹{p['close']} ({p['chg']}%)")
+    m = o.get("ml") or {}
+    m85 = [p for p in o["picks"] if p.get("mode85")]
+    if m.get("m85_win"):
+        L.append(f"\n🎯 <b>85% MODE</b> (unseen-data test: {m['m85_win']}% wins in {m.get('m85_n')} trades, "
+                 f"avg {m.get('m85_avg'):+.2f}%/trade)")
+        if m85:
+            for p in m85[:5]:
+                L.append(f"✅ <b>{_esc(p['symbol'])}</b> Buy {p['entry']} · Target {p['m85_target']} (+5%) · "
+                         f"SL {p['m85_stop']} (-15%) · Qty {p['m85_qty']} · AI {p.get('ml_prob')}%")
+            L.append("Rule: sell ALL at +5%. Wide SL = wins often, but one loss = -15%, so keep qty small.")
+        else:
+            L.append("No stock qualifies right now – wait, don't force a trade.")
     hc = [p for p in buys if p.get("high_conviction")]
     if hc:
         L.append(f"\n🔥 <b>HIGH CONVICTION ({len(hc)})</b> – AI top 30% + weekly up + all checks passed")
