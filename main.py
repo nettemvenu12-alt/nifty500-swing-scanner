@@ -541,7 +541,7 @@ def main():
     buy_list = []
     for p in picks:
         p["in_buy_list"] = False
-        good = (p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")) and not p["rule_fails"]
+        good = p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
         if p["segment"] == "Smallcap 250" and (not p["smallcap_ok"] or p["score"] < 75):
             good = False
         if pause_new or len(buy_list) >= slots or not good or p["symbol"] in held:
@@ -561,7 +561,8 @@ def main():
     for name, _ in data.SEGMENTS:
         ps = sorted([p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")],
                     key=lambda p: -p["score"])
-        ps = [p for p in ps if not p["rule_fails"]] if not pause_new else []
+        ps = ps if not pause_new else []
+        ps = sorted(ps, key=lambda p: -p["score"])  # highest score first (as before)
         if name == "Smallcap 250":
             ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]

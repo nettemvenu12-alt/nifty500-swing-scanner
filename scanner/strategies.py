@@ -31,7 +31,7 @@ def high52_breakout(d):
     """Fresh 52-week-high close with volume."""
     prev_high = d["hh252"].shift()
     return (
-        _liquid(d) & (d["Close"] > prev_high) & (d["vol_ratio"] >= 1.5)
+        _liquid(d) & (d["Close"] > prev_high) & (d["vol_ratio"] >= 1.3)
         & (d["ema50"] > d["ema200"]) & (d["rsi"] < 80)
     )
 

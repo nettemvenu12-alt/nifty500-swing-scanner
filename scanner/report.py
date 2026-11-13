@@ -199,14 +199,15 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
         for sym in v["buy"]:
             p = bysym[sym]
             n += 1
-            L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
+            nf = len(p.get("rule_fails") or [])
+            L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100  ✅{8 - nf}/8"
                      f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}\n"
                      f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
     if n == 0:
         L.append("\nNo stock passes all checks today. Waiting is also a good trade.")
     else:
-        L.append("\n✅ All listed stocks pass: market, RS > Nifty, strong sector, EMA 20>50>200, RSI < 80, "
-                 "volume breakout, no results in 7 days, no bad news, low debt.")
+        L.append("\n✅x/8 = checklist passed (RS > Nifty, strong sector, EMA 20>50>200, RSI < 80, "
+                 "volume breakout, no results in 7 days, no bad news, low debt). 8/8 is best.")
         L.append("Rule: at Target 1 sell half + move SL to buy price; sell rest when a day closes below 20 EMA. "
                  "No move in 15 days → exit.")
     return "\n".join(L)
