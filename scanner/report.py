@@ -184,7 +184,7 @@ def _esc(x):
 SEG_ICONS = {"Nifty 50": "🏛", "Nifty Next 50": "🏢", "Midcap 150": "📈", "Smallcap 250": "⚠️"}
 
 
-def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
+def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>", skip=()):
     """Numbered buy list per index segment: 1. MCX, 2. PAYTM ... (no watchlist)."""
     bysym = {p["symbol"]: p for p in o["picks"]}
     L, n = [f"\n{title}"], 0
@@ -194,10 +194,11 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
     for name, v in (o.get("segments") or {}).items():
         L.append(f"\n{SEG_ICONS.get(name, '•')} <b>{name}</b>"
                  + (" (strict rules, half qty)" if name == "Smallcap 250" else ""))
-        if not v["buy"]:
-            L.append("   No buy today")
+        buy = [x for x in v["buy"] if x not in skip]
+        if not buy:
+            L.append("   No buy today" if not v["buy"] else "   (already in the list above)")
             continue
-        for sym in v["buy"]:
+        for sym in buy:
             p = bysym[sym]
             n += 1
             L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
@@ -231,13 +232,16 @@ def telegram_text(o):
         L.append(f"\n💼 <b>Your holdings</b> · P&amp;L ₹{tot:+,}")
         for h in hr:
             L.append(f"• <b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
-    L.append(simple_list(o))
     m = o.get("ml") or {}
     m85 = [p for p in o["picks"] if p.get("mode85")]
-    if m85:
-        L.append(f"\n🎯 <b>85% MODE</b> (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
-        for k, p in enumerate(m85[:3], 1):
+    if m85 and not o.get("pause_new"):
+        L.append(f"\n🎯 <b>FIRST BUY THESE – highest winning chance</b>\n85% MODE (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
+        for k, p in enumerate(m85[:5], 1):
             L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}")
+    elif not o.get("pause_new"):
+        L.append("\n🎯 <b>85% MODE</b>: no stock qualifies right now – wait, or use the list below (lower winning chance).")
+    L.append(simple_list(o, "🛒 <b>REMAINING BUY LIST – swing (hold up to 60 days)</b>",
+                         skip={p["symbol"] for p in m85[:5]} if not o.get("pause_new") else ()))
     if o["btst"]:
         L.append("\n⚡ <b>BTST</b> (buy ~3:20 PM, sell next morning)" + (" – forming, confirm at 3:15" if live else ""))
         for k, p in enumerate(o["btst"][:3], 1):

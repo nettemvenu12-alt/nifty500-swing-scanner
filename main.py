@@ -591,7 +591,8 @@ def main():
         ps = sorted([p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")],
                     key=lambda p: -p["score"])
         ps = ps if not pause_new else []
-        ps = sorted(ps, key=lambda p: -p["score"])  # highest score first (as before)
+        # highest winning chance first: 85% mode, then high conviction, then by score
+        ps = sorted(ps, key=lambda p: (not p["mode85"], not p["high_conviction"], -p["score"]))
         if name == "Smallcap 250":
             ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]
