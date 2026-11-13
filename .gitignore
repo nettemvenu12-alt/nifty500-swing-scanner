@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .venv/
+trader/.env
+trader/state.json
+trader/scrip_master.json
