@@ -50,7 +50,7 @@ def plan_for(entry, d):
     return round(float(stop), 2), round(entry * 1.05, 2), round(entry * 1.10, 2)
 
 
-def review(h, d):
+def review(h, d, bench_close=None):
     """Status + advice for one holding given its daily data with indicators."""
     since = d[d.index.date >= dt.date.fromisoformat(h["date"])]
     last = float(d.Close.iloc[-1])
@@ -68,6 +68,11 @@ def review(h, d):
         act = "📉 Closed below 20 EMA – sell the rest"
     elif days >= 60:
         act = "⏰ 60 days done – exit"
+    elif not t1_hit and days >= 15 and pnl < 2:
+        act = "⏳ 15 days, no move – consider exiting (time stop)"
+    elif (bench_close is not None and days >= 10 and
+          pnl - (float(bench_close.iloc[-1]) / float(bench_close[bench_close.index.date >= dt.date.fromisoformat(h["date"])].iloc[0]) - 1) * 100 < -5):
+        act = "📉 Weaker than Nifty by 5%+ since buy – consider exiting"
     elif t1_hit:
         act = f"✅ Hold rest · trail: exit on close below 20 EMA ({e20:.2f})"
     else:

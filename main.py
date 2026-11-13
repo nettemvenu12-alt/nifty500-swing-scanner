@@ -15,7 +15,7 @@ import pandas as pd
 import requests
 
 from scanner import backtest as bt
-from scanner import data, fundamentals, model, news, portfolio, report, risk
+from scanner import data, fundamentals, model, news, portfolio, regime as regime_mod, report, risk
 from scanner import indicators as ind
 from scanner import strategies as stg
 
@@ -227,6 +227,9 @@ def main():
     if bench is None:
         bench = data.download([data.NIFTY]).get(data.NIFTY)
     regime = market_regime(bench)
+    n50 = data.download([data.NIFTY], period="2y").get(data.NIFTY)
+    n50_ret63 = float(n50.Close.pct_change(63).iloc[-1] * 100) if n50 is not None else 0.0
+    fii = regime_mod.fii_flows()
     bench_ind = ind.add_all(bench)
     cfg = load_config()
     print("Market:", regime)
@@ -334,6 +337,11 @@ def main():
                                      n=("symbol", "size"))
     sec = sec[sec.n >= 3].sort_values("rs", ascending=False)
     top_sectors = list(sec.index[:5])
+    strong_half = set(sec.index[: max(1, len(sec) // 2)])  # sectors in the top half by RS
+    breadth50 = float((df.row.apply(lambda r: r.Close > r.ema50)).mean() * 100)
+    mkt = regime_mod.classify(n50, regime.get("vix"), breadth50, fii) if n50 is not None else \
+        {"regime": "NEUTRAL", "size": 0.5, "slots": 3, "notes": "Nifty 50 data missing"}
+    print("Market regime:", mkt)
     sectors = [{"name": k, "rs": round(v.rs), "day": round(v.day, 2), "n": int(v.n)}
                for k, v in sec.head(8).iterrows()]
 
@@ -400,6 +408,24 @@ def main():
             else:
                 total += 1
         rid = f.get("results_in_days")
+        # ---- your checklist (only rules that helped in the 10-year test are hard rules) ----
+        fails = []
+        if x.row.ret63 - n50_ret63 <= 0:
+            fails.append("not outperforming Nifty 50 (3M)")
+        if x.industry not in strong_half:
+            fails.append("sector not in top half")
+        if not (x.row.ema20 > x.row.ema50 > x.row.ema200):
+            fails.append("EMA 20>50>200 not stacked")
+        if x.row.rsi >= 80:
+            fails.append("RSI 80+ overbought")
+        if any(s in x.signals for s in ("Breakout", "52W High", "Squeeze", "Results Gap")) and x.row.vol_ratio < 1.5:
+            fails.append("low-volume breakout")
+        if rid is not None and 0 <= rid <= 7:
+            fails.append("results within 7 days")
+        if sent < -0.2:
+            fails.append("negative news")
+        if f.get("de") is not None and f["de"] > 150 and x.industry != "Financial Services":
+            fails.append("high debt (D/E > 1.5)")
         if rid is not None and 0 <= rid <= 7:
             total -= 5
             warn.append(f"Results in {rid} days – event risk")
@@ -457,6 +483,7 @@ def main():
                 and x.ml_prob >= ml_rep.get("hc_threshold", 1) and x.row.wk_up
                 and not (rid is not None and 0 <= rid <= 7) and total >= 70
                 and not (iv and not iv["above_vwap"])),
+            "rule_fails": fails,
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
@@ -468,6 +495,7 @@ def main():
                 else "buy" if p["label"] in ("STRONG BUY", "BUY") else "other")
         p["size_tier"] = tier
         mult = cfg["risk_mult"][tier] * (0.5 if p["segment"] == "Smallcap 250" else 1.0)  # half size in small caps
+        mult *= mkt["size"] if mkt["size"] > 0 else 1.0  # NEUTRAL market = half size
         p.update(position_size(p["entry"], p["stop"], cfg, mult))
         p["m85_qty"] = position_size(p["entry"], p["m85_stop"], cfg, cfg["risk_mult"]["mode85"])["qty"]
 
@@ -498,7 +526,7 @@ def main():
             d = data.download([h["symbol"]]).get(h["symbol"])
         if d is not None:
             try:
-                hold_reviews.append(portfolio.review(h, ind.add_all(d)))
+                hold_reviews.append(portfolio.review(h, ind.add_all(d), bench["Close"]))
             except Exception as e:
                 print("holding review failed", h["symbol"], e)
 
@@ -508,12 +536,12 @@ def main():
     for s in held:
         ind_ = meta.get(s, {}).get("Industry", "?")
         sec_count[ind_] = sec_count.get(ind_, 0) + 1
-    slots = max(0, cfg["max_positions"] - len(held))
-    pause_new = regime["label"] == "BEARISH" or regime.get("vix", 0) >= 20
+    slots = max(0, min(cfg["max_positions"], mkt["slots"]) - len(held))
+    pause_new = mkt["regime"] == "BEAR"
     buy_list = []
     for p in picks:
         p["in_buy_list"] = False
-        good = p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
+        good = (p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")) and not p["rule_fails"]
         if p["segment"] == "Smallcap 250" and (not p["smallcap_ok"] or p["score"] < 75):
             good = False
         if pause_new or len(buy_list) >= slots or not good or p["symbol"] in held:
@@ -533,6 +561,7 @@ def main():
     for name, _ in data.SEGMENTS:
         ps = sorted([p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")],
                     key=lambda p: -p["score"])
+        ps = [p for p in ps if not p["rule_fails"]] if not pause_new else []
         if name == "Smallcap 250":
             ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]
@@ -573,7 +602,7 @@ def main():
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
-        "weekly": weekly, "buy_list": buy_list, "segments": seg_lists, "slots": slots, "pause_new": pause_new,
+        "weekly": weekly, "buy_list": buy_list, "market": mkt, "fii": fii, "segments": seg_lists, "slots": slots, "pause_new": pause_new,
         "setup_status": setup_status, "surveillance_skipped": skipped, "adv": int((df.day > 0).sum()), "dec": int((df.day < 0).sum()),
         "regime": regime, "breadth": breadth, "universe": len(df),
         "swing_backtest": swing_stats, "btst_backtest": btst_stats,
