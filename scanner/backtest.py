@@ -20,6 +20,7 @@ def _stops(d):
 def swing_trades(d, signal):
     idx = np.flatnonzero(signal.fillna(False).values)
     hi, lo, cl = d["High"].values, d["Low"].values, d["Close"].values
+    e20 = d["ema20"].values
     stops = _stops(d).values
     res, last = [], -GAP
     for i in idx:
@@ -30,8 +31,9 @@ def swing_trades(d, signal):
         end = min(i + HOLD, len(d) - 1)
         if end - i < 5:
             continue
-        # Trade management (same as live plan): stop first; at +5% book half and
-        # move stop to cost; rest exits at +10%, at cost, or at day-60 close.
+        # Trade management (same as live plan, chosen by tools/upgrade_research.py):
+        # stop first; at +5% book half and move stop to cost; the rest rides the
+        # trend and exits on a close below the 20 EMA (or at day 60).
         hit5 = hit10 = stopped = False
         rest = (cl[end] / e - 1) * 100
         for j in range(i + 1, end + 1):
@@ -42,7 +44,9 @@ def swing_trades(d, signal):
             if not hit5 and hi[j] >= e * 1.05:
                 hit5, st = True, e
             if hi[j] >= e * 1.10:
-                hit10, rest = True, 10.0
+                hit10 = True
+            if hit5 and cl[j] < e20[j]:
+                rest = (max(cl[j], st) / e - 1) * 100
                 break
         exit_ret = 0.5 * 5 + 0.5 * rest if hit5 else rest
         res.append({"date": d.index[i], "win5": hit5, "win10": hit10,

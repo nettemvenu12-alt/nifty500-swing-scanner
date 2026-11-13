@@ -39,7 +39,9 @@ Technical 65 · Relative strength 10 · Fundamentals 15 · News 5 · Backtest ed
 
 ## Trade plan (swing, up to 60 days)
 Buy near close · Stop = higher of 10-day low / 2.5×ATR (3–10% risk) ·
-**T1 +5%: book half, move stop to cost** · T2 +10%: exit rest · exit anything left on day 60.
+**T1 +5%: book half, move stop to cost** · rest exits on a daily close below the 20 EMA (max 60 days). Chosen by `tools/upgrade_research.py`: on unseen 2025-26 data this nearly doubled average profit vs a fixed +10% exit.
+
+**🔥 High conviction** = entry trigger + AI probability in its top 30% + weekly uptrend + no results within 7 days + score ≥70 + above VWAP (live). On unseen data these won ~62% vs ~58% for all setups.
 
 ## Schedule
 - 9:15, 10:15, 11:15, 12:15, 1:15, 2:30 IST — LIVE hourly Telegram report (new setups, BTST forming, target/SL alerts)

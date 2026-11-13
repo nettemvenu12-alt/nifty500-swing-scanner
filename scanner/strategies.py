@@ -115,8 +115,11 @@ def trade_plan(row, hold_days=60):
     stop = max(stop, entry * 0.90)          # never risk more than 10%
     t1, t2 = entry * 1.05, entry * 1.10
     risk = entry - stop
+    dip = min(entry, max(entry - 0.5 * row.atr, row.hh20 if row.hh20 == row.hh20 else 0))
     return {
-        "entry": round(entry, 2), "stop": round(stop, 2),
+        "entry": round(entry, 2), "stop": round(stop, 2), "dip_buy": round(dip, 2),
+        "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+        "ema20": round(row.ema20, 2),
         "target1": round(t1, 2), "target2": round(t2, 2),
         "risk_pct": round(risk / entry * 100, 1),
         "rr_t2": round((t2 - entry) / risk, 2) if risk > 0 else np.nan,

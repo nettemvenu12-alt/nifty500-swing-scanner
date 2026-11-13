@@ -82,7 +82,7 @@ def _card(p, top=False):
              if iv else "")
     pats = (" · 🕯 " + ", ".join(e(x) for x in p["patterns"])) if p.get("patterns") else ""
     why = "".join(f"<span>✔ {e(w)}</span>" for w in p.get("why", []))
-    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}
+    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}{' <span class="lab hc">🔥 HIGH CONVICTION</span>' if p.get('high_conviction') else ''}
 <span class="muted">{e(p['name'])}</span><br><span class="stars">{p['stars']}</span>
 <span class="lab l{p['label'][:2]}">{p['label']}</span> <b>{p['score']}</b>/100</div>{_spark(p['spark'])}</div>
 <div class="muted">{e(p['setup'])} · {e(str(p['industry']))} · ₹{p['close']} ({p['chg']}%)</div>
@@ -93,6 +93,7 @@ RS rank {p['rs_rank']} · Hist win {p['hist_win5'] if p['hist_win5'] is not None
 <div class="muted">🤖 AI win chance <b>{p.get('ml_prob') if p.get('ml_prob') is not None else '-'}%</b> ·
 Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('max_loss', '-')}) ·
 Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
+<div class="muted">Limit-buy option ₹{p.get('dip_buy', '-')} · Exit: T1 → sell half, SL to cost; rest on close below 20 EMA (₹{p.get('ema20', '-')})</div>
 <div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
 
 
@@ -140,7 +141,7 @@ h1{{font-size:20px}}h2{{font-size:16px;margin-top:22px;border-bottom:1px solid #
 .top{{border:2px solid #facc15}}.row{{display:flex;justify-content:space-between;align-items:center}}
 .sym{{font-size:17px}}.muted{{color:#94a3b8;font-size:12.5px;margin:4px 0}}.stars{{color:#facc15}}
 .lab{{padding:1px 6px;border-radius:6px;font-size:11px;background:#334155}}.lST{{background:#15803d}}.lBU{{background:#16a34a}}
-.lAC{{background:#0e7490}}.lWA{{background:#475569}}.plan{{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}}.green{{color:#4ade80}}.red{{color:#f87171}}.amber{{color:#fbbf24}}
+.lAC{{background:#0e7490}}.hc{{background:#b45309}}.lWA{{background:#475569}}.plan{{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}}.green{{color:#4ade80}}.red{{color:#f87171}}.amber{{color:#fbbf24}}
 .chip{{display:inline-block;background:#1e293b;border-radius:6px;padding:1px 6px;margin:2px;font-size:11.5px}}
 .why span{{display:inline-block;font-size:12px;color:#a7f3d0;margin-right:8px}}.warn{{color:#fbbf24;font-size:12.5px}}ul{{padding-left:18px;margin:4px 0}}li{{font-size:12.5px}}a{{color:#93c5fd}}
 table{{width:100%;border-collapse:collapse;font-size:12.5px}}td,th{{padding:5px;border-bottom:1px solid #1f2937;text-align:left}}
@@ -182,12 +183,19 @@ def telegram_text(o):
         L.append("\n🆕 <b>New setups this hour</b>")
         for p in new[:6]:
             L.append(f"{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])} · ₹{p['close']} ({p['chg']}%)")
-    top = buys[:1]
+    hc = [p for p in buys if p.get("high_conviction")]
+    if hc:
+        L.append(f"\n🔥 <b>HIGH CONVICTION ({len(hc)})</b> – AI top 30% + weekly up + all checks passed")
+    else:
+        L.append("\n🔥 No high-conviction trade right now. Skipping weak setups protects profit.")
+    top = (hc or buys)[:1]
     if top:
         p = top[0]
-        L.append(f"\n⭐ <b>Best buy now: {_esc(p['symbol'])}</b> {p['stars']} {p['label']} ({p['score']}/100)\n"
+        L.append(f"\n{'🔥' if p.get('high_conviction') else '⭐'} <b>Best buy now: {_esc(p['symbol'])}</b> {p['stars']} {p['label']} ({p['score']}/100)\n"
                  f"Buy ~{p['entry']} · SL {p['stop']} (-{p['risk_pct']}%) · T1 {p['target1']} · T2 {p['target2']}\n"
-                 f"Qty {p.get('qty')} (₹{p.get('invest')}, max loss ₹{p.get('max_loss')}) · 🤖 AI {p.get('ml_prob')}%")
+                 f"Qty {p.get('qty')} (₹{p.get('invest')}, max loss ₹{p.get('max_loss')}) · 🤖 AI {p.get('ml_prob')}%\n"
+                 f"Lower-risk limit buy: {p.get('dip_buy')}\n"
+                 f"Exit: at T1 sell half + SL to cost; sell rest when a day closes below 20 EMA (now {p.get('ema20')})")
         if p.get("why"):
             L.append("✔ " + " · ".join(_esc(w) for w in p["why"][:3]))
         iv = p.get("intra")
@@ -195,7 +203,7 @@ def telegram_text(o):
             L.append(f"Live: ₹{iv['last']} vs VWAP ₹{iv['vwap']} {'✅' if iv['above_vwap'] else '❌ wait'}")
     L.append("\n📊 <b>Swing picks (≤60 days, +5% / +10%)</b>")
     for p in buys[1:8]:
-        tag = "🆕 " if p.get("new") and live else ""
+        tag = ("🔥 " if p.get("high_conviction") else "") + ("🆕 " if p.get("new") and live else "")
         L.append(f"{tag}{p['stars']} <b>{_esc(p['symbol'])}</b> {p['score']} · {_esc(p['setup'])}\n"
                  f"   Buy {p['entry']} SL {p['stop']} T1 {p['target1']} T2 {p['target2']} · Qty {p.get('qty')} · AI {p.get('ml_prob')}%")
     if len(buys) <= 1:

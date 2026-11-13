@@ -105,10 +105,12 @@ def update_tracker(prices, today_picks, today):
         d = prices.get(p.symbol)
         if d is None:
             continue
+        e20 = ind.ema(d.Close, 20)
         fwd = d[d.index.date > dt.date.fromisoformat(str(p.date))].head(bt.HOLD)
-        # Same management as the backtest: half booked at T1, stop moved to cost.
+        # Same management as the backtest: half booked at T1, stop moved to cost,
+        # rest exits on a close below the 20 EMA.
         status, ret, stop, t1 = "OPEN", None, p.stop, False
-        for _, bar in fwd.iterrows():
+        for ts, bar in fwd.iterrows():
             if bar.Low <= stop:
                 rest = (stop / p.entry - 1) * 100
                 status = "T1 + EXIT AT COST" if t1 else "STOP"
@@ -116,8 +118,9 @@ def update_tracker(prices, today_picks, today):
                 break
             if not t1 and bar.High >= p.target1:
                 t1, stop = True, p.entry
-            if bar.High >= p.target2:
-                status, ret = "TARGET 2", 7.5
+            if t1 and bar.Close < e20[ts]:
+                rest = (max(bar.Close, stop) / p.entry - 1) * 100
+                status, ret = "T1 + TRAIL EXIT", 2.5 + 0.5 * rest
                 break
         if ret is None and len(fwd):
             rest = (fwd.Close.iloc[-1] / p.entry - 1) * 100
@@ -130,7 +133,7 @@ def update_tracker(prices, today_picks, today):
     t = pd.DataFrame(rows)
     stats = {}
     if len(t):
-        closed = t[t.status.isin(["STOP", "TARGET 2", "T1 + EXIT AT COST", "EXPIRED"])]
+        closed = t[t.status.isin(["STOP", "T1 + TRAIL EXIT", "T1 + EXIT AT COST", "EXPIRED"])]
         if len(closed):
             stats = {"closed": len(closed),
                      "win_rate": round((closed.ret > 0).mean() * 100, 1),
@@ -367,10 +370,15 @@ def main():
             "ml_prob": None if np.isnan(x.ml_prob) else round(float(x.ml_prob) * 100, 1),
             "patterns": x.patterns, "weekly_up": bool(x.row.wk_up), "intra": iv,
             "why": reasons(x.row, x.signals, x.rs_rank, x.industry in top_sectors),
+            "high_conviction": bool(
+                x.signals and ml_rep.get("useful") and not np.isnan(x.ml_prob)
+                and x.ml_prob >= ml_rep.get("hc_threshold", 1) and x.row.wk_up
+                and not (rid is not None and 0 <= rid <= 7) and total >= 70
+                and not (iv and not iv["above_vwap"])),
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
-    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", -p["score"], p["symbol"]))
+    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", not p["high_conviction"], -p["score"], p["symbol"]))
 
     btst = []
     for _, x in btst_c.iterrows():

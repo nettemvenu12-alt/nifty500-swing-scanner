@@ -47,7 +47,10 @@ def train(samples):
         bins = np.quantile(p, [0, .2, .4, .6, .8, 1])
         rep["quintiles"] = [round(float(te.win5[(p >= bins[i]) & (p <= bins[i + 1])].mean()) * 100, 1)
                             for i in range(5)]
-        rep["useful"] = bool(rep["auc"] >= 0.55 and rep["top20_win"] > rep["base_rate"])
+        rep["hc_threshold"] = round(float(np.quantile(p, 0.7)), 3)  # top-30% cut-off
+        # useful = clearly better than average on unseen data (win rate AND profit)
+        rep["useful"] = bool(rep["auc"] >= 0.53 and rep["top20_win"] >= rep["base_rate"] + 3
+                             and rep["top20_avg_ret"] > rep["all_avg_ret"])
     else:
         rep["useful"] = False
     final = _clf().fit(s[feats], s.win5)
