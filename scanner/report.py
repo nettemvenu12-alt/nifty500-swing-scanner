@@ -199,17 +199,13 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>"):
         for sym in v["buy"]:
             p = bysym[sym]
             n += 1
-            nf = len(p.get("rule_fails") or [])
-            L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100  ✅{8 - nf}/8"
+            L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
                      f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}\n"
                      f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
     if n == 0:
         L.append("\nNo stock passes all checks today. Waiting is also a good trade.")
     else:
-        L.append("\n✅x/8 = checklist passed (RS > Nifty, strong sector, EMA 20>50>200, RSI < 80, "
-                 "volume breakout, no results in 7 days, no bad news, low debt). 8/8 is best.")
-        L.append("Rule: at Target 1 sell half + move SL to buy price; sell rest when a day closes below 20 EMA. "
-                 "No move in 15 days → exit.")
+        L.append("\nRule: at Target 1 sell half + move SL to buy price; sell rest when a day closes below 20 EMA.")
     return "\n".join(L)
 
 
@@ -219,11 +215,8 @@ def telegram_text(o):
     live = o.get("intraday")
     head = (f"⏱ <b>LIVE {o['generated'][-9:-4]} report</b>" if live
             else f"📈 <b>Swing report {o['data_date']}</b>")
-    mk = o.get("market") or {}
-    size_txt = {"BULL": "full size, up to 5 stocks", "NEUTRAL": "HALF size, max 3 stocks",
-                "BEAR": "NO new buys – stay in cash"}.get(mk.get("regime"), "")
-    L = [head, f"Market <b>{mk.get('regime', r['label'])}</b> → {size_txt}",
-         f"<i>{_esc(mk.get('notes', ''))}</i>"]
+    L = [head, f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} ({r.get('day', 0):+.2f}%)"
+               + (f" · VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
     if o.get("alerts"):
         L.append("\n🔔 <b>Tracked picks – updates</b>")
         for a in o["alerts"]:
