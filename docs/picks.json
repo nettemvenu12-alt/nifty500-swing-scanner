@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-13 20:32 IST",
+ "generated": "2026-11-13 21:24 IST",
  "data_date": "2026-11-13",
  "intraday": false,
- "session_min": 678,
+ "session_min": 729,
  "sectors": [
   {
    "name": "Oil Gas & Consumable Fuels",
@@ -56,26 +56,26 @@
  "alerts": [],
  "ml": {
   "enabled": true,
-  "train_n": 8616,
+  "train_n": 8615,
   "test_n": 3014,
   "test_from": "2025-06-11",
   "base_rate": 54.2,
-  "auc": 0.562,
-  "top20_win": 61.5,
-  "top20_avg_ret": 0.76,
+  "auc": 0.563,
+  "top20_win": 62.5,
+  "top20_avg_ret": 0.9,
   "all_avg_ret": 0.45,
   "quintiles": [
-   46.9,
-   50.7,
-   54.2,
-   57.9,
-   61.5
+   47.3,
+   50.4,
+   54.0,
+   57.0,
+   62.5
   ],
   "hc_threshold": 0.675,
   "m85_threshold": 0.755,
   "m85_n": 168,
-  "m85_win": 82.7,
-  "m85_avg": 1.61,
+  "m85_win": 83.3,
+  "m85_avg": 1.73,
   "useful": true
  },
  "config": {
@@ -93,7 +93,7 @@
  },
  "holdings": [],
  "weekly": {
-  "new_picks": 8,
+  "new_picks": 7,
   "best": [
    {
     "symbol": "MCX",
@@ -111,7 +111,7 @@
     "status": "OPEN"
    }
   ],
-  "open": 8
+  "open": 7
  },
  "buy_list": [
   "MCX",
@@ -119,6 +119,22 @@
   "BHEL",
   "GVT&D"
  ],
+ "market": {
+  "regime": "BULL",
+  "size": 1.0,
+  "slots": 5,
+  "points": 5,
+  "trend": 2,
+  "nifty50": 25144.3,
+  "sma50": 23331.79,
+  "sma200": 23991.76,
+  "notes": "Nifty 50 25144 (above 50 DMA 23332, above 200 DMA 23992) \u00b7 VIX 15.5 \u00b7 breadth 60% above 50 EMA \u00b7 FII 5-day \u20b9+5,737 Cr"
+ },
+ "fii": {
+  "fii_5d": 5737,
+  "dii_5d": -2254,
+  "days": 1
+ },
  "segments": {
   "Nifty 50": {
    "buy": [],
@@ -250,7 +266,7 @@
    "stop_rate": 24.4
   },
   "Breakout": {
-   "n": 2863,
+   "n": 2864,
    "win5": 66.4,
    "win10": 34.4,
    "avg": 1.51,
@@ -266,7 +282,7 @@
    "stop_rate": 33.5
   },
   "Squeeze": {
-   "n": 2701,
+   "n": 2703,
    "win5": 61.1,
    "win10": 29.9,
    "avg": 0.94,
@@ -283,8 +299,8 @@
   }
  },
  "btst_backtest": {
-  "n": 3945,
-  "gap_up": 72.6,
+  "n": 3943,
+  "gap_up": 72.5,
   "hit1": 71.2,
   "avg_open": 0.43,
   "avg_best": 2.4
@@ -310,9 +326,9 @@
    "risk_pct": 8.5,
    "rr_t2": 1.17,
    "hold": "up to 60 days",
-   "qty": 4,
-   "invest": 14880,
-   "max_loss": 1271,
+   "qty": 3,
+   "invest": 11160,
+   "max_loss": 953,
    "close": 3720.0,
    "chg": 2.63,
    "rsi": 68.6,
@@ -329,7 +345,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.7,
+   "ml_prob": 75.4,
    "patterns": [
     "NR7 breakout"
    ],
@@ -342,16 +358,20 @@
     "Weekly trend up",
     "Top 7% relative strength in Nifty 500"
    ],
-   "mode85": true,
+   "mode85": false,
    "m85_target": 3906.0,
    "m85_stop": 3162.0,
    "m85_qty": 2,
    "high_conviction": true,
+   "rule_fails": [
+    "sector not in top half",
+    "low-volume breakout"
+   ],
    "fund": {
     "pe": 64.2,
     "roe": 44.4,
     "de": 0.2,
-    "mcap_cr": 94679.2,
+    "mcap_cr": null,
     "sales_yoy": 114.3,
     "profit_yoy": 123.7,
     "profit_qoq": 9.9,
@@ -361,6 +381,11 @@
    },
    "news": [
     {
+     "title": "Multi Commodity Exchange of India Limited (MCX.NS) stock price, news, quote and history - Yahoo Finance UK",
+     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9heG1pNTA1akdZNjNwTGhUSFFCWkNRS3RCeVRKeXdJazJkMmpvcWQyaEFNcUFHMkVQUElOeTVqTU9WWEtuaThYeEZFdVVhY3h6X1JySw?oc=5",
+     "date": "Thu, 12 Nov 2026 11:42:31 GMT"
+    },
+    {
      "title": "MCX Outlook for the Week - Equitypandit",
      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1uSzRxVzRFTFlkUlRMSHl3SjFScTRWdkVXRjJJZW90UFUwRV9wc19DcGZnU1FNNFdrTWFfRFdsWmxLc1FVdGtqNkxjQUcyaWFRSE0yUWhycm54OTVGZVdYMU53MTI?oc=5",
      "date": "Sun, 08 Nov 2026 08:00:00 GMT"
@@ -369,11 +394,6 @@
      "title": "MCX share price hits new high, up 100% in one year; market cap nears \u20b91 trn - Business Standard",
      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdTNjS2l3Nm4wUlAyN0VIMkZ5TDA5RWNSWlo1dVdFVG1idVdhY19FXzRGRURKWE1hRTBSRDh1ODI3WFRBdnBDbzRiY2ljYjA1MW1JQjQxS2tRTkZxanpJeTBUU3Z6YmdOQTFZUmZtU05nOFdVbU5LckJNTFR0UkYwWHBYcTdsWHdsQmgyWUZHV1hNSDMwS3RNdFBQX2s3enU0M2FMQ1A1d2F3al9oeG1pOXZCaFJKSERBRmlfdjdET2wtcDVIbWlxRGN3Ym14Mk9LWWl1QtIB2gFBVV95cUxOUENoaFBUVVVFWk53TldNWDVyTjdxZnBnNnJ0ZzFHUHdkaEJzNmZCVXhHaHVXa211Z2c3aWhSWG5Kcmo3V21HTmxDLTZKTmx5dEpvekMxdWhiY2pXRVF6U1dWeGd1RHUxSmwtRTlnRU1CalJCN0RoT3hjUV9wczE1VWx1QkRuSnBGYmdXQ2hTek1hYzlmRVUtSUtZUmJvZ0lxSUM2OHRwcGcyQlMyajRCNnhVa1BaU0FnaC1TMjhNYzZvVDVIRlhESW5sTFh6V2M2OTY5dlIxdVNZQQ?oc=5",
      "date": "Fri, 13 Nov 2026 08:03:12 GMT"
-    },
-    {
-     "title": "Multi Commodity Exchange of India (NSEI:MCX) Stock Forecast & Analyst Predictions - Simply Wall St",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNalZuWkNQVjhRMGtneGdsbWFteGhXbUh3MGpGMFNLQVN4b25QeVNMNWJPeDdCcGMxamJaa1ZpbDVKRm41UWNvSDV5enFJb3lHcXJ1ZGlDNUhvSDkyWUl6RDZPaHdkaHR5YU16TXloZVRmV2R1UDd5c25hTUEzaFJpNDBGa21XWFgyaktodnhyTDZiQk45SVc5RVRhLTdzUTlUYkNCS01nVUtIZFNDWE9N?oc=5",
-     "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     }
    ],
    "sentiment": 0.2,
@@ -440,7 +460,7 @@
     3624.7,
     3720.0
    ],
-   "size_tier": "mode85",
+   "size_tier": "high_conviction",
    "in_buy_list": true,
    "new": false
   },
@@ -451,7 +471,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "A+ Momentum, Breakout",
-   "score": 87.0,
+   "score": 87.2,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "STRONG BUY",
    "entry": 349.0,
@@ -464,9 +484,9 @@
    "risk_pct": 8.2,
    "rr_t2": 1.21,
    "hold": "up to 60 days",
-   "qty": 26,
-   "invest": 9074,
-   "max_loss": 748,
+   "qty": 21,
+   "invest": 7329,
+   "max_loss": 604,
    "close": 349.0,
    "chg": 2.35,
    "rsi": 73.2,
@@ -479,11 +499,11 @@
     "Technical": 58,
     "Rel. Strength": 9.2,
     "Fundamentals": 13.0,
-    "News": 3.0,
+    "News": 3.2,
     "Backtest": 2.5,
     "AI model": 10.0
    },
-   "ml_prob": 76.3,
+   "ml_prob": 74.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -495,11 +515,14 @@
     "Weekly trend up",
     "Top 8% relative strength in Nifty 500"
    ],
-   "mode85": true,
+   "mode85": false,
    "m85_target": 366.45,
    "m85_stop": 296.65,
    "m85_qty": 28,
    "high_conviction": true,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 28.2,
     "roe": 18.4,
@@ -529,7 +552,7 @@
      "date": "Wed, 11 Nov 2026 05:41:21 GMT"
     }
    ],
-   "sentiment": 0.2,
+   "sentiment": 0.3,
    "warnings": [],
    "spark": [
     290.36,
@@ -593,7 +616,7 @@
     341.0,
     349.0
    ],
-   "size_tier": "mode85",
+   "size_tier": "high_conviction",
    "in_buy_list": true,
    "new": false
   },
@@ -604,7 +627,7 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "A+ Momentum, 52W High",
-   "score": 82.7,
+   "score": 82.5,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "STRONG BUY",
    "entry": 1939.9,
@@ -617,9 +640,9 @@
    "risk_pct": 8.5,
    "rr_t2": 1.18,
    "hold": "up to 60 days",
-   "qty": 9,
-   "invest": 17459,
-   "max_loss": 1476,
+   "qty": 7,
+   "invest": 13579,
+   "max_loss": 1148,
    "close": 1939.9,
    "chg": 0.77,
    "rsi": 72.3,
@@ -632,11 +655,11 @@
     "Technical": 53,
     "Rel. Strength": 9.7,
     "Fundamentals": 11.0,
-    "News": 4.0,
+    "News": 3.8,
     "Backtest": 3.2,
     "AI model": 10.0
    },
-   "ml_prob": 78.1,
+   "ml_prob": 74.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -647,11 +670,15 @@
     "Weekly trend up",
     "Top 3% relative strength in Nifty 500"
    ],
-   "mode85": true,
+   "mode85": false,
    "m85_target": 2036.9,
    "m85_stop": 1648.92,
    "m85_qty": 5,
    "high_conviction": true,
+   "rule_fails": [
+    "sector not in top half",
+    "low-volume breakout"
+   ],
    "fund": {
     "pe": 147.2,
     "roe": 5.3,
@@ -671,17 +698,17 @@
      "date": "Thu, 12 Nov 2026 09:27:57 GMT"
     },
     {
+     "title": "India's Paytm gets preliminary RBI nod for wallet licence; shares hit record high - Reuters",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTkRzdktWTTB4bUxnUHRKR1A0SlI0eVMzVmFlbTI3QlRmSy1QMWhMLXhnYTdmTHl0bGkzUXRwbXdqbW9aZ3R4Y01EZTYweFN4WXgySmFGWU1kSzM4MmlhcC1POWJUTF9JNGFtcWZWVnlEZUhtNzBZQWFkNVFuVkdXWmNtd2pLTm1PWTAyM0laOEU2YUNQd1dKeVdYS0M3VjF4QWFBckNuME8xS3RoNnpYNHRDWG95WngtRUwzaWJWUVM?oc=5",
+     "date": "Fri, 13 Nov 2026 11:08:02 GMT"
+    },
+    {
      "title": "Paytm share price crosses Rs 1,900 for the first time since listing in 2021; up 49% year-to-date - The Times of India",
      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNdlllSjJETTVkUzM5SlpieGNYbEctVVhhN2lvXzB2bHR5UkRYVmJud3E5MWRsUTJMMHg0TTNaMEE5TTZ3TFBtNmI1R19kWVlISnhlZjFZWVZTTnRsb2RETm94TFB0d3BmbnIwWmRYZXBiVGlxQjZudWJfYW9SMldtRm5JMmxWaVNNbXZOSmtWb2xtNVlqTWJWZ0tfRVNjN1IzbWZzcWp0Q1FVTV85bDdLYlk2T1h5LWRmT1Nra3VUZU94Z1d0eGdyQmN1ekJpbWpmTFpOYmpGV2xuS3NEbi04bUdDZURVdjFHWjFrcEtINTZuNVc5czJkV2I5OUZDUUNEMGhZdFJhMHZZQkXSAZACQVVfeXFMUEZDak5mX2tHbHgzcDE4VmpqWjFHenliampadmYyd0FuckxaN0w3T2NEUm1CSFBwekNaWnFSTUtwLXB4SzA3bmVzLXpYSTdHeWdxSlhKRVRGbWhZb25iR3YyLThySVE4TTAtVDZfd3VCemxjMkRNeDk1Z0NyX1dFMFZDYmJHWHR4T2hPZHF1T3hPNlAzV1BGTDdLYWxibDlRR2xmUlB2dndkRDI3cFFqandIMHRMYmsxZGQtNXJoUWR3QTZ6Q3YycFU1WmhLVjVjWThMWVk3SGItUjZNVndvMDdlY2JrOGJ5dlRneXk0M0FFMllpcklBMTJIZkZCTGZfb3MwR1ExVERROUZpNzBfWFQ?oc=5",
      "date": "Thu, 12 Nov 2026 13:48:00 GMT"
-    },
-    {
-     "title": "Paytm gets RBI\u2019s in-principle nod to revive wallet business; shares hit record high - The Hindu",
-     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQLWllRlhsSGdLck93QVRsRWlWaVBNdG91RHUzNzlJb1NCeWFQdm4waFZ5bFMwaVJFQkhJaDJLbGtpWmFCRlg3dF9aUVlXdDFEdnkxREVseTAwZjh2MVpNcjB5aGZaOVA5Ukh2SEVVV3R4WXdBWWtfWUdvN3I0WWlFM2NQcllnQ25nSlhNamNNUl9IYl9YX2plUFhVOWtRSF9zN1F0aGZuYTJ3WGpxSlBKSF83V1pDNlJXQnNORDNkcjNxYnlKbUNOM1JoSllfQdIB1AFBVV95cUxOVzViQWxuS0lyQ1JtOGRYeHlZQ1FBMnRQNDJWZzVxQ1AyWU8wVEJ5ZEduMWMxM1NfRXFSSmFMemwzZUhRRk1LTUdPX04zNzRDellZUWZCdXJFY3NUUXdpZzhDamJZSjE0Ml8yUUw0U1VkalBFNWxSejNBWjg2UEdKa2hSejRSMS1iNElWcFFmemt3RGdNd0xfM19iOUY3OEwtbzhwb2JlRnY4emh3eUN1blZXLUU5N1B1Y2MyTVVaLUI5bEhDdEY0M3RwSWtkcFRKdWdGTw?oc=5",
-     "date": "Fri, 13 Nov 2026 13:00:55 GMT"
     }
    ],
-   "sentiment": 0.6,
+   "sentiment": 0.5,
    "warnings": [],
    "spark": [
     1546.3,
@@ -745,7 +772,7 @@
     1925.0,
     1939.9
    ],
-   "size_tier": "mode85",
+   "size_tier": "high_conviction",
    "in_buy_list": false,
    "new": false
   },
@@ -788,7 +815,7 @@
     "Backtest": 3.9,
     "AI model": 10.0
    },
-   "ml_prob": 73.5,
+   "ml_prob": 71.0,
    "patterns": [
     "Bullish engulfing",
     "Inside-bar breakout",
@@ -805,6 +832,9 @@
    "m85_stop": 370.85,
    "m85_qty": 22,
    "high_conviction": true,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 52.8,
     "roe": 11.3,
@@ -941,7 +971,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 74.7,
+   "ml_prob": 69.6,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -955,6 +985,11 @@
    "m85_stop": 3757.0,
    "m85_qty": 2,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half",
+    "EMA 20>50>200 not stacked"
+   ],
    "fund": {
     "pe": 78.4,
     "roe": 53.4,
@@ -1093,7 +1128,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 73.9,
+   "ml_prob": 71.6,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -1106,6 +1141,10 @@
    "m85_stop": 17916.3,
    "m85_qty": 0,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "EMA 20>50>200 not stacked"
+   ],
    "fund": {
     "pe": 59.8,
     "roe": 24.8,
@@ -1190,168 +1229,13 @@
    "new": false
   },
   {
-   "symbol": "GESHIP",
-   "name": "Great Eastern Shipping Co. Ltd.",
-   "industry": "Services",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Pullback",
-   "score": 70.8,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "BUY",
-   "entry": 1518.0,
-   "stop": 1394.9,
-   "dip_buy": 1518.0,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 1489.9,
-   "target1": 1593.9,
-   "target2": 1669.8,
-   "risk_pct": 8.1,
-   "rr_t2": 1.23,
-   "hold": "up to 60 days",
-   "qty": 4,
-   "invest": 6072,
-   "max_loss": 492,
-   "close": 1518.0,
-   "chg": 5.78,
-   "rsi": 53.7,
-   "adx": 22.0,
-   "vol_x": 1.93,
-   "from_high": -13.2,
-   "rs_rank": 87,
-   "hist_win5": 75.0,
-   "parts": {
-    "Technical": 33,
-    "Rel. Strength": 8.7,
-    "Fundamentals": 15.0,
-    "News": 4.0,
-    "Backtest": 5.0,
-    "AI model": 10.0
-   },
-   "ml_prob": 76.0,
-   "patterns": [
-    "NR7 breakout"
-   ],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "Volume 1.9x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Top 13% relative strength in Nifty 500",
-    "Sector is among market leaders"
-   ],
-   "mode85": false,
-   "m85_target": 1593.9,
-   "m85_stop": 1290.3,
-   "m85_qty": 6,
-   "high_conviction": false,
-   "fund": {
-    "pe": 4.9,
-    "roe": 26.0,
-    "de": 4.4,
-    "mcap_cr": 20399.7,
-    "sales_yoy": 46.9,
-    "profit_yoy": 118.3,
-    "profit_qoq": -3.0,
-    "eps_growth": 118.3,
-    "results_in_days": null,
-    "sector": "Industrials"
-   },
-   "news": [
-    {
-     "title": "The Great Eastern Shipping Co. Ltd. reaches USD 593m net cash - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPN3FIOHh6OWFQRGJnX0w4cnZUSEFCelRpSGltcF92RGU2cTNYNUxidFFyLWdLaEFRdG5qN0hOVWtGOTRKalhGem1pd0tqTU50NkVDRFY0bGgtaFhjV2l5V1hDbi1qYTE3SXRUZEVONDVvOEdjczdGcmllWGFhRUdHdUIwV2pWb2RTNG1rQ1FpdlZZVFpWT01WMFJ3NE1taHIzZEE3cFlDZTlvbFJ0aXVr?oc=5",
-     "date": "Mon, 09 Nov 2026 10:29:40 GMT"
-    },
-    {
-     "title": "Here's What We Like About Great Eastern Shipping's (NSE:GESHIP) Upcoming Dividend - Simply Wall St",
-     "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPaTRNdERfS0hDQU9tZWgwSWoxWnFTMU1IUDNWT1hHOFlJM3h3bHBacldsZnZlSkVJa1RiOGxEajhZOUprdWVwdnRtU3lkUnhybEhrYW1VVTRhQnhHTzdNSUluV0tmVmo4ZmUtajIzZWEzamhyOXE2ai1qWlJpbDhQYWRXa2NaU04yOW5PVVBqaF9aaDFXaE9SNmVSNGhfdXFKREdmSnptQ2hzMHN6TXhBNmRSVTc0RFczWTUyUk96TW4zOVNDY0dQdV81aUw2Vjc0OWlQN212SDV1TG5GeVNRMNIB5gFBVV95cUxORVpnb3VvcG1yQ3czNUw4YkUyal9KaVBIejlYS3R4dTlWS0hQYm9SX1lLYUpvZnE1cklOS2dPNzBJaGVMN2VVVWcxNGVuNjBEQUI1elBTXzVpV1hqa0FTMDF6MEVwSUNySXRMRThENFotcTY3Vm1yQnhDcXpKUkFZWktFWHQ5V2lpZXRkeWJZWG9mOU9yeWVjNUY1aXNTM2t5clpTWklyZkVUSDZKQlNQMFhLWFlrN0dpVlZsTENBaFU3d2xVM2c1SDVLenBtSXpjMkZaeWh5aS1fYXZGcnR4bWc4cjlJUQ?oc=5",
-     "date": "Mon, 09 Nov 2026 00:26:15 GMT"
-    },
-    {
-     "title": "Great Eastern Shipping dividend 2026: Last day to buy today | Check record date, payout amount, history, yield, returns - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPOC1PdmNrZjJwWDJtdEtKdlZyaXF0MmFoUlgxX1lQX0tmSkE0TTFEeWdkSUdWenZxMGFuSk8zYmw2V2dYMlF4RERrVE5aRlVQWlM3ejRQTzR5bnljWlRJS19BLXBwd1l5WUxodVlZamN4NU42NzZRQkVfNlFmOEhJSU03UDZsTm1OQlFhM2JDQU82dDFRd3oxZ3Y2aE1ENmRiYWdPQTU2YmhNdklQT3EteHVjM1U4U21ELXA0aGdjX0RrWm01Rk9DeUZhSm5uejRHRGRBcmExLVF6M0dDN2dGeFFLSHA5T2VzZFEtUnpGeWlYWUxzSVNPV255ZWFxZw?oc=5",
-     "date": "Thu, 12 Nov 2026 05:53:00 GMT"
-    }
-   ],
-   "sentiment": 0.6,
-   "warnings": [
-    "Weekly trend not confirmed"
-   ],
-   "spark": [
-    1289.96,
-    1302.43,
-    1286.1,
-    1298.27,
-    1319.76,
-    1329.26,
-    1318.97,
-    1304.11,
-    1326.29,
-    1288.87,
-    1312.43,
-    1292.63,
-    1340.15,
-    1356.09,
-    1363.02,
-    1370.05,
-    1379.56,
-    1386.29,
-    1398.17,
-    1376.59,
-    1377.78,
-    1410.94,
-    1417.87,
-    1470.25,
-    1447.48,
-    1469.06,
-    1467.87,
-    1482.33,
-    1518.17,
-    1522.52,
-    1544.5,
-    1515.39,
-    1543.81,
-    1517.37,
-    1552.32,
-    1514.5,
-    1518.46,
-    1535.1,
-    1526.68,
-    1527.77,
-    1469.36,
-    1492.42,
-    1504.21,
-    1491.34,
-    1503.51,
-    1481.73,
-    1517.18,
-    1535.49,
-    1544.4,
-    1602.72,
-    1577.77,
-    1584.5,
-    1521.24,
-    1556.19,
-    1445.5,
-    1414.51,
-    1411.83,
-    1421.04,
-    1435.1,
-    1518.0
-   ],
-   "size_tier": "buy",
-   "in_buy_list": false,
-   "new": true
-  },
-  {
    "symbol": "CRAFTSMAN",
    "name": "Craftsman Automation Ltd.",
    "industry": "Automobile and Auto Components",
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Pullback",
-   "score": 70.4,
+   "score": 70.2,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "BUY",
    "entry": 11077.0,
@@ -1379,11 +1263,11 @@
     "Technical": 44,
     "Rel. Strength": 8.1,
     "Fundamentals": 13.0,
-    "News": 2.5,
+    "News": 2.8,
     "Backtest": 3.1,
-    "AI model": 10.0
+    "AI model": 9.5
    },
-   "ml_prob": 69.5,
+   "ml_prob": 67.8,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -1396,6 +1280,9 @@
    "m85_stop": 9415.45,
    "m85_qty": 0,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 51.7,
     "roe": 12.3,
@@ -1425,7 +1312,7 @@
      "date": "Thu, 12 Nov 2026 01:28:50 GMT"
     }
    ],
-   "sentiment": 0.0,
+   "sentiment": 0.1,
    "warnings": [
     "Weekly trend not confirmed"
    ],
@@ -1502,7 +1389,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Pullback",
-   "score": 68.3,
+   "score": 69.0,
    "stars": "\u2605\u2605\u2605\u2606\u2606",
    "label": "ACCUMULATE",
    "entry": 178.68,
@@ -1532,9 +1419,9 @@
     "Fundamentals": 14.0,
     "News": 2.5,
     "Backtest": 5.0,
-    "AI model": 7.0
+    "AI model": 7.7
    },
-   "ml_prob": 60.2,
+   "ml_prob": 62.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -1548,6 +1435,7 @@
    "m85_stop": 151.88,
    "m85_qty": 55,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 7.1,
     "roe": 29.1,
@@ -1652,7 +1540,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "A+ Momentum, Pullback",
-   "score": 67.4,
+   "score": 67.3,
    "stars": "\u2605\u2605\u2605\u2606\u2606",
    "label": "ACCUMULATE",
    "entry": 24365.0,
@@ -1682,9 +1570,9 @@
     "Fundamentals": 11.0,
     "News": 2.8,
     "Backtest": 4.1,
-    "AI model": 8.7
+    "AI model": 8.6
    },
-   "ml_prob": 65.2,
+   "ml_prob": 64.9,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -1700,6 +1588,9 @@
    "m85_stop": 20710.25,
    "m85_qty": 0,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 291.0,
     "roe": 8.6,
@@ -1714,14 +1605,14 @@
    },
    "news": [
     {
-     "title": "Certain Common Shares of PTC Industries Limited are subject to a Lock-Up Agreement Ending on 9-NOV-2026. - www.marketscreener.com",
-     "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQY3FrU3BsZklMR1haaXJxV2pkd0N3WUVLOWdxZUY3TXZhX2o5aEJ2T1UtS0pneDBQdWhoV2dVWEhFa3F5OURWVm5NRmUwWm5YemdwWTVrYldUZ08zVmZFX0xQSWZVakxMMFJpMmpId2VJMWhjSDlKbXU1ajJIM0VqUEMtLW5Fc3Zyd29ZclUxLXR2VXppakc1dnFFZTlDcFpUMkk2eU1CcEZsbEdjemYwaFE4RGlmdUlvNHN5NEg3VlVvMFN6elphcGJKMVc4ajd0ZjktdWlSNGpVaWN2eVdfdkVZazZLdUpk?oc=5",
-     "date": "Mon, 09 Nov 2026 00:24:12 GMT"
-    },
-    {
      "title": "Hunting for next defence stock winners? Raymond, PTC, Axiscades, Rossell - Experts decode opportunity, share targets - TradingView",
      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQQnc2ZUtGS0ZYU0NWaGFfVEpoc2ZJRTRiTmd6bWw1OFFZbnNvcUdUaTRaNkFLSUx3QjdHTUg0VGlrbWh1Mk5QUGNHNUptUG1YdHc4LWxkaHQyd3FGUWhXMHJFM3NlRjVaTGlNWGxDY05PLVJFamFTdElDcEhVWURlMS1DLTZ1WkFTNV9QajV2MFpEeXFsd3c4Y3V3NDF5V0lWTUdfYW9WOTdGNlluNWp3NjVsT0hPRlJiSDVtMTdjbWczRm5ENzFEWWc0cDNKVXF1QXFjR2FaeVFCc3g1SzJCOGRoR2hLX0RQOV9LLTRkZDV6THB1ajJ2eFN3?oc=5",
      "date": "Fri, 06 Nov 2026 19:03:35 GMT"
+    },
+    {
+     "title": "Certain Common Shares of PTC Industries Limited are subject to a Lock-Up Agreement Ending on 9-NOV-2026. - www.marketscreener.com",
+     "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQY3FrU3BsZklMR1haaXJxV2pkd0N3WUVLOWdxZUY3TXZhX2o5aEJ2T1UtS0pneDBQdWhoV2dVWEhFa3F5OURWVm5NRmUwWm5YemdwWTVrYldUZ08zVmZFX0xQSWZVakxMMFJpMmpId2VJMWhjSDlKbXU1ajJIM0VqUEMtLW5Fc3Zyd29ZclUxLXR2VXppakc1dnFFZTlDcFpUMkk2eU1CcEZsbEdjemYwaFE4RGlmdUlvNHN5NEg3VlVvMFN6elphcGJKMVc4ajd0ZjktdWlSNGpVaWN2eVdfdkVZazZLdUpk?oc=5",
+     "date": "Mon, 09 Nov 2026 00:24:12 GMT"
     },
     {
      "title": "Q2 Results, Nov 14: Ashok Leyland, Patanjali Foods, Brainbees Solutions, Hero Motors, PTC Industries, Kaynes Tech, others to post earnings - Upstox",
@@ -1798,168 +1689,13 @@
    "new": false
   },
   {
-   "symbol": "BBOX",
-   "name": "Black Box Ltd.",
-   "industry": "Information Technology",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Pullback",
-   "score": 66.0,
-   "stars": "\u2605\u2605\u2605\u2606\u2606",
-   "label": "ACCUMULATE",
-   "entry": 900.7,
-   "stop": 810.63,
-   "dip_buy": 900.7,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 842.45,
-   "target1": 945.74,
-   "target2": 990.77,
-   "risk_pct": 10.0,
-   "rr_t2": 1.0,
-   "hold": "up to 60 days",
-   "qty": 2,
-   "invest": 1801,
-   "max_loss": 180,
-   "close": 900.7,
-   "chg": 1.91,
-   "rsi": 60.6,
-   "adx": 22.8,
-   "vol_x": 6.11,
-   "from_high": -18.2,
-   "rs_rank": 84,
-   "hist_win5": 35.3,
-   "parts": {
-    "Technical": 39,
-    "Rel. Strength": 8.4,
-    "Fundamentals": 8.0,
-    "News": 5.0,
-    "Backtest": 0.0,
-    "AI model": 10.0
-   },
-   "ml_prob": 76.3,
-   "patterns": [
-    "Inside-bar breakout"
-   ],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "Volume 6.1x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Top 16% relative strength in Nifty 500",
-    "Sector is among market leaders"
-   ],
-   "mode85": false,
-   "m85_target": 945.74,
-   "m85_stop": 765.6,
-   "m85_qty": 11,
-   "high_conviction": false,
-   "fund": {
-    "pe": 69.1,
-    "roe": null,
-    "de": 89.6,
-    "mcap_cr": 15996.4,
-    "sales_yoy": 23.9,
-    "profit_yoy": 17.9,
-    "profit_qoq": -13.7,
-    "eps_growth": 17.9,
-    "results_in_days": null,
-    "sector": "Technology"
-   },
-   "news": [
-    {
-     "title": "Black Box Q2 Results: Net Profit Jumps 30.6% - HDFC Sky",
-     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOLXkwY3FsaDJvc1czOWxBSkZaZ2YtVlh4cTNwZ09TUXd3bXFUY2dIbGxIeDVVZk93Tjc5WV9WXzNjaEdkckRzSjVUeXNmQnIyTGRBWWhvVlpSQXN0LXZIcFZlNkVsbEM3S2lOcXIyN0JPekRrOWhjdl9DTVRBZ0xrMWw2YXkwalBvMVQ4YUU1b2dsM3k1blN1N3dYTk41WXRPNDZmY0taa2ozaDlMS01QTQ?oc=5",
-     "date": "Fri, 13 Nov 2026 08:38:27 GMT"
-    },
-    {
-     "title": "Black Box sees data centre revenue share rising to 30%, explores acquisitions amid strong AI demand - Moneycontrol.com",
-     "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQQmtyVkpNSnZmNFNvVFcyc1RnaWlqY01NWVRZSnRyVjJRemVleVFmSlpQYlY4dEMwTUhqVWNlanJnNFRlYVd2ai1NSmpGYWMyYVpFeWt0VGpmSVdYOVhFLXNfRkc2NGc5bkVqa2FWNUdsdlhkejk4MnV4REdUT3FiM3UyczNIVWJhR1QxSXBPRm5JLXRRLTFXRTR0eUZMWG1nQm9aZzhFdmNVaS1ES3FWX3B5aHFVRVFvVGRTZFFmR2d0RGVQTWR0WUd5d19qQUZwTXZsMHBmdU9kamZla2lFT1B6VlVWdVhlYUtIUS1nNkRING9j0gH6AUFVX3lxTE84NlZMOTlVWnpWUGFDUDF0VHNxeGVnUE5oN2NYUklRNzdWX0w0OHRSZlpHekRHS2pxb3M4OGp6MVlMRGJabnpnWWRqd3I0ODhkS2N6M2UzaEhLa09xSW11TXRWZTVXUEtYQ1JEY0ZwMDZaV2lOekowT3ZwTUJER1RqZ2xGUHZhOWw1a0dDTU5VN0JjMFEzbS04WklnMjB0OU40cHJESWhpYXgtRWdjUXNlNTI1SGJmclpFdlpKNjZJWkl4UHVtc3dpd0ZTbHBBbW93QVZMRjE0N0xEcERKbVl5YXBQUGRqZF8yMkRPaHVPV3o2c3VLM1lENWc?oc=5",
-     "date": "Fri, 13 Nov 2026 08:08:19 GMT"
-    },
-    {
-     "title": "Black Box Q2 results: Profit rises 30% to Rs 73 crore, revenue jumps 22%; shares gain 2% - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOUzloNE1lUnV2WWpBZ3pjdUJLTzhUa3dhMThGRlYzS1lOWDN0TjNnd0pxeHIxVi1leEhfQU1rRC1CTDAzX1E4U25tWXJ5b1gzYUJ1TDhHZi1HWDYyRlNHLWJpRzZqSlB4Slg1V3FtSTJaTkJfczRJbEl3R3FQNlRJY3JRNkFwZlpQc3lWWDI0dVpoVDFqQi1QekI5bS1Jck02TWlpbnpoeU1JdHRidThfNkhBNE9wN3NLVTU0VXZZaHRLa0ljME9MY0xDTzJVcDExMzNMdXA1Nnk3QkQwMnc?oc=5",
-     "date": "Fri, 13 Nov 2026 07:15:26 GMT"
-    }
-   ],
-   "sentiment": 1.0,
-   "warnings": [
-    "Weekly trend not confirmed"
-   ],
-   "spark": [
-    776.35,
-    766.71,
-    750.53,
-    774.6,
-    758.82,
-    745.89,
-    753.78,
-    738.0,
-    745.9,
-    747.65,
-    719.95,
-    725.2,
-    720.9,
-    712.25,
-    774.25,
-    770.9,
-    763.1,
-    744.85,
-    800.8,
-    745.8,
-    763.25,
-    766.4,
-    801.15,
-    831.35,
-    810.05,
-    809.85,
-    795.4,
-    799.75,
-    783.15,
-    812.8,
-    804.8,
-    795.85,
-    812.5,
-    839.95,
-    884.85,
-    856.55,
-    892.1,
-    924.6,
-    921.85,
-    935.8,
-    880.2,
-    907.25,
-    894.45,
-    896.8,
-    885.0,
-    805.1,
-    796.0,
-    809.15,
-    811.65,
-    821.15,
-    796.75,
-    789.3,
-    797.75,
-    807.7,
-    856.85,
-    810.95,
-    814.75,
-    868.2,
-    883.8,
-    900.7
-   ],
-   "size_tier": "other",
-   "in_buy_list": false,
-   "new": true
-  },
-  {
    "symbol": "DATAPATTNS",
    "name": "Data Patterns (India) Ltd.",
    "industry": "Capital Goods",
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Pullback",
-   "score": 56.6,
+   "score": 56.5,
    "stars": "\u2605\u2605\u2606\u2606\u2606",
    "label": "WATCH",
    "entry": 4268.0,
@@ -1989,9 +1725,9 @@
     "Fundamentals": 2.0,
     "News": 2.2,
     "Backtest": 4.6,
-    "AI model": 10.0
+    "AI model": 9.8
    },
-   "ml_prob": 73.6,
+   "ml_prob": 68.7,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -2003,6 +1739,11 @@
    "m85_stop": 3627.8,
    "m85_qty": 2,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half",
+    "EMA 20>50>200 not stacked"
+   ],
    "fund": {
     "pe": 99.4,
     "roe": null,
@@ -2141,7 +1882,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 74.1,
+   "ml_prob": 74.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -2157,6 +1898,9 @@
    "m85_stop": 426.66,
    "m85_qty": 19,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 58.0,
     "roe": 20.6,
@@ -2255,6 +1999,161 @@
    "new": false
   },
   {
+   "symbol": "NYKAA",
+   "name": "FSN E-Commerce Ventures Ltd.",
+   "industry": "Consumer Services",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 86.3,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "WATCHLIST",
+   "entry": 365.2,
+   "stop": 342.05,
+   "dip_buy": 363.4,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 349.23,
+   "target1": 383.46,
+   "target2": 401.72,
+   "risk_pct": 6.3,
+   "rr_t2": 1.58,
+   "hold": "up to 60 days",
+   "qty": 21,
+   "invest": 7669,
+   "max_loss": 486,
+   "close": 365.2,
+   "chg": 1.36,
+   "rsi": 64.9,
+   "adx": 23.7,
+   "vol_x": 0.85,
+   "from_high": -0.4,
+   "rs_rank": 91,
+   "hist_win5": 50.0,
+   "parts": {
+    "Technical": 55,
+    "Rel. Strength": 9.1,
+    "Fundamentals": 13.0,
+    "News": 4.0,
+    "Backtest": 1.7,
+    "AI model": 10.0
+   },
+   "ml_prob": 72.4,
+   "patterns": [
+    "Inside-bar breakout"
+   ],
+   "weekly_up": true,
+   "intra": null,
+   "why": [
+    "Broke 55-day high",
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up",
+    "Top 9% relative strength in Nifty 500",
+    "Tight base (volatility contraction)"
+   ],
+   "mode85": false,
+   "m85_target": 383.46,
+   "m85_stop": 310.42,
+   "m85_qty": 27,
+   "high_conviction": false,
+   "rule_fails": [],
+   "fund": {
+    "pe": 326.1,
+    "roe": 20.8,
+    "de": 89.5,
+    "mcap_cr": 104642.5,
+    "sales_yoy": 28.1,
+    "profit_yoy": 192.8,
+    "profit_qoq": 25.9,
+    "eps_growth": 192.8,
+    "results_in_days": 83,
+    "sector": "Consumer Cyclical"
+   },
+   "news": [
+    {
+     "title": "Honasa, Nykaa rally up to 4% in subdued market; record 52-week highs - Business Standard",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSXlfNTFMNWFnRWNmSllycUQ4c25vcTFzUFlZTlZuaExMeUpDalk2MU9ia3JkdHB3czMtWkVlQVpreUQwV01mcEo0Vjk0N2RiQXFObmRFZUtfaFVVTzExNk0yS0h0YWpFWjJxWmNpdzdLYl81QS05cVlxVEMtMG45V0ppODJxaGFkZTI1M3JNa3JtQWJxa18xemRzeWpDYjZTWHhZNzc1UDRlVXlDemVhMWl1M3JRRVlUZ0pzYmtjZU44bThUbTNjMmpsa2c?oc=5",
+     "date": "Fri, 13 Nov 2026 06:55:27 GMT"
+    },
+    {
+     "title": "Nykaa gets its beauty formula together. Can fashion follow? - The Morning Context",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMWZ6UUlVVWIzVk9kZm9fa1gwY3lTMHNDaWFvdi1oZjY1UVBQME9IQXV2TExIdmEwRm1GaHNaWnFPYnUwVklHRTZ5aGwxQ2tpTS1SWjlFcl9ya1lGRF9FSGZlRGdIRGktV0lTWmZhNnFxa1pHVUpDaWEzTExTamh6bWFrU0tCcEUwdTNJYjhqeVFTVGdTVjR6bEZDbWg?oc=5",
+     "date": "Mon, 09 Nov 2026 20:23:57 GMT"
+    },
+    {
+     "title": "Nykaa Fashion reaches third EBITDA-positive quarter as NSV rises 47% - Multibagg AI",
+     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRklhd1lRS0o1MFhmeHR5T0szeGNfOVN3YkwtbW04d0F4V0czM1hUa3JZYllGMHMzZkVmQ0J4dXZFR0RTOUF6S19tN1hLelVUY3R3MC1vZFFYQTBFc09vcVBJQnpXdFFEWU55SHVtd0hJSHZBWG5GU0FiSmZ4TjdzNVd0c1F3THY3QkNSMXY3b3I3UDVOVUVoUHlkdWIzTmp0TXJmdldkQTRtaHVYSnl5dDBjWHNTeXlsNHBF?oc=5",
+     "date": "Fri, 06 Nov 2026 17:03:40 GMT"
+    }
+   ],
+   "sentiment": 0.6,
+   "warnings": [],
+   "spark": [
+    320.6,
+    327.35,
+    330.35,
+    334.0,
+    330.3,
+    334.0,
+    340.0,
+    338.0,
+    335.65,
+    349.55,
+    338.5,
+    337.4,
+    334.2,
+    332.5,
+    332.7,
+    341.0,
+    343.0,
+    341.95,
+    344.5,
+    336.2,
+    325.6,
+    323.75,
+    332.15,
+    336.0,
+    333.55,
+    340.85,
+    335.3,
+    333.7,
+    325.5,
+    327.35,
+    320.0,
+    324.95,
+    339.55,
+    338.2,
+    341.25,
+    332.3,
+    343.0,
+    340.0,
+    338.0,
+    336.5,
+    338.4,
+    345.0,
+    336.65,
+    329.7,
+    321.9,
+    319.3,
+    329.85,
+    339.4,
+    342.5,
+    352.9,
+    349.35,
+    353.65,
+    353.9,
+    355.5,
+    350.3,
+    353.0,
+    359.7,
+    356.8,
+    360.3,
+    365.2
+   ],
+   "size_tier": "other",
+   "in_buy_list": false,
+   "new": false
+  },
+  {
    "symbol": "MINDACORP",
    "name": "Minda Corporation Ltd.",
    "industry": "Automobile and Auto Components",
@@ -2293,7 +2192,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.6,
+   "ml_prob": 78.5,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -2307,6 +2206,10 @@
    "m85_stop": 625.73,
    "m85_qty": 13,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 31.5,
     "roe": 20.0,
@@ -2443,7 +2346,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 74.3,
+   "ml_prob": 74.9,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -2459,6 +2362,9 @@
    "m85_stop": 2007.44,
    "m85_qty": 4,
    "high_conviction": false,
+   "rule_fails": [
+    "RSI 80+ overbought"
+   ],
    "fund": {
     "pe": 41.0,
     "roe": 21.4,
@@ -2478,14 +2384,14 @@
      "date": "Thu, 12 Nov 2026 12:17:47 GMT"
     },
     {
-     "title": "ICICI Bank, Divi's among 14 NSE 500 stocks hit new highs in Muhurat session - Business Standard",
-     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPMGJYQVRJYUh2d1FwSDhaVjllSTBncWs4WWZHWW9vbG1XeFJ4QUU3QmtocDFMQnB1dFIzbHlVdjZpQzllNFJBTG1HaU9jWXhjMXRTbWUzUmdYVTRzeG5oQzVsSWZTa1BpS3JaektYdG9iVHd4d3NXVWU3TUhvVXBYNXR5cy15TDlUcEp2cmVObDI4RnpRQ0JNb05DckRVSVRXYVpUVVdMSE1ZN0lNc3BUR3BtcUFTSlZibC1RRTFmTVRCZnVRcGhibk1nb1gwRXBCUk85UXRXdzXSAd4BQVVfeXFMTzR3dXJlY0FGSEcwa2FGazlOV0cwSzFaWjNVYTQtWXBqWnB5UVctSzFEQm9uMXVZWUxyTzRZd0dGLUVBaFFVaFB0eUlUdWdVdWxyMnU4RHlVaWFqa1VGTGZ6TjRPVEFHeDZudmRydzlFYm5GWkRaNEZkc2pBS1FsWTcydEoxVWEweWRZSWpnOWxwSDZSVWVnR19mYmFSR2I1dk56MnZWZHplbXdCdVpCNVVsQVgxYy11aU1zTXRON19QMi12OUdrSTYzN2NHYklUS0VISWc3TElGRC1FcWpn?oc=5",
-     "date": "Sun, 08 Nov 2026 09:40:31 GMT"
-    },
-    {
      "title": "Diwali Stock Picks 2026: Tata Steel, BEL, HDFC Bank - 25 brokerages reveal 187 shares to buy in Samvat 2083 | Full List - TradingView",
      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQdWI2NHdhNE1KaERXWGRxd3pCdFZfc1IxMDlzLTBzeW9vR3pwSG5Dai0xc0Ezb0VZWVVVVnl5U19UWEFGMVNpSzlOcXRvMEN1X1NOTDk5VUgyZkVXSzdjeFI0WS0yVDQyaU5wUFY3czFPNXFxTEM2ZzdBRkJsa2FxX0lWZzhCdG5pMnpPcXdVMTJrUHF3a2NIV1VDcmhOaXZhSnJIakhyeXRSOEdPVVlTR2xzdVdNdE5oazBEQy02eEJnUjVLeUJpSllRMXJYLWhzWkQ4RkdzR3drdEx5Z2Iwc1hlOEpnQlBvU1FhNWl6Zno0SmJIUUJPQThER2dGdw?oc=5",
      "date": "Sun, 08 Nov 2026 17:34:02 GMT"
+    },
+    {
+     "title": "ICICI Bank, Divi's among 14 NSE 500 stocks hit new highs in Muhurat session - Business Standard",
+     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPMGJYQVRJYUh2d1FwSDhaVjllSTBncWs4WWZHWW9vbG1XeFJ4QUU3QmtocDFMQnB1dFIzbHlVdjZpQzllNFJBTG1HaU9jWXhjMXRTbWUzUmdYVTRzeG5oQzVsSWZTa1BpS3JaektYdG9iVHd4d3NXVWU3TUhvVXBYNXR5cy15TDlUcEp2cmVObDI4RnpRQ0JNb05DckRVSVRXYVpUVVdMSE1ZN0lNc3BUR3BtcUFTSlZibC1RRTFmTVRCZnVRcGhibk1nb1gwRXBCUk85UXRXdzXSAd4BQVVfeXFMTzR3dXJlY0FGSEcwa2FGazlOV0cwSzFaWjNVYTQtWXBqWnB5UVctSzFEQm9uMXVZWUxyTzRZd0dGLUVBaFFVaFB0eUlUdWdVdWxyMnU4RHlVaWFqa1VGTGZ6TjRPVEFHeDZudmRydzlFYm5GWkRaNEZkc2pBS1FsWTcydEoxVWEweWRZSWpnOWxwSDZSVWVnR19mYmFSR2I1dk56MnZWZHplbXdCdVpCNVVsQVgxYy11aU1zTXRON19QMi12OUdrSTYzN2NHYklUS0VISWc3TElGRC1FcWpn?oc=5",
+     "date": "Sun, 08 Nov 2026 09:40:31 GMT"
     }
    ],
    "sentiment": 0.3,
@@ -2597,7 +2503,7 @@
     "Backtest": 3.3,
     "AI model": 10.0
    },
-   "ml_prob": 74.5,
+   "ml_prob": 74.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -2612,6 +2518,7 @@
    "m85_stop": 2833.99,
    "m85_qty": 2,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 44.5,
     "roe": null,
@@ -2710,160 +2617,6 @@
    "new": false
   },
   {
-   "symbol": "NYKAA",
-   "name": "FSN E-Commerce Ventures Ltd.",
-   "industry": "Consumer Services",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 85.4,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "label": "WATCHLIST",
-   "entry": 365.2,
-   "stop": 342.05,
-   "dip_buy": 363.4,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 349.23,
-   "target1": 383.46,
-   "target2": 401.72,
-   "risk_pct": 6.3,
-   "rr_t2": 1.58,
-   "hold": "up to 60 days",
-   "qty": 21,
-   "invest": 7669,
-   "max_loss": 486,
-   "close": 365.2,
-   "chg": 1.36,
-   "rsi": 64.9,
-   "adx": 23.7,
-   "vol_x": 0.85,
-   "from_high": -0.4,
-   "rs_rank": 91,
-   "hist_win5": 50.0,
-   "parts": {
-    "Technical": 55,
-    "Rel. Strength": 9.1,
-    "Fundamentals": 13.0,
-    "News": 4.0,
-    "Backtest": 1.7,
-    "AI model": 9.0
-   },
-   "ml_prob": 66.3,
-   "patterns": [
-    "Inside-bar breakout"
-   ],
-   "weekly_up": true,
-   "intra": null,
-   "why": [
-    "Broke 55-day high",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 9% relative strength in Nifty 500",
-    "Tight base (volatility contraction)"
-   ],
-   "mode85": false,
-   "m85_target": 383.46,
-   "m85_stop": 310.42,
-   "m85_qty": 27,
-   "high_conviction": false,
-   "fund": {
-    "pe": 326.1,
-    "roe": 20.8,
-    "de": 89.5,
-    "mcap_cr": 104642.5,
-    "sales_yoy": 28.1,
-    "profit_yoy": 192.8,
-    "profit_qoq": 25.9,
-    "eps_growth": 192.8,
-    "results_in_days": 83,
-    "sector": "Consumer Cyclical"
-   },
-   "news": [
-    {
-     "title": "Honasa, Nykaa rally up to 4% in subdued market; record 52-week highs - Business Standard",
-     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSXlfNTFMNWFnRWNmSllycUQ4c25vcTFzUFlZTlZuaExMeUpDalk2MU9ia3JkdHB3czMtWkVlQVpreUQwV01mcEo0Vjk0N2RiQXFObmRFZUtfaFVVTzExNk0yS0h0YWpFWjJxWmNpdzdLYl81QS05cVlxVEMtMG45V0ppODJxaGFkZTI1M3JNa3JtQWJxa18xemRzeWpDYjZTWHhZNzc1UDRlVXlDemVhMWl1M3JRRVlUZ0pzYmtjZU44bThUbTNjMmpsa2c?oc=5",
-     "date": "Fri, 13 Nov 2026 06:55:27 GMT"
-    },
-    {
-     "title": "Nykaa gets its beauty formula together. Can fashion follow? - The Morning Context",
-     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMWZ6UUlVVWIzVk9kZm9fa1gwY3lTMHNDaWFvdi1oZjY1UVBQME9IQXV2TExIdmEwRm1GaHNaWnFPYnUwVklHRTZ5aGwxQ2tpTS1SWjlFcl9ya1lGRF9FSGZlRGdIRGktV0lTWmZhNnFxa1pHVUpDaWEzTExTamh6bWFrU0tCcEUwdTNJYjhqeVFTVGdTVjR6bEZDbWg?oc=5",
-     "date": "Mon, 09 Nov 2026 20:23:57 GMT"
-    },
-    {
-     "title": "Nykaa Fashion reaches third EBITDA-positive quarter as NSV rises 47% - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRklhd1lRS0o1MFhmeHR5T0szeGNfOVN3YkwtbW04d0F4V0czM1hUa3JZYllGMHMzZkVmQ0J4dXZFR0RTOUF6S19tN1hLelVUY3R3MC1vZFFYQTBFc09vcVBJQnpXdFFEWU55SHVtd0hJSHZBWG5GU0FiSmZ4TjdzNVd0c1F3THY3QkNSMXY3b3I3UDVOVUVoUHlkdWIzTmp0TXJmdldkQTRtaHVYSnl5dDBjWHNTeXlsNHBF?oc=5",
-     "date": "Fri, 06 Nov 2026 17:03:40 GMT"
-    }
-   ],
-   "sentiment": 0.6,
-   "warnings": [],
-   "spark": [
-    320.6,
-    327.35,
-    330.35,
-    334.0,
-    330.3,
-    334.0,
-    340.0,
-    338.0,
-    335.65,
-    349.55,
-    338.5,
-    337.4,
-    334.2,
-    332.5,
-    332.7,
-    341.0,
-    343.0,
-    341.95,
-    344.5,
-    336.2,
-    325.6,
-    323.75,
-    332.15,
-    336.0,
-    333.55,
-    340.85,
-    335.3,
-    333.7,
-    325.5,
-    327.35,
-    320.0,
-    324.95,
-    339.55,
-    338.2,
-    341.25,
-    332.3,
-    343.0,
-    340.0,
-    338.0,
-    336.5,
-    338.4,
-    345.0,
-    336.65,
-    329.7,
-    321.9,
-    319.3,
-    329.85,
-    339.4,
-    342.5,
-    352.9,
-    349.35,
-    353.65,
-    353.9,
-    355.5,
-    350.3,
-    353.0,
-    359.7,
-    356.8,
-    360.3,
-    365.2
-   ],
-   "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
    "symbol": "KALYANKJIL",
    "name": "Kalyan Jewellers India Ltd.",
    "industry": "Consumer Durables",
@@ -2902,7 +2655,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 76.5,
+   "ml_prob": 74.6,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -2917,6 +2670,9 @@
    "m85_stop": 592.45,
    "m85_qty": 14,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 45.0,
     "roe": 26.7,
@@ -3056,7 +2812,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 72.0,
+   "ml_prob": 74.0,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3070,6 +2826,9 @@
    "m85_stop": 324.32,
    "m85_qty": 26,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 12.5,
     "roe": 21.0,
@@ -3206,7 +2965,7 @@
     "Backtest": 3.9,
     "AI model": 10.0
    },
-   "ml_prob": 69.7,
+   "ml_prob": 72.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3222,6 +2981,7 @@
    "m85_stop": 2060.4,
    "m85_qty": 4,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 97.8,
     "roe": 24.0,
@@ -3358,7 +3118,7 @@
     "Backtest": 2.7,
     "AI model": 10.0
    },
-   "ml_prob": 76.4,
+   "ml_prob": 73.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3374,6 +3134,7 @@
    "m85_stop": 3433.24,
    "m85_qty": 2,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 75.6,
     "roe": 26.1,
@@ -3510,7 +3271,7 @@
     "Backtest": 3.3,
     "AI model": 10.0
    },
-   "ml_prob": 75.2,
+   "ml_prob": 72.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3526,6 +3287,7 @@
    "m85_stop": 275.44,
    "m85_qty": 30,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 10.5,
     "roe": 20.4,
@@ -3624,14 +3386,167 @@
    "new": false
   },
   {
+   "symbol": "MANKIND",
+   "name": "Mankind Pharma Ltd.",
+   "industry": "Healthcare",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 81.2,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "WATCHLIST",
+   "entry": 2640.0,
+   "stop": 2459.38,
+   "dip_buy": 2640.0,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 2509.56,
+   "target1": 2772.0,
+   "target2": 2904.0,
+   "risk_pct": 6.8,
+   "rr_t2": 1.46,
+   "hold": "up to 60 days",
+   "qty": 2,
+   "invest": 5280,
+   "max_loss": 361,
+   "close": 2640.0,
+   "chg": 0.05,
+   "rsi": 65.3,
+   "adx": 32.1,
+   "vol_x": 0.59,
+   "from_high": -2.4,
+   "rs_rank": 80,
+   "hist_win5": 66.4,
+   "parts": {
+    "Technical": 47,
+    "Rel. Strength": 8.0,
+    "Fundamentals": 14.0,
+    "News": 3.0,
+    "Backtest": 4.4,
+    "AI model": 9.6
+   },
+   "ml_prob": 67.9,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": null,
+   "why": [
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up",
+    "Top 20% relative strength in Nifty 500",
+    "Tight base (volatility contraction)",
+    "Sector is among market leaders"
+   ],
+   "mode85": false,
+   "m85_target": 2772.0,
+   "m85_stop": 2244.0,
+   "m85_qty": 3,
+   "high_conviction": false,
+   "rule_fails": [],
+   "fund": {
+    "pe": 48.7,
+    "roe": 13.6,
+    "de": 30.4,
+    "mcap_cr": 109043.9,
+    "sales_yoy": 21.5,
+    "profit_yoy": 62.3,
+    "profit_qoq": 25.2,
+    "eps_growth": 39.1,
+    "results_in_days": 74,
+    "sector": "Healthcare"
+   },
+   "news": [
+    {
+     "title": "Mankind Pharma Limited (MANKIND.NS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5yMWo1eGh2ejItV09GNWdtOUM4Ml9iT2VIM0V3cFB4M1Z1dnVEelM4MENMYXZ1RWl6cm1zelRmcm1RMmViUXctczVSUnBfclE3Tnp4Nk5ONFdtQQ?oc=5",
+     "date": "Thu, 12 Nov 2026 11:38:33 GMT"
+    },
+    {
+     "title": "Trade Spotlight: How should you trade Canara Bank, Mankind Pharma, Amara Raja Energy, Bharat Dynamics,... - Moneycontrol.com",
+     "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOQy1UM1JjWEdQR1RuWHdOYXpKUEROcDQ1UFlndGFmQnVTLUU4a1Jzc0p1ZjR5QmdDNUhSOEkyZnZONDQwZm9DaS1aZXVpZG9QS041R05xUWxfazhkVXNNUTlIcDBTOURfNmU2UjdlR0xuU3V2RGZYSTgyOFRiSGhPT1lINGpqTFh1MHl6MGwxUTc1SzdBLS1HOEt4LTd4bVpobjg3ZVNmd3A0aHBoQV9pdlBYeEsxRWhMRzNoMWZ4WWN4SXVmUjZGQTlqM1NzQnBYVWhVQl84cUlsMzRYZ0laMjY1cmcxemZSd1doSV9kT2NEcWthUEtOMnlPMEVMdHpJZTQxNEUwSHdfeC1DaWJYdG1KenRrZEFIOVFwdmoxU1BTXzloTDBF0gGnAkFVX3lxTE5DLVQzUmNYR1BHVG5Yd05hekpQRE5wNDVQWWd0YWZCdVMtRThrUnNzSnVmNHlCZ0M1SFI4STJmdk40NDBmb0NpLVpldWlkb1BLTjVHTnFRbF9rOGRVc01ROUhwMFM5RF82ZTZSN2VHTG5TdXZEZlhJODI4VGJIaE9PWUg0ampMWHUweXowbDFRNzVLN0EtLUc4S3gtN3htWmhuODdlU2Z3cDRocGhBX2l2UFh4SzFFaExHM2gxZnhZY3hJdWZSNkZBOWozU3NCcFhVaFVCXzhxSWwzNFhnSVoyNjVyZzF6ZlJ3V2hJX2RPY0Rxa2FQS04yeU8wRUx0ekllNDE0RTBId194LUNpYlh0bUp6dGtkQUg5UXB2ajFTUFNfOWhMMEU?oc=5",
+     "date": "Wed, 11 Nov 2026 02:50:47 GMT"
+    },
+    {
+     "title": "Mankind Pharma RTA to shift corporate office in December 2026 - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQY2ItRGFPbThXT1kwNlRMb1BOXzBoMldoVTNvOGVFQUVabEtBRUFudzdLdFBfNHU5LTFjejdwTmxFdGFsY3M1dFpJZGZDRFhZb3ZZU2p3eUVzOXF6bGlLalZFQ2dxaGFFY0N4VW5qWlhkVWdJV3VMdWNnOXZPb25hNkxBSjlKS0JkZHpYN2RnVG5JaWluc2dkNXM1R21BSkFFMzlCTzlUZnhwZ1pvQUFKWVNB?oc=5",
+     "date": "Fri, 13 Nov 2026 09:49:25 GMT"
+    }
+   ],
+   "sentiment": 0.2,
+   "warnings": [],
+   "spark": [
+    2380.0,
+    2394.0,
+    2385.0,
+    2384.0,
+    2374.5,
+    2365.0,
+    2393.7,
+    2417.5,
+    2382.9,
+    2419.2,
+    2356.5,
+    2391.5,
+    2368.8,
+    2327.9,
+    2318.0,
+    2309.0,
+    2265.0,
+    2238.4,
+    2280.0,
+    2280.5,
+    2246.0,
+    2300.0,
+    2300.7,
+    2437.8,
+    2480.0,
+    2465.0,
+    2500.0,
+    2474.9,
+    2435.6,
+    2545.0,
+    2503.8,
+    2535.0,
+    2479.0,
+    2500.0,
+    2500.0,
+    2380.0,
+    2368.5,
+    2400.0,
+    2372.0,
+    2335.0,
+    2347.6,
+    2275.5,
+    2253.2,
+    2285.5,
+    2275.6,
+    2212.6,
+    2312.0,
+    2502.5,
+    2490.0,
+    2469.3,
+    2492.8,
+    2481.2,
+    2475.0,
+    2537.9,
+    2518.0,
+    2540.0,
+    2668.3,
+    2660.0,
+    2638.6,
+    2640.0
+   ],
+   "size_tier": "other",
+   "in_buy_list": false,
+   "new": false
+  },
+  {
    "symbol": "APLAPOLLO",
    "name": "APL Apollo Tubes Ltd.",
    "industry": "Capital Goods",
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 79.8,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
+   "score": 80.5,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "WATCHLIST",
    "entry": 2251.6,
    "stop": 2128.6,
@@ -3660,9 +3575,9 @@
     "Fundamentals": 15.0,
     "News": 3.8,
     "Backtest": 3.3,
-    "AI model": 7.9
+    "AI model": 8.8
    },
-   "ml_prob": 63.0,
+   "ml_prob": 65.5,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3677,6 +3592,9 @@
    "m85_stop": 1913.86,
    "m85_qty": 4,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 47.7,
     "roe": 25.3,
@@ -3813,7 +3731,7 @@
     "Backtest": 2.9,
     "AI model": 10.0
    },
-   "ml_prob": 77.1,
+   "ml_prob": 75.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3829,6 +3747,7 @@
    "m85_stop": 549.7,
    "m85_qty": 15,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 16.5,
     "roe": 11.9,
@@ -3965,7 +3884,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 71.1,
+   "ml_prob": 73.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -3979,6 +3898,9 @@
    "m85_stop": 77.94,
    "m85_qty": 109,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 8.8,
     "roe": 23.3,
@@ -4077,158 +3999,6 @@
    "new": false
   },
   {
-   "symbol": "MANKIND",
-   "name": "Mankind Pharma Ltd.",
-   "industry": "Healthcare",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 78.2,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "WATCHLIST",
-   "entry": 2640.0,
-   "stop": 2459.38,
-   "dip_buy": 2640.0,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 2509.56,
-   "target1": 2772.0,
-   "target2": 2904.0,
-   "risk_pct": 6.8,
-   "rr_t2": 1.46,
-   "hold": "up to 60 days",
-   "qty": 2,
-   "invest": 5280,
-   "max_loss": 361,
-   "close": 2640.0,
-   "chg": 0.05,
-   "rsi": 65.3,
-   "adx": 32.1,
-   "vol_x": 0.59,
-   "from_high": -2.4,
-   "rs_rank": 80,
-   "hist_win5": 66.4,
-   "parts": {
-    "Technical": 47,
-    "Rel. Strength": 8.0,
-    "Fundamentals": 14.0,
-    "News": 3.0,
-    "Backtest": 4.4,
-    "AI model": 6.3
-   },
-   "ml_prob": 58.1,
-   "patterns": [],
-   "weekly_up": true,
-   "intra": null,
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 20% relative strength in Nifty 500",
-    "Tight base (volatility contraction)",
-    "Sector is among market leaders"
-   ],
-   "mode85": false,
-   "m85_target": 2772.0,
-   "m85_stop": 2244.0,
-   "m85_qty": 3,
-   "high_conviction": false,
-   "fund": {
-    "pe": 48.7,
-    "roe": 13.6,
-    "de": 30.4,
-    "mcap_cr": 109030.9,
-    "sales_yoy": 21.5,
-    "profit_yoy": 62.3,
-    "profit_qoq": 25.2,
-    "eps_growth": 39.1,
-    "results_in_days": 74,
-    "sector": "Healthcare"
-   },
-   "news": [
-    {
-     "title": "Mankind Pharma Limited (MANKIND.NS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5yMWo1eGh2ejItV09GNWdtOUM4Ml9iT2VIM0V3cFB4M1Z1dnVEelM4MENMYXZ1RWl6cm1zelRmcm1RMmViUXctczVSUnBfclE3Tnp4Nk5ONFdtQQ?oc=5",
-     "date": "Thu, 12 Nov 2026 11:38:33 GMT"
-    },
-    {
-     "title": "Trade Spotlight: How should you trade Canara Bank, Mankind Pharma, Amara Raja Energy, Bharat Dynamics,... - Moneycontrol.com",
-     "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOQy1UM1JjWEdQR1RuWHdOYXpKUEROcDQ1UFlndGFmQnVTLUU4a1Jzc0p1ZjR5QmdDNUhSOEkyZnZONDQwZm9DaS1aZXVpZG9QS041R05xUWxfazhkVXNNUTlIcDBTOURfNmU2UjdlR0xuU3V2RGZYSTgyOFRiSGhPT1lINGpqTFh1MHl6MGwxUTc1SzdBLS1HOEt4LTd4bVpobjg3ZVNmd3A0aHBoQV9pdlBYeEsxRWhMRzNoMWZ4WWN4SXVmUjZGQTlqM1NzQnBYVWhVQl84cUlsMzRYZ0laMjY1cmcxemZSd1doSV9kT2NEcWthUEtOMnlPMEVMdHpJZTQxNEUwSHdfeC1DaWJYdG1KenRrZEFIOVFwdmoxU1BTXzloTDBF0gGnAkFVX3lxTE5DLVQzUmNYR1BHVG5Yd05hekpQRE5wNDVQWWd0YWZCdVMtRThrUnNzSnVmNHlCZ0M1SFI4STJmdk40NDBmb0NpLVpldWlkb1BLTjVHTnFRbF9rOGRVc01ROUhwMFM5RF82ZTZSN2VHTG5TdXZEZlhJODI4VGJIaE9PWUg0ampMWHUweXowbDFRNzVLN0EtLUc4S3gtN3htWmhuODdlU2Z3cDRocGhBX2l2UFh4SzFFaExHM2gxZnhZY3hJdWZSNkZBOWozU3NCcFhVaFVCXzhxSWwzNFhnSVoyNjVyZzF6ZlJ3V2hJX2RPY0Rxa2FQS04yeU8wRUx0ekllNDE0RTBId194LUNpYlh0bUp6dGtkQUg5UXB2ajFTUFNfOWhMMEU?oc=5",
-     "date": "Wed, 11 Nov 2026 02:50:47 GMT"
-    },
-    {
-     "title": "Mankind Pharma RTA to shift corporate office in December 2026 - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQY2ItRGFPbThXT1kwNlRMb1BOXzBoMldoVTNvOGVFQUVabEtBRUFudzdLdFBfNHU5LTFjejdwTmxFdGFsY3M1dFpJZGZDRFhZb3ZZU2p3eUVzOXF6bGlLalZFQ2dxaGFFY0N4VW5qWlhkVWdJV3VMdWNnOXZPb25hNkxBSjlKS0JkZHpYN2RnVG5JaWluc2dkNXM1R21BSkFFMzlCTzlUZnhwZ1pvQUFKWVNB?oc=5",
-     "date": "Fri, 13 Nov 2026 09:49:25 GMT"
-    }
-   ],
-   "sentiment": 0.2,
-   "warnings": [],
-   "spark": [
-    2380.0,
-    2394.0,
-    2385.0,
-    2384.0,
-    2374.5,
-    2365.0,
-    2393.7,
-    2417.5,
-    2382.9,
-    2419.2,
-    2356.5,
-    2391.5,
-    2368.8,
-    2327.9,
-    2318.0,
-    2309.0,
-    2265.0,
-    2238.4,
-    2280.0,
-    2280.5,
-    2246.0,
-    2300.0,
-    2300.7,
-    2437.8,
-    2480.0,
-    2465.0,
-    2500.0,
-    2474.9,
-    2435.6,
-    2545.0,
-    2503.8,
-    2535.0,
-    2479.0,
-    2500.0,
-    2500.0,
-    2380.0,
-    2368.5,
-    2400.0,
-    2372.0,
-    2335.0,
-    2347.6,
-    2275.5,
-    2253.2,
-    2285.5,
-    2275.6,
-    2212.6,
-    2312.0,
-    2502.5,
-    2490.0,
-    2469.3,
-    2492.8,
-    2481.2,
-    2475.0,
-    2537.9,
-    2518.0,
-    2540.0,
-    2668.3,
-    2660.0,
-    2638.6,
-    2640.0
-   ],
-   "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
    "symbol": "RADICO",
    "name": "Radico Khaitan Ltd",
    "industry": "Fast Moving Consumer Goods",
@@ -4267,7 +4037,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 71.2,
+   "ml_prob": 69.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4280,6 +4050,10 @@
    "m85_stop": 3914.25,
    "m85_qty": 2,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 77.5,
     "roe": 24.0,
@@ -4416,7 +4190,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 70.1,
+   "ml_prob": 72.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4430,6 +4204,9 @@
    "m85_stop": 644.05,
    "m85_qty": 13,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 92.9,
     "roe": 13.3,
@@ -4550,7 +4327,7 @@
     "Backtest": 4.0,
     "AI model": 10.0
    },
-   "ml_prob": 73.7,
+   "ml_prob": 71.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4565,6 +4342,10 @@
    "m85_stop": 121.39,
    "m85_qty": 70,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half",
+    "RSI 80+ overbought"
+   ],
    "fund": {
     "pe": 7.2,
     "roe": 15.1,
@@ -4717,6 +4498,10 @@
    "m85_stop": 306.81,
    "m85_qty": 27,
    "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 17.6,
     "roe": 13.3,
@@ -4821,7 +4606,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 74.1,
+   "score": 74.4,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 1180.0,
@@ -4849,11 +4634,11 @@
     "Technical": 49,
     "Rel. Strength": 8.3,
     "Fundamentals": 5.0,
-    "News": 4.2,
+    "News": 4.5,
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 73.8,
+   "ml_prob": 71.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4868,6 +4653,10 @@
    "m85_stop": 1003.0,
    "m85_qty": 8,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half",
+    "EMA 20>50>200 not stacked"
+   ],
    "fund": {
     "pe": 32.2,
     "roe": null,
@@ -4897,7 +4686,7 @@
      "date": "Thu, 12 Nov 2026 12:43:31 GMT"
     }
    ],
-   "sentiment": 0.7,
+   "sentiment": 0.8,
    "warnings": [],
    "spark": [
     1182.63,
@@ -5004,7 +4793,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 72.8,
+   "ml_prob": 71.0,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5019,6 +4808,7 @@
    "m85_stop": 143.5,
    "m85_qty": 59,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": null,
     "roe": -21.5,
@@ -5145,7 +4935,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 78.6,
+   "ml_prob": 76.0,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5159,6 +4949,9 @@
    "m85_stop": 912.13,
    "m85_qty": 9,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 79.1,
     "roe": 15.6,
@@ -5263,7 +5056,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 72.5,
+   "score": 72.3,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 919.0,
@@ -5291,11 +5084,11 @@
     "Technical": 47,
     "Rel. Strength": 9.4,
     "Fundamentals": 11.0,
-    "News": 3.0,
+    "News": 2.8,
     "Backtest": 1.7,
     "AI model": 7.7
    },
-   "ml_prob": 62.2,
+   "ml_prob": 62.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5310,6 +5103,9 @@
    "m85_stop": 781.15,
    "m85_qty": 10,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 76.6,
     "roe": 11.9,
@@ -5324,22 +5120,22 @@
    },
    "news": [
     {
-     "title": "Sona BLW Precision Forgings Limited (SONACOMS.NS) Seasonal returns chart - Yahoo Finance UK",
-     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9Fclo3emE5Q3Q2ZE5uQkk0TXAwYXBNY2EtR0IwblljWllCdlJmeE1icS1fOEgxR1JfeEgxd0lkMVhYeUdWd19jMlFDNlVyaktqV05LNFBIVWdkS21Ka2JYa0FwVzhCWmRsWkhV?oc=5",
-     "date": "Wed, 11 Nov 2026 12:45:15 GMT"
-    },
-    {
-     "title": "Taking Stock: Nifty above 25,250, Sensex gains 772 pts led by auto, FMCG, financials - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQODdhaVVfQU1CWHF1TEJGZUx5UUZmRjlkQ19ZaXJJbWJiZncwN2NZYXdCX0VvOExQckVsaExtbXFqSWlqLTNubjB3UVhHYnd5Q3lPblAzS05RZm9UYkVnUzFJVE9rMXpNMktaZTJFSUhzWllBMGduUS1aUk9pRXppUEs2cHFRRl96bnVvaUxHQUozblFIYVJpTEhqcGw0c3VzeU5RNF9HT3JTV3hMcDJjYUx3cWY1cXQ2WGtJZy02ZHFibzVKVTdwZWpnanBlY2xsczBQRE9PcFgxN0E?oc=5",
-     "date": "Wed, 11 Nov 2026 10:23:44 GMT"
-    },
-    {
      "title": "Sona BLW Precision Forgings Ltd Hits All-Time High of Rs 918.05 as Momentum Builds Across Timeframes - MarketsMojo",
      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNNlVHUl96dWN5NXdfQ0E3M0ZENUZHaEhkUEVmX1VDS2tDWk13UU1HWEtjRGRFdm1uUU8wNU41bWh2WldUNVljY25tVVRaMVYwUFk3a3VsQVZocThYSWRMakE2UkNQQzZ1U0VUbFB4YVpsN09Bd2djc1ZxYm92MGRKanFlWWpzNjBOSnNwRVBzTzNReE9rNjRoSXBINE9keVJFNFFqcXVKQk1QckFOSmc1N21fc1lzRUE1U0xURlJOZ3V4R21NanVCbDNZLWx5Ulc5dlhUNGN2bw?oc=5",
      "date": "Mon, 09 Nov 2026 08:15:24 GMT"
+    },
+    {
+     "title": "Endurance Technologies Share Price: 15.3% CAGR vs Uno Minda - Univest",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONXAzOFFocGkzblYxZHZLelRVZ2dTckFWaUpCaDYwLVl4N1UyNVJyTjFnU2tKN3I3MzFNNFBXdmhzNnUxRDVVaGF5cUhuelBPQ09va0szaUdoc2FUcjBZTnNZdFNPeXJSU2lfbVJzZXBJRGhFbzZRX2V3X00yRTdQTFFlSzkxRFNYaWdRQnRnd2dPcHN1andqODBDRXRxUE9YMDJ2TkU4WWJSWUhtMWxYc0Z0elhuTTNJcXlMX2NzTWhlTTA?oc=5",
+     "date": "Wed, 11 Nov 2026 05:20:00 GMT"
+    },
+    {
+     "title": "Adroit Industries (India) Ltd Share Price Today,, ADROITIND Share Price NSE, BSE - Business Today",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTnhoZjZlYnVDNk5HekRCZXRIN0JMTkoxTXA0YkFycnVySi1JeVhhelk5X2x1RWhmbFFCY3R5ZzhwY01uN1hPZHZYRk1PUHA2MjkzZUVoODNJcXdpSjFCdDRJTnBSR215TS1fNExOTGt3OGR1X3Y0SFAxNWhjY3I5QmFEeGc4OWJkSml2eXpKSDNqRXAycTFZ?oc=5",
+     "date": "Wed, 11 Nov 2026 18:30:00 GMT"
     }
    ],
-   "sentiment": 0.2,
+   "sentiment": 0.12,
    "warnings": [],
    "spark": [
     824.0,
@@ -5446,7 +5242,7 @@
     "Backtest": 3.9,
     "AI model": 10.0
    },
-   "ml_prob": 79.0,
+   "ml_prob": 74.1,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -5460,6 +5256,9 @@
    "m85_stop": 1319.79,
    "m85_qty": 6,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 73.0,
     "roe": 15.2,
@@ -5598,7 +5397,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 72.3,
+   "ml_prob": 76.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5612,6 +5411,9 @@
    "m85_stop": 667.0,
    "m85_qty": 12,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 77.3,
     "roe": 5.6,
@@ -5716,8 +5518,8 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 69.3,
-   "stars": "\u2605\u2605\u2605\u2606\u2606",
+   "score": 70.7,
+   "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 1677.2,
    "stop": 1509.48,
@@ -5744,11 +5546,11 @@
     "Technical": 47,
     "Rel. Strength": 8.4,
     "Fundamentals": 11.0,
-    "News": 2.5,
+    "News": 3.0,
     "Backtest": 1.7,
-    "AI model": 9.0
+    "AI model": 10.0
    },
-   "ml_prob": 66.2,
+   "ml_prob": 70.2,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -5762,6 +5564,9 @@
    "m85_stop": 1425.62,
    "m85_qty": 5,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
    "fund": {
     "pe": 89.4,
     "roe": 10.1,
@@ -5791,7 +5596,7 @@
      "date": "Wed, 11 Nov 2026 18:26:58 GMT"
     }
    ],
-   "sentiment": 0.0,
+   "sentiment": 0.2,
    "warnings": [
     "Weekly trend not confirmed"
    ],
@@ -5868,8 +5673,8 @@
    "segment": "Nifty 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 69.1,
-   "stars": "\u2605\u2605\u2605\u2606\u2606",
+   "score": 70.5,
+   "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 1903.3,
    "stop": 1813.7,
@@ -5898,9 +5703,9 @@
     "Fundamentals": 9.0,
     "News": 3.2,
     "Backtest": 0.0,
-    "AI model": 5.0
+    "AI model": 6.5
    },
-   "ml_prob": 54.1,
+   "ml_prob": 58.6,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5916,6 +5721,7 @@
    "m85_stop": 1617.81,
    "m85_qty": 5,
    "high_conviction": false,
+   "rule_fails": [],
    "fund": {
     "pe": 31.8,
     "roe": 15.6,
@@ -6052,7 +5858,7 @@
     "Backtest": 0.0,
     "AI model": 10.0
    },
-   "ml_prob": 69.9,
+   "ml_prob": 70.0,
    "patterns": [
     "Hammer"
    ],
@@ -6067,6 +5873,10 @@
    "m85_stop": 679.96,
    "m85_qty": 12,
    "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half",
+    "negative news"
+   ],
    "fund": {
     "pe": 67.2,
     "roe": 3.8,
@@ -6220,7 +6030,7 @@
   }
  ],
  "live": {
-  "open": 8
+  "open": 7
  },
  "tracker": [
   {
@@ -6240,7 +6050,7 @@
    "date": "2026-11-13",
    "symbol": "ANGELONE",
    "setup": "A+ Momentum, Breakout",
-   "score": 87.0,
+   "score": 87.2,
    "entry": 349.0,
    "stop": 320.23,
    "target1": 366.45,
@@ -6253,7 +6063,7 @@
    "date": "2026-11-13",
    "symbol": "PAYTM",
    "setup": "A+ Momentum, 52W High",
-   "score": 82.7,
+   "score": 82.5,
    "entry": 1939.9,
    "stop": 1775.91,
    "target1": 2036.9,
@@ -6303,22 +6113,9 @@
   },
   {
    "date": "2026-11-13",
-   "symbol": "GESHIP",
-   "setup": "Pullback",
-   "score": 70.8,
-   "entry": 1518.0,
-   "stop": 1394.9,
-   "target1": 1593.9,
-   "target2": 1669.8,
-   "status": "OPEN",
-   "days": 0,
-   "ret": null
-  },
-  {
-   "date": "2026-11-13",
    "symbol": "CRAFTSMAN",
    "setup": "Pullback",
-   "score": 70.4,
+   "score": 70.2,
    "entry": 11077.0,
    "stop": 10075.0,
    "target1": 11630.85,
