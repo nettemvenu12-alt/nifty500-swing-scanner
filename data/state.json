@@ -42,12 +42,16 @@
   "S:ACE": "18:25",
   "S:GRAPHITE": "18:25",
   "B:ANURAS": "18:25",
-  "B:POLICYBZR": "18:25"
+  "B:POLICYBZR": "18:25",
+  "S:STARHEALTH": "18:40",
+  "S:SUNTV": "18:40"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
   "2026-11-13:ANGELONE": "OPEN",
   "2026-11-13:PAYTM": "OPEN",
-  "2026-11-13:GVT&D": "OPEN"
+  "2026-11-13:GVT&D": "OPEN",
+  "2026-11-13:BHEL": "OPEN",
+  "2026-11-13:NEULANDLAB": "OPEN"
  }
 }
