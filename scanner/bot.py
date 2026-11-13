@@ -196,7 +196,7 @@ def main():
         send(chat, reply)
     if json.dumps(holdings) != before:
         portfolio.save(holdings)
-    morning(st)
+    # morning(st)  # disabled: user wants hourly lists 9:15–3:15 instead of an 8:40 message
     json.dump(st, open(STATE, "w"))
 
 
