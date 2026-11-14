@@ -94,7 +94,7 @@ RS rank {p['rs_rank']} · Hist win {p['hist_win5'] if p['hist_win5'] is not None
 Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('max_loss', '-')}) ·
 Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
 <div class="muted">Limit-buy option ₹{p.get('dip_buy', '-')} · Exit: T1 → sell half, SL to cost; rest on close below 20 EMA (₹{p.get('ema20', '-')})</div>
-{f'<div class="green">🎯 90% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m90_target"]} (+4%) · SL ₹{p["m90_stop"]} (-25%) · qty {p["m90_qty"]}</div>' if p.get('mode90') else ''}
+{f'<div class="green">🎯 90% mode plan: buy ₹{p["entry"]} · sell half at ₹{p["m90_target"]} (+4%), SL to cost, rest on close below 20 EMA · SL ₹{p["m90_stop"]} (-25%) · qty {p["m90_qty"]}</div>' if p.get('mode90') else ''}
 {f'<div class="green">🎯 85% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m85_target"]} (+5%) · SL ₹{p["m85_stop"]} (-15%) · qty {p["m85_qty"]}</div>' if p.get('mode85') else ''}
 {f'<div class="green">💰 Big investors bought ₹{p["smart"]["net_cr"]} Cr in bulk/block deals (10 days): {e(", ".join(p["smart"]["buyers"]))}</div>' if (p.get("smart") or {}).get("tag") == "buy" else ''}
 <div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
@@ -243,8 +243,8 @@ def telegram_text(o):
     m85 = [p for p in o["picks"] if p.get("mode85") and p not in m90 and p.get("m85_qty", 0) > 0][:5]
     if not o.get("pause_new"):
         if m90:
-            L.append(f"\n🎯 <b>FIRST BUY THESE – 90% MODE</b> (highest winning chance, tested {m.get('m90_win')}% wins)\n"
-                     "Sell ALL at +4% · SL -25% (far, so buy only the Qty shown)")
+            L.append(f"\n🎯 <b>FIRST BUY THESE – 90% MODE</b> (highest winning chance, tested {m.get('m90_win')}% wins, /buy saves this plan)\n"
+                     "At +4% sell HALF + move SL to buy price · sell rest when a day closes below 20 EMA · SL -25% (buy only the Qty shown)")
             for k, p in enumerate(m90, 1):
                 L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m90_target']} · SL ₹{p['m90_stop']} · Qty {p['m90_qty']}{_tags(p)}")
         if m85:

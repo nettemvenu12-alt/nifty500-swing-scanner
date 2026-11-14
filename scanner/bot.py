@@ -3,7 +3,8 @@
 Only messages from TELEGRAM_CHAT_ID are answered.
   /check SYMBOL          full analysis of any NSE stock
   /top                   today's best picks
-  /buy SYMBOL PRICE QTY  save a real buy (stop/targets set automatically)
+  /buy SYMBOL PRICE QTY  save a real buy (stop/targets set automatically;
+                         90% MODE picks get SL -25% / sell half at +4%; add "90" to force it)
   /sell SYMBOL [QTY]     remove (all or part of) a holding
   /half SYMBOL           mark that you booked half at T1
   /portfolio             your holdings with live P&L and what to do
@@ -110,10 +111,19 @@ def handle(text, holdings):
         d, _ = _prices(sym)
         if d is None:
             return f"❌ No NSE data for {sym}", holdings
-        stop, t1, t2 = portfolio.plan_for(price, d)
+        try:
+            m90 = {p["symbol"] for p in json.load(open(PICKS))["picks"] if p.get("mode90")}
+        except Exception:
+            m90 = set()
+        mode90 = sym in m90 or (len(parts) >= 5 and parts[4] == "90")
+        if mode90:  # tools/exit_research.py: half at +4%, rest trails 20 EMA, SL -25%
+            stop, t1, t2 = round(price * 0.75, 2), round(price * 1.04, 2), round(price * 1.10, 2)
+        else:
+            stop, t1, t2 = portfolio.plan_for(price, d)
         holdings.append({"symbol": sym, "price": price, "qty": qty, "stop": stop, "t1": t1, "t2": t2,
-                         "date": str(dt.date.today()), "t1_done": False})
-        return (f"✅ Saved {sym} {qty} @ {price}\nSL {stop} · T1 {t1} (sell half) · then trail 20 EMA\n"
+                         "date": str(dt.date.today()), "t1_done": False, "mode90": mode90})
+        return (f"✅ Saved {sym} {qty} @ {price}{' (🎯 90% MODE)' if mode90 else ''}\n"
+                f"SL {stop} · T1 {t1} (sell half) · then trail 20 EMA\n"
                 f"I'll alert you every hour if something needs action."), holdings
     if cmd == "/sell" and len(parts) >= 2 and _sym(parts[1]):
         sym = _sym(parts[1])
