@@ -197,7 +197,7 @@ def load_state(today):
         st = {}
     if st.get("date") != today:
         st = {"date": today, "seen": {}, "status": st.get("status", {}),
-              "weekly_sent": st.get("weekly_sent")}
+              "weekly_sent": st.get("weekly_sent"), "bigfalls_sent": st.get("bigfalls_sent")}
     return st
 
 
@@ -644,6 +644,18 @@ def main():
             "ok": not why, "why": why, "target": round(c * 1.05, 2), "stop": round(c * 0.85, 2),
             "qty": position_size(c, c * 0.85, cfg, 0.5 if x.segment == "Smallcap 250" else 1.0)["qty"],
             "news": h[:1]})
+    # Week (5 days) 10%+ and month (21 days) 20%+ fallers, per segment, biggest fall first
+    big_falls = {"week": {}, "month": {}}
+    for key, col, lim in (("week", "ret5", -10), ("month", "ret21", -20)):
+        for _, x in df[df.segment != "Other"].assign(_r=df.row.apply(lambda r: r[col])).sort_values("_r").iterrows():
+            if x._r > lim:
+                break
+            lst = big_falls[key].setdefault(x.segment, [])
+            if len(lst) < 10 and x.row.turnover_cr >= stg.MIN_TURNOVER_CR:
+                lst.append({"symbol": x.symbol, "chg": round(float(x._r), 1), "close": round(float(x.row.Close), 2)})
+    send_big = not intraday and state.get("bigfalls_sent") != today
+    if send_big:
+        state["bigfalls_sent"] = today
     new_falls = [f["symbol"] for v in falls.values() for f in v if "F:" + f["symbol"] not in state["seen"]]
     for s_ in new_falls:
         state["seen"]["F:" + s_] = stamp
@@ -697,7 +709,7 @@ def main():
                           for s, v in big_deals.items() if v["tag"] == "buy" and s in meta),
                          key=lambda x: -x["net_cr"])[:5]
     out = {
-        "smart_money": smart_money, "early": early, "falls": falls, "new_falls": new_falls,
+        "smart_money": smart_money, "early": early, "falls": falls, "new_falls": new_falls, "big_falls": big_falls,
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
@@ -721,6 +733,8 @@ def main():
     telegram(report.telegram_text(out))
     # separate message every run (hourly): swing list above, 5%+ fall list here
     telegram(report.falls_text(out))
+    if send_big:  # once a day after the close: week 10%+ / month 20%+ fallers
+        telegram(report.big_falls_text(out))
     print(md[:3000])
 
 

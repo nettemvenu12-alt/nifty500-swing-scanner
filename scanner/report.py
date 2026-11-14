@@ -334,3 +334,17 @@ def falls_text(o):
 
 
 SEGMENTS_ORDER = [("Nifty 50", 0), ("Nifty Next 50", 0), ("Midcap 150", 0), ("Smallcap 250", 0)]
+
+
+def big_falls_text(o):
+    """Separate daily message: down 10%+ in a week and 20%+ in a month, per segment."""
+    bf = o.get("big_falls") or {}
+    L = [f"📉 <b>BIG FALLS</b> ({o['data_date']})"]
+    for key, title, lim in (("week", "WEEK lo 10%+ down (5 days)", 10), ("month", "MONTH lo 20%+ down (1 month)", 20)):
+        L.append(f"\n🗓 <b>{title}</b>")
+        for name, _ in SEGMENTS_ORDER:
+            lst = (bf.get(key) or {}).get(name) or []
+            L.append(f"{SEG_ICONS.get(name, '•')} <b>{name}</b>: "
+                     + (", ".join(f"{_esc(x['symbol'])} {x['chg']:+.0f}%" for x in lst) if lst else f"{lim}%+ down ledu"))
+    L.append("\n<i>Information only – padina stock ni konadaniki 📉 5%+ FALL list lo ✅ BUY OK chudandi.</i>")
+    return "\n".join(L)
