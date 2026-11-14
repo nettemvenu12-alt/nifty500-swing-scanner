@@ -43,7 +43,9 @@
   "B:ANURAS": "08:09",
   "B:PRESTIGE": "08:09",
   "B:ABCAPITAL": "08:09",
-  "B:POLICYBZR": "08:09"
+  "B:POLICYBZR": "08:09",
+  "F:TECHNOE": "13:31",
+  "F:GABRIEL": "13:31"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -70,5 +72,6 @@
   "2026-11-13:GRAPHITE": "OPEN",
   "2026-11-13:CUB": "OPEN"
  },
- "weekly_sent": "2026-W46"
+ "weekly_sent": "2026-W46",
+ "bigfalls_sent": "2026-11-13"
 }
