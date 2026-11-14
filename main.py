@@ -692,4 +692,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:  # tell the user on Telegram instead of failing silently
+        import traceback
+        traceback.print_exc()
+        run = (f'{os.getenv("GITHUB_SERVER_URL")}/{os.getenv("GITHUB_REPOSITORY")}/actions/runs/{os.getenv("GITHUB_RUN_ID")}'
+               if os.getenv("GITHUB_RUN_ID") else "")
+        telegram("⚠️ <b>Swing scanner fail ayyindi</b> – ee report raledu.\n"
+                 f"Error: {report._esc(type(e).__name__)}: {report._esc(str(e)[:200])}\n"
+                 + (f'<a href="{run}">Run link</a> – ee link ni Buddy ki pampithe fix chestundi.' if run else ""))
+        raise
