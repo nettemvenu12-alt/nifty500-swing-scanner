@@ -654,7 +654,10 @@ def main():
             if len(lst) < 10 and x.row.turnover_cr >= stg.MIN_TURNOVER_CR:
                 lst.append({"symbol": x.symbol, "chg": round(float(x._r), 1), "close": round(float(x.row.Close), 2)})
     # BIG FALLS go out once a day at 2:45 PM (cron-job.org run); later runs don't repeat it
-    send_big = dt.time(14, 40) <= now.time() and now.weekday() < 5 and state.get("bigfalls_sent") != today
+    # a manual run on a weekend acts like the 2:45 PM run (lets the user test it)
+    weekend_test = now.weekday() >= 5 and os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    send_big = ((dt.time(14, 40) <= now.time() and now.weekday() < 5) or weekend_test) \
+        and (weekend_test or state.get("bigfalls_sent") != today)
     if send_big:
         state["bigfalls_sent"] = today
     new_falls = [f["symbol"] for v in falls.values() for f in v if "F:" + f["symbol"] not in state["seen"]]
@@ -731,7 +734,7 @@ def main():
     for name in ("latest.md", f"{today}.md"):
         with open(os.path.join(ROOT, "reports", name), "w") as fh:
             fh.write(md)
-    big_only = dt.time(14, 40) <= now.time() <= dt.time(14, 58)  # the 2:45 PM run sends only BIG FALLS
+    big_only = (dt.time(14, 40) <= now.time() <= dt.time(14, 58)) or weekend_test  # 2:45 run: only BIG FALLS
     if not big_only:
         telegram(report.telegram_text(out))
         # separate message every run (hourly): swing list above, 5%+ fall list here
