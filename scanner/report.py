@@ -82,7 +82,7 @@ def _card(p, top=False):
              if iv else "")
     pats = (" · 🕯 " + ", ".join(e(x) for x in p["patterns"])) if p.get("patterns") else ""
     why = "".join(f"<span>✔ {e(w)}</span>" for w in p.get("why", []))
-    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}{' <span class="lab hc">🔥 HIGH CONVICTION</span>' if p.get('high_conviction') else ''}{' <span class="lab lST">🎯 85% MODE</span>' if p.get('mode85') else ''}
+    return f"""<div class="{cls}"><div class="row"><div><b class="sym">{e(p['symbol'])}</b>{' <span class="lab lST">NEW</span>' if p.get('new') else ''}{' <span class="lab hc">🔥 HIGH CONVICTION</span>' if p.get('high_conviction') else ''}{' <span class="lab lST">🎯 90% MODE</span>' if p.get('mode90') else ' <span class="lab lST">🎯 85% MODE</span>' if p.get('mode85') else ''}
 <span class="muted">{e(p['name'])}</span><br><span class="stars">{p['stars']}</span>
 <span class="lab l{p['label'][:2]}">{p['label']}</span> <b>{p['score']}</b>/100</div>{_spark(p['spark'])}</div>
 <div class="muted">{e(p['setup'])} · {e(str(p['industry']))} · ₹{p['close']} ({p['chg']}%)</div>
@@ -94,6 +94,7 @@ RS rank {p['rs_rank']} · Hist win {p['hist_win5'] if p['hist_win5'] is not None
 Qty <b>{p.get('qty', '-')}</b> (₹{p.get('invest', '-')}, max loss ₹{p.get('max_loss', '-')}) ·
 Weekly {'✅' if p.get('weekly_up') else '❌'}{intra}{pats}</div>
 <div class="muted">Limit-buy option ₹{p.get('dip_buy', '-')} · Exit: T1 → sell half, SL to cost; rest on close below 20 EMA (₹{p.get('ema20', '-')})</div>
+{f'<div class="green">🎯 90% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m90_target"]} (+4%) · SL ₹{p["m90_stop"]} (-25%) · qty {p["m90_qty"]}</div>' if p.get('mode90') else ''}
 {f'<div class="green">🎯 85% mode plan: buy ₹{p["entry"]} · sell all at ₹{p["m85_target"]} (+5%) · SL ₹{p["m85_stop"]} (-15%) · qty {p["m85_qty"]}</div>' if p.get('mode85') else ''}
 {f'<div class="green">💰 Big investors bought ₹{p["smart"]["net_cr"]} Cr in bulk/block deals (10 days): {e(", ".join(p["smart"]["buyers"]))}</div>' if (p.get("smart") or {}).get("tag") == "buy" else ''}
 <div class="why">{why}</div><div>{parts}</div><div class="muted">{e(fund)}</div>{warn}<ul>{news}</ul></div>"""
@@ -202,7 +203,7 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>", 
             p = bysym[sym]
             n += 1
             L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
-                     f"{'  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}"
+                     f"{'  🎯90%' if p.get('mode90') else '  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}"
                      f"{'  💰' if (p.get('smart') or {}).get('tag') == 'buy' else ''}\n"
                      f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
     if any((bysym[s].get("smart") or {}).get("tag") == "buy" for v in (o.get("segments") or {}).values() for s in v["buy"]):
@@ -233,15 +234,23 @@ def telegram_text(o):
         for h in hr:
             L.append(f"• <b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
     m = o.get("ml") or {}
-    m85 = [p for p in o["picks"] if p.get("mode85")]
-    if m85 and not o.get("pause_new"):
-        L.append(f"\n🎯 <b>FIRST BUY THESE – highest winning chance</b>\n85% MODE (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
-        for k, p in enumerate(m85[:5], 1):
-            L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}")
-    elif not o.get("pause_new"):
-        L.append("\n🎯 <b>85% MODE</b>: no stock qualifies right now – wait, or use the list below (lower winning chance).")
+    # a Qty of 0 means the share price is too high for the configured capital / risk
+    m90 = [p for p in o["picks"] if p.get("mode90") and p.get("m90_qty", 0) > 0][:5]
+    m85 = [p for p in o["picks"] if p.get("mode85") and p not in m90 and p.get("m85_qty", 0) > 0][:5]
+    if not o.get("pause_new"):
+        if m90:
+            L.append(f"\n🎯 <b>FIRST BUY THESE – 90% MODE</b> (highest winning chance, tested {m.get('m90_win')}% wins)\n"
+                     "Sell ALL at +4% · SL -25% (far, so buy only the Qty shown)")
+            for k, p in enumerate(m90, 1):
+                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m90_target']} · SL ₹{p['m90_stop']} · Qty {p['m90_qty']}")
+        if m85:
+            L.append(f"\n🎯 <b>{'NEXT' if m90 else 'FIRST BUY THESE'} – 85% MODE</b> (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
+            for k, p in enumerate(m85, 1):
+                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}")
+        if not m90 and not m85:
+            L.append("\n🎯 <b>90% / 85% MODE</b>: no stock qualifies right now – wait, or use the list below (lower winning chance).")
     L.append(simple_list(o, "🛒 <b>REMAINING BUY LIST – swing (hold up to 60 days)</b>",
-                         skip={p["symbol"] for p in m85[:5]} if not o.get("pause_new") else ()))
+                         skip={p["symbol"] for p in m90 + m85} if not o.get("pause_new") else ()))
     if o["btst"]:
         L.append("\n⚡ <b>BTST</b> (buy ~3:20 PM, sell next morning)" + (" – forming, confirm at 3:15" if live else ""))
         for k, p in enumerate(o["btst"][:3], 1):

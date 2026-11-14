@@ -28,7 +28,7 @@ def train(samples):
     if HistGradientBoostingClassifier is None or len(samples) < 800:
         return None, {"enabled": False, "reason": "not enough data or sklearn missing"}
     s = samples.sort_values("date").reset_index(drop=True)
-    feats = [c for c in s.columns if c not in ("date", "win5", "ret", "ret85", "symbol")]
+    feats = [c for c in s.columns if c not in ("date", "win5", "ret", "ret85", "ret90", "symbol")]
     cut = s.date.quantile(0.75)
     tr = s[s.date < cut - pd.Timedelta(days=EMBARGO_DAYS)]
     te = s[s.date >= cut]
@@ -58,6 +58,13 @@ def train(samples):
                 rep["m85_n"] = int(len(sel))
                 rep["m85_win"] = round(float((sel.ret85 > 0).mean()) * 100, 1)
                 rep["m85_avg"] = round(float(sel.ret85.mean()), 2)
+        if "ret90" in te:
+            # 90% mode: same picks + RSI < 75, +4% target / -25% stop (tools/mode90_research.py)
+            sel = te[(p >= q90) & (te.wk_up > 0) & (te.rs63 > 15) & (te.rsi < 75)]
+            if len(sel):
+                rep["m90_n"] = int(len(sel))
+                rep["m90_win"] = round(float((sel.ret90 > 0).mean()) * 100, 1)
+                rep["m90_avg"] = round(float(sel.ret90.mean()), 2)
         # useful = clearly better than average on unseen data (win rate AND profit)
         rep["useful"] = bool(rep["auc"] >= 0.53 and rep["top20_win"] >= rep["base_rate"] + 3
                              and rep["top20_avg_ret"] > rep["all_avg_ret"])

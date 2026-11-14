@@ -296,6 +296,7 @@ def main():
             sm["win5"] = [int(t["win5"]) for t in done]
             sm["ret"] = [t["ret"] for t in done]
             sm["ret85"] = [bt.fixed_outcome(d, d.index.get_loc(t["date"])) for t in done]
+            sm["ret90"] = [bt.fixed_outcome(d, d.index.get_loc(t["date"]), 4, 25) for t in done]
             samples.append(sm)
         r = d.iloc[-1].copy()
         r["ema200_up"] = d.ema200.iloc[-1] > d.ema200.iloc[-22]
@@ -496,6 +497,12 @@ def main():
                 and x.ml_prob >= ml_rep.get("m85_threshold", 1) and x.row.wk_up
                 and x.row.rs63 > 15
                 and not (rid is not None and 0 <= rid <= 7)),
+            "mode90": bool(
+                x.signals and ml_rep.get("m90_win", 0) >= 85 and not np.isnan(x.ml_prob)
+                and x.ml_prob >= ml_rep.get("m85_threshold", 1) and x.row.wk_up
+                and x.row.rs63 > 15 and x.row.rsi < 75
+                and not (rid is not None and 0 <= rid <= 7)),
+            "m90_target": round(x.row.Close * 1.04, 2), "m90_stop": round(x.row.Close * 0.75, 2),
             "m85_target": round(x.row.Close * 1.05, 2), "m85_stop": round(x.row.Close * 0.85, 2),
             "m85_qty": position_size(x.row.Close, x.row.Close * 0.85, cfg)["qty"],
             "high_conviction": bool(
@@ -507,7 +514,7 @@ def main():
             "fund": {k: (round(v, 1) if isinstance(v, float) else v) for k, v in f.items()},
             "news": h[:3], "sentiment": round(sent, 2), "warnings": warn, "spark": x.spark,
         })
-    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", not p["mode85"], not p["high_conviction"],
+    picks.sort(key=lambda p: (p["label"] == "WATCHLIST", not p["mode90"], not p["mode85"], not p["high_conviction"],
                               -p["score"], p["symbol"]))
     # Smart sizing: more for proven-quality signals, less for ordinary ones
     for p in picks:
@@ -518,6 +525,9 @@ def main():
         mult *= mkt["size"] if mkt["size"] > 0 else 1.0  # NEUTRAL market = half size
         p.update(position_size(p["entry"], p["stop"], cfg, mult))
         p["m85_qty"] = position_size(p["entry"], p["m85_stop"], cfg, cfg["risk_mult"]["mode85"])["qty"]
+        # 90% mode: the stop is far (-25%), so the position is small (a full stop costs ~1.5% of capital)
+        p["m90_target"], p["m90_stop"] = round(p["entry"] * 1.04, 2), round(p["entry"] * 0.75, 2)
+        p["m90_qty"] = position_size(p["entry"], p["m90_stop"], cfg, cfg["risk_mult"]["mode85"])["qty"]
 
     btst = []
     for _, x in btst_c.iterrows():
@@ -570,7 +580,7 @@ def main():
     buy_list = []
     for p in picks:
         p["in_buy_list"] = False
-        good = p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
+        good = p["mode90"] or p["mode85"] or p["high_conviction"] or p["label"] in ("STRONG BUY", "BUY")
         if p["segment"] == "Smallcap 250" and (not p["smallcap_ok"] or p["score"] < 75):
             good = False
         if pause_new or len(buy_list) >= slots or not good or p["symbol"] in held:
@@ -592,7 +602,7 @@ def main():
                     key=lambda p: -p["score"])
         ps = ps if not pause_new else []
         # highest winning chance first: 85% mode, then high conviction, then by score
-        ps = sorted(ps, key=lambda p: (not p["mode85"], not p["high_conviction"], -p["score"]))
+        ps = sorted(ps, key=lambda p: (not p["mode90"], not p["mode85"], not p["high_conviction"], -p["score"]))
         if name == "Smallcap 250":
             ps = [p for p in ps if p["smallcap_ok"] and p["score"] >= 75]
         watch = [p["symbol"] for p in picks if p["segment"] == name and p["label"] == "WATCHLIST"][:3]
