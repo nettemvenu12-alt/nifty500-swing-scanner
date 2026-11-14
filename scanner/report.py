@@ -227,6 +227,19 @@ def telegram_text(o):
             else f"📈 <b>Swing report {o['data_date']}</b>")
     L = [head, f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} ({r.get('day', 0):+.2f}%)"
                + (f" · VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
+    m = o.get("ml") or {}
+    # a Qty of 0 means the share price is too high for the configured capital / risk
+    m90 = [p for p in o["picks"] if p.get("mode90") and p.get("m90_qty", 0) > 0][:5]
+    m85 = [p for p in o["picks"] if p.get("mode85") and p not in m90 and p.get("m85_qty", 0) > 0][:5]
+    # One clear answer first: are there high-winning-chance swing buys right now?
+    if o.get("pause_new"):
+        L.append("\n❌ <b>Swing buy: LEVU</b> – market weak (BEAR). Kotha stocks konakandi, wait cheyyandi.")
+    elif m90 or m85:
+        names = ", ".join(p["symbol"] for p in (m90 + m85))
+        L.append(f"\n✅ <b>Swing buy: UNNAYI ({len(m90 + m85)})</b> – {_esc(names)}")
+    else:
+        L.append("\n❌ <b>Swing buy: LEVU</b> – ippudu high winning chance stocks levu. Wait cheyyandi; "
+                 "kinda list lo unnavi takkuva chance.")
     if o.get("alerts"):
         L.append("\n🔔 <b>Tracked picks – updates</b>")
         for a in o["alerts"]:
@@ -237,10 +250,6 @@ def telegram_text(o):
         L.append(f"\n💼 <b>Your holdings</b> · P&amp;L ₹{tot:+,}")
         for h in hr:
             L.append(f"• <b>{_esc(h['symbol'])}</b> {h['pnl']:+.2f}% · {_esc(h['action'])}")
-    m = o.get("ml") or {}
-    # a Qty of 0 means the share price is too high for the configured capital / risk
-    m90 = [p for p in o["picks"] if p.get("mode90") and p.get("m90_qty", 0) > 0][:5]
-    m85 = [p for p in o["picks"] if p.get("mode85") and p not in m90 and p.get("m85_qty", 0) > 0][:5]
     if not o.get("pause_new"):
         if m90:
             L.append(f"\n🎯 <b>FIRST BUY THESE – 90% MODE</b> (highest winning chance, tested {m.get('m90_win')}% wins, /buy saves this plan)\n"
