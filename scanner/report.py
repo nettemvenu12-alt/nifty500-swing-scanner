@@ -303,3 +303,34 @@ def telegram_text(o):
         L.append("\n<i>Live: today's candle not closed yet.</i>")
     L.append(f'\n<a href="{PAGES}">Full details</a> · Not advice – always use SL.')
     return "\n".join(L)
+
+
+def falls_text(o):
+    """Separate message: stocks down 5%+ today, one list per index segment."""
+    falls, new = o.get("falls") or {}, set(o.get("new_falls") or [])
+    when = f"LIVE {o['generated'][-9:-4]}" if o.get("intraday") else o["data_date"]
+    L = [f"📉 <b>5%+ FALL TODAY</b> ({when}) – konavacha leda?",
+         "✅ BUY OK = tested ~85% wins: Target +5% · SL -15% · Qty chinnadi",
+         "❌ AVOID = karanam pakkana undi"]
+    for name, _ in SEGMENTS_ORDER:
+        L.append(f"\n{SEG_ICONS.get(name, '•')} <b>{name}</b>")
+        lst = falls.get(name) or []
+        if not lst:
+            L.append("   5%+ fall ledu")
+            continue
+        for f in lst:
+            tag = " 🆕" if f["symbol"] in new else ""
+            if f["ok"]:
+                L.append(f"✅ <b>{_esc(f['symbol'])}</b> {f['chg']:+.1f}% ₹{f['close']}{tag} – BUY OK · "
+                         f"Target ₹{f['target']} · SL ₹{f['stop']} · Qty {f['qty']}")
+            else:
+                L.append(f"❌ <b>{_esc(f['symbol'])}</b> {f['chg']:+.1f}% ₹{f['close']}{tag} – AVOID: {_esc(', '.join(f['why']))}")
+            if f.get("news"):
+                L.append(f"   📰 {_esc(f['news'][0]['title'][:80])}")
+    if o.get("intraday"):
+        L.append("\n<i>Live: day not closed yet – buy near 3:15 PM if it is still OK.</i>")
+    L.append("<i>Not advice – always use SL.</i>")
+    return "\n".join(L)
+
+
+SEGMENTS_ORDER = [("Nifty 50", 0), ("Nifty Next 50", 0), ("Midcap 150", 0), ("Smallcap 250", 0)]

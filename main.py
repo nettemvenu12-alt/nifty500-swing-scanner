@@ -616,6 +616,37 @@ def main():
         key = ("B:" if "target" in p and "target1" not in p else "S:") + p["symbol"]
         p["new"] = key not in state["seen"] and p.get("label") != "WATCHLIST"
         state["seen"].setdefault(key, stamp)
+    # 5%+ one-day fallers, per index segment, each with BUY OK / AVOID (tools/fall_research.py:
+    # buying a normal-volume fall won ~85% at +5% / SL -15%; heavy-volume falls did worse)
+    falls = {}
+    for _, x in df[(df.day <= -5) & (df.segment != "Other")].sort_values("day").iterrows():
+        if x.row.turnover_cr < stg.MIN_TURNOVER_CR or len(falls.get(x.segment, [])) >= 8:
+            continue
+        h = nws.get(x.symbol)
+        if h is None and not args.no_news:
+            h = news.headlines(meta[x.symbol]["Name"], x.symbol, n=3)
+        h = h or []
+        sent = news.sentiment(h)
+        why = []
+        if x.row.vol_ratio >= 2:
+            why.append(f"heavy selling ({x.row.vol_ratio:.1f}x volume)")
+        if x.symbol in surv:
+            why.append("NSE surveillance (ASM/GSM)")
+        if sent < -0.2:
+            why.append("bad news")
+        why += x.redflags
+        rd = rescal.get(x.symbol)
+        if rd is not None and 0 <= rd <= 7:
+            why.append(f"results in {rd} days")
+        c = float(x.row.Close)
+        falls.setdefault(x.segment, []).append({
+            "symbol": x.symbol, "chg": round(float(x.day), 1), "close": round(c, 2),
+            "ok": not why, "why": why, "target": round(c * 1.05, 2), "stop": round(c * 0.85, 2),
+            "qty": position_size(c, c * 0.85, cfg, 0.5 if x.segment == "Smallcap 250" else 1.0)["qty"],
+            "news": h[:1]})
+    new_falls = [f["symbol"] for v in falls.values() for f in v if "F:" + f["symbol"] not in state["seen"]]
+    for s_ in new_falls:
+        state["seen"]["F:" + s_] = stamp
     alerts = []
     for t in (track.to_dict("records") if len(track) else []):
         k = f"{t['date']}:{t['symbol']}"
@@ -666,7 +697,7 @@ def main():
                           for s, v in big_deals.items() if v["tag"] == "buy" and s in meta),
                          key=lambda x: -x["net_cr"])[:5]
     out = {
-        "smart_money": smart_money, "early": early,
+        "smart_money": smart_money, "early": early, "falls": falls, "new_falls": new_falls,
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
@@ -688,6 +719,8 @@ def main():
         with open(os.path.join(ROOT, "reports", name), "w") as fh:
             fh.write(md)
     telegram(report.telegram_text(out))
+    if new_falls:  # separate message, only when a new 5%+ faller shows up today
+        telegram(report.falls_text(out))
     print(md[:3000])
 
 
