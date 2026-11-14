@@ -653,7 +653,8 @@ def main():
             lst = big_falls[key].setdefault(x.segment, [])
             if len(lst) < 10 and x.row.turnover_cr >= stg.MIN_TURNOVER_CR:
                 lst.append({"symbol": x.symbol, "chg": round(float(x._r), 1), "close": round(float(x.row.Close), 2)})
-    send_big = not intraday and state.get("bigfalls_sent") != today
+    # BIG FALLS go out once a day at 2:45 PM (cron-job.org run); later runs don't repeat it
+    send_big = dt.time(14, 40) <= now.time() and now.weekday() < 5 and state.get("bigfalls_sent") != today
     if send_big:
         state["bigfalls_sent"] = today
     new_falls = [f["symbol"] for v in falls.values() for f in v if "F:" + f["symbol"] not in state["seen"]]
@@ -730,9 +731,11 @@ def main():
     for name in ("latest.md", f"{today}.md"):
         with open(os.path.join(ROOT, "reports", name), "w") as fh:
             fh.write(md)
-    telegram(report.telegram_text(out))
-    # separate message every run (hourly): swing list above, 5%+ fall list here
-    telegram(report.falls_text(out))
+    big_only = dt.time(14, 40) <= now.time() <= dt.time(14, 58)  # the 2:45 PM run sends only BIG FALLS
+    if not big_only:
+        telegram(report.telegram_text(out))
+        # separate message every run (hourly): swing list above, 5%+ fall list here
+        telegram(report.falls_text(out))
     if send_big:  # once a day after the close: week 10%+ / month 20%+ fallers
         telegram(report.big_falls_text(out))
     print(md[:3000])
