@@ -80,6 +80,17 @@ def results_gap(d):
     return _liquid(d) & (d["ema50"] > d["ema200"]) & (first | follow)
 
 
+def early_breakout(d):
+    """BEFORE the breakout: stage-2 uptrend, tight 10-day base, price within 5% under the
+    55-day high, stronger than the market. In tools/early_research.py (5 years) buying here
+    did slightly better than buying after the breakout (+5%/-15%: 80.7% wins vs 78.3%)."""
+    return (
+        _liquid(d) & trend_template(d) & d["rsi"].between(50, 70)
+        & (d["Close"] <= d["hh55"]) & (d["Close"] >= d["hh55"] * 0.95)
+        & (d["vcp"] < 0.4) & (d["rs63"] > 10)
+    )
+
+
 def a_plus(d):
     """Best combo found in research: any setup + near 52W high + strong RS + stage 2."""
     any_setup = swing_breakout(d) | high52_breakout(d) | squeeze_breakout(d) | pullback_buy(d)

@@ -204,15 +204,19 @@ def simple_list(o, title="🛒 <b>BUY LIST – swing (hold up to 60 days)</b>", 
             n += 1
             L.append(f"<b>{n}. {_esc(sym)}</b>  {p['stars']}  {p['score']:.0f}/100"
                      f"{'  🎯90%' if p.get('mode90') else '  🎯85%' if p.get('mode85') else '  🔥' if p.get('high_conviction') else ''}"
-                     f"{'  💰' if (p.get('smart') or {}).get('tag') == 'buy' else ''}\n"
+                     f"{_tags(p)}\n"
                      f"   Buy ₹{p['entry']} · SL ₹{p['stop']} · Target ₹{p['target1']} / ₹{p['target2']} · Qty {p.get('qty')}")
-    if any((bysym[s].get("smart") or {}).get("tag") == "buy" for v in (o.get("segments") or {}).values() for s in v["buy"]):
-        L.append("\n💰 = big investors bought in bulk/block deals (last 10 days)")
     if n == 0:
         L.append("\nNo stock passes all checks today. Waiting is also a good trade.")
     else:
         L.append("\nRule: at Target 1 sell half + move SL to buy price; sell rest when a day closes below 20 EMA.")
     return "\n".join(L)
+
+
+def _tags(p):
+    """💰 big investors bought (bulk/block deals) · 📰 clearly positive news this week."""
+    return (("  💰" if (p.get("smart") or {}).get("tag") == "buy" else "")
+            + ("  📰" if p.get("news") and p.get("sentiment", 0) >= 0.3 else ""))
 
 
 def telegram_text(o):
@@ -242,15 +246,34 @@ def telegram_text(o):
             L.append(f"\n🎯 <b>FIRST BUY THESE – 90% MODE</b> (highest winning chance, tested {m.get('m90_win')}% wins)\n"
                      "Sell ALL at +4% · SL -25% (far, so buy only the Qty shown)")
             for k, p in enumerate(m90, 1):
-                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m90_target']} · SL ₹{p['m90_stop']} · Qty {p['m90_qty']}")
+                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m90_target']} · SL ₹{p['m90_stop']} · Qty {p['m90_qty']}{_tags(p)}")
         if m85:
             L.append(f"\n🎯 <b>{'NEXT' if m90 else 'FIRST BUY THESE'} – 85% MODE</b> (tested {m.get('m85_win')}% wins) – sell ALL at +5%, SL -15%")
             for k, p in enumerate(m85, 1):
-                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}")
+                L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['entry']} · Target ₹{p['m85_target']} · SL ₹{p['m85_stop']} · Qty {p['m85_qty']}{_tags(p)}")
         if not m90 and not m85:
             L.append("\n🎯 <b>90% / 85% MODE</b>: no stock qualifies right now – wait, or use the list below (lower winning chance).")
     L.append(simple_list(o, "🛒 <b>REMAINING BUY LIST – swing (hold up to 60 days)</b>",
                          skip={p["symbol"] for p in m90 + m85} if not o.get("pause_new") else ()))
+    if o.get("early"):
+        L.append("\n🚀 <b>EARLY – before the breakout</b> (tested 81% wins, +5% / SL -15%)")
+        for k, p in enumerate(o["early"], 1):
+            L.append(f"{k}. <b>{_esc(p['symbol'])}</b> Buy ₹{p['close']} · breakout at ₹{p['level']} ({p['away']}% away) · "
+                     f"Target ₹{p['target']} · SL ₹{p['stop']} · Qty {p['qty']}{_tags(p)}")
+    top = (m90 + m85)[:4] if not o.get("pause_new") else []
+    nl = [(p, p["news"][0]) for p in top if p.get("news")]
+    if nl:
+        L.append("\n📰 <b>NEWS on the top picks</b>")
+        for p, n in nl:
+            mood = "👍" if p.get("sentiment", 0) >= 0.3 else "👎" if p.get("sentiment", 0) <= -0.2 else "•"
+            L.append(f'{mood} <b>{_esc(p["symbol"])}</b>: <a href="{H.escape(str(n["link"]), quote=True)}">{_esc(n["title"][:90])}</a>')
+    sm = o.get("smart_money") or []
+    if sm:
+        L.append("\n💰 <b>BIG DEALS</b> (bulk/block buying, last 10 days)")
+        for x in sm:
+            L.append(f"• <b>{_esc(x['symbol'])}</b> ₹{x['net_cr']:.0f} Cr net bought"
+                     + (f" – {_esc(x['buyers'][0][:40])}" if x.get("buyers") else ""))
+    L.append("<i>💰 big investors bought · 📰 good news this week</i>")
     if o["btst"]:
         L.append("\n⚡ <b>BTST</b> (buy ~3:20 PM, sell next morning)" + (" – forming, confirm at 3:15" if live else ""))
         for k, p in enumerate(o["btst"][:3], 1):

@@ -305,6 +305,7 @@ def main():
             "symbol": sym, "name": meta[sym]["Name"], "industry": meta[sym]["Industry"],
             "row": r, "signals": [k for k, v in sigs.items() if v], "btst": bool(b.iloc[-1]),
             "trend": bool(stg.trend_template(d).iloc[-1]), "bt": per_stock,
+            "early": bool(stg.early_breakout(d).iloc[-1]),
             "tech": stg.tech_score(r), "feat": F.iloc[-1], "redflags": risk.red_flags(d),
             "patterns": [v for k, v in PATTERNS.items() if bool(r.get(k, False))],
             "spark": [round(x, 2) for x in d.Close.tail(60).tolist()],
@@ -637,7 +638,35 @@ def main():
         "new_52w_high": int(df.row.apply(lambda r: r.from_high >= -2).sum()),
         "signals": int((df.signals.str.len() > 0).sum()),
     }
+    # Early (pre-breakout) ideas: not yet a signal, strongest relative strength first
+    early = []
+    listed = {p["symbol"] for p in picks if p["label"] != "WATCHLIST"}
+    for _, x in df[df.early & (df.signals.str.len() == 0)].sort_values("rs_rank", ascending=False).iterrows():
+        rd = rescal.get(x.symbol)
+        if (x.symbol in surv or x.symbol in listed or x.symbol in held or x.redflags
+                or (rd is not None and 0 <= rd <= 7)
+                or (x.segment == "Smallcap 250" and x.row.turnover_cr < SMALLCAP_MIN_TURNOVER_CR)):
+            continue
+        c = float(x.row.Close)
+        size = position_size(c, c * 0.85, cfg, (mkt["size"] if mkt["size"] > 0 else 1.0)
+                             * (0.5 if x.segment == "Smallcap 250" else 1.0))
+        if size["qty"] <= 0:
+            continue
+        early.append({"symbol": x.symbol, "name": x["name"], "segment": x.segment, "close": round(c, 2),
+                      "level": round(float(x.row.hh55), 2),
+                      "away": round((float(x.row.hh55) / c - 1) * 100, 1),
+                      "target": round(c * 1.05, 2), "stop": round(c * 0.85, 2), "qty": size["qty"],
+                      "rs_rank": round(x.rs_rank), "smart": big_deals.get(x.symbol)})
+        if len(early) >= 3:
+            break
+    if pause_new:
+        early = []
+    # Smart money: Nifty 500 stocks where big investors were net buyers in bulk/block deals
+    smart_money = sorted(({"symbol": s, "net_cr": v["net_cr"], "buyers": v["buyers"][:2]}
+                          for s, v in big_deals.items() if v["tag"] == "buy" and s in meta),
+                         key=lambda x: -x["net_cr"])[:5]
     out = {
+        "smart_money": smart_money, "early": early,
         "generated": now.strftime("%Y-%m-%d %H:%M IST"), "data_date": today,
         "intraday": intraday, "session_min": round(mins), "sectors": sectors,
         "alerts": alerts, "ml": ml_rep, "config": cfg, "holdings": hold_reviews,
