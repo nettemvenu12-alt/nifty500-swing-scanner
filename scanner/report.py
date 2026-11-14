@@ -223,8 +223,8 @@ def telegram_text(o):
     """Short, simple Telegram report: market line, your holdings, numbered buy list, BTST."""
     r, b = o["regime"], o["breadth"]
     live = o.get("intraday")
-    head = (f"⏱ <b>LIVE {o['generated'][-9:-4]} report</b>" if live
-            else f"📈 <b>Swing report {o['data_date']}</b>")
+    head = (f"📈 <b>1. SWING TRADING LIST</b> · ⏱ LIVE {o['generated'][-9:-4]}" if live
+            else f"📈 <b>1. SWING TRADING LIST</b> · {o['data_date']}")
     L = [head, f"Market <b>{r['label']}</b> · Nifty 500 {r['close']} ({r.get('day', 0):+.2f}%)"
                + (f" · VIX {r['vix']} ({r['vix_note']})" if r.get("vix") else "")]
     m = o.get("ml") or {}
@@ -309,7 +309,7 @@ def falls_text(o):
     """Separate message: stocks down 5%+ today, one list per index segment."""
     falls, new = o.get("falls") or {}, set(o.get("new_falls") or [])
     when = f"LIVE {o['generated'][-9:-4]}" if o.get("intraday") else o["data_date"]
-    L = [f"📉 <b>5%+ FALL TODAY</b> ({when}) – konavacha leda?",
+    L = [f"📉 <b>2. STOCK FALLEN LIST</b> – ivala 5%+ down ({when}) – konavacha leda?",
          "✅ BUY OK = tested ~85% wins: Target +5% · SL -15% · Qty chinnadi",
          "❌ AVOID = karanam pakkana undi"]
     for name, _ in SEGMENTS_ORDER:
@@ -339,12 +339,12 @@ SEGMENTS_ORDER = [("Nifty 50", 0), ("Nifty Next 50", 0), ("Midcap 150", 0), ("Sm
 def big_falls_text(o):
     """Separate daily message: down 10%+ in a week and 20%+ in a month, per segment."""
     bf = o.get("big_falls") or {}
-    L = [f"📉 <b>BIG FALLS</b> ({o['data_date']})"]
+    L = [f"🗓 <b>3. WEEKLY / MONTHLY LIST</b> – big falls ({o['data_date']})"]
     for key, title, lim in (("week", "WEEK lo 10%+ down (5 days)", 10), ("month", "MONTH lo 20%+ down (1 month)", 20)):
         L.append(f"\n🗓 <b>{title}</b>")
         for name, _ in SEGMENTS_ORDER:
             lst = (bf.get(key) or {}).get(name) or []
             L.append(f"{SEG_ICONS.get(name, '•')} <b>{name}</b>: "
                      + (", ".join(f"{_esc(x['symbol'])} {x['chg']:+.0f}%" for x in lst) if lst else f"{lim}%+ down ledu"))
-    L.append("\n<i>Information only – padina stock ni konadaniki 📉 5%+ FALL list lo ✅ BUY OK chudandi.</i>")
+    L.append("\n<i>Information only – padina stock ni konadaniki 2. Stock fallen list lo ✅ BUY OK chudandi.</i>")
     return "\n".join(L)
