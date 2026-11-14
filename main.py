@@ -719,8 +719,8 @@ def main():
         with open(os.path.join(ROOT, "reports", name), "w") as fh:
             fh.write(md)
     telegram(report.telegram_text(out))
-    if new_falls:  # separate message, only when a new 5%+ faller shows up today
-        telegram(report.falls_text(out))
+    # separate message every run (hourly): swing list above, 5%+ fall list here
+    telegram(report.falls_text(out))
     print(md[:3000])
 
 
