@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14 00:56 IST",
+ "generated": "2026-11-14 07:52 IST",
  "data_date": "2026-11-12",
  "intraday": false,
  "session_min": 0,
@@ -56,26 +56,29 @@
  "alerts": [],
  "ml": {
   "enabled": true,
-  "train_n": 8612,
+  "train_n": 8611,
   "test_n": 3013,
   "test_from": "2025-06-10",
   "base_rate": 54.3,
-  "auc": 0.563,
-  "top20_win": 63.0,
-  "top20_avg_ret": 1.04,
+  "auc": 0.564,
+  "top20_win": 61.7,
+  "top20_avg_ret": 0.82,
   "all_avg_ret": 0.45,
   "quintiles": [
-   47.8,
-   50.2,
-   52.7,
+   46.6,
+   51.3,
+   54.1,
    57.6,
-   63.0
+   61.7
   ],
-  "hc_threshold": 0.677,
-  "m85_threshold": 0.756,
-  "m85_n": 166,
-  "m85_win": 82.5,
-  "m85_avg": 1.57,
+  "hc_threshold": 0.672,
+  "m85_threshold": 0.754,
+  "m85_n": 167,
+  "m85_win": 84.4,
+  "m85_avg": 1.95,
+  "m90_n": 132,
+  "m90_win": 89.4,
+  "m90_avg": 1.86,
   "useful": true
  },
  "config": {
@@ -95,9 +98,9 @@
  "weekly": null,
  "buy_list": [
   "DLF",
-  "PETRONET",
   "PAYTM",
   "MEESHO",
+  "PETRONET",
   "GABRIEL"
  ],
  "market": {
@@ -106,10 +109,10 @@
   "slots": 5,
   "points": 4,
   "trend": 2,
-  "nifty50": 25299.35,
-  "sma50": 23310.51,
-  "sma200": 23992.2,
-  "notes": "Nifty 50 25299 (above 50 DMA 23311, above 200 DMA 23992) \u00b7 VIX 16.6 \u00b7 breadth 65% above 50 EMA \u00b7 FII 5-day \u20b9+5,737 Cr"
+  "nifty50": 25144.3,
+  "sma50": 23331.79,
+  "sma200": 23991.76,
+  "notes": "Nifty 50 25144 (above 50 DMA 23332, above 200 DMA 23992) \u00b7 VIX 16.6 \u00b7 breadth 65% above 50 EMA \u00b7 FII 5-day \u20b9+5,737 Cr"
  },
  "fii": {
   "fii_5d": 5737,
@@ -134,11 +137,11 @@
   },
   "Midcap 150": {
    "buy": [
-    "PETRONET",
     "PAYTM",
     "MEESHO",
-    "APLAPOLLO",
+    "PETRONET",
     "KALYANKJIL",
+    "APLAPOLLO",
     "ABCAPITAL"
    ],
    "watch": [
@@ -224,10 +227,10 @@
  "regime": {
   "label": "POSITIVE",
   "mult": 1.0,
-  "close": 23865.8,
-  "ret21": 9.36,
-  "rsi": 75.8,
-  "day": 0.36,
+  "close": 23734.2,
+  "ret21": 7.44,
+  "rsi": 71.9,
+  "day": -0.55,
   "vix": 16.62,
   "vix_note": "rising \u2013 be careful"
  },
@@ -240,9 +243,9 @@
  "universe": 491,
  "swing_backtest": {
   "A+ Momentum": {
-   "n": 5099,
+   "n": 5100,
    "win5": 63.3,
-   "win10": 33.0,
+   "win10": 33.1,
    "avg": 1.42,
    "profit": 63.4,
    "stop_rate": 36.4
@@ -264,7 +267,7 @@
    "stop_rate": 33.1
   },
   "52W High": {
-   "n": 3688,
+   "n": 3690,
    "win5": 66.0,
    "win10": 34.4,
    "avg": 1.54,
@@ -272,8 +275,8 @@
    "stop_rate": 33.5
   },
   "Squeeze": {
-   "n": 2701,
-   "win5": 61.2,
+   "n": 2702,
+   "win5": 61.1,
    "win10": 29.9,
    "avg": 0.95,
    "profit": 61.3,
@@ -290,8 +293,8 @@
  },
  "btst_backtest": {
   "n": 3933,
-  "gap_up": 72.4,
-  "hit1": 71.3,
+  "gap_up": 72.5,
+  "hit1": 71.2,
   "avg_open": 0.43,
   "avg_best": 2.4
  },
@@ -335,7 +338,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.8,
+   "ml_prob": 77.0,
    "patterns": [
     "Bullish engulfing"
    ],
@@ -350,13 +353,16 @@
     "Top 6% relative strength in Nifty 500"
    ],
    "mode85": true,
+   "mode90": true,
+   "m90_target": 800.07,
+   "m90_stop": 576.97,
    "m85_target": 807.76,
    "m85_stop": 653.9,
    "m85_qty": 12,
    "high_conviction": true,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 62,
+   "results_in_days": 61,
    "fund": {
     "pe": 41.1,
     "roe": 10.3,
@@ -366,7 +372,7 @@
     "profit_yoy": 70.6,
     "profit_qoq": 63.9,
     "eps_growth": 10.3,
-    "results_in_days": 62,
+    "results_in_days": 61,
     "sector": "Real Estate"
    },
    "news": [
@@ -451,6 +457,7 @@
     769.3
    ],
    "size_tier": "mode85",
+   "m90_qty": 7,
    "in_buy_list": true,
    "new": false
   },
@@ -493,7 +500,7 @@
     "Backtest": 1.6,
     "AI model": 10.0
    },
-   "ml_prob": 77.2,
+   "ml_prob": 76.8,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -506,6 +513,9 @@
     "Top 4% relative strength in Nifty 500"
    ],
    "mode85": true,
+   "mode90": true,
+   "m90_target": 10367.76,
+   "m90_stop": 7476.75,
    "m85_target": 10467.45,
    "m85_stop": 8473.65,
    "m85_qty": 1,
@@ -611,165 +621,8 @@
     9969.0
    ],
    "size_tier": "mode85",
+   "m90_qty": 0,
    "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "PETRONET",
-   "name": "Petronet LNG Ltd.",
-   "industry": "Oil Gas & Consumable Fuels",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "A+ Momentum, 52W High",
-   "score": 83.6,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "label": "STRONG BUY",
-   "entry": 335.0,
-   "stop": 315.23,
-   "dip_buy": 331.05,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 301.89,
-   "target1": 351.75,
-   "target2": 368.5,
-   "risk_pct": 5.9,
-   "rr_t2": 1.69,
-   "hold": "up to 60 days",
-   "qty": 59,
-   "invest": 19765,
-   "max_loss": 1166,
-   "close": 335.0,
-   "chg": 1.58,
-   "rsi": 79.6,
-   "adx": 29.5,
-   "vol_x": 1.85,
-   "from_high": -0.4,
-   "rs_rank": 95,
-   "hist_win5": 41.0,
-   "parts": {
-    "Technical": 54,
-    "Rel. Strength": 9.5,
-    "Fundamentals": 12.0,
-    "News": 3.0,
-    "Backtest": 0.2,
-    "AI model": 10.0
-   },
-   "ml_prob": 76.4,
-   "patterns": [],
-   "weekly_up": true,
-   "intra": null,
-   "why": [
-    "A+ setup: near 52W high with strong relative strength",
-    "Broke 55-day high",
-    "Volume 1.8x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 5% relative strength in Nifty 500"
-   ],
-   "mode85": true,
-   "m85_target": 351.75,
-   "m85_stop": 284.75,
-   "m85_qty": 29,
-   "high_conviction": true,
-   "rule_fails": [],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 10.5,
-    "roe": 20.4,
-    "de": 8.7,
-    "mcap_cr": 48607.5,
-    "sales_yoy": -34.6,
-    "profit_yoy": 51.3,
-    "profit_qoq": 10.5,
-    "eps_growth": 51.3,
-    "results_in_days": null,
-    "sector": "Energy"
-   },
-   "news": [
-    {
-     "title": "What Petronet LNG Doubters Overlooked - Yahoo Finance",
-     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQREZQaXZEeEZ1T3ZneWZMaWZkRmtib0dzeHc5OHFmSTFKdnZYUk5VRWYwdURpa1pQUTQwY09yempBN3FYR1BMTU9zUjR6bmxaWElNbXlXLXI0NzlqcXh0NGlLOGl2eTRwZ1k4ZVc0d1lLeTZWd2pDek85Sm5KQmpnVkU5SHFpVXFCUW1BeXkySFBsWEhXcHEzTjBSby1GUQ?oc=5",
-     "date": "Tue, 10 Nov 2026 19:09:45 GMT"
-    },
-    {
-     "title": "Petronet LNG schedules analyst meets in Mumbai for Nov 17-18, 2026 - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQazIzVUItbks4M0tObENnSXpLN1MxaVNRaUd3QUx1U21oYVVkVXd2YTAzX05QSmV1WXBmVWp4VWlTVm5oN0l2YzN4akFmVUl5TDVGSUtKODFaYVFUNUhUcjJJaFBTUDl1NFZNQ1h2bHJFSjVmRk4ycC0zTnJaZjgwUkJWYlgxcTFScEluLVdIcjNNMXRVeFFpbGlDVVBDMUVSeV9mVHFwVC1HVHBoRzhlNGliT3pfQQ?oc=5",
-     "date": "Thu, 12 Nov 2026 05:34:53 GMT"
-    },
-    {
-     "title": "Petronet LNG Limited Q2 PAT rises 53% to \u20b91,235 crore - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONjdabWhtWDhVVk9zMmItNkZWYlEtaWtQOGtsZTRKendLdV9abm9TSHIxdUlwaGxsb2ludHJtMVp2MGxpZG5KOWVJNHVFb1VIR3ZsQ1FjZFZjUHlRXzVYQkxUSFRYNnFDQUJCMEtPZVFRYXg4M254blBsZUtPX0lYWWpLVVkySExidWFocE5MRllETzZaSy1lbVByZVp5eVFx?oc=5",
-     "date": "Mon, 09 Nov 2026 11:26:49 GMT"
-    }
-   ],
-   "sentiment": 0.2,
-   "warnings": [
-    "RSI overbought \u2013 wait for dip"
-   ],
-   "spark": [
-    275.58,
-    279.93,
-    281.79,
-    284.97,
-    286.53,
-    289.41,
-    286.04,
-    282.62,
-    284.53,
-    285.55,
-    293.96,
-    285.85,
-    282.81,
-    283.11,
-    281.74,
-    284.53,
-    279.49,
-    279.59,
-    282.32,
-    280.86,
-    277.68,
-    275.87,
-    277.19,
-    286.14,
-    281.15,
-    275.53,
-    279.54,
-    280.27,
-    280.17,
-    283.45,
-    276.7,
-    278.22,
-    279.2,
-    283.6,
-    290.93,
-    290.44,
-    282.13,
-    285.06,
-    284.09,
-    283.6,
-    286.48,
-    288.68,
-    286.53,
-    287.17,
-    288.49,
-    283.99,
-    279.98,
-    285.31,
-    289.46,
-    278.61,
-    282.76,
-    283.11,
-    294.3,
-    296.31,
-    304.13,
-    310.0,
-    317.0,
-    320.45,
-    329.8,
-    335.0
-   ],
-   "size_tier": "mode85",
-   "in_buy_list": true,
    "new": false
   },
   {
@@ -811,7 +664,7 @@
     "Backtest": 3.9,
     "AI model": 10.0
    },
-   "ml_prob": 80.9,
+   "ml_prob": 81.1,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -824,6 +677,9 @@
     "Top 3% relative strength in Nifty 500"
    ],
    "mode85": true,
+   "mode90": true,
+   "m90_target": 2002.0,
+   "m90_stop": 1443.75,
    "m85_target": 2021.25,
    "m85_stop": 1636.25,
    "m85_qty": 5,
@@ -852,7 +708,7 @@
     {
      "title": "India's Paytm gets preliminary RBI nod for wallet licence; shares hit record high - Reuters",
      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTkRzdktWTTB4bUxnUHRKR1A0SlI0eVMzVmFlbTI3QlRmSy1QMWhMLXhnYTdmTHl0bGkzUXRwbXdqbW9aZ3R4Y01EZTYweFN4WXgySmFGWU1kSzM4MmlhcC1POWJUTF9JNGFtcWZWVnlEZUhtNzBZQWFkNVFuVkdXWmNtd2pLTm1PWTAyM0laOEU2YUNQd1dKeVdYS0M3VjF4QWFBckNuME8xS3RoNnpYNHRDWG95WngtRUwzaWJWUVM?oc=5",
-     "date": "Fri, 13 Nov 2026 11:08:02 GMT"
+     "date": "Fri, 13 Nov 2026 18:29:05 GMT"
     },
     {
      "title": "Paytm share price crosses Rs 1,900 for the first time since listing in 2021; up 49% year-to-date - The Times of India",
@@ -925,6 +781,7 @@
     1925.0
    ],
    "size_tier": "mode85",
+   "m90_qty": 3,
    "in_buy_list": true,
    "new": false
   },
@@ -967,7 +824,7 @@
     "Backtest": 4.2,
     "AI model": 10.0
    },
-   "ml_prob": 77.8,
+   "ml_prob": 78.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -980,6 +837,9 @@
     "Top 2% relative strength in Nifty 500"
    ],
    "mode85": true,
+   "mode90": true,
+   "m90_target": 264.27,
+   "m90_stop": 190.58,
    "m85_target": 266.82,
    "m85_stop": 215.99,
    "m85_qty": 39,
@@ -1017,14 +877,14 @@
      "date": "Fri, 13 Nov 2026 07:45:45 GMT"
     },
     {
+     "title": "SoftBank Offloads Meesho Shares Worth \u20b91,855 Cr - Inc42",
+     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONDFBUWQ3Mm9vNjlRRTlYUV80R1dPWURhcm55RHlBUDRkYTRiSUFkX2tsX3puSTMwakJ6bWcxaHJheUhvMWRuOUhjNFFkQ2E0UmpYRFpRVVNrOTREM1RjelBZU1R1TmFlQko1WUFLWmhLNWZDQlFtUF83Y2MyMDZuX0xBd00?oc=5",
+     "date": "Fri, 13 Nov 2026 22:09:36 GMT"
+    },
+    {
      "title": "Why is Meesho stock at a record high today? - Investing.com",
      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNenNfLTNfOWFjbTFZN3lyTEJ4M2FFeFhJLWpZMHhmcHRxd3hJM0VqSll0WnFSajZ6U2liUFJoRUlnXzNfUVBUdEtHWU5UalNjM0tUNEw1eGJja2R0RnV0NFNTRExmLV94WHEza2FwV0ZQNDdYS0VQMlg3RGxfSmsyQzBickNMOUF5WlpDOUFfem01d1BmeS1ISjExUC01bFBlS1RqMWFWcw?oc=5",
      "date": "Thu, 12 Nov 2026 05:48:25 GMT"
-    },
-    {
-     "title": "Meesho shares surge to new post-listing high on MSCI inclusion - Here are the potential inflows it could get - CNBC TV18",
-     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZzRvbHlJaVV0WG9tYkkxc1hJRDFUUGoxMEVQcEhNUE5GREhGc19fTklOU0otRUw5dWt4QXpDZ25FMGViZjE0cnNsWkpTb1Qya2Q5RkYzUjFRR2tnYjAzQ0VaaWI4MkxXcVAxTUYzZEtEaVo1VlcxbjQ1WlBjanNLeFpHczB4TTlVaXdOcENSdmlHSUF0djNpTUVSTEpzaV9DdlhYSjJ4Z1k5U2s5NWpTMUZNMXRRaWUyeFdaeXVlVmt2YVhMdFlTS1kxRlBCQVNGY3RfeURGNHTSAd4BQVVfeXFMTnVwWHNIVXZCcWZWelNrQkVROEpIRXRQaUc5Y25XT1lSSkt0aGpBN3F6ZFM3al8xZmpfSl9fTXh3d3BwRFdYYk5Qd2padWJmQ1NOUGZmZHNhZlFKcTVFYXJ3a2FFWGR2Y2g3c0FPNExrZTJPVVNYZ2xvUFFtOWRWWkhzcXNLdmUtRlMtSnRaWkJPS2Z4QjhWcmI4MTVwcWtoNkMwWWliNURTcGV0VmhhZG0wcndwOEpoUUdOU0JDTXRpZndPZVNNTFdVaHJMbFE4aHBoT0dLY0h2VGExNTFR?oc=5",
-     "date": "Thu, 12 Nov 2026 06:31:10 GMT"
     }
    ],
    "sentiment": 0.6,
@@ -1094,6 +954,169 @@
     254.11
    ],
    "size_tier": "mode85",
+   "m90_qty": 23,
+   "in_buy_list": true,
+   "new": false
+  },
+  {
+   "symbol": "PETRONET",
+   "name": "Petronet LNG Ltd.",
+   "industry": "Oil Gas & Consumable Fuels",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "A+ Momentum, 52W High",
+   "score": 83.7,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "STRONG BUY",
+   "entry": 335.0,
+   "stop": 315.23,
+   "dip_buy": 331.05,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 301.89,
+   "target1": 351.75,
+   "target2": 368.5,
+   "risk_pct": 5.9,
+   "rr_t2": 1.69,
+   "hold": "up to 60 days",
+   "qty": 59,
+   "invest": 19765,
+   "max_loss": 1166,
+   "close": 335.0,
+   "chg": 1.58,
+   "rsi": 79.6,
+   "adx": 29.5,
+   "vol_x": 1.85,
+   "from_high": -0.4,
+   "rs_rank": 95,
+   "hist_win5": 41.0,
+   "parts": {
+    "Technical": 54,
+    "Rel. Strength": 9.5,
+    "Fundamentals": 12.0,
+    "News": 3.2,
+    "Backtest": 0.2,
+    "AI model": 10.0
+   },
+   "ml_prob": 75.5,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": null,
+   "why": [
+    "A+ setup: near 52W high with strong relative strength",
+    "Broke 55-day high",
+    "Volume 1.8x average",
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up",
+    "Top 5% relative strength in Nifty 500"
+   ],
+   "mode85": true,
+   "mode90": false,
+   "m90_target": 348.4,
+   "m90_stop": 251.25,
+   "m85_target": 351.75,
+   "m85_stop": 284.75,
+   "m85_qty": 29,
+   "high_conviction": true,
+   "rule_fails": [],
+   "smart": null,
+   "results_in_days": null,
+   "fund": {
+    "pe": 10.5,
+    "roe": 20.4,
+    "de": 8.7,
+    "mcap_cr": 48607.5,
+    "sales_yoy": -34.6,
+    "profit_yoy": 51.3,
+    "profit_qoq": 10.5,
+    "eps_growth": 51.3,
+    "results_in_days": null,
+    "sector": "Energy"
+   },
+   "news": [
+    {
+     "title": "What Petronet LNG Doubters Overlooked - Yahoo Finance",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQREZQaXZEeEZ1T3ZneWZMaWZkRmtib0dzeHc5OHFmSTFKdnZYUk5VRWYwdURpa1pQUTQwY09yempBN3FYR1BMTU9zUjR6bmxaWElNbXlXLXI0NzlqcXh0NGlLOGl2eTRwZ1k4ZVc0d1lLeTZWd2pDek85Sm5KQmpnVkU5SHFpVXFCUW1BeXkySFBsWEhXcHEzTjBSby1GUQ?oc=5",
+     "date": "Tue, 10 Nov 2026 19:09:45 GMT"
+    },
+    {
+     "title": "Petronet LNG schedules analyst meets in Mumbai for Nov 17-18, 2026 - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQazIzVUItbks4M0tObENnSXpLN1MxaVNRaUd3QUx1U21oYVVkVXd2YTAzX05QSmV1WXBmVWp4VWlTVm5oN0l2YzN4akFmVUl5TDVGSUtKODFaYVFUNUhUcjJJaFBTUDl1NFZNQ1h2bHJFSjVmRk4ycC0zTnJaZjgwUkJWYlgxcTFScEluLVdIcjNNMXRVeFFpbGlDVVBDMUVSeV9mVHFwVC1HVHBoRzhlNGliT3pfQQ?oc=5",
+     "date": "Thu, 12 Nov 2026 05:34:53 GMT"
+    },
+    {
+     "title": "Petronet LNG Limited Q2 PAT rises 53% to \u20b91,235 crore - Multibagg AI",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONjdabWhtWDhVVk9zMmItNkZWYlEtaWtQOGtsZTRKendLdV9abm9TSHIxdUlwaGxsb2ludHJtMVp2MGxpZG5KOWVJNHVFb1VIR3ZsQ1FjZFZjUHlRXzVYQkxUSFRYNnFDQUJCMEtPZVFRYXg4M254blBsZUtPX0lYWWpLVVkySExidWFocE5MRllETzZaSy1lbVByZVp5eVFx?oc=5",
+     "date": "Mon, 09 Nov 2026 11:26:49 GMT"
+    }
+   ],
+   "sentiment": 0.3,
+   "warnings": [
+    "RSI overbought \u2013 wait for dip"
+   ],
+   "spark": [
+    275.58,
+    279.93,
+    281.79,
+    284.97,
+    286.53,
+    289.41,
+    286.04,
+    282.62,
+    284.53,
+    285.55,
+    293.96,
+    285.85,
+    282.81,
+    283.11,
+    281.74,
+    284.53,
+    279.49,
+    279.59,
+    282.32,
+    280.86,
+    277.68,
+    275.87,
+    277.19,
+    286.14,
+    281.15,
+    275.53,
+    279.54,
+    280.27,
+    280.17,
+    283.45,
+    276.7,
+    278.22,
+    279.2,
+    283.6,
+    290.93,
+    290.44,
+    282.13,
+    285.06,
+    284.09,
+    283.6,
+    286.48,
+    288.68,
+    286.53,
+    287.17,
+    288.49,
+    283.99,
+    279.98,
+    285.31,
+    289.46,
+    278.61,
+    282.76,
+    283.11,
+    294.3,
+    296.31,
+    304.13,
+    310.0,
+    317.0,
+    320.45,
+    329.8,
+    335.0
+   ],
+   "size_tier": "mode85",
+   "m90_qty": 17,
    "in_buy_list": true,
    "new": false
   },
@@ -1136,7 +1159,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 82.8,
+   "ml_prob": 84.2,
    "patterns": [
     "NR7 breakout"
    ],
@@ -1150,6 +1173,9 @@
     "Top 8% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 1706.85,
+   "m90_stop": 1230.9,
    "m85_target": 1723.26,
    "m85_stop": 1395.02,
    "m85_qty": 6,
@@ -1255,6 +1281,7 @@
     1641.2
    ],
    "size_tier": "high_conviction",
+   "m90_qty": 3,
    "in_buy_list": true,
    "new": false
   },
@@ -1297,7 +1324,7 @@
     "Backtest": 0.9,
     "AI model": 10.0
    },
-   "ml_prob": 77.8,
+   "ml_prob": 77.2,
    "patterns": [
     "Inside-bar breakout"
    ],
@@ -1310,12 +1337,14 @@
     "Tight base (volatility contraction)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 1756.98,
+   "m90_stop": 1267.05,
    "m85_target": 1773.87,
    "m85_stop": 1435.99,
    "m85_qty": 5,
    "high_conviction": true,
    "rule_fails": [
-    "not outperforming Nifty 50 (3M)",
     "sector not in top half",
     "EMA 20>50>200 not stacked"
    ],
@@ -1415,6 +1444,7 @@
     1689.4
    ],
    "size_tier": "high_conviction",
+   "m90_qty": 3,
    "in_buy_list": false,
    "new": false
   },
@@ -1425,7 +1455,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "A+ Momentum, Pullback",
-   "score": 71.1,
+   "score": 71.3,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "BUY",
    "entry": 2125.5,
@@ -1453,11 +1483,11 @@
     "Technical": 46,
     "Rel. Strength": 8.6,
     "Fundamentals": 6.0,
-    "News": 3.0,
+    "News": 3.2,
     "Backtest": 4.6,
     "AI model": 10.0
    },
-   "ml_prob": 75.6,
+   "ml_prob": 69.2,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -1468,6 +1498,9 @@
     "Top 14% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2210.52,
+   "m90_stop": 1594.12,
    "m85_target": 2231.78,
    "m85_stop": 1806.68,
    "m85_qty": 4,
@@ -1496,17 +1529,17 @@
      "date": "Sat, 07 Nov 2026 09:59:30 GMT"
     },
     {
+     "title": "BEML share price falls after hitting 52-week high- ICICI Direct sees 39% upside in the defence PSU stock- Should you buy - TradingView",
+     "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNM0lzcDdacHhQQUp4YmRicC12UkVJTWtyVDhENFdZUGw5QkpPV3FLNEJ0MktfV0tsRk90Yi1VNDdiWkQ0SlFqUlh0OFJVSGpWZTJTX1FXbnZ3QTM3aWlFeHRaUG1MSHdVa3U4bFF4VkdXM0JLQnA1YTB2Smx1NGM5UWpKdk91UnpEZmgyOXhxVjlQSjhkWWx3NXB6bURXaE9TRVRBRnZFamJoaG9ENkFkNUwyX19UNkNsS0ROX3FVUXpwd0tCQlFWZzgxVG1vVU83dU1EMjdLWTY4c3V4Y2xzLW1RcFZwUW5xZTJqVkhiUWJ5Y2dQa0xfckFyOHhacm9nRW5xWg?oc=5",
+     "date": "Fri, 13 Nov 2026 19:18:29 GMT"
+    },
+    {
      "title": "BEML shares gain nearly 1%, rally 15% so far in 2026; key update investors should know - Upstox",
      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPMGJ5RW0yUVBrUDhJM1VpLXVnbWtON3lwdElvYjhjLXM1MEUzSnlab2FwNFZnSktOazVrY29RcFFuTzRwVDBMUHZ1aE81NW00QTBGWHNMMlc0NmYtcjZudHdDZkRNZ193SDF5Rnp3a1JNTXNnTUtCZC1iZmdKVzJCNVpEUlNyTFZkYVdCTll4cDF1bWxrc1RIX3FxUkdSRWg2RmpncHBrZUtQMzVwTUV1VjBLbTBvcTVHNS1qTkZxdWx1T2hDRzFTQlhTQWhxemJuVFluY1hkemE?oc=5",
      "date": "Thu, 12 Nov 2026 06:39:53 GMT"
-    },
-    {
-     "title": "BEML (NSEI:BEML) Stock Forecast & Analyst Predictions - Simply Wall St",
-     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81UE9QaVlWZ2UxRjR0akw2c2d2cWVfSTVBSXI2TGhFcmxDRi04WjlJZGkwNGdpUUR2a090TkswVW9JN0gzVGp3VE1lcXpIdllDUG5TT2k4U01hSHpGNmU5UDdSLXYxTk45aTZwZXhfNjBzNUFONzdpT0JKNlVwdw?oc=5",
-     "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     }
    ],
-   "sentiment": 0.2,
+   "sentiment": 0.3,
    "warnings": [],
    "spark": [
     1897.33,
@@ -1571,6 +1604,172 @@
     2125.5
    ],
    "size_tier": "high_conviction",
+   "m90_qty": 2,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "KALYANKJIL",
+   "name": "Kalyan Jewellers India Ltd.",
+   "industry": "Consumer Durables",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "A+ Momentum, 52W High",
+   "score": 84.3,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "STRONG BUY",
+   "entry": 710.9,
+   "stop": 640.84,
+   "dip_buy": 696.89,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 571.73,
+   "target1": 746.45,
+   "target2": 781.99,
+   "risk_pct": 9.9,
+   "rr_t2": 1.01,
+   "hold": "up to 60 days",
+   "qty": 14,
+   "invest": 9953,
+   "max_loss": 981,
+   "close": 710.9,
+   "chg": 7.1,
+   "rsi": 79.7,
+   "adx": 30.9,
+   "vol_x": 5.73,
+   "from_high": -0.9,
+   "rs_rank": 98,
+   "hist_win5": 61.9,
+   "parts": {
+    "Technical": 54,
+    "Rel. Strength": 9.8,
+    "Fundamentals": 14.0,
+    "News": 4.5,
+    "Backtest": 3.6,
+    "AI model": 10.0
+   },
+   "ml_prob": 77.6,
+   "patterns": [],
+   "weekly_up": false,
+   "intra": null,
+   "why": [
+    "A+ setup: near 52W high with strong relative strength",
+    "Broke 55-day high",
+    "Volume 5.7x average",
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Top 2% relative strength in Nifty 500"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 739.34,
+   "m90_stop": 533.17,
+   "m85_target": 746.45,
+   "m85_stop": 604.27,
+   "m85_qty": 14,
+   "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half"
+   ],
+   "smart": null,
+   "results_in_days": null,
+   "fund": {
+    "pe": 45.0,
+    "roe": 26.7,
+    "de": 92.3,
+    "mcap_cr": 71982.7,
+    "sales_yoy": 31.4,
+    "profit_yoy": 63.9,
+    "profit_qoq": 22.5,
+    "eps_growth": 63.9,
+    "results_in_days": null,
+    "sector": "Consumer Cyclical"
+   },
+   "news": [
+    {
+     "title": "Kalyan Jewellers Share Price Rallies 33% in Seven Sessions; Stock Jumps 6.67% Today - India Infoline",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdHhyb1Z1YzVyWjR5ZDA2eGdlcmNCaEp2MEhPMkxBQkJZU0x0bDFTZk5nQlJidl94SklfSXVUNFZ5dzBFZFBoWmJRd1ZrYjZZZnpUNElYR1kyMU1IRzdUUS1XTmx1cW9tVVVfWnBBcjViZ0tFbHp4dC1CcDFzM3RSS0NwT20xSm1RR0lmVXpFS2hrN3JqandQSm5ZQXdWdmVhTGMwSTZSN0R0cklIWUNaQ25xdnFYaVYydUF1Q0xFSUV1QnM?oc=5",
+     "date": "Thu, 12 Nov 2026 05:45:00 GMT"
+    },
+    {
+     "title": "Kalyan Jewellers shares surge 10% as Q2 profit jumps 64%; UBS sees big upside, check target price - Moneycontrol.com",
+     "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOZ2l1OWg0Y2VCdFRSdjhrelhmV3lUSzFfRjVBU1NtVTBoRFZtclF4WmlhcXVhQ2tUMHRzR0lEYVFWdTZCT1V1aWhtbW93MEpHeXZDdDhuVDFoMl8ybEhEZFk5QVc5T0hBNzUxUW5SdVBRWmJoVUhIcWhlNDAySGFlSW9TX0tJdmdWVUpRYVluQ2VXb3VIUHFna016TkowdlBubHlyUHFpdzBNSDJsWkRCaUdQQzZleWhkNGl5YkdQTXdfRE5TaEJiOFh5MHY0Z1RMU0ZKUC10WjdVVTJoYmY1V19ZWnFLNExSUTBVY25HQdIB9AFBVV95cUxNSTVZZWk4RUtTQlE0NHpUOUtUdFBXRGJ4RjR5WHIwM1hqTzdKVzR4NnZiMktBSFNyV2FkNG1LTnJWb0J5Sy05RFZKOV9zQkpCblBLRGtueV92WV9sTDg4SEpIRjBNd3BVSUNUdjhtWG5OWjh5bjU2VDdNaThTWlVJcWxDT1R5N0ZKdFVsUDRGbERTRmtYTzVLRXNWNGszeVlOb1BWRmVVeTRuaFNJaUtXaW5pa1BnLWhxaXk2anBRdFFYVFJEY2VhcW1KWXNXSHdySnZwNExMTXQ4MkhjZmJ2U2N5Qk91M1laVDJHelpvUk5iNFpU?oc=5",
+     "date": "Wed, 11 Nov 2026 04:04:15 GMT"
+    },
+    {
+     "title": "Why Kalyan Jewellers' Share Price is Rising - Equitymaster",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5xbWVtUEZ5WVVXUmw0MVlxdDBFZUNSdGpjU1Mwb2JaajRvSGpfX3pfYzZFaTFXc2l0V1dXYWJiYU1lX0hDaHp0eENFV1htNm5OREFWMGVmX21iNUJjZk1LclJITE9SbW0zXy16b3ZiTlg?oc=5",
+     "date": "Wed, 11 Nov 2026 08:53:45 GMT"
+    }
+   ],
+   "sentiment": 0.8,
+   "warnings": [
+    "Weekly trend not confirmed",
+    "RSI overbought \u2013 wait for dip",
+    "Up >12% in 5 days \u2013 extended"
+   ],
+   "spark": [
+    607.52,
+    599.16,
+    592.78,
+    593.58,
+    601.1,
+    605.48,
+    610.11,
+    608.12,
+    626.74,
+    613.3,
+    598.56,
+    570.67,
+    587.6,
+    582.92,
+    596.37,
+    588.6,
+    610.11,
+    605.13,
+    612.7,
+    601.15,
+    604.2,
+    580.9,
+    581.45,
+    581.85,
+    581.5,
+    583.1,
+    584.25,
+    573.6,
+    573.0,
+    564.0,
+    568.85,
+    553.15,
+    528.5,
+    556.85,
+    548.15,
+    569.0,
+    553.5,
+    554.0,
+    567.15,
+    571.0,
+    564.0,
+    558.85,
+    558.0,
+    551.3,
+    557.0,
+    530.4,
+    512.0,
+    504.8,
+    500.0,
+    510.0,
+    515.0,
+    498.0,
+    505.45,
+    508.2,
+    529.05,
+    560.0,
+    590.75,
+    611.0,
+    663.75,
+    710.9
+   ],
+   "size_tier": "buy",
+   "m90_qty": 8,
    "in_buy_list": false,
    "new": false
   },
@@ -1581,7 +1780,7 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "A+ Momentum, Pullback",
-   "score": 85.0,
+   "score": 82.8,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "STRONG BUY",
    "entry": 2225.7,
@@ -1611,9 +1810,9 @@
     "Fundamentals": 15.0,
     "News": 3.8,
     "Backtest": 3.2,
-    "AI model": 7.1
+    "AI model": 4.7
    },
-   "ml_prob": 60.5,
+   "ml_prob": 53.4,
    "patterns": [
     "NR7 breakout"
    ],
@@ -1628,6 +1827,9 @@
     "Tight base (volatility contraction)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2314.73,
+   "m90_stop": 1669.28,
    "m85_target": 2336.98,
    "m85_stop": 1891.84,
    "m85_qty": 4,
@@ -1636,7 +1838,7 @@
     "sector not in top half"
    ],
    "smart": null,
-   "results_in_days": 69,
+   "results_in_days": 68,
    "fund": {
     "pe": 47.7,
     "roe": 25.3,
@@ -1646,7 +1848,7 @@
     "profit_yoy": 61.2,
     "profit_qoq": 45.3,
     "eps_growth": 26.8,
-    "results_in_days": 69,
+    "results_in_days": 68,
     "sector": "Basic Materials"
    },
    "news": [
@@ -1731,167 +1933,7 @@
     2225.7
    ],
    "size_tier": "buy",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "KALYANKJIL",
-   "name": "Kalyan Jewellers India Ltd.",
-   "industry": "Consumer Durables",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "A+ Momentum, 52W High",
-   "score": 84.7,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "label": "STRONG BUY",
-   "entry": 710.9,
-   "stop": 640.84,
-   "dip_buy": 696.89,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 571.73,
-   "target1": 746.45,
-   "target2": 781.99,
-   "risk_pct": 9.9,
-   "rr_t2": 1.01,
-   "hold": "up to 60 days",
-   "qty": 14,
-   "invest": 9953,
-   "max_loss": 981,
-   "close": 710.9,
-   "chg": 7.1,
-   "rsi": 79.7,
-   "adx": 30.9,
-   "vol_x": 5.73,
-   "from_high": -0.9,
-   "rs_rank": 98,
-   "hist_win5": 61.9,
-   "parts": {
-    "Technical": 54,
-    "Rel. Strength": 9.8,
-    "Fundamentals": 14.0,
-    "News": 5.0,
-    "Backtest": 3.6,
-    "AI model": 10.0
-   },
-   "ml_prob": 81.5,
-   "patterns": [],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "A+ setup: near 52W high with strong relative strength",
-    "Broke 55-day high",
-    "Volume 5.7x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Top 2% relative strength in Nifty 500"
-   ],
-   "mode85": false,
-   "m85_target": 746.45,
-   "m85_stop": 604.27,
-   "m85_qty": 14,
-   "high_conviction": false,
-   "rule_fails": [
-    "sector not in top half"
-   ],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 45.0,
-    "roe": 26.7,
-    "de": 92.3,
-    "mcap_cr": 71982.7,
-    "sales_yoy": 31.4,
-    "profit_yoy": 63.9,
-    "profit_qoq": 22.5,
-    "eps_growth": 63.9,
-    "results_in_days": null,
-    "sector": "Consumer Cyclical"
-   },
-   "news": [
-    {
-     "title": "Kalyan Jewellers Share Price Rallies 33% in Seven Sessions; Stock Jumps 6.67% Today - India Infoline",
-     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdHhyb1Z1YzVyWjR5ZDA2eGdlcmNCaEp2MEhPMkxBQkJZU0x0bDFTZk5nQlJidl94SklfSXVUNFZ5dzBFZFBoWmJRd1ZrYjZZZnpUNElYR1kyMU1IRzdUUS1XTmx1cW9tVVVfWnBBcjViZ0tFbHp4dC1CcDFzM3RSS0NwT20xSm1RR0lmVXpFS2hrN3JqandQSm5ZQXdWdmVhTGMwSTZSN0R0cklIWUNaQ25xdnFYaVYydUF1Q0xFSUV1QnM?oc=5",
-     "date": "Thu, 12 Nov 2026 05:45:00 GMT"
-    },
-    {
-     "title": "Where Could Kalyan Jewellers' Share Price Potentially Be in the Next 5 Years? - Equitymaster",
-     "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOc3c2MndjcUIteFdlajBXR3hac2s5c09weTEta0VwOEZhLUt2aEhCUVFEZUJYcnNsZU43QzV6ekM2OFVvRmFUVHdsVlhrV2Yxam5EWWhQMV9DbktvTTZKVmtXZk9rSGl1OXBDMG5xNC1zNXNrZnBuS25TdkhqSFlaRG5qYkxyc29QenppbWNMR0FKeURFTDJoZ3I4YnN0SnRxZGV1bXVzVkFjbGxtQWwzTVhVMHN0aGNPZzA2Rmc5bDNUdFpqcFpFLTlIbGRZdkJDWmtockRKeG1fN0dmQ1E?oc=5",
-     "date": "Sat, 07 Nov 2026 01:30:00 GMT"
-    },
-    {
-     "title": "Kalyan Jewellers shares surge 10% as Q2 profit jumps 64%; UBS sees big upside, check target price - Moneycontrol.com",
-     "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOZ2l1OWg0Y2VCdFRSdjhrelhmV3lUSzFfRjVBU1NtVTBoRFZtclF4WmlhcXVhQ2tUMHRzR0lEYVFWdTZCT1V1aWhtbW93MEpHeXZDdDhuVDFoMl8ybEhEZFk5QVc5T0hBNzUxUW5SdVBRWmJoVUhIcWhlNDAySGFlSW9TX0tJdmdWVUpRYVluQ2VXb3VIUHFna016TkowdlBubHlyUHFpdzBNSDJsWkRCaUdQQzZleWhkNGl5YkdQTXdfRE5TaEJiOFh5MHY0Z1RMU0ZKUC10WjdVVTJoYmY1V19ZWnFLNExSUTBVY25HQdIB9AFBVV95cUxNSTVZZWk4RUtTQlE0NHpUOUtUdFBXRGJ4RjR5WHIwM1hqTzdKVzR4NnZiMktBSFNyV2FkNG1LTnJWb0J5Sy05RFZKOV9zQkpCblBLRGtueV92WV9sTDg4SEpIRjBNd3BVSUNUdjhtWG5OWjh5bjU2VDdNaThTWlVJcWxDT1R5N0ZKdFVsUDRGbERTRmtYTzVLRXNWNGszeVlOb1BWRmVVeTRuaFNJaUtXaW5pa1BnLWhxaXk2anBRdFFYVFJEY2VhcW1KWXNXSHdySnZwNExMTXQ4MkhjZmJ2U2N5Qk91M1laVDJHelpvUk5iNFpU?oc=5",
-     "date": "Wed, 11 Nov 2026 04:04:15 GMT"
-    }
-   ],
-   "sentiment": 1.0,
-   "warnings": [
-    "Weekly trend not confirmed",
-    "RSI overbought \u2013 wait for dip",
-    "Up >12% in 5 days \u2013 extended"
-   ],
-   "spark": [
-    607.52,
-    599.16,
-    592.78,
-    593.58,
-    601.1,
-    605.48,
-    610.11,
-    608.12,
-    626.74,
-    613.3,
-    598.56,
-    570.67,
-    587.6,
-    582.92,
-    596.37,
-    588.6,
-    610.11,
-    605.13,
-    612.7,
-    601.15,
-    604.2,
-    580.9,
-    581.45,
-    581.85,
-    581.5,
-    583.1,
-    584.25,
-    573.6,
-    573.0,
-    564.0,
-    568.85,
-    553.15,
-    528.5,
-    556.85,
-    548.15,
-    569.0,
-    553.5,
-    554.0,
-    567.15,
-    571.0,
-    564.0,
-    558.85,
-    558.0,
-    551.3,
-    557.0,
-    530.4,
-    512.0,
-    504.8,
-    500.0,
-    510.0,
-    515.0,
-    498.0,
-    505.45,
-    508.2,
-    529.05,
-    560.0,
-    590.75,
-    611.0,
-    663.75,
-    710.9
-   ],
-   "size_tier": "buy",
+   "m90_qty": 2,
    "in_buy_list": false,
    "new": false
   },
@@ -1934,7 +1976,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 76.5,
+   "ml_prob": 76.2,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -1944,13 +1986,14 @@
     "Price > 50 EMA > 200 EMA (uptrend)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 436.28,
+   "m90_stop": 314.62,
    "m85_target": 440.48,
    "m85_stop": 356.58,
    "m85_qty": 23,
    "high_conviction": false,
-   "rule_fails": [
-    "not outperforming Nifty 50 (3M)"
-   ],
+   "rule_fails": [],
    "smart": null,
    "results_in_days": null,
    "fund": {
@@ -1972,9 +2015,9 @@
      "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     },
     {
-     "title": "ABCAPITAL Share Price Today - Aditya Birla Capital on NSE/BSE - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51Z2lEY1JvSVo4cy1xd0dnZFZ4VVdrWENQa2c5ZmJkSmt4OFhrVGJNb0k1ZWpIQl9uMWRaUVRrTVpidi1kQVJNVVlzQXdhOVBON0txMlNHQUhTaW1QOFpMT09B?oc=5",
-     "date": "Sun, 08 Nov 2026 21:33:21 GMT"
+     "title": "Aditya Birla Capital to host institutional investor meet on Nov 18 - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVFp4MFhFRThVWmhQQjJodFB4d1hFSUQzeXY0aldRRzFfMnpVd2QtMEpZWFFhYXkycmJwQThJY3JScnJDSHNOSlMxVnQwbTg5d0xTVXJVa3loQ3BBYW5jOGlzWkJ6VWVCM0JpV3RldXhaTzdLcDVvRW1vdERaMjl3dXNCNTNybmZEYlRGTV9Eem5ucWlwTk9WNUJjR21iaE9Gb3E1QlFLVnIxZkpncDlweGVqb0RvSFNQ?oc=5",
+     "date": "Fri, 13 Nov 2026 14:18:54 GMT"
     },
     {
      "title": "Aditya Birla Capital opens 100th gold loan branch, eyes 1,000 outlets - Business Standard",
@@ -2049,6 +2092,7 @@
     419.5
    ],
    "size_tier": "buy",
+   "m90_qty": 14,
    "in_buy_list": false,
    "new": false
   },
@@ -2091,7 +2135,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 83.6,
+   "ml_prob": 80.3,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -2102,6 +2146,9 @@
     "Top 14% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 817.02,
+   "m90_stop": 589.2,
    "m85_target": 824.88,
    "m85_stop": 667.76,
    "m85_qty": 12,
@@ -2130,14 +2177,14 @@
      "date": "Mon, 09 Nov 2026 11:43:55 GMT"
     },
     {
-     "title": "Ramkrishna Forgings - MTAR Technologies among 3 stocks showing White Marubozu pattern - The Economic Times",
-     "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPd0NFS1QtbVlzbDlrb0VhRDRDRW5YYWlWMEhnMzlNSUNpbWZ4eUVyUzd5blI2a1VYQ1FKMUJSVHhWREJiMW1ZN0VfdE9JdHNfSVNDVjhLRWJzY2dSYWhJd24xUGRjS21SRUxDNHNSLXBJWjltbjJGV3FEMjRYRTU1Zk9Sdy1wa0pxMmdfOUNXRXM0NWNEakMzWk5pX1Q5RVdYdWc2emxCR1J5WjFCMGQ4Zi0wS2czRF9BZHM0dFIxWTN2a2VQbEoxY0NLMXBjRS1ncDhtbzc5ci1qYWhiSjRPbGFKV0ozRDZfcmRB?oc=5",
-     "date": "Mon, 09 Nov 2026 04:16:12 GMT"
-    },
-    {
      "title": "Ramkrishna Forgings Re-appoints Naresh Jalan as Managing Director for Three-Year Term - scanx.trade",
      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNNG1MSHFHNFBEVDRMendVd2FwYWNBSVVISHhnM3lkMVB6MmtTSnRSM2lvcEpxNEtQamV1QWo2SFdkQ1pUZEVNOXJWcThtd3ZTUkNCQWR3ZzllenNlS1hKMVBVa2RsT3VJZlBBVTFTOWlMV1ZHX1RzRmZ5Nzl6QVJUTnZUVExqMlRqVVNqNVFwVkh2eElvWWxwWFJxQ0VBOEJxMTFEZzZicW13akIyS1pWcmJFMjQtaVA5eE5qYkxydXU0OFRoUmJqNmxLM0htcU9Nb0o3SQ?oc=5",
      "date": "Sun, 08 Nov 2026 07:52:48 GMT"
+    },
+    {
+     "title": "Broad-Based Technical Strength Lifts Ramkrishna Forgings Ltd to 52-Week High of Rs 796.95 - MarketsMojo",
+     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYjdITHBpLW1JNjB6NG9iUkVTV1J0dnpVQ3UxWWM1UlN2RENQYVZKdUFHU0ZhdXJyeDdrT1BCQ05FQWs4RFJlMldyMVRfVEtOSlJVOUVjRGYxTXByYmZqM25TWkJCMTd3WFIxZmh6d0RDN2lHeDEwUE1Mc2JJN05kRmpvN1FOSmZPNW90RXRCdFRGRmtJYmxsUDluTWxHSXJDRHR2akx5b21Lbm9KaG9pOC14QVk?oc=5",
+     "date": "Fri, 13 Nov 2026 06:58:53 GMT"
     }
    ],
    "sentiment": 0.1,
@@ -2208,6 +2255,7 @@
     785.6
    ],
    "size_tier": "buy",
+   "m90_qty": 7,
    "in_buy_list": false,
    "new": false
   },
@@ -2250,7 +2298,7 @@
     "Backtest": 3.8,
     "AI model": 10.0
    },
-   "ml_prob": 80.1,
+   "ml_prob": 77.1,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -2258,6 +2306,9 @@
     "Price > 50 EMA > 200 EMA (uptrend)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 4823.73,
+   "m90_stop": 3478.65,
    "m85_target": 4870.11,
    "m85_stop": 3942.47,
    "m85_qty": 2,
@@ -2267,7 +2318,7 @@
     "sector not in top half"
    ],
    "smart": null,
-   "results_in_days": 69,
+   "results_in_days": 68,
    "fund": {
     "pe": 77.5,
     "roe": 24.0,
@@ -2277,7 +2328,7 @@
     "profit_yoy": 78.0,
     "profit_qoq": 1.2,
     "eps_growth": 66.5,
-    "results_in_days": 69,
+    "results_in_days": 68,
     "sector": "Consumer Defensive"
    },
    "news": [
@@ -2364,6 +2415,7 @@
     4638.2
    ],
    "size_tier": "buy",
+   "m90_qty": 1,
    "in_buy_list": false,
    "new": false
   },
@@ -2406,7 +2458,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 78.6,
+   "ml_prob": 73.5,
    "patterns": [
     "Bullish engulfing",
     "Inside-bar breakout"
@@ -2419,6 +2471,9 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 21759.92,
+   "m90_stop": 15692.25,
    "m85_target": 21969.15,
    "m85_stop": 17784.55,
    "m85_qty": 0,
@@ -2509,6 +2564,7 @@
     20923.0
    ],
    "size_tier": "buy",
+   "m90_qty": 0,
    "in_buy_list": false,
    "new": false
   },
@@ -2519,7 +2575,7 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "A+ Momentum, Breakout, 52W High",
-   "score": 75.0,
+   "score": 74.3,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "BUY",
    "entry": 1216.8,
@@ -2547,11 +2603,11 @@
     "Technical": 53,
     "Rel. Strength": 9.8,
     "Fundamentals": 7.0,
-    "News": 5.0,
+    "News": 4.2,
     "Backtest": 1.0,
     "AI model": 10.0
    },
-   "ml_prob": 82.9,
+   "ml_prob": 79.6,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -2563,6 +2619,9 @@
     "Top 2% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 1265.47,
+   "m90_stop": 912.6,
    "m85_target": 1277.64,
    "m85_stop": 1034.28,
    "m85_qty": 8,
@@ -2599,7 +2658,7 @@
      "date": "Thu, 12 Nov 2026 06:27:34 GMT"
     }
    ],
-   "sentiment": 1.0,
+   "sentiment": 0.7,
    "warnings": [
     "Weekly trend not confirmed",
     "Up >12% in 5 days \u2013 extended"
@@ -2667,6 +2726,7 @@
     1216.8
    ],
    "size_tier": "buy",
+   "m90_qty": 4,
    "in_buy_list": false,
    "new": false
   },
@@ -2709,7 +2769,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 77.8,
+   "ml_prob": 74.1,
    "patterns": [
     "NR7 breakout"
    ],
@@ -2720,6 +2780,9 @@
     "Tight base (volatility contraction)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 830.65,
+   "m90_stop": 599.03,
    "m85_target": 838.64,
    "m85_stop": 678.9,
    "m85_qty": 12,
@@ -2826,6 +2889,7 @@
     798.7
    ],
    "size_tier": "buy",
+   "m90_qty": 7,
    "in_buy_list": false,
    "new": false
   },
@@ -2868,7 +2932,7 @@
     "Backtest": 3.8,
     "AI model": 10.0
    },
-   "ml_prob": 75.4,
+   "ml_prob": 72.4,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -2877,6 +2941,9 @@
     "Top 15% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 245.33,
+   "m90_stop": 176.92,
    "m85_target": 247.68,
    "m85_stop": 200.51,
    "m85_qty": 42,
@@ -2980,162 +3047,7 @@
     235.89
    ],
    "size_tier": "buy",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "RBLBANK",
-   "name": "RBL Bank Ltd.",
-   "industry": "Financial Services",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Pullback",
-   "score": 70.2,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "BUY",
-   "entry": 389.0,
-   "stop": 359.41,
-   "dip_buy": 389.0,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 374.07,
-   "target1": 408.45,
-   "target2": 427.9,
-   "risk_pct": 7.6,
-   "rr_t2": 1.31,
-   "hold": "up to 60 days",
-   "qty": 16,
-   "invest": 6224,
-   "max_loss": 473,
-   "close": 389.0,
-   "chg": 0.3,
-   "rsi": 57.6,
-   "adx": 25.5,
-   "vol_x": 0.6,
-   "from_high": -9.5,
-   "rs_rank": 63,
-   "hist_win5": 61.8,
-   "parts": {
-    "Technical": 49,
-    "Rel. Strength": 6.3,
-    "Fundamentals": 10.0,
-    "News": 2.5,
-    "Backtest": 3.6,
-    "AI model": 9.0
-   },
-   "ml_prob": 66.4,
-   "patterns": [],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)"
-   ],
-   "mode85": false,
-   "m85_target": 408.45,
-   "m85_stop": 330.65,
-   "m85_qty": 25,
-   "high_conviction": false,
-   "rule_fails": [
-    "not outperforming Nifty 50 (3M)",
-    "EMA 20>50>200 not stacked"
-   ],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 27.9,
-    "roe": 4.0,
-    "de": null,
-    "mcap_cr": 59906.8,
-    "sales_yoy": 25.8,
-    "profit_yoy": 132.6,
-    "profit_qoq": 112.8,
-    "eps_growth": 158.9,
-    "results_in_days": null,
-    "sector": "Financial Services"
-   },
-   "news": [
-    {
-     "title": "RBL Bank leads FCNR(B) mobilisation relative to deposit base; Kotak, ICICI well placed to benefit - bfsi.economictimes.indiatimes.com",
-     "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNb3NtRkpVR3ZIUlY0bDRGY0h0dE9Ubk1ZdUlQTWUybXJkc1dFcmU5c09IVEhEd0s4Y1RFMDhKTTAwYlk4aEdzRU5LWEItT2pRUkUyWFpxMGZKa3ZPdmVrTzViT0p2VUctZ1pTWEswUEJaSzN2YXVOc0xhS05NU1Vfa2hQdWhfWV9mNXJYWngzRS1KZkRETWxfcHpWeFgxbWJCT0JCdzJyWFdabjFUcEc3aG1SNzgyNDZWZFpBWVQzZDBHeGt5bUhMel8tUWZzTmhDQXAteXdTU1ZBZGxYLTFNTUstMnRic2RTV1HSAe8BQVVfeXFMTlFJbGUwTFBJeE5iREVDSzBxaFlvYjFuTkE0RkxUeS1NVC1pUHBPNU90LWtUb2xRUGFPMDFlSVlXdk5DREtWcm1jRlpKamxmTkNyeE0td1hXQWgxYkVoMDc2eWZvSHJhczFSV0lCeWtEOUN2SWpLX3pkOW5Za1k0UGJqUEI0MUdna0JUUWZVVF8xQS14bzZsbWdVMnRTa1BoYjQzTEtnWk1hWmRTT2gxSVEweEtBQjduemVaMzgtUDVKcWpPcm9yVnlBTTFJZWZGb1Mtc3I1NkZMVEdCM1g0SlhWWUFGZ3VFamxhcklKV3c?oc=5",
-     "date": "Wed, 11 Nov 2026 11:45:33 GMT"
-    },
-    {
-     "title": "UAE\u2019s NDB Buys 60% Stake in RBL Bank for $2.75 Billion: Finance Ministry Should Reconsider and Scrap IDBI Sale - Countercurrents",
-     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcXBGaHhzRGpGTllld3dSR0JYYTNJenpUQlVvLXpoSmdPelpsU3M1TmRjbVBQb2d6djFuYkVCS3dNdDFMeU44QnA5MXJpdHFjMWhEYkZ6em9iQWlTdHQxcnNTWHlidFJlODBVQlMyTzl6Q1hGSE5OUE9UdGIyeFhhWjBzS0FSakdteThIYm8wdE1Gb1p6RmtVVkE1SVh3RHdTVDk5bVl3SjBSbWJUZUc2aC1TNUJNYW1NYTU3V2Q3WHBza1ZKUmZYb0lqT1VJNkdzVjBfTjRRdEdhaVE?oc=5",
-     "date": "Sun, 08 Nov 2026 11:33:15 GMT"
-    },
-    {
-     "title": "RBL Bank ESOP Allotment: 1,85,172 Shares Issued to Employees - Kalkine India",
-     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZE85a3Z5bnQ4cmNWTVJvQmpabFJKZGlveEJxMUNYcmIyVk5fZzJGRjJNMFN2aXpZVmNQVFBFU3FPSmlpSG5aWndNZFFWM2pxYnZhVHdleFFzZ3E0cnVRMlFNaE11MktwVGRPdkc3SERtb3NwN3p1Z2tpelgwTUN5LTVPVTZGR0hxRHFqZGVfTWVCdS1Wd3RnV3I2NVJQUHhDVzRfRUNJbDZ4d2l2ZXprcEp0US1SdHFUMlNSSjhOaDVFVkNz?oc=5",
-     "date": "Tue, 10 Nov 2026 03:18:00 GMT"
-    }
-   ],
-   "sentiment": 0.0,
-   "warnings": [
-    "Weekly trend not confirmed"
-   ],
-   "spark": [
-    381.5,
-    383.0,
-    381.5,
-    392.3,
-    392.5,
-    388.0,
-    384.0,
-    382.5,
-    385.4,
-    382.0,
-    380.35,
-    380.5,
-    389.4,
-    408.1,
-    414.35,
-    415.0,
-    418.5,
-    416.0,
-    410.8,
-    412.55,
-    403.6,
-    404.0,
-    404.15,
-    415.9,
-    402.4,
-    423.2,
-    428.0,
-    412.75,
-    415.05,
-    407.0,
-    402.0,
-    403.35,
-    411.4,
-    416.55,
-    414.5,
-    412.0,
-    400.7,
-    418.0,
-    417.7,
-    388.05,
-    386.0,
-    374.15,
-    378.25,
-    375.75,
-    358.8,
-    361.0,
-    345.65,
-    348.5,
-    348.55,
-    349.95,
-    360.9,
-    351.0,
-    352.2,
-    350.2,
-    364.75,
-    372.4,
-    379.0,
-    379.0,
-    387.85,
-    389.0
-   ],
-   "size_tier": "buy",
+   "m90_qty": 25,
    "in_buy_list": false,
    "new": false
   },
@@ -3178,7 +3090,7 @@
     "Backtest": 4.0,
     "AI model": 10.0
    },
-   "ml_prob": 78.3,
+   "ml_prob": 73.2,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -3189,6 +3101,9 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2136.16,
+   "m90_stop": 1540.5,
    "m85_target": 2156.7,
    "m85_stop": 1745.9,
    "m85_qty": 4,
@@ -3294,6 +3209,167 @@
     2054.0
    ],
    "size_tier": "other",
+   "m90_qty": 2,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "RBLBANK",
+   "name": "RBL Bank Ltd.",
+   "industry": "Financial Services",
+   "segment": "Smallcap 250",
+   "smallcap_ok": true,
+   "setup": "Pullback",
+   "score": 69.3,
+   "stars": "\u2605\u2605\u2605\u2606\u2606",
+   "label": "ACCUMULATE",
+   "entry": 389.0,
+   "stop": 359.41,
+   "dip_buy": 389.0,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 374.07,
+   "target1": 408.45,
+   "target2": 427.9,
+   "risk_pct": 7.6,
+   "rr_t2": 1.31,
+   "hold": "up to 60 days",
+   "qty": 8,
+   "invest": 3112,
+   "max_loss": 237,
+   "close": 389.0,
+   "chg": 0.3,
+   "rsi": 57.6,
+   "adx": 25.5,
+   "vol_x": 0.6,
+   "from_high": -9.5,
+   "rs_rank": 63,
+   "hist_win5": 61.8,
+   "parts": {
+    "Technical": 49,
+    "Rel. Strength": 6.3,
+    "Fundamentals": 10.0,
+    "News": 2.5,
+    "Backtest": 3.6,
+    "AI model": 8.1
+   },
+   "ml_prob": 63.6,
+   "patterns": [],
+   "weekly_up": false,
+   "intra": null,
+   "why": [
+    "Price > 50 EMA > 200 EMA (uptrend)"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 404.56,
+   "m90_stop": 291.75,
+   "m85_target": 408.45,
+   "m85_stop": 330.65,
+   "m85_qty": 25,
+   "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "EMA 20>50>200 not stacked"
+   ],
+   "smart": null,
+   "results_in_days": null,
+   "fund": {
+    "pe": 27.9,
+    "roe": 4.0,
+    "de": null,
+    "mcap_cr": 59906.8,
+    "sales_yoy": 25.8,
+    "profit_yoy": 132.6,
+    "profit_qoq": 112.8,
+    "eps_growth": 158.9,
+    "results_in_days": null,
+    "sector": "Financial Services"
+   },
+   "news": [
+    {
+     "title": "RBLBANK Share Price Today - RBL Bank on NSE/BSE - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA0TlRoNmR2ODJrWnlrcWxtdmt1WHZpZ282QS1Ua2c3NEFuSkxIQXdqVnNMV0tHM2dRQzJXQ0d4MndlazhqVUhXeWNlSWhpQXBOUXc?oc=5",
+     "date": "Wed, 11 Nov 2026 23:29:24 GMT"
+    },
+    {
+     "title": "RBL Bank leads FCNR(B) mobilisation relative to deposit base; Kotak, ICICI well placed to benefit - bfsi.economictimes.indiatimes.com",
+     "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNb3NtRkpVR3ZIUlY0bDRGY0h0dE9Ubk1ZdUlQTWUybXJkc1dFcmU5c09IVEhEd0s4Y1RFMDhKTTAwYlk4aEdzRU5LWEItT2pRUkUyWFpxMGZKa3ZPdmVrTzViT0p2VUctZ1pTWEswUEJaSzN2YXVOc0xhS05NU1Vfa2hQdWhfWV9mNXJYWngzRS1KZkRETWxfcHpWeFgxbWJCT0JCdzJyWFdabjFUcEc3aG1SNzgyNDZWZFpBWVQzZDBHeGt5bUhMel8tUWZzTmhDQXAteXdTU1ZBZGxYLTFNTUstMnRic2RTV1HSAe8BQVVfeXFMTlFJbGUwTFBJeE5iREVDSzBxaFlvYjFuTkE0RkxUeS1NVC1pUHBPNU90LWtUb2xRUGFPMDFlSVlXdk5DREtWcm1jRlpKamxmTkNyeE0td1hXQWgxYkVoMDc2eWZvSHJhczFSV0lCeWtEOUN2SWpLX3pkOW5Za1k0UGJqUEI0MUdna0JUUWZVVF8xQS14bzZsbWdVMnRTa1BoYjQzTEtnWk1hWmRTT2gxSVEweEtBQjduemVaMzgtUDVKcWpPcm9yVnlBTTFJZWZGb1Mtc3I1NkZMVEdCM1g0SlhWWUFGZ3VFamxhcklKV3c?oc=5",
+     "date": "Wed, 11 Nov 2026 11:45:33 GMT"
+    },
+    {
+     "title": "UAE\u2019s NDB Buys 60% Stake in RBL Bank for $2.75 Billion: Finance Ministry Should Reconsider and Scrap IDBI Sale - Countercurrents",
+     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcXBGaHhzRGpGTllld3dSR0JYYTNJenpUQlVvLXpoSmdPelpsU3M1TmRjbVBQb2d6djFuYkVCS3dNdDFMeU44QnA5MXJpdHFjMWhEYkZ6em9iQWlTdHQxcnNTWHlidFJlODBVQlMyTzl6Q1hGSE5OUE9UdGIyeFhhWjBzS0FSakdteThIYm8wdE1Gb1p6RmtVVkE1SVh3RHdTVDk5bVl3SjBSbWJUZUc2aC1TNUJNYW1NYTU3V2Q3WHBza1ZKUmZYb0lqT1VJNkdzVjBfTjRRdEdhaVE?oc=5",
+     "date": "Sun, 08 Nov 2026 11:33:15 GMT"
+    }
+   ],
+   "sentiment": 0.0,
+   "warnings": [
+    "Weekly trend not confirmed"
+   ],
+   "spark": [
+    381.5,
+    383.0,
+    381.5,
+    392.3,
+    392.5,
+    388.0,
+    384.0,
+    382.5,
+    385.4,
+    382.0,
+    380.35,
+    380.5,
+    389.4,
+    408.1,
+    414.35,
+    415.0,
+    418.5,
+    416.0,
+    410.8,
+    412.55,
+    403.6,
+    404.0,
+    404.15,
+    415.9,
+    402.4,
+    423.2,
+    428.0,
+    412.75,
+    415.05,
+    407.0,
+    402.0,
+    403.35,
+    411.4,
+    416.55,
+    414.5,
+    412.0,
+    400.7,
+    418.0,
+    417.7,
+    388.05,
+    386.0,
+    374.15,
+    378.25,
+    375.75,
+    358.8,
+    361.0,
+    345.65,
+    348.5,
+    348.55,
+    349.95,
+    360.9,
+    351.0,
+    352.2,
+    350.2,
+    364.75,
+    372.4,
+    379.0,
+    379.0,
+    387.85,
+    389.0
+   ],
+   "size_tier": "other",
+   "m90_qty": 15,
    "in_buy_list": false,
    "new": false
   },
@@ -3304,7 +3380,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Pullback",
-   "score": 63.3,
+   "score": 62.6,
    "stars": "\u2605\u2605\u2605\u2606\u2606",
    "label": "ACCUMULATE",
    "entry": 4231.0,
@@ -3332,11 +3408,11 @@
     "Technical": 47,
     "Rel. Strength": 5.0,
     "Fundamentals": 2.0,
-    "News": 2.2,
+    "News": 2.5,
     "Backtest": 4.6,
-    "AI model": 10.0
+    "AI model": 8.9
    },
-   "ml_prob": 76.0,
+   "ml_prob": 65.9,
    "patterns": [
     "NR7 breakout"
    ],
@@ -3348,6 +3424,9 @@
     "Tight base (volatility contraction)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 4400.24,
+   "m90_stop": 3173.25,
    "m85_target": 4442.55,
    "m85_stop": 3596.35,
    "m85_qty": 2,
@@ -3378,17 +3457,17 @@
      "date": "Tue, 10 Nov 2026 07:36:04 GMT"
     },
     {
+     "title": "Data Patterns (India) (NSEI:DATAPATTNS) Stock Forecast & Analyst Predictions - Simply Wall St",
+     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNN3dnZ00wOHY4cG5HWVI2X3JPVFFVSkVwSEtoYS16bFFvcG56eU1LN3NDc093SjV0UTZCNGZxRHdVTU5UTHNkc0Uta25YNm5TaGVaSVZoWXlyWUZoa0NDTzVraDJnMjVqWlBReW9sd0xQcGRUTnFUTzBfZzVRZjJ2YjFMTEhYZHQzWjBRejhUbkZUQmxHb2VmU3l3?oc=5",
+     "date": "Wed, 11 Nov 2026 08:00:00 GMT"
+    },
+    {
      "title": "Data Patterns shares rally 9% despite weak Q2 results; management says confident on meeting FY27 targets - TradingView",
      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPcVNSY2tObkRBQnNzaEFnT3ZXeExyQ1VJUnQtYnEtOUp5YTdETFlLcGpPM2lld1BHbVdYOWJaODFmdXV1d0lxN0Y2ZWdGbnk2Z09NQUpCR2RXeXlzc3prVGcxN1RseldKT1g2ZmQ5bnZ1MVVBc08wRmV0THRiS09hVFdYdnRMSHVGc25vMy1Wb19XdmZHOW9halVWRC1qa2MzczN2c2VucmtpcTZ4bkEwOS1wZ3FxZk1SaHRZaWQxSlYxUkswYm94RnlTaDRhdGFlbEVZZ1BIbnp2ZzZyalFvbzM2VEFiaWJ5ZThucFNfc2wxZXpsUWdNcw?oc=5",
      "date": "Mon, 09 Nov 2026 08:28:52 GMT"
-    },
-    {
-     "title": "What Data Patterns (India) Doubters Overlooked - Yahoo Finance",
-     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWjdkS0FOWnFIbTdYTmNLRWVJZlVDX3ZsajBYNzRCalNTN0ZDaWVhZHhlMzQ3UE5TamViampFcWxNYzRQWV9TZmNZc0xHamFMZmM2VXQyRXRtTmFOOTJzLXNaODZmd3JiYzVJSmdPOUhMOGJYcWREN0RUdi1oZnNsYmxPYXpfcmxBbzVVZGVCNUh4Z25WZlh2bEEtdjNFVUl0Q19IOGJPMA?oc=5",
-     "date": "Thu, 12 Nov 2026 00:18:00 GMT"
     }
    ],
-   "sentiment": -0.1,
+   "sentiment": 0.0,
    "warnings": [
     "Weekly trend not confirmed"
    ],
@@ -3455,164 +3534,7 @@
     4231.0
    ],
    "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "STARHEALTH",
-   "name": "Star Health and Allied Insurance Company Ltd.",
-   "industry": "Financial Services",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Pullback",
-   "score": 62.5,
-   "stars": "\u2605\u2605\u2605\u2606\u2606",
-   "label": "ACCUMULATE",
-   "entry": 570.95,
-   "stop": 521.9,
-   "dip_buy": 570.95,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 545.06,
-   "target1": 599.5,
-   "target2": 628.05,
-   "risk_pct": 8.6,
-   "rr_t2": 1.16,
-   "hold": "up to 60 days",
-   "qty": 5,
-   "invest": 2855,
-   "max_loss": 245,
-   "close": 570.95,
-   "chg": 2.36,
-   "rsi": 59.4,
-   "adx": 19.2,
-   "vol_x": 0.82,
-   "from_high": -8.6,
-   "rs_rank": 57,
-   "hist_win5": 28.6,
-   "parts": {
-    "Technical": 39,
-    "Rel. Strength": 5.7,
-    "Fundamentals": 12.0,
-    "News": 3.2,
-    "Backtest": 0.0,
-    "AI model": 10.0
-   },
-   "ml_prob": 78.0,
-   "patterns": [
-    "Inside-bar breakout"
-   ],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)"
-   ],
-   "mode85": false,
-   "m85_target": 599.5,
-   "m85_stop": 485.31,
-   "m85_qty": 17,
-   "high_conviction": false,
-   "rule_fails": [
-    "not outperforming Nifty 50 (3M)",
-    "EMA 20>50>200 not stacked"
-   ],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 32.0,
-    "roe": 9.5,
-    "de": 0.7,
-    "mcap_cr": 33709.6,
-    "sales_yoy": 17.6,
-    "profit_yoy": 232.8,
-    "profit_qoq": -51.8,
-    "eps_growth": 382.4,
-    "results_in_days": null,
-    "sector": "Financial Services"
-   },
-   "news": [
-    {
-     "title": "STARHEALTH Share Price Today - Star Health Insurance on NSE/BSE - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9oT3ltb3dlcHdNV1pLdTdrb05NWFM1TFNWTkNrQlBia3BvZHVTYnhkX3FWVllFdTRSdXZFTXozTmYwcDlUbl9zUHlsSWtvX0MxeXFrc18zV004S1JVV1BMSExvOA?oc=5",
-     "date": "Wed, 11 Nov 2026 21:54:18 GMT"
-    },
-    {
-     "title": "Burn-related claims peak in the Diwali quarter, Star Health data shows; insurer shares simple safety steps - TheWire.in",
-     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNa0g4SHhNYnpLN09QNG5iWThocmktcXhBUHE4Sl9GUXp3SGktUDI5RXJWdUlYd3pxUkNkc25mYm1IaV9fQVQ1SFlHeTg3TEtyWXlrbXUwQ3pmdUhwZlZfeEMyUDJBUUM4NERhSVVpb0dQTWloYXpCTFBiR3hoSmVDejJ2Q19HTFltSy04RWVaX1QzQmlJQ3NYWFVRcWZhODNSbDU0MVdTb2RWOVJmUVpJYzR2RkRBX1FyaHJ6RDBkekl0X0ljVWtOc2thM0Y3ZDREaWlxczBzZFA5WFHSAeABQVVfeXFMT1lyVldIazltaHBLQUZVSVRoLUUxZVFweHJLb0hWOHFTT3ZmM2FCeFFremtBMFpKcXo4eWdNUFZ6b1hIaUstd1J3RnBDWUhoLVE1dlNLZXo4UkRISGFMUlJTVkwxTHJIVl9WaHVuSE14OUxEQUtJdUxSR2djbU55cmJBYXVQOWNkamRoUTQ5LUpraGxONjlBeGtIanQ5akZMcVZPNVo3NmQzRDdPRmFCMERBdENEUGIxOG4yQ0RQVGZERWlVdmpULTZvWEFrcnk0ZzJqUHp1TlFpR0FDRWpnZUQ?oc=5",
-     "date": "Tue, 10 Nov 2026 08:39:36 GMT"
-    },
-    {
-     "title": "IRDAI\u2019s commission cap proposal a step in right direction: Star Health - The Times of India",
-     "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxONm9BRWE0WjQyRHc0TkJaNlNaRHhaemUtR0pfUm1xMFBzNHpQMEVrZVU2TlJmZUVxR2lyTUwyWWgzTzRFS0Vya3ZicVIyMlNQTnlJYzhhZFNKQUF3dDRWUDNIVktYanM5Uk5SeGZOMzNtejhaME5pTHpJOUhfWHFla1h3RmZfRE96bjVDd1pBUjh1Z3hrQnRMYmlQQTZrZlVHdUdCYklhemhGUHZiVGtFY01yRFJFWlNGaXBTTV91eUF5NEE1U0xDYUhUbGZXakxQQkpya1hzUXRlZzMteWhTddIB4AFBVV95cUxONm9BRWE0WjQyRHc0TkJaNlNaRHhaemUtR0pfUm1xMFBzNHpQMEVrZVU2TlJmZUVxR2lyTUwyWWgzTzRFS0Vya3ZicVIyMlNQTnlJYzhhZFNKQUF3dDRWUDNIVktYanM5Uk5SeGZOMzNtejhaME5pTHpJOUhfWHFla1h3RmZfRE96bjVDd1pBUjh1Z3hrQnRMYmlQQTZrZlVHdUdCYklhemhGUHZiVGtFY01yRFJFWlNGaXBTTV91eUF5NEE1U0xDYUhUbGZXakxQQkpya1hzUXRlZzMteWhTdQ?oc=5",
-     "date": "Thu, 12 Nov 2026 22:30:00 GMT"
-    }
-   ],
-   "sentiment": 0.3,
-   "warnings": [
-    "Weekly trend not confirmed"
-   ],
-   "spark": [
-    584.25,
-    583.9,
-    582.8,
-    575.5,
-    578.5,
-    573.0,
-    582.85,
-    583.75,
-    586.1,
-    573.5,
-    567.75,
-    560.4,
-    562.95,
-    559.35,
-    557.35,
-    565.95,
-    572.1,
-    571.95,
-    576.25,
-    562.7,
-    540.8,
-    545.7,
-    560.55,
-    547.05,
-    542.9,
-    544.6,
-    549.2,
-    550.4,
-    558.15,
-    552.5,
-    538.1,
-    534.65,
-    537.7,
-    535.25,
-    550.55,
-    553.85,
-    545.5,
-    552.1,
-    563.2,
-    560.1,
-    554.05,
-    550.0,
-    548.85,
-    542.05,
-    541.95,
-    541.2,
-    530.35,
-    538.25,
-    546.75,
-    519.25,
-    532.4,
-    530.4,
-    512.0,
-    522.55,
-    530.5,
-    542.35,
-    564.75,
-    548.25,
-    557.8,
-    570.95
-   ],
-   "size_tier": "other",
+   "m90_qty": 1,
    "in_buy_list": false,
    "new": false
   },
@@ -3655,7 +3577,7 @@
     "Backtest": 0.0,
     "AI model": 10.0
    },
-   "ml_prob": 81.3,
+   "ml_prob": 76.7,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -3665,6 +3587,9 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 919.15,
+   "m90_stop": 662.85,
    "m85_target": 927.99,
    "m85_stop": 751.23,
    "m85_qty": 11,
@@ -3768,6 +3693,7 @@
     883.8
    ],
    "size_tier": "other",
+   "m90_qty": 6,
    "in_buy_list": false,
    "new": false
   },
@@ -3810,7 +3736,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 81.0,
+   "ml_prob": 80.9,
    "patterns": [
     "Inside-bar breakout"
    ],
@@ -3825,6 +3751,9 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2406.98,
+   "m90_stop": 1735.8,
    "m85_target": 2430.12,
    "m85_stop": 1967.24,
    "m85_qty": 4,
@@ -3930,6 +3859,7 @@
     2314.4
    ],
    "size_tier": "other",
+   "m90_qty": 2,
    "in_buy_list": false,
    "new": false
   },
@@ -3972,7 +3902,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 82.5,
+   "ml_prob": 82.1,
    "patterns": [
     "Bullish engulfing"
    ],
@@ -3987,6 +3917,9 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 1718.7,
+   "m90_stop": 1239.45,
    "m85_target": 1735.23,
    "m85_stop": 1404.71,
    "m85_qty": 6,
@@ -4090,6 +4023,7 @@
     1652.6
    ],
    "size_tier": "other",
+   "m90_qty": 3,
    "in_buy_list": false,
    "new": false
   },
@@ -4132,7 +4066,7 @@
     "Backtest": 3.3,
     "AI model": 10.0
    },
-   "ml_prob": 73.3,
+   "ml_prob": 76.6,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4143,13 +4077,16 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 3441.05,
+   "m90_stop": 2481.52,
    "m85_target": 3474.13,
    "m85_stop": 2812.39,
    "m85_qty": 3,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 75,
+   "results_in_days": 74,
    "fund": {
     "pe": 44.5,
     "roe": null,
@@ -4159,24 +4096,24 @@
     "profit_yoy": 34.9,
     "profit_qoq": -8.3,
     "eps_growth": 47.1,
-    "results_in_days": 75,
+    "results_in_days": 74,
     "sector": "Healthcare"
    },
    "news": [
     {
-     "title": "Gland Pharma Share Price - Upstox",
-     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9TWm1BRXZGR2pqTC11N1R2a0ZSNGxwYzd1X0R1RW56ejF1VTBGclQ3bHdlTmhrc2c1c0xWNDVpR0IwOWxUQ2t2MmdPM2JlOEI1cm1FT1k5Ml9PUm5rbkdYVWRGc2dueG9CMkhJ?oc=5",
-     "date": "Sat, 07 Nov 2026 19:29:34 GMT"
+     "title": "Gland Pharma shares jump 7% to 52-week high; Nomura sees re-rating but Citi says 'sell' - CNBC TV18 - LinkedIn",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSXlNQjlnXzRFXzkyMHF6eFl0WXY0X25VaGFMWk5ZVkNNTm5BbGxJbGQ4T3NSdGhOX09SSzlDdTNmSHI0Qi1mY3ZSTXNGNFhMNmJLUXVoZ1ozR0xtUjdXcjZWRFF4OGNmaUpPOXhvbXlNOXZaaGpQQlNqWGM3all4dnV2anZkZ3dLUWVOaFRfOTM0UmllVnNjMWxvOV8tRFBPeWtiZnE0Q2lLQ0lJMFBxNEZEal9lQ29f?oc=5",
+     "date": "Mon, 09 Nov 2026 07:27:35 GMT"
+    },
+    {
+     "title": "Gland Pharma shares hit 52-week high; jump 7% despite market sell-off | Will rally continue after 93% YTD rise? - TradingView",
+     "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQcFh4NWRuSnhRUGQyTDZ5b2FPS0VpX1U5bzJyY0VIZUFfMTRfQ05iU2tLel83ZnlXSHdZSS1EY2FSTWxMMWl5M2p4VXpTbXI0OElhOWNyWmttc054d0lOVjJqblo4ZnJIdjl2OUhhSVpaUjVUX0ZBS1hpc0VzNUxFSW92MGdDY0pxdjJZdlJHQ29LYlpuTjhiT0FoTjFjbjBtYlhWRnZxQUJ5alVDeTJWWUUzMFZ4V3Y3T0NSN2Z3UTJpdE5aUDR5OUNOVDZ0VmpwVFpUd3pIdXRlaEUyamlFTUYycGRKX0xNYW9FeWMzYm5iTTdR?oc=5",
+     "date": "Mon, 09 Nov 2026 08:04:23 GMT"
     },
     {
      "title": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices - Moneycontrol.com",
      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
      "date": "Mon, 09 Nov 2026 12:49:32 GMT"
-    },
-    {
-     "title": "Why Gland Pharma Share Price Is Rallying? Check 3 Key Reasons Behind the Surge - Dalal Street Investment Journal",
-     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOV0VBdktqdTQwdVRfTkxWUjE0eG1EODgzREhUa1gyWnRfRHZhRU9VUVJoOFdxWWVxb0RwQ1RLRTk1WHRJd3c1OGYxeTZxLUdUWGU0MUpJd19hZ3g2eEllZkFiQ0E5NFJwVjZGaHBYWG9TeW5MQkVDY2FoT1FnVTVpVC1DME4weUJuMkE1QWc0WmVnTnVFZnZSTENyUUJZVk1meVIyOGtIYUVLNW43dld0WU9pQmtfQk9Lcml3Yw?oc=5",
-     "date": "Mon, 09 Nov 2026 05:07:58 GMT"
     }
    ],
    "sentiment": 1.0,
@@ -4244,6 +4181,7 @@
     3308.7
    ],
    "size_tier": "other",
+   "m90_qty": 1,
    "in_buy_list": false,
    "new": false
   },
@@ -4286,7 +4224,7 @@
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 79.8,
+   "ml_prob": 79.0,
    "patterns": [
     "Inside-bar breakout"
    ],
@@ -4298,6 +4236,9 @@
     "Top 13% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 515.48,
+   "m90_stop": 371.74,
    "m85_target": 520.43,
    "m85_stop": 421.3,
    "m85_qty": 20,
@@ -4403,6 +4344,7 @@
     495.65
    ],
    "size_tier": "other",
+   "m90_qty": 12,
    "in_buy_list": false,
    "new": false
   },
@@ -4445,7 +4387,7 @@
     "Backtest": 4.5,
     "AI model": 10.0
    },
-   "ml_prob": 81.0,
+   "ml_prob": 80.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4457,6 +4399,9 @@
     "Top 5% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2383.68,
+   "m90_stop": 1719.0,
    "m85_target": 2406.6,
    "m85_stop": 1948.2,
    "m85_qty": 4,
@@ -4465,7 +4410,7 @@
     "RSI 80+ overbought"
    ],
    "smart": null,
-   "results_in_days": 76,
+   "results_in_days": 75,
    "fund": {
     "pe": 61.8,
     "roe": 12.9,
@@ -4475,7 +4420,7 @@
     "profit_yoy": 35.3,
     "profit_qoq": 9.7,
     "eps_growth": 7.1,
-    "results_in_days": 76,
+    "results_in_days": 75,
     "sector": "Real Estate"
    },
    "news": [
@@ -4562,159 +4507,7 @@
     2292.0
    ],
    "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "KARURVYSYA",
-   "name": "Karur Vysya Bank Ltd.",
-   "industry": "Financial Services",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 83.1,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "label": "WATCHLIST",
-   "entry": 380.6,
-   "stop": 345.97,
-   "dip_buy": 380.6,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 356.22,
-   "target1": 399.63,
-   "target2": 418.66,
-   "risk_pct": 9.1,
-   "rr_t2": 1.1,
-   "hold": "up to 60 days",
-   "qty": 7,
-   "invest": 2664,
-   "max_loss": 242,
-   "close": 380.6,
-   "chg": -0.99,
-   "rsi": 65.2,
-   "adx": 25.4,
-   "vol_x": 0.62,
-   "from_high": -2.6,
-   "rs_rank": 91,
-   "hist_win5": 73.3,
-   "parts": {
-    "Technical": 51,
-    "Rel. Strength": 9.1,
-    "Fundamentals": 13.0,
-    "News": 3.3,
-    "Backtest": 5.0,
-    "AI model": 10.0
-   },
-   "ml_prob": 72.5,
-   "patterns": [],
-   "weekly_up": true,
-   "intra": null,
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 9% relative strength in Nifty 500"
-   ],
-   "mode85": false,
-   "m85_target": 399.63,
-   "m85_stop": 323.51,
-   "m85_qty": 26,
-   "high_conviction": false,
-   "rule_fails": [],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 12.5,
-    "roe": 21.0,
-    "de": null,
-    "mcap_cr": 36883.2,
-    "sales_yoy": 26.6,
-    "profit_yoy": 51.1,
-    "profit_qoq": 4.2,
-    "eps_growth": 37.2,
-    "results_in_days": null,
-    "sector": "Financial Services"
-   },
-   "news": [
-    {
-     "title": "Two Trades for Today: A top consumer electricals maker for a 6.35% rise, a mid-cap private bank for a gain - The Economic Times",
-     "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQQjJNWTNnc1hlM3gyNDhKMzdZWXNWOXd3S2VpSzlYbFlkbURDOXZxMTAzU2VmT2QxamU1QkMzM3BzYUR2ckc3ZW5qcFhIbUQxVHctQmlUci1CYjZjOE83cDh2Qy1rb01IU29DN3hmbzVhYUJzZFpycEJSQkthQlhmcW0weTg1MElzSjVuLWVicWZwYVVPd2sxUGVPMHFsN2ZRWExncngtOUIyOV9KMERJUHBPemY1eUFoTlVqYTViMm80R0pXZllobTNESWcyWkpfR2xXb3VTVDVVMTRGel9MTXpacU5LSFRxRDQ2T2J1azJYaXZfeVlVYzRwWGdMTzF2bHRyS0pVV1JxaWJrYWdF0gGUAkFVX3lxTE9HMjAzWmx4em15U3kxLUp6c0tyczFVX0pTYTA4cG5FV3F1S2YxSXJYQW5nN1Q0R3NmLVFwVlMxcW5JeXp4cFBaY0JVN1B2S3JIcFNfNjRhUng3Y3MyRDhQUy1nZWp4RGNQc0JEUFoyLWwtMk1NTTMtcVQza3d3UmJuMVRTc3NRNW92RUpPblUwU1RKOVBBby00ckc4ZF9wQTJiWkZBNjRIdFVSYVNnejQ1SkE0V3M5cHBhMnNMVThBX1paclZIeEdOUFpabnBTMVN2TUdmZU1xYk91WW9JSTNCVTdFUHd1bDhHZDlGN0VxeWIxZTFmR3lPUllJWW90YlYxWFpmc3pCb3YyS1hxU2h3d3BPLQ?oc=5",
-     "date": "Sun, 08 Nov 2026 10:46:33 GMT"
-    },
-    {
-     "title": "Shriram Research\u2019s Diwali picks: Aeroflex leads 11-stock list with 32% upside - Moneycontrol.com",
-     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNGRTM3F6OGtjamgtUDhFc29Gckg2TkVCZWNER0VJV0N5TjFXaTlsRTNIbmdINE1MTHpTcnhqQWZaTjRRU0FDSmN5VzB3dWN2X2VLZnA5VFNtaFhTcDRIb0JzTlRpM213MzJOM0tsRFgtNmtodmNkRzdQMC1SSnVKZzhublZrQ2xEUmtxNEtSTTBUXzFBeUotSHZCWWlfbS1WQThLVDA2UlNvdFhiYk14NjhnMkN2d2JYNnAtQ2EwaFZ2Z3dlaVV6TWdpNlDSAdIBQVVfeXFMTXYyRkZ0M19LZENCQ2dpUGRqaGtjbVNaNk5teGlvemdMU21haEU2UWNXNTRkSzZYT29yMlFKTWdNZ2RaTFpUMFMwcmc1Vmppc3pURE1QR1NuZ2FIelU1WUw3N1hNaTdscmt1RXVvdnlqU2xCZ3JhaDgwbVltUDlQbG9hcE5iLU03WjJxa2tVaFcwWlhfSHFhaXFPZ1p2QU8yYlNtZldnU3F3T2tQRnhxRUJYRnI3VnFCbDI0S0pyV2hGVVpxLXlfX3FuMWhONjgxMmJ3?oc=5",
-     "date": "Sat, 07 Nov 2026 09:27:20 GMT"
-    },
-    {
-     "title": "India short bonds may underperform on rate hikes, cash squeeze - The Economic Times",
-     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOV1hzbU5SU3hXeTRYZGJhQ0lFSlZRV3d0dzNyVC1HSE9DdjY5SkVQS0MwaHdIMXVyekJvWWFLRnRpT0ZXbHVhTWFWQ3B3TjEyUVNoM1lzay1WZXBpSFdKcF9ka1ZmZm55cmxYdkZkMGVHOXIya0FucGlVVnltRjlWWU9jaUNTbFI4dE16ZUc0b0ptTXppNlRTWXBjdFdPSGJWQkpJNnUxZ1NvN2pjczlwdXhGRjRFaEV1T1RYamxYMkdZX3RMakhLbNIBzgFBVV95cUxNMk1KbWhuS1N0b1lxVi1uNG1VRXBlb1lRV252YVhJZzUyM2hXZ2tOQVRRb19ZWENjb25xZHgwZExsaWJSOXZvV2FPbXlINFhVNXFkY1o2MjBYMUUydTFYejEtcFo0MFNGRU1UT29iaW96WTVfTXlyckc3QlFIaG5sakw4c2ltS0s3azlpWkRZQlBxdlpPV0pOSUQ1NVV4ZG02bTJOZHpBNUVlT2VtRGJyYmU1eWZ0VzhzMEM1QmJkUkgzWU9RbzNWZEUxWHJFUQ?oc=5",
-     "date": "Mon, 09 Nov 2026 03:53:12 GMT"
-    }
-   ],
-   "sentiment": 0.33,
-   "warnings": [],
-   "spark": [
-    334.0,
-    333.9,
-    331.05,
-    334.1,
-    335.5,
-    338.15,
-    346.0,
-    354.35,
-    346.3,
-    346.0,
-    347.6,
-    347.6,
-    346.6,
-    350.0,
-    348.85,
-    341.7,
-    341.15,
-    340.6,
-    335.3,
-    333.8,
-    324.45,
-    334.8,
-    331.5,
-    332.15,
-    326.15,
-    320.15,
-    324.45,
-    325.0,
-    327.95,
-    320.75,
-    318.15,
-    324.8,
-    325.3,
-    324.7,
-    325.2,
-    330.1,
-    329.2,
-    339.9,
-    342.3,
-    348.6,
-    341.25,
-    345.65,
-    355.65,
-    370.05,
-    359.65,
-    356.05,
-    336.3,
-    337.7,
-    350.6,
-    350.2,
-    354.5,
-    356.1,
-    344.5,
-    336.1,
-    343.9,
-    360.5,
-    370.05,
-    370.0,
-    384.4,
-    380.6
-   ],
-   "size_tier": "other",
+   "m90_qty": 2,
    "in_buy_list": false,
    "new": false
   },
@@ -4757,7 +4550,7 @@
     "Backtest": 4.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.9,
+   "ml_prob": 76.3,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4767,13 +4560,16 @@
     "Top 8% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 3769.69,
+   "m90_stop": 2718.52,
    "m85_target": 3805.93,
    "m85_stop": 3080.99,
    "m85_qty": 2,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 69,
+   "results_in_days": 68,
    "fund": {
     "pe": 64.2,
     "roe": 44.4,
@@ -4783,7 +4579,7 @@
     "profit_yoy": 123.7,
     "profit_qoq": 9.9,
     "eps_growth": 130.2,
-    "results_in_days": 69,
+    "results_in_days": 68,
     "sector": "Financial Services"
    },
    "news": [
@@ -4793,14 +4589,14 @@
      "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     },
     {
+     "title": "MCX Share Price Today - MCX on NSE/BSE - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9xSzl3LWcyUDZtWjFkeDNudG56R25fcGZyTGFaaE1GSjNjaml1aEFqWDJ0c2FmaThlX3N0eW1SUGpiaWFCZDlUaUNHZl9USVNMVlgwTTczR3FJT0p0NkdBOGRuVHpvcGc?oc=5",
+     "date": "Fri, 13 Nov 2026 00:07:42 GMT"
+    },
+    {
      "title": "MCX share price hits new high, up 100% in one year; market cap nears \u20b91 trn - Business Standard",
      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdTNjS2l3Nm4wUlAyN0VIMkZ5TDA5RWNSWlo1dVdFVG1idVdhY19FXzRGRURKWE1hRTBSRDh1ODI3WFRBdnBDbzRiY2ljYjA1MW1JQjQxS2tRTkZxanpJeTBUU3Z6YmdOQTFZUmZtU05nOFdVbU5LckJNTFR0UkYwWHBYcTdsWHdsQmgyWUZHV1hNSDMwS3RNdFBQX2s3enU0M2FMQ1A1d2F3al9oeG1pOXZCaFJKSERBRmlfdjdET2wtcDVIbWlxRGN3Ym14Mk9LWWl1QtIB2gFBVV95cUxOUENoaFBUVVVFWk53TldNWDVyTjdxZnBnNnJ0ZzFHUHdkaEJzNmZCVXhHaHVXa211Z2c3aWhSWG5Kcmo3V21HTmxDLTZKTmx5dEpvekMxdWhiY2pXRVF6U1dWeGd1RHUxSmwtRTlnRU1CalJCN0RoT3hjUV9wczE1VWx1QkRuSnBGYmdXQ2hTek1hYzlmRVUtSUtZUmJvZ0lxSUM2OHRwcGcyQlMyajRCNnhVa1BaU0FnaC1TMjhNYzZvVDVIRlhESW5sTFh6V2M2OTY5dlIxdVNZQQ?oc=5",
      "date": "Fri, 13 Nov 2026 08:03:12 GMT"
-    },
-    {
-     "title": "Multi Commodity Exchange of India (NSEI:MCX) Stock Forecast & Analyst Predictions - Simply Wall St",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNalZuWkNQVjhRMGtneGdsbWFteGhXbUh3MGpGMFNLQVN4b25QeVNMNWJPeDdCcGMxamJaa1ZpbDVKRm41UWNvSDV5enFJb3lHcXJ1ZGlDNUhvSDkyWUl6RDZPaHdkaHR5YU16TXloZVRmV2R1UDd5c25hTUEzaFJpNDBGa21XWFgyaktodnhyTDZiQk45SVc5RVRhLTdzUTlUYkNCS01nVUtIZFNDWE9N?oc=5",
-     "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     }
    ],
    "sentiment": 0.3,
@@ -4868,6 +4664,7 @@
     3624.7
    ],
    "size_tier": "other",
+   "m90_qty": 1,
    "in_buy_list": false,
    "new": false
   },
@@ -4910,7 +4707,7 @@
     "Backtest": 3.9,
     "AI model": 10.0
    },
-   "ml_prob": 72.4,
+   "ml_prob": 72.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -4922,13 +4719,16 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 2496.0,
+   "m90_stop": 1800.0,
    "m85_target": 2520.0,
    "m85_stop": 2040.0,
    "m85_qty": 4,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 70,
+   "results_in_days": 69,
    "fund": {
     "pe": 97.8,
     "roe": 24.0,
@@ -4938,7 +4738,7 @@
     "profit_yoy": 170.8,
     "profit_qoq": 20.1,
     "eps_growth": 126.4,
-    "results_in_days": 70,
+    "results_in_days": 69,
     "sector": "Healthcare"
    },
    "news": [
@@ -5023,161 +4823,159 @@
     2400.0
    ],
    "size_tier": "other",
+   "m90_qty": 2,
    "in_buy_list": false,
    "new": false
   },
   {
-   "symbol": "FEDERALBNK",
-   "name": "Federal Bank Ltd.",
+   "symbol": "KARURVYSYA",
+   "name": "Karur Vysya Bank Ltd.",
    "industry": "Financial Services",
-   "segment": "Midcap 150",
+   "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 81.9,
+   "score": 82.3,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "WATCHLIST",
-   "entry": 362.5,
-   "stop": 339.45,
-   "dip_buy": 362.0,
+   "entry": 380.6,
+   "stop": 345.97,
+   "dip_buy": 380.6,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 342.91,
-   "target1": 380.62,
-   "target2": 398.75,
-   "risk_pct": 6.4,
-   "rr_t2": 1.57,
+   "ema20": 356.22,
+   "target1": 399.63,
+   "target2": 418.66,
+   "risk_pct": 9.1,
+   "rr_t2": 1.1,
    "hold": "up to 60 days",
-   "qty": 21,
-   "invest": 7612,
-   "max_loss": 484,
-   "close": 362.5,
-   "chg": 0.25,
-   "rsi": 68.1,
-   "adx": 22.1,
-   "vol_x": 1.14,
-   "from_high": -2.1,
-   "rs_rank": 79,
-   "hist_win5": 77.8,
+   "qty": 7,
+   "invest": 2664,
+   "max_loss": 242,
+   "close": 380.6,
+   "chg": -0.99,
+   "rsi": 65.2,
+   "adx": 25.4,
+   "vol_x": 0.62,
+   "from_high": -2.6,
+   "rs_rank": 91,
+   "hist_win5": 73.3,
    "parts": {
-    "Technical": 52,
-    "Rel. Strength": 7.9,
-    "Fundamentals": 12.0,
-    "News": 3.2,
+    "Technical": 51,
+    "Rel. Strength": 9.1,
+    "Fundamentals": 13.0,
+    "News": 2.5,
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 75.9,
+   "ml_prob": 73.4,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
    "why": [
-    "Broke 55-day high",
     "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up"
+    "Weekly trend up",
+    "Top 9% relative strength in Nifty 500"
    ],
    "mode85": false,
-   "m85_target": 380.62,
-   "m85_stop": 308.12,
-   "m85_qty": 27,
+   "mode90": false,
+   "m90_target": 395.82,
+   "m90_stop": 285.45,
+   "m85_target": 399.63,
+   "m85_stop": 323.51,
+   "m85_qty": 26,
    "high_conviction": false,
-   "rule_fails": [
-    "not outperforming Nifty 50 (3M)"
-   ],
+   "rule_fails": [],
    "smart": null,
-   "results_in_days": 62,
+   "results_in_days": null,
    "fund": {
-    "pe": 17.6,
-    "roe": 13.3,
+    "pe": 12.5,
+    "roe": 21.0,
     "de": null,
-    "mcap_cr": 89181.3,
-    "sales_yoy": 35.6,
-    "profit_yoy": 63.2,
-    "profit_qoq": 19.3,
-    "eps_growth": 51.1,
-    "results_in_days": 62,
+    "mcap_cr": 36883.2,
+    "sales_yoy": 26.6,
+    "profit_yoy": 51.1,
+    "profit_qoq": 4.2,
+    "eps_growth": 37.2,
+    "results_in_days": null,
     "sector": "Financial Services"
    },
    "news": [
     {
-     "title": "FEDERALBNK Outlook for the Week - Equitypandit",
-     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8taXdiTldwRGNJdEpOSEdNMUhlREMydE9ZTWZ6cVBTWWVmaEIwUGRfNEhKTmZWaDF0enRva1ZEb0xTczZYY0hlWGFoMWFiS19OQzNTS1dwWUFYOGhzcVU1aFJ0QXZYN05BODNuWUhR?oc=5",
-     "date": "Sun, 08 Nov 2026 08:00:00 GMT"
+     "title": "Shriram Research\u2019s Diwali picks: Aeroflex leads 11-stock list with 32% upside - Moneycontrol.com",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNGRTM3F6OGtjamgtUDhFc29Gckg2TkVCZWNER0VJV0N5TjFXaTlsRTNIbmdINE1MTHpTcnhqQWZaTjRRU0FDSmN5VzB3dWN2X2VLZnA5VFNtaFhTcDRIb0JzTlRpM213MzJOM0tsRFgtNmtodmNkRzdQMC1SSnVKZzhublZrQ2xEUmtxNEtSTTBUXzFBeUotSHZCWWlfbS1WQThLVDA2UlNvdFhiYk14NjhnMkN2d2JYNnAtQ2EwaFZ2Z3dlaVV6TWdpNlDSAdIBQVVfeXFMTXYyRkZ0M19LZENCQ2dpUGRqaGtjbVNaNk5teGlvemdMU21haEU2UWNXNTRkSzZYT29yMlFKTWdNZ2RaTFpUMFMwcmc1Vmppc3pURE1QR1NuZ2FIelU1WUw3N1hNaTdscmt1RXVvdnlqU2xCZ3JhaDgwbVltUDlQbG9hcE5iLU03WjJxa2tVaFcwWlhfSHFhaXFPZ1p2QU8yYlNtZldnU3F3T2tQRnhxRUJYRnI3VnFCbDI0S0pyV2hGVVpxLXlfX3FuMWhONjgxMmJ3?oc=5",
+     "date": "Sat, 07 Nov 2026 09:27:20 GMT"
     },
     {
-     "title": "NIFTY Bank reclaims 61,000: HDFC Bank, Axis Bank, Federal Bank, other banking stocks rally up to 6%; here's why - Upstox",
-     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNa0RvSWFtNF9xTmFKQnNuN2xad3dBWk5vQTBSeGhUYjhDSFhxRks1VTk1eDBFVWNTNlllcGdZazlnQTJYVDNzVlZNNmw5a0JzMGhZWGZtcEhURzVQNGIzNThoSjMxakQ5ZTFEVS1HNXVwbWpQQl9YX0E3RmVjYUlQUWZBVUdBS0hlODcxSmo5NTh1YXVnZjBLMlBrNGR1bkdVM1ZKcTh6ZUg2dXZyTmtUdVFZbjZnSzlnVzFKWXFhem5HalRicXM5RFN6d1VPVEJuMURPYkNjaGpmXzNtOEFBT1RBemZxTUVmelFVZDBJdHJzdmtmWGlF?oc=5",
-     "date": "Wed, 11 Nov 2026 06:43:42 GMT"
-    },
-    {
-     "title": "Federal Bank hikes FD interest rates for senior citizens: Check revised rates - CNBC TV18 - LinkedIn",
-     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVzBvM3VXQUltQjU0bTcyY0VkUEV4MVF4ejd3ZTNvVmtBcjRZM090aENRUlBSZnZ4eE1paFNCSVY2N3AzYkl6T3JlVlNhSHJ0YzZPOFRyQ2cwdGFOaklTemdjZkVoOFowSHJaQXBSWi1hQmkxeDhpMzlWcl81Wm9sYklwV2dZbkNfMWRZeTM4QmdqQm9NM29wbFR2MmV5WEN3ekM3dUdGdUhUckVYZi1jS1NJWkJPUQ?oc=5",
-     "date": "Thu, 12 Nov 2026 16:36:58 GMT"
+     "title": "India short bonds may underperform on rate hikes, cash squeeze - The Economic Times",
+     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOV1hzbU5SU3hXeTRYZGJhQ0lFSlZRV3d0dzNyVC1HSE9DdjY5SkVQS0MwaHdIMXVyekJvWWFLRnRpT0ZXbHVhTWFWQ3B3TjEyUVNoM1lzay1WZXBpSFdKcF9ka1ZmZm55cmxYdkZkMGVHOXIya0FucGlVVnltRjlWWU9jaUNTbFI4dE16ZUc0b0ptTXppNlRTWXBjdFdPSGJWQkpJNnUxZ1NvN2pjczlwdXhGRjRFaEV1T1RYamxYMkdZX3RMakhLbNIBzgFBVV95cUxNMk1KbWhuS1N0b1lxVi1uNG1VRXBlb1lRV252YVhJZzUyM2hXZ2tOQVRRb19ZWENjb25xZHgwZExsaWJSOXZvV2FPbXlINFhVNXFkY1o2MjBYMUUydTFYejEtcFo0MFNGRU1UT29iaW96WTVfTXlyckc3QlFIaG5sakw4c2ltS0s3azlpWkRZQlBxdlpPV0pOSUQ1NVV4ZG02bTJOZHpBNUVlT2VtRGJyYmU1eWZ0VzhzMEM1QmJkUkgzWU9RbzNWZEUxWHJFUQ?oc=5",
+     "date": "Mon, 09 Nov 2026 03:53:12 GMT"
     }
    ],
-   "sentiment": 0.3,
+   "sentiment": 0.0,
    "warnings": [],
    "spark": [
-    354.1,
-    357.8,
-    358.8,
-    355.3,
-    361.0,
-    357.75,
-    346.95,
-    345.3,
-    344.8,
-    344.25,
-    356.7,
-    349.25,
-    353.35,
-    344.6,
-    343.0,
-    342.0,
-    344.15,
-    345.0,
+    334.0,
+    333.9,
+    331.05,
+    334.1,
+    335.5,
+    338.15,
     346.0,
-    344.5,
-    343.0,
-    341.8,
-    332.75,
-    332.75,
-    332.0,
-    327.0,
-    331.3,
-    329.5,
-    322.0,
-    325.0,
-    320.2,
-    317.4,
-    318.2,
-    327.35,
-    320.0,
-    323.5,
-    321.0,
-    330.0,
-    328.2,
-    329.5,
-    330.0,
-    335.0,
-    338.0,
+    354.35,
+    346.3,
+    346.0,
+    347.6,
+    347.6,
+    346.6,
+    350.0,
     348.85,
-    344.0,
-    347.8,
-    340.9,
-    344.4,
-    341.6,
-    346.0,
-    347.75,
-    339.7,
-    337.5,
-    333.75,
-    335.2,
-    338.5,
-    340.1,
-    344.1,
-    361.6,
-    362.5
+    341.7,
+    341.15,
+    340.6,
+    335.3,
+    333.8,
+    324.45,
+    334.8,
+    331.5,
+    332.15,
+    326.15,
+    320.15,
+    324.45,
+    325.0,
+    327.95,
+    320.75,
+    318.15,
+    324.8,
+    325.3,
+    324.7,
+    325.2,
+    330.1,
+    329.2,
+    339.9,
+    342.3,
+    348.6,
+    341.25,
+    345.65,
+    355.65,
+    370.05,
+    359.65,
+    356.05,
+    336.3,
+    337.7,
+    350.6,
+    350.2,
+    354.5,
+    356.1,
+    344.5,
+    336.1,
+    343.9,
+    360.5,
+    370.05,
+    370.0,
+    384.4,
+    380.6
    ],
    "size_tier": "other",
+   "m90_qty": 15,
    "in_buy_list": false,
    "new": false
   },
@@ -5188,7 +4986,7 @@
    "segment": "Nifty Next 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 81.7,
+   "score": 82.0,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "WATCHLIST",
    "entry": 141.79,
@@ -5216,11 +5014,11 @@
     "Technical": 54,
     "Rel. Strength": 9.7,
     "Fundamentals": 9.0,
-    "News": 3.2,
+    "News": 3.5,
     "Backtest": 4.0,
     "AI model": 10.0
    },
-   "ml_prob": 74.0,
+   "ml_prob": 74.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5232,6 +5030,9 @@
     "Top 3% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 147.46,
+   "m90_stop": 106.34,
    "m85_target": 148.88,
    "m85_stop": 120.52,
    "m85_qty": 70,
@@ -5257,7 +5058,7 @@
     {
      "title": "PNB Share Price - Upstox",
      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9WQkJNWC1Zd2FyaTR2VlF3bDg1bzAybHBMRGJmVkE0ekJhNjNtd2JNN0ZtalBieThrSGtKTEFZRHpONFd0RGNiQzNQN3pkVkFyUm8tYnhHU04yLVcyeEMzeVNWU1AyMUdJc1Fz?oc=5",
-     "date": "Thu, 12 Nov 2026 04:48:02 GMT"
+     "date": "Thu, 12 Nov 2026 23:23:10 GMT"
     },
     {
      "title": "PNB Outlook for the Week - Equitypandit",
@@ -5270,7 +5071,7 @@
      "date": "Wed, 11 Nov 2026 07:51:43 GMT"
     }
    ],
-   "sentiment": 0.3,
+   "sentiment": 0.4,
    "warnings": [
     "RSI overbought \u2013 wait for dip",
     "Up >12% in 5 days \u2013 extended"
@@ -5338,6 +5139,166 @@
     141.79
    ],
    "size_tier": "other",
+   "m90_qty": 42,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "FEDERALBNK",
+   "name": "Federal Bank Ltd.",
+   "industry": "Financial Services",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 81.8,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "WATCHLIST",
+   "entry": 362.5,
+   "stop": 339.45,
+   "dip_buy": 362.0,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 342.91,
+   "target1": 380.62,
+   "target2": 398.75,
+   "risk_pct": 6.4,
+   "rr_t2": 1.57,
+   "hold": "up to 60 days",
+   "qty": 21,
+   "invest": 7612,
+   "max_loss": 484,
+   "close": 362.5,
+   "chg": 0.25,
+   "rsi": 68.1,
+   "adx": 22.1,
+   "vol_x": 1.14,
+   "from_high": -2.1,
+   "rs_rank": 79,
+   "hist_win5": 77.8,
+   "parts": {
+    "Technical": 52,
+    "Rel. Strength": 7.9,
+    "Fundamentals": 12.0,
+    "News": 3.0,
+    "Backtest": 5.0,
+    "AI model": 10.0
+   },
+   "ml_prob": 72.3,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": null,
+   "why": [
+    "Broke 55-day high",
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 377.0,
+   "m90_stop": 271.88,
+   "m85_target": 380.62,
+   "m85_stop": 308.12,
+   "m85_qty": 27,
+   "high_conviction": false,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)"
+   ],
+   "smart": null,
+   "results_in_days": 61,
+   "fund": {
+    "pe": 17.6,
+    "roe": 13.3,
+    "de": null,
+    "mcap_cr": 89181.3,
+    "sales_yoy": 35.6,
+    "profit_yoy": 63.2,
+    "profit_qoq": 19.3,
+    "eps_growth": 51.1,
+    "results_in_days": 61,
+    "sector": "Financial Services"
+   },
+   "news": [
+    {
+     "title": "FEDERALBNK Outlook for the Week - Equitypandit",
+     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8taXdiTldwRGNJdEpOSEdNMUhlREMydE9ZTWZ6cVBTWWVmaEIwUGRfNEhKTmZWaDF0enRva1ZEb0xTczZYY0hlWGFoMWFiS19OQzNTS1dwWUFYOGhzcVU1aFJ0QXZYN05BODNuWUhR?oc=5",
+     "date": "Sun, 08 Nov 2026 08:00:00 GMT"
+    },
+    {
+     "title": "Virendra Somwanshi on Building Federal Bank\u2019s Wealth Management Business - Hubbis",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSzIzVE1TS3pnMjF5S1Atb2o5ZXdoWU55YzE0eXd0bkdCWmFUQ093andGUzBiU0N0TEc5ejNOX0ZUdUh5VDZMZzVmcllIczZEMlZPUmtTMjRoM2VjSTE0TEJUU0V0YWZZaDZpN2dBQlNYaE1RMDRiRnNUOU10eEVyTDNoY1Z3bHFuMG9wSGlCWHJrWExYZFRFdU5DTkdxem5Y?oc=5",
+     "date": "Thu, 12 Nov 2026 03:09:23 GMT"
+    },
+    {
+     "title": "NIFTY Bank reclaims 61,000: HDFC Bank, Axis Bank, Federal Bank, other banking stocks rally up to 6%; here's why - Upstox",
+     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNa0RvSWFtNF9xTmFKQnNuN2xad3dBWk5vQTBSeGhUYjhDSFhxRks1VTk1eDBFVWNTNlllcGdZazlnQTJYVDNzVlZNNmw5a0JzMGhZWGZtcEhURzVQNGIzNThoSjMxakQ5ZTFEVS1HNXVwbWpQQl9YX0E3RmVjYUlQUWZBVUdBS0hlODcxSmo5NTh1YXVnZjBLMlBrNGR1bkdVM1ZKcTh6ZUg2dXZyTmtUdVFZbjZnSzlnVzFKWXFhem5HalRicXM5RFN6d1VPVEJuMURPYkNjaGpmXzNtOEFBT1RBemZxTUVmelFVZDBJdHJzdmtmWGlF?oc=5",
+     "date": "Wed, 11 Nov 2026 06:43:42 GMT"
+    }
+   ],
+   "sentiment": 0.2,
+   "warnings": [],
+   "spark": [
+    354.1,
+    357.8,
+    358.8,
+    355.3,
+    361.0,
+    357.75,
+    346.95,
+    345.3,
+    344.8,
+    344.25,
+    356.7,
+    349.25,
+    353.35,
+    344.6,
+    343.0,
+    342.0,
+    344.15,
+    345.0,
+    346.0,
+    344.5,
+    343.0,
+    341.8,
+    332.75,
+    332.75,
+    332.0,
+    327.0,
+    331.3,
+    329.5,
+    322.0,
+    325.0,
+    320.2,
+    317.4,
+    318.2,
+    327.35,
+    320.0,
+    323.5,
+    321.0,
+    330.0,
+    328.2,
+    329.5,
+    330.0,
+    335.0,
+    338.0,
+    348.85,
+    344.0,
+    347.8,
+    340.9,
+    344.4,
+    341.6,
+    346.0,
+    347.75,
+    339.7,
+    337.5,
+    333.75,
+    335.2,
+    338.5,
+    340.1,
+    344.1,
+    361.6,
+    362.5
+   ],
+   "size_tier": "other",
+   "m90_qty": 16,
    "in_buy_list": false,
    "new": false
   },
@@ -5380,7 +5341,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 73.0,
+   "ml_prob": 69.9,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5389,6 +5350,9 @@
     "Weekly trend up"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 512.72,
+   "m90_stop": 369.75,
    "m85_target": 517.65,
    "m85_stop": 419.05,
    "m85_qty": 20,
@@ -5417,14 +5381,14 @@
      "date": "Fri, 13 Nov 2026 09:15:25 GMT"
     },
     {
-     "title": "Aditya Birla Capital, Poonawalla Fincorp, PNB Housing shares among JM's top NBFC picks - Business Today",
-     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOZ2VfWFVYSFVNdmh3US1HZXlVWEctdE1lSDR3aF9EX0t2bzB1UnV5al8yUUs3WnBTMENENFpEVDZSSXBxNW5oSksteFpmRl9OY3dzdUdpa0hVVndhbF9uYWN6WnRxS21RMjVSWW5wODF4Nl9IWlZoaWd6bDdEY0tfZkNqLVQ2OEEtQmJNSFBoYVNYbEtKcHkxQTR6NGVKb1o0SDZVS2ROejFsUUJEMFNYVXQ1OFJ6UHVwdEcyQ1IzaExmOW9UbWpSS2V1bDZvSjBHVUpXQmx5WDJ3U0ZRLWFDcV93Rzh4Z9IB6wFBVV95cUxOTy1KMG45NzZhY05wdHAzekdzcWpRTXRwRW1FYm44R2JGdWN6eTYwQkIwcnhzZkJUZ051YnV2bDBiUEhTMUdIdEtLUUVSSnNpNjQ4bFJPT18yOGxXNlllSlIzdmhkLTFnOWN4WVRLSHFLUFVhd3A3M1BFQ3FWTDBZWFMtQ3ktTlNLODh6aEp6WkFNYXdtaHdLUll6YThLaHliTld6WURMMzJ5d0JHQ1VqVzVKVzJETzM1aDlMa3dzeWREMXZ5RzFJZ3ZaaTVoOUl4bXdPWEcwSG1LVmo3TU5ZLVVNaG1WdktONlVz?oc=5",
-     "date": "Wed, 11 Nov 2026 04:28:37 GMT"
-    },
-    {
      "title": "Rise and Fall 2 winner Shehzad Poonawalla hits back at Tej Pratap Yadav over \u2018vote chori\u2019 remark: \u2018I cons - The Times of India",
      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNWFN4NDRkY2wxNWhfM1YyaVBXdmc4RGcxeEpVOTZSaXoxUkhlNlF0THotc3JrZWFLUUxvUklBRHVmaDBfMi15b2pvd3IxR3gxS2psS0ZXb0p4bzdwb1RvdnhlMEJFeEc0cG9JanlON2tKRjJqNVhsVFBaN1AzcENnanVEZVIyOXZNS2p2OTFoMVZVWkQ1VjhGcXFsTkFSOXQ5SW5aUkltcXhSS1lQODh3REw5MnBLaGhwWDQ3V3ItNmVhbDU3OTFjZ2VyQ19wYk9fRnZaMm1ZY19mdERZWG1jRS1PUG1vMEl5NGRJMkdVd3ozTm8zVEVhMHljZ3RmY2pUdEtJdUhFUjQ4VkZnMVg1M0xrLXUxc191VmFma1dYM1Nmc1RT0gGqAkFVX3lxTFBIcC1meTVXSmZWU0RSSUE1TU5nYWstYUYwMnRYVWpldEF6di00QURTLUxpWTE2Mkd1ZnY0a1QtVjY4bjZKOWZqaW9LbnhJQnZqOUtNLWJlR3poYkZrR3huODd5Y3BIVXBmbU9iWFdOS21WWVc0MHUycjBRUXB0R25lcDNoTHdPWW1ra2ZWcjFTVjFqb2lsYS1yLXhOTjgwUkptVkRQT0dFTFpXTzBleVc4bkxnOUZxNnNSYWU5N1lpNjluNFF2Y0FNRFdKLUV5dUxZZXZBQm5YeFhoQnd4WTRoTWlaNFphNWVVLVZVTExMeV9HVFRpVWFIMmx4VWpMemR0VzRLQ0tBS01vcVJmMFl3cW1GNnlHWnlTNnE2ZXBjd0VCb3ZHZFBjZGc?oc=5",
      "date": "Sun, 08 Nov 2026 06:25:00 GMT"
+    },
+    {
+     "title": "Poonawalla Fincorp appoints Ankit Gupta as Head - Digital and Transformation - Exchange4Media",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUGVfeGlVWWFETEtWQXcyV0hJSTdSMFNLdW5JRngyRHZEWFQyMTE4Ukh6bkhMcWxja1FITlZUbW1mZXFKVi1ZTHkySlYzYm5ydlBuVGZpeHJEU1VMY3ZaeGpYTnNsY2JZMUlJZ2hSU2VWMDMtRlRRMHl1b3o2bGlXd1E5bks5aDZRQ3RXdnZqWXEwQU04b0x1TnhTaVJnVnNISnFLWGFJdVJtLVFZYTZTZGQtcDUxb3g2UHdlSjVGLXFyZ0hfZzhmTG50VVlJS1JiLVR2NA?oc=5",
+     "date": "Sat, 07 Nov 2026 02:38:33 GMT"
     }
    ],
    "sentiment": 0.0,
@@ -5492,6 +5456,166 @@
     493.0
    ],
    "size_tier": "other",
+   "m90_qty": 12,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Ltd.",
+   "industry": "Healthcare",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 80.4,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "label": "WATCHLIST",
+   "entry": 1807.2,
+   "stop": 1694.6,
+   "dip_buy": 1807.2,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 1716.9,
+   "target1": 1897.56,
+   "target2": 1987.92,
+   "risk_pct": 6.2,
+   "rr_t2": 1.6,
+   "hold": "up to 60 days",
+   "qty": 4,
+   "invest": 7229,
+   "max_loss": 450,
+   "close": 1807.2,
+   "chg": -1.11,
+   "rsi": 65.8,
+   "adx": 27.4,
+   "vol_x": 1.89,
+   "from_high": -2.8,
+   "rs_rank": 83,
+   "hist_win5": 61.5,
+   "parts": {
+    "Technical": 49,
+    "Rel. Strength": 8.3,
+    "Fundamentals": 12.0,
+    "News": 2.2,
+    "Backtest": 3.6,
+    "AI model": 10.0
+   },
+   "ml_prob": 71.6,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": null,
+   "why": [
+    "Volume 1.9x average",
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up",
+    "Top 17% relative strength in Nifty 500",
+    "Sector is among market leaders"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 1879.49,
+   "m90_stop": 1355.4,
+   "m85_target": 1897.56,
+   "m85_stop": 1536.12,
+   "m85_qty": 5,
+   "high_conviction": false,
+   "rule_fails": [],
+   "smart": null,
+   "results_in_days": null,
+   "fund": {
+    "pe": 26.4,
+    "roe": 10.7,
+    "de": 21.9,
+    "mcap_cr": 104902.9,
+    "sales_yoy": 31.3,
+    "profit_yoy": 36.5,
+    "profit_qoq": 9.1,
+    "eps_growth": 32.7,
+    "results_in_days": null,
+    "sector": "Healthcare"
+   },
+   "news": [
+    {
+     "title": "Aurobindo Pharma Limited (AUROPHARMA.NS) stock price, news, quote and history - Yahoo Finance Singapore",
+     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1fS1Q4TWhNOUFkR2Q1VkFYbUd3RlpGLTRacFZDMlJNNE1rYlZJaXk0bXFXbnZuT2lhemh4OEllSmxMU2Nxbkx1c0JoNjVXSXhXdUxhMmF0dnpoT1hkUXc?oc=5",
+     "date": "Tue, 10 Nov 2026 18:26:03 GMT"
+    },
+    {
+     "title": "AUROPHARMA Share Price Today - Aurobindo Pharma on NSE/BSE - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiQnJ4d2RVNERQTFY5NU9XS2dVZkkzQnl4SzFoNmQ0d2dXTUJDZHpPU2VNQWNEbHVUeFBQcUJsZktLQWxnQjdvZ1g5MVBCbWp6cnZlb2RtR2JQUkRv?oc=5",
+     "date": "Fri, 13 Nov 2026 04:51:30 GMT"
+    },
+    {
+     "title": "Buzzing stocks: Bajaj Finance, Tata Power, Adani Enterprises, Sandur Manganese, Alivus Life, Aurobindo Pharma - TradingView",
+     "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQdHZabDRucDMzNnA2WTdYMW1TOHhlU1hIX01VTURHelBPOUt2OWlhbTRRSXJmZjVBUW80SHdadklYc0Z3YThBOXhHUDhseVp5WGFHX3Y1cDlrZkZiV2x6RGF4NTN6ZDNnS0JHNVFIMVlNTUE1VmNDX09jeHBiQVlUUFVRM2FxdnBmVEJPckg1OUdnTTl4Z0E2dmxzRFdCc2N1LW4yZk5vUG4tVldQUmdDVlh5LTFXWVQ0LVlQcGRYZVpqLVVUdExteTRZdjJJQWtXOTBMTXMzSkdLaTR1S0dUNG5zMUJDSVF6VUJ2YmhfMlA?oc=5",
+     "date": "Wed, 11 Nov 2026 19:15:00 GMT"
+    }
+   ],
+   "sentiment": -0.1,
+   "warnings": [],
+   "spark": [
+    1621.06,
+    1638.79,
+    1618.37,
+    1601.93,
+    1615.18,
+    1601.93,
+    1611.7,
+    1616.88,
+    1630.82,
+    1639.09,
+    1710.52,
+    1676.95,
+    1641.98,
+    1631.12,
+    1646.86,
+    1653.74,
+    1685.62,
+    1692.49,
+    1662.11,
+    1673.46,
+    1653.74,
+    1636.8,
+    1683.62,
+    1727.46,
+    1706.94,
+    1693.59,
+    1715.0,
+    1709.53,
+    1705.54,
+    1691.1,
+    1691.29,
+    1665.69,
+    1670.47,
+    1668.58,
+    1686.41,
+    1675.65,
+    1638.79,
+    1686.61,
+    1700.46,
+    1678.24,
+    1656.63,
+    1671.57,
+    1660.61,
+    1615.28,
+    1572.84,
+    1604.82,
+    1565.77,
+    1584.0,
+    1621.36,
+    1638.59,
+    1653.64,
+    1675.06,
+    1677.45,
+    1688.11,
+    1698.57,
+    1778.27,
+    1793.21,
+    1848.3,
+    1827.5,
+    1807.2
+   ],
+   "size_tier": "other",
+   "m90_qty": 3,
    "in_buy_list": false,
    "new": false
   },
@@ -5534,7 +5658,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.5,
+   "ml_prob": 76.8,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5545,6 +5669,9 @@
     "Top 11% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 95.46,
+   "m90_stop": 68.84,
    "m85_target": 96.38,
    "m85_stop": 78.02,
    "m85_qty": 108,
@@ -5571,14 +5698,14 @@
      "date": "Wed, 11 Nov 2026 11:17:57 GMT"
     },
     {
-     "title": "MAHABANK 23 Nov 26 Future Research Recommendation - HDFC Sky",
-     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSGF1SXFadXN0ZXp1YUg1eXNwb1VIMnNrY3AtUVBveU1DcDdUU1RNMFotNExMYS1pYW8tcGcxT280X2FXVU40YjNsT3lXbWl2NkxOcUpiU1B4U2VMdWFKbnJWdUZlVE5qQWxKSUFxMTZkdFp0NDlmcFR4Q1dNUmdBSXRYRlFyRFRXNlotS0szQ283czY2LU9zMQ?oc=5",
-     "date": "Fri, 06 Nov 2026 20:20:49 GMT"
-    },
-    {
      "title": "MAHABANK6.BO Interactive Stock Chart | BANK OF MAHARASHTRA Stock - Yahoo Finance - Yahoo! Finance Canada",
      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBkeEZsUXVFTEw3Tm1MdUt4Q2xHZjlkazMtUHlLeWIzMUMzcnItYS1HSEREb1V3NGlmcXg3UlhHbFFuTTdmMXI4WDVQSHM2WDlWYnpkVGMxXzJTU2M?oc=5",
      "date": "Sun, 08 Nov 2026 13:48:30 GMT"
+    },
+    {
+     "title": "Muhurat Trading 2026: Nifty may see big gap-up opening, but there's a catch; expert picks 3 stocks - Moneycontrol.com",
+     "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQXRZazlraVEyQktJOWh0ak9ub1JLMVplYjRvc2tIMnpXNXZfcHM4Sk9UZW5OWDA0WTh2aDNNSHhSNmJEdDNuTjlEZ1hNdExocnpTbWIweW9udV8yUGtKeWlYSzQ0ck0wVkotWWNHQjVSS2xUb0RXTlFwYmNrQnhwdXNCSy1UQVBZTTRxN19rWnh1MFlZR3F1LTdBem42c0JxSFQ3WUFLMG9vYmlncENSQ2Rqckk4azZmRzlrVzB2UzVlc1RYdFA0NkZmcGZQU2ROQ3pLLUh4U243Z0RuT3Q3TlMwS09ma3pwSjFpS2tabnQ1d9IB9wFBVV95cUxNb0lOMGJnb3RWX2ZYRVFxRkRxSjJHdHZ2enBHY0tiamJ2UFdVY0Q5bldmTnczTzM5WHVzbEJNRVNzU2JUTDZQVThjWjlWS2dNckNSeHB6UGFPZW5lQzBqSVRzNFZZb3huRGdSWnl5LWNjM0lMY0stczdGMW9ralNqRU5IU0swZTNURjkyd3VFWTBORzU0WGlCRzk3UjNkNGk3TmRGdFNlYll3cDZMWHAxRWh3ZVVNejF6OFh0SXBXOTBuaHVUU1R1MVNlUWY0aEpCWjdHTXpoc0FBU0xrc2VRTlRzYVQ3NHRNS0J2LS0xeUFYLUFLWGNB?oc=5",
+     "date": "Sun, 08 Nov 2026 02:29:19 GMT"
     }
    ],
    "sentiment": 0.4,
@@ -5648,161 +5775,7 @@
     91.79
    ],
    "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "AUROPHARMA",
-   "name": "Aurobindo Pharma Ltd.",
-   "industry": "Healthcare",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 80.2,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "label": "WATCHLIST",
-   "entry": 1807.2,
-   "stop": 1694.6,
-   "dip_buy": 1807.2,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 1716.9,
-   "target1": 1897.56,
-   "target2": 1987.92,
-   "risk_pct": 6.2,
-   "rr_t2": 1.6,
-   "hold": "up to 60 days",
-   "qty": 4,
-   "invest": 7229,
-   "max_loss": 450,
-   "close": 1807.2,
-   "chg": -1.11,
-   "rsi": 65.8,
-   "adx": 27.4,
-   "vol_x": 1.89,
-   "from_high": -2.8,
-   "rs_rank": 83,
-   "hist_win5": 61.5,
-   "parts": {
-    "Technical": 49,
-    "Rel. Strength": 8.3,
-    "Fundamentals": 12.0,
-    "News": 2.0,
-    "Backtest": 3.6,
-    "AI model": 10.0
-   },
-   "ml_prob": 73.1,
-   "patterns": [],
-   "weekly_up": true,
-   "intra": null,
-   "why": [
-    "Volume 1.9x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 17% relative strength in Nifty 500",
-    "Sector is among market leaders"
-   ],
-   "mode85": false,
-   "m85_target": 1897.56,
-   "m85_stop": 1536.12,
-   "m85_qty": 5,
-   "high_conviction": false,
-   "rule_fails": [],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 26.4,
-    "roe": 10.7,
-    "de": 21.9,
-    "mcap_cr": 104902.9,
-    "sales_yoy": 31.3,
-    "profit_yoy": 36.5,
-    "profit_qoq": 9.1,
-    "eps_growth": 32.7,
-    "results_in_days": null,
-    "sector": "Healthcare"
-   },
-   "news": [
-    {
-     "title": "Aurobindo Pharma Limited (AUROPHARMA.NS) stock price, news, quote and history - Yahoo Finance Singapore",
-     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1fS1Q4TWhNOUFkR2Q1VkFYbUd3RlpGLTRacFZDMlJNNE1rYlZJaXk0bXFXbnZuT2lhemh4OEllSmxMU2Nxbkx1c0JoNjVXSXhXdUxhMmF0dnpoT1hkUXc?oc=5",
-     "date": "Tue, 10 Nov 2026 18:26:03 GMT"
-    },
-    {
-     "title": "Buzzing stocks: Bajaj Finance, Tata Power, Adani Enterprises, Sandur Manganese, Alivus Life, Aurobindo Pharma - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQdHZabDRucDMzNnA2WTdYMW1TOHhlU1hIX01VTURHelBPOUt2OWlhbTRRSXJmZjVBUW80SHdadklYc0Z3YThBOXhHUDhseVp5WGFHX3Y1cDlrZkZiV2x6RGF4NTN6ZDNnS0JHNVFIMVlNTUE1VmNDX09jeHBiQVlUUFVRM2FxdnBmVEJPckg1OUdnTTl4Z0E2dmxzRFdCc2N1LW4yZk5vUG4tVldQUmdDVlh5LTFXWVQ0LVlQcGRYZVpqLVVUdExteTRZdjJJQWtXOTBMTXMzSkdLaTR1S0dUNG5zMUJDSVF6VUJ2YmhfMlA?oc=5",
-     "date": "Wed, 11 Nov 2026 19:15:00 GMT"
-    },
-    {
-     "title": "Aurobindo Pharma shares extend losses after USFDA's OAI classification for subsidiary's plant - CNBC TV18 - LinkedIn",
-     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWm9nNFBqR0dKeV9uSVNUVXpCOG9vektCdUhoOWZzR2E3S2dqUXlGWS1EdXZSelJFZHI1VkVma09mREVhMFEtbTJGOHZjVGJ4bWkxN2hYVTN4a0loMTV1Qlc1bm4yX2tJd0hZOUJGYTZTaGRoV3ZMUm9NVEp2bWg4cWd6NXRxZndOOHBHMTNlNm13VzFyOG1URzQtZzRoWE9IZmZzRU04WmtqMGotTkpzMjJ0TTdLVEtzbEE?oc=5",
-     "date": "Thu, 12 Nov 2026 08:44:58 GMT"
-    }
-   ],
-   "sentiment": -0.2,
-   "warnings": [],
-   "spark": [
-    1621.06,
-    1638.79,
-    1618.37,
-    1601.93,
-    1615.18,
-    1601.93,
-    1611.7,
-    1616.88,
-    1630.82,
-    1639.09,
-    1710.52,
-    1676.95,
-    1641.98,
-    1631.12,
-    1646.86,
-    1653.74,
-    1685.62,
-    1692.49,
-    1662.11,
-    1673.46,
-    1653.74,
-    1636.8,
-    1683.62,
-    1727.46,
-    1706.94,
-    1693.59,
-    1715.0,
-    1709.53,
-    1705.54,
-    1691.1,
-    1691.29,
-    1665.69,
-    1670.47,
-    1668.58,
-    1686.41,
-    1675.65,
-    1638.79,
-    1686.61,
-    1700.46,
-    1678.24,
-    1656.63,
-    1671.57,
-    1660.61,
-    1615.28,
-    1572.84,
-    1604.82,
-    1565.77,
-    1584.0,
-    1621.36,
-    1638.59,
-    1653.64,
-    1675.06,
-    1677.45,
-    1688.11,
-    1698.57,
-    1778.27,
-    1793.21,
-    1848.3,
-    1827.5,
-    1807.2
-   ],
-   "size_tier": "other",
+   "m90_qty": 65,
    "in_buy_list": false,
    "new": false
   },
@@ -5813,7 +5786,7 @@
    "segment": "Nifty Next 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 79.1,
+   "score": 79.3,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 204.4,
@@ -5841,11 +5814,11 @@
     "Technical": 49,
     "Rel. Strength": 9.0,
     "Fundamentals": 11.0,
-    "News": 3.0,
+    "News": 3.2,
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 80.2,
+   "ml_prob": 73.8,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -5856,13 +5829,16 @@
     "Top 10% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 212.58,
+   "m90_stop": 153.3,
    "m85_target": 214.62,
    "m85_stop": 173.74,
    "m85_qty": 48,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 62,
+   "results_in_days": 61,
    "fund": {
     "pe": 7.0,
     "roe": 16.3,
@@ -5872,19 +5848,19 @@
     "profit_yoy": 30.6,
     "profit_qoq": 2.5,
     "eps_growth": 30.6,
-    "results_in_days": 62,
+    "results_in_days": 61,
     "sector": "Financial Services"
    },
    "news": [
     {
+     "title": "UNIONBANK Share Price Today - Union Bank of India on NSE/BSE - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9uSFRRREx6bkRMTmVieExaN2FBV1ZDbW5OMEQ5dm9xemdZeTlyLXpZeG55bm83QU9uUzdDTU9nekc4ek0zbFEyQkxrc1Z0c0xfRW9FMnVBSzBsS2pjMjhuZw?oc=5",
+     "date": "Wed, 11 Nov 2026 22:02:53 GMT"
+    },
+    {
      "title": "Union Bank of India among 5 stocks closing above VWAP - The Economic Times",
      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNamRmdFZNYjhDZGcxQ084SHNLNWtqd1JucGRiZ0dUbGVaelUyWXlQLW45R1F5OUFNSkcwMEVHWFBXWTJtQzA1U1BkT1JBakRFTmh0dWhhc1Y2aVRfOUlIcTFCcHdJY3NwLTlqWU1VTlo1UTlueWpGU2NWY0JxOGtGNDRTRmg2aUwtaGczQ1JTdExpZnJzTFpVUGRtWjN0aTBxRlF1Ri03b0gtSF9iNDYwNEVsRDFxZU0yZ0psRTQ4eHNGQnNVcENTV2lmeW41cWc?oc=5",
      "date": "Wed, 11 Nov 2026 03:45:32 GMT"
-    },
-    {
-     "title": "Nifty PSU Bank Index Performance: Bank of India, UCO Bank among 7 stocks rebound 15-56% from 1-yr lows - here's why - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxONUxfTW1aZ0dMa0ExSVBsUUR1NXMzMmYyX3V4ZF9uVmRpb1dnT0hvM013eUFNMFU5cmNOYTRBZmhSbXlkbklEbTIxbDJ6UzJ4T0NydmtZSzZrMHd4SHktWkYwS2ZsWTU5UUZfaGdvMHY3ekNOQ1AyMTI3d1lTaERlajV3dFEtMFl3cnFxYTBRbjlmQWM4R1EwY1dJNzF0VFBBWHQ0ZHBSRkdHcDhodmppb1FtQkRhZ1Rkd3FKVGowYjVWX3UwNkozYTZCci1wRXFTcUVlM204TEVNamVHSWMzWGl6cWhEUEc1djJVWDNYTlpXNVppM1ZrZWxMQQ?oc=5",
-     "date": "Tue, 10 Nov 2026 18:47:47 GMT"
     },
     {
      "title": "Top Gainers Today 09 Nov 2026: PSU Banks and Small Caps Rise - Multibagg AI",
@@ -5892,7 +5868,7 @@
      "date": "Mon, 09 Nov 2026 11:01:13 GMT"
     }
    ],
-   "sentiment": 0.2,
+   "sentiment": 0.3,
    "warnings": [
     "RSI overbought \u2013 wait for dip"
    ],
@@ -5959,6 +5935,168 @@
     204.4
    ],
    "size_tier": "other",
+   "m90_qty": 29,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "ACE",
+   "name": "Action Construction Equipment Ltd.",
+   "industry": "Capital Goods",
+   "segment": "Smallcap 250",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 78.8,
+   "stars": "\u2605\u2605\u2605\u2605\u2606",
+   "label": "WATCHLIST",
+   "entry": 1179.65,
+   "stop": 1067.45,
+   "dip_buy": 1179.65,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 1116.64,
+   "target1": 1238.63,
+   "target2": 1297.62,
+   "risk_pct": 9.5,
+   "rr_t2": 1.05,
+   "hold": "up to 60 days",
+   "qty": 2,
+   "invest": 2359,
+   "max_loss": 224,
+   "close": 1179.65,
+   "chg": 1.22,
+   "rsi": 60.7,
+   "adx": 25.6,
+   "vol_x": 0.79,
+   "from_high": -7.0,
+   "rs_rank": 85,
+   "hist_win5": 100.0,
+   "parts": {
+    "Technical": 51,
+    "Rel. Strength": 8.5,
+    "Fundamentals": 12.0,
+    "News": 3.5,
+    "Backtest": 5.0,
+    "AI model": 10.0
+   },
+   "ml_prob": 75.2,
+   "patterns": [],
+   "weekly_up": false,
+   "intra": null,
+   "why": [
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Top 15% relative strength in Nifty 500"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 1226.84,
+   "m90_stop": 884.74,
+   "m85_target": 1238.63,
+   "m85_stop": 1002.7,
+   "m85_qty": 8,
+   "high_conviction": false,
+   "rule_fails": [
+    "sector not in top half",
+    "EMA 20>50>200 not stacked"
+   ],
+   "smart": null,
+   "results_in_days": null,
+   "fund": {
+    "pe": 32.2,
+    "roe": null,
+    "de": 0.4,
+    "mcap_cr": 14039.7,
+    "sales_yoy": 35.9,
+    "profit_yoy": 68.1,
+    "profit_qoq": 37.5,
+    "eps_growth": 22.3,
+    "results_in_days": null,
+    "sector": "Industrials"
+   },
+   "news": [
+    {
+     "title": "Action Construction rallies 6%, nears 52-week high on healthy Q2 results - Business Standard",
+     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaUNZNDQtMllueVctYU9XdFg4T216STdXT1l6ZGJwODJvWDhJQTZNMkU1b3JaMzV6dDEtOFNHMHVDRFhUOVk3MVZMMUJxRDZfM1g1UkxuZFVGTEZfcV9LWHFZUzE4eEFuMk5pd0d2UGRZRl9TYmlWRzZXdHcwUmhtZ3Rnd2NlOUVHazBCbERHQ0EyNHdzVXlrUkRiejBxMDRIT0ttQ09UNjdsNFJWdU1xd3NEeUtTQTc5WjVqcDNPenJNTGo4X3czSHo0Wk16SDFnV2s00gHYAUFVX3lxTE1TSC1yN3ZSVUZza1FWeU5TWC1PNDdIRlk5X3JrZ1ZManRBQ1E4aldhNXlXRWZGaWI0dE5OOHZaV3dDd2RHeU5ra1hCQ3Nqb1JNSmIxMUVQZEozSklHYkMzNWJSQm0zV1N6UWxYZWFVT0lVZnVyOHd4VWxFeWZwdkF2N0h1Tlg5cTJlLWdRSmVBQ0tydHhTX1h3N3g3cWd4dlFvaEhwYkJIbWJ6b1VIUmVXblF5WUUyaVB5NEstdkhpV0lsc0ZXN3dsbUJHUWxQeWhMWTUxZ0wxTw?oc=5",
+     "date": "Fri, 13 Nov 2026 04:42:10 GMT"
+    },
+    {
+     "title": "ACE Reports 82% Jump in Q2 Net Profit on Crane Business Restructuring Gain - Autocar Professional",
+     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQjFuUVN4UFVwVHJKamMtejFPQk1PMHgwSWxudWtDeFZIMkZHUWUtODVWNGUtTGdocEZkdF9BbmNoSHV1aFNZajBCcW54dmVyWmFUb1FPdmJOSFZremxjRE5tZmtvelBTWHVzWmwwZGZDbVhTQ2d6LXZ5MVE3dXBvb2IwVkROSFFvYUUxbHliMHNTelhGUy15VGVBdndNdlVkbUdPQm5ad2s3dzZKbm9tb0l4ekd3N1EtZUpv0gHDAUFVX3lxTE1pWFJsdlU3ZzJma2x3elpZMnphT2NyaDlQbjFLdklqVG5OaXdDcC1rbk41TWlPRC0tbUY5WVYxeERwMGRPNkQ5dkE2N1FpdW9mRXVJVlFaLTFWUVkwbDhmckpqZWt5WDI4d3djTUJKQk5rLW5YZ3J6aFd3aENkS2RUM3dmLXVxUy1fUWNtZ2ZPSm95MlNmMEh4a19YdVhVMTZjekFNbG9qWmdoa3I0ZHA1ZWlLWnlTdUZHUFFtcUdSMzY3Yw?oc=5",
+     "date": "Thu, 12 Nov 2026 12:54:29 GMT"
+    },
+    {
+     "title": "Grupo Argos accelerates the execution of ACE 1.0 through stronger cash generation, lower debt, and share price appreciation, reporting EBITDA of COP 2.1 trillion and an EBITDA margin of 25% - Grupo Argos",
+     "link": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPQXNiX2JXdFZ5eHFFaEpzRjlHYnpya21lU05RS092NG1vdktYOFQzLVJqVjNiN2FtVEtpTkpXSWtENmdoaTg1azFzZTVZSTVEaUdELTZFV0x4QnlRbVlFRVZnRDg1eENTYnE4eUVRU01ReTZucThsbWFQaXVBOE9KVmNfZFdycWJ2TURKM0xaUXZWaF9GS3REVUwwZ0dDdWx0Y2ZFaHlhZDlzQmtyNnJRNkJuaE03cU5udU5tZHRpUmpuYUZEVDdNZTh2c0N6U05mWWdzUzNjbXV6Vm1MRUdzaElxQ1ZrcU03bHUxT3RVaHlfR2Z5WXJiUXozT2p2ZVZiT1REd0dZU0RCcDdwLTI5OEYzeG9vR18tdV9aYUZHU3RUYzktdjMwWEtqYUJRb3YwNkpnQ1pGSlFLUFEtd3N0dGkyRQ?oc=5",
+     "date": "Thu, 12 Nov 2026 08:00:00 GMT"
+    }
+   ],
+   "sentiment": 0.4,
+   "warnings": [
+    "Weekly trend not confirmed"
+   ],
+   "spark": [
+    1111.66,
+    1182.63,
+    1179.03,
+    1162.27,
+    1180.03,
+    1165.06,
+    1152.68,
+    1156.88,
+    1133.92,
+    1138.51,
+    1108.46,
+    1091.79,
+    1088.9,
+    1145.5,
+    1125.4,
+    1113.2,
+    1121.2,
+    1127.0,
+    1121.2,
+    1129.0,
+    1132.1,
+    1149.7,
+    1205.6,
+    1229.2,
+    1230.4,
+    1241.9,
+    1253.9,
+    1241.0,
+    1226.6,
+    1212.9,
+    1205.8,
+    1232.0,
+    1212.3,
+    1227.5,
+    1252.2,
+    1249.9,
+    1179.8,
+    1176.9,
+    1201.1,
+    1192.9,
+    1197.0,
+    1155.7,
+    1136.3,
+    1108.1,
+    1074.6,
+    1053.4,
+    1000.1,
+    1011.3,
+    1036.5,
+    1022.8,
+    1027.0,
+    994.7,
+    1021.5,
+    1050.55,
+    1104.75,
+    1127.65,
+    1167.7,
+    1166.65,
+    1165.45,
+    1179.65
+   ],
+   "size_tier": "other",
+   "m90_qty": 5,
    "in_buy_list": false,
    "new": false
   },
@@ -6001,7 +6139,7 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 79.7,
+   "ml_prob": 72.3,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -6010,6 +6148,9 @@
     "Top 11% relative strength in Nifty 500"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 689.68,
+   "m90_stop": 497.36,
    "m85_target": 696.31,
    "m85_stop": 563.68,
    "m85_qty": 15,
@@ -6114,6 +6255,7 @@
     663.15
    ],
    "size_tier": "other",
+   "m90_qty": 9,
    "in_buy_list": false,
    "new": false
   },
@@ -6124,7 +6266,7 @@
    "segment": "Nifty 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 76.3,
+   "score": 75.4,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
    "entry": 1774.0,
@@ -6152,11 +6294,11 @@
     "Technical": 47,
     "Rel. Strength": 8.9,
     "Fundamentals": 15.0,
-    "News": 2.5,
+    "News": 2.8,
     "Backtest": 4.5,
-    "AI model": 2.7
+    "AI model": 1.5
    },
-   "ml_prob": 47.5,
+   "ml_prob": 43.7,
    "patterns": [],
    "weekly_up": true,
    "intra": null,
@@ -6168,13 +6310,16 @@
     "Sector is among market leaders"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 1844.96,
+   "m90_stop": 1330.5,
    "m85_target": 1862.7,
    "m85_stop": 1507.9,
    "m85_qty": 5,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
-   "results_in_days": 62,
+   "results_in_days": 61,
    "fund": {
     "pe": 28.4,
     "roe": 19.2,
@@ -6184,7 +6329,7 @@
     "profit_yoy": 39.0,
     "profit_qoq": 8.2,
     "eps_growth": 32.7,
-    "results_in_days": 62,
+    "results_in_days": 61,
     "sector": "Technology"
    },
    "news": [
@@ -6199,12 +6344,12 @@
      "date": "Thu, 12 Nov 2026 20:04:28 GMT"
     },
     {
-     "title": "Tech Mahindra Ltd Share/Stock Price Live Today | The HinduBusinessLine - BusinessLine",
-     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBtZXU1NE5uNnZjNWN6T1dnalQ2T1E0Rlk1bU5FajdNM0Y4YzRYQ1F0ZFpac1dGTkVxNUhwRnFpQWhvc1c4SmxmSkdDTklSbjJ0MkZIR19wSW9uRGZ2TVdhTFpYcnZJVnktZ1MyTWlzOA?oc=5",
-     "date": "Mon, 09 Nov 2026 08:00:00 GMT"
+     "title": "Tech Mahindra\u2019s Agreement With Vodafone Business - https://www.fintechbiznews.com/",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRklTMU9zWjVaMGpScnA1aHpGVktKRDFONjBiSDhGSzNvZG5sa0ZsWHRpUkUwcXpkY2M4NjNFcE5TZUk3bElUVUliSzdoMWh1Z1ZnYTh1MDRLbG56Zl9jblkzMkxKX3NLTEJwVVFZVXpLRmdzeXUyQnVzei1Xb1djckJJQTFDRFJIS0Z0VUw4YkVWSTNQVzR1TmJJY3lSdw?oc=5",
+     "date": "Mon, 09 Nov 2026 17:43:03 GMT"
     }
    ],
-   "sentiment": 0.0,
+   "sentiment": 0.1,
    "warnings": [],
    "spark": [
     1596.8,
@@ -6269,163 +6414,7 @@
     1774.0
    ],
    "size_tier": "other",
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "ACE",
-   "name": "Action Construction Equipment Ltd.",
-   "industry": "Capital Goods",
-   "segment": "Smallcap 250",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 73.1,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "WATCHLIST",
-   "entry": 1179.65,
-   "stop": 1067.45,
-   "dip_buy": 1179.65,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 1116.64,
-   "target1": 1238.63,
-   "target2": 1297.62,
-   "risk_pct": 9.5,
-   "rr_t2": 1.05,
-   "hold": "up to 60 days",
-   "qty": 2,
-   "invest": 2359,
-   "max_loss": 224,
-   "close": 1179.65,
-   "chg": 1.22,
-   "rsi": 60.7,
-   "adx": 25.6,
-   "vol_x": 0.79,
-   "from_high": -7.0,
-   "rs_rank": 85,
-   "hist_win5": 100.0,
-   "parts": {
-    "Technical": 51,
-    "Rel. Strength": 8.5,
-    "Fundamentals": 5.0,
-    "News": 4.2,
-    "Backtest": 5.0,
-    "AI model": 10.0
-   },
-   "ml_prob": 80.0,
-   "patterns": [],
-   "weekly_up": false,
-   "intra": null,
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Top 15% relative strength in Nifty 500"
-   ],
-   "mode85": false,
-   "m85_target": 1238.63,
-   "m85_stop": 1002.7,
-   "m85_qty": 8,
-   "high_conviction": false,
-   "rule_fails": [
-    "sector not in top half",
-    "EMA 20>50>200 not stacked"
-   ],
-   "smart": null,
-   "results_in_days": null,
-   "fund": {
-    "pe": 32.2,
-    "roe": null,
-    "de": 0.4,
-    "mcap_cr": 14039.7,
-    "sales_yoy": -18.2,
-    "profit_yoy": 0.8,
-    "profit_qoq": 7.7,
-    "eps_growth": 22.3,
-    "results_in_days": null,
-    "sector": "Industrials"
-   },
-   "news": [
-    {
-     "title": "Action Construction rallies 6%, nears 52-week high on healthy Q2 results - Business Standard",
-     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaUNZNDQtMllueVctYU9XdFg4T216STdXT1l6ZGJwODJvWDhJQTZNMkU1b3JaMzV6dDEtOFNHMHVDRFhUOVk3MVZMMUJxRDZfM1g1UkxuZFVGTEZfcV9LWHFZUzE4eEFuMk5pd0d2UGRZRl9TYmlWRzZXdHcwUmhtZ3Rnd2NlOUVHazBCbERHQ0EyNHdzVXlrUkRiejBxMDRIT0ttQ09UNjdsNFJWdU1xd3NEeUtTQTc5WjVqcDNPenJNTGo4X3czSHo0Wk16SDFnV2s00gHYAUFVX3lxTE1TSC1yN3ZSVUZza1FWeU5TWC1PNDdIRlk5X3JrZ1ZManRBQ1E4aldhNXlXRWZGaWI0dE5OOHZaV3dDd2RHeU5ra1hCQ3Nqb1JNSmIxMUVQZEozSklHYkMzNWJSQm0zV1N6UWxYZWFVT0lVZnVyOHd4VWxFeWZwdkF2N0h1Tlg5cTJlLWdRSmVBQ0tydHhTX1h3N3g3cWd4dlFvaEhwYkJIbWJ6b1VIUmVXblF5WUUyaVB5NEstdkhpV0lsc0ZXN3dsbUJHUWxQeWhMWTUxZ0wxTw?oc=5",
-     "date": "Fri, 13 Nov 2026 04:42:10 GMT"
-    },
-    {
-     "title": "ACE Reports 82% Jump in Q2 Net Profit on Crane Business Restructuring Gain - Autocar Professional",
-     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQjFuUVN4UFVwVHJKamMtejFPQk1PMHgwSWxudWtDeFZIMkZHUWUtODVWNGUtTGdocEZkdF9BbmNoSHV1aFNZajBCcW54dmVyWmFUb1FPdmJOSFZremxjRE5tZmtvelBTWHVzWmwwZGZDbVhTQ2d6LXZ5MVE3dXBvb2IwVkROSFFvYUUxbHliMHNTelhGUy15VGVBdndNdlVkbUdPQm5ad2s3dzZKbm9tb0l4ekd3N1EtZUpv0gHDAUFVX3lxTE1pWFJsdlU3ZzJma2x3elpZMnphT2NyaDlQbjFLdklqVG5OaXdDcC1rbk41TWlPRC0tbUY5WVYxeERwMGRPNkQ5dkE2N1FpdW9mRXVJVlFaLTFWUVkwbDhmckpqZWt5WDI4d3djTUJKQk5rLW5YZ3J6aFd3aENkS2RUM3dmLXVxUy1fUWNtZ2ZPSm95MlNmMEh4a19YdVhVMTZjekFNbG9qWmdoa3I0ZHA1ZWlLWnlTdUZHUFFtcUdSMzY3Yw?oc=5",
-     "date": "Thu, 12 Nov 2026 12:54:29 GMT"
-    },
-    {
-     "title": "Action Construction Equipment Q2FY27 Results: Consolidated PAT up 82% YoY to \u20b91,643 mn - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaW55RFpuRGJ0QjV4a2Q0YmhzOThIdFR3NUlJNlY5VEpTYmpLWHlCYnRORFpoeVdYbzd6aDZ4d25TT0Q2OHlqYjdZcWJoU1F2blFMVU1lMm4yTlVOcEZQakREUXd0UFhaT3d3YXQ4bVJuRmM4bFBGMDV0SElsQkhZODNtWGFpaF8zdlZqSTZlOVdReFFEQnRBOUdqNTVDQ1RVb1lvTVI5RHNSazJZMk1VTWxJbG9vRGtXR080UndHNEhjQUE?oc=5",
-     "date": "Thu, 12 Nov 2026 12:43:31 GMT"
-    }
-   ],
-   "sentiment": 0.7,
-   "warnings": [
-    "Weekly trend not confirmed"
-   ],
-   "spark": [
-    1111.66,
-    1182.63,
-    1179.03,
-    1162.27,
-    1180.03,
-    1165.06,
-    1152.68,
-    1156.88,
-    1133.92,
-    1138.51,
-    1108.46,
-    1091.79,
-    1088.9,
-    1145.5,
-    1125.4,
-    1113.2,
-    1121.2,
-    1127.0,
-    1121.2,
-    1129.0,
-    1132.1,
-    1149.7,
-    1205.6,
-    1229.2,
-    1230.4,
-    1241.9,
-    1253.9,
-    1241.0,
-    1226.6,
-    1212.9,
-    1205.8,
-    1232.0,
-    1212.3,
-    1227.5,
-    1252.2,
-    1249.9,
-    1179.8,
-    1176.9,
-    1201.1,
-    1192.9,
-    1197.0,
-    1155.7,
-    1136.3,
-    1108.1,
-    1074.6,
-    1053.4,
-    1000.1,
-    1011.3,
-    1036.5,
-    1022.8,
-    1027.0,
-    994.7,
-    1021.5,
-    1050.55,
-    1104.75,
-    1127.65,
-    1167.7,
-    1166.65,
-    1165.45,
-    1179.65
-   ],
-   "size_tier": "other",
+   "m90_qty": 3,
    "in_buy_list": false,
    "new": false
   },
@@ -6436,7 +6425,7 @@
    "segment": "Smallcap 250",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 68.4,
+   "score": 68.3,
    "stars": "\u2605\u2605\u2605\u2606\u2606",
    "label": "WATCHLIST",
    "entry": 167.9,
@@ -6464,11 +6453,11 @@
     "Technical": 47,
     "Rel. Strength": 9.2,
     "Fundamentals": 5.0,
-    "News": 2.9,
+    "News": 2.8,
     "Backtest": 4.4,
     "AI model": 10.0
    },
-   "ml_prob": 77.0,
+   "ml_prob": 74.4,
    "patterns": [],
    "weekly_up": false,
    "intra": null,
@@ -6478,6 +6467,9 @@
     "Tight base (volatility contraction)"
    ],
    "mode85": false,
+   "mode90": false,
+   "m90_target": 174.62,
+   "m90_stop": 125.93,
    "m85_target": 176.29,
    "m85_stop": 142.71,
    "m85_qty": 59,
@@ -6499,6 +6491,11 @@
    },
    "news": [
     {
+     "title": "V2RETAIL Share Price Today - V2 Retail on NSE/BSE - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5YcE1PV1lzdnE5bE5XMENya0dncWtfV0taNldsanBCZVFBM3Yxb1RlOFZrQ0Roc0RuZFVYSllnU0I5aEpsRjQ1em9Jb0lBVnhqSUFR?oc=5",
+     "date": "Thu, 12 Nov 2026 00:33:42 GMT"
+    },
+    {
      "title": "Best aircon servicing Singapore companies [Nov 2026] - SETHLUI.com",
      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5vMkFMUUQ0MmhWZm1jTXdzZDlnaVNMY1FuVVlKcVB1N2Q4bFBfa0Jwd1pYQUtxSFN0NEdkT3VaaE5tS0dUR1FUcEdDMTZBTDRPbHRpWC1JRU84eElZRlpsQ2JwQXUwTFE?oc=5",
      "date": "Wed, 11 Nov 2026 08:00:00 GMT"
@@ -6507,14 +6504,9 @@
      "title": "Diwali 2026 price shock: Last-minute househelp costs up to 3 times more in Noida, Mumbai and Bengaluru as Urban Company, Snabbit and Pronto see festive demand - ET Now",
      "link": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOd2RHTldyX1JVdEpBOEdIeU10TzQ1Ry1oaG9teDFoRmhlWnhRWC1ZUjRMbGlIem9vd1RQeVlfazNsdFRzMXl4bmlvRXZCd28wTVpvZnVTTjBfVFctS09wMFRGN2E2Sm5WYVdoUXlCTGpxeF9fUkJySGszbzNQTkFsMDh5RXJXMVNJVmJTajZHTUM0VkNKcUs0OHhWRXEzMU91Q3IyYW1MOE5MQTZDZXZENVV4aWZ4T083cnctOS1NYk15Qld6V1lnUi1iN2lOSFc2eC1RMm9ZcnRDcTF6SzNkOW81X09leG1RSld5bDd1T1pUaEtNcDhsVnBvWDcyS1U1NnZ0NlVvUE1jOVdnZ25DY1k4YklmMllSY2Zud2syUEZ4dktCZWRlcHpzVTZuZFhyWnVnZnR30gG7AkFVX3lxTE45b2dDUjJUQnZUTk5FNHdFQTJUdmZiMlgyOW5RRHJmZnBlWExVSGJycU04REJTX1lrbjlsTTVVbUZxVTRxUUJOc1ZjNklZcUdHV0pLY0xvVXpHY1dZdS1FcERqbnNFNUNBdkJpTUNzLTN4RXdpdS1YbnkyeWVtbldoVzA0VHc5cFVOMXdTMXpfS3VBWk9vanJCbjItcG5hcF9JVjk1MlZheFJqUC1uQzlQNTl1eWRUSXdjWUZKbGhCM3ZHS3JsUEFhMlctckN2aUJJTTBEd25uU1g0aXM3bG0tdmY0clk5cGV6WDl1eW94N21ONDJXc3NGcXZMOVdwbUlCUXRXRDRMWU1yOXQ5bm54cGZTZWt1eVRRSzU0dTNZOW1INkVHdmxfVm5ueTZtRWI0VnA4blpDQmUxYw?oc=5",
      "date": "Sat, 07 Nov 2026 03:46:17 GMT"
-    },
-    {
-     "title": "A change of doors, not an exit - The Financial Express",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPd3JHZ1JLQ3BFMERVVldDZnRRZUZZTnZpdjI5bXI0aXNVekFqWjRoVy1sWmtjQldIblZGTXcwM045MS12ZlBDbXc1YUY3SjRRZlk2c0VaUlhEYS1rSU5LZ0lDS0dSdjI5SHlWZDQzdkZ1akNnTWFTZ1RwZy1ORmpGV3RiQkd1WWUxQTBxSdIBjAFBVV95cUxPd3JHZ1JLQ3BFMERVVldDZnRRZUZZTnZpdjI5bXI0aXNVekFqWjRoVy1sWmtjQldIblZGTXcwM045MS12ZlBDbXc1YUY3SjRRZlk2c0VaUlhEYS1rSU5LZ0lDS0dSdjI5SHlWZDQzdkZ1akNnTWFTZ1RwZy1ORmpGV3RiQkd1WWUxQTBxSQ?oc=5",
-     "date": "Tue, 10 Nov 2026 15:31:58 GMT"
     }
    ],
-   "sentiment": 0.17,
+   "sentiment": 0.12,
    "warnings": [
     "Weekly trend not confirmed"
    ],
@@ -6581,6 +6573,7 @@
     167.9
    ],
    "size_tier": "other",
+   "m90_qty": 35,
    "in_buy_list": false,
    "new": false
   }
@@ -6614,7 +6607,7 @@
   {
    "symbol": "MOTILALOFS",
    "name": "Motilal Oswal Financial Services Ltd.",
-   "score": 97.0,
+   "score": 94.0,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "close": 1216.8,
    "chg": 5.21,
@@ -6633,32 +6626,7 @@
      "date": "Wed, 11 Nov 2026 06:26:48 GMT"
     }
    ],
-   "sentiment": 1.0,
-   "new": false
-  },
-  {
-   "symbol": "CDSL",
-   "name": "Central Depository Services (India) Ltd.",
-   "score": 90.6,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "close": 1455.0,
-   "chg": 3.41,
-   "vol_x": 3.27,
-   "stop": 1408.1,
-   "target": 1484.1,
-   "news": [
-    {
-     "title": "CDSL\u2019s Consol Income, Net Profit Grow 15% YoY - https://www.fintechbiznews.com/",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNR2MwR2J5NFQzNlBIbUZNOWNrMFpBU293YmtzS19WRDZsU2l1WDFNbmcwbU4yZ3dBWk10ZVBmQXI1SUVzaE9PcmM1UTZIRmFab3RidXJwYkR5SkktYV9EeFBqRHg0WWIwRGY3UFdoUGRVZy1KazhOc25KNHNFSEFLM3RjLTF3WUQtSHFRNVg0MTNCWlJjTHpXbVVLQ1FUS0Z3?oc=5",
-     "date": "Sat, 07 Nov 2026 13:28:50 GMT"
-    },
-    {
-     "title": "Breakout stock: CDSL gains 4%, up 30% from 52-week low; more upside ahead? - Business Standard",
-     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdkpvZmNyZnE3NUlzUE4wcjBUWExSZEVNTDVXSlJSeUVSS25uYmFqVHlTcFhPbnRvTGlSUGUzYjJ4Q3YyN0VkZDFWOVM0c05LRUp3Vnl3OFpyNVdXS21Kd3c3TjBpLTBaRHNTZjBWVVBjXzUxZjdfSUVFeFJ4aXktWDgtUjJpSXNucEhTVG52a01zQ2tSNlZGOEZXcmpuX0pvalk4cXlXVXk3WGJSY3hKckhpUTZBOEo1dl93ZnREYzJPMzhVb3BFLUxhSXRsWHky0gHWAUFVX3lxTE5JLUlSZWNIMUtnZ2NCOW53VnpfUllPeU5RMFZnVWtpcjdHZUZ2cE8tei1WaXM4UmhHRlpCUVhSM1ItX1hFOUxwRmMxNXRhNGpoODFlaEJQWVhWSlpRTmJVVllHUFc4bEwyeTV1eGNTYmtKNlRIeUdUNDhydEkxeGtwb0JNM0VGTlNCbW0tU1dGTjFWSlQ3c1dZdHBlSW0tQ1V4dmt4NlRTcUg5UllqQWd4dTc4LVpHYkxFdkxZeWZTMkVqTmRNZElvanBwS3NmaWVfWGFMOUE?oc=5",
-     "date": "Thu, 12 Nov 2026 08:10:43 GMT"
-    }
-   ],
-   "sentiment": 0.8,
+   "sentiment": 0.7,
    "new": false
   },
   {
@@ -6680,10 +6648,35 @@
     {
      "title": "India's Paytm gets preliminary RBI nod for wallet licence; shares hit record high - Reuters",
      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTkRzdktWTTB4bUxnUHRKR1A0SlI0eVMzVmFlbTI3QlRmSy1QMWhMLXhnYTdmTHl0bGkzUXRwbXdqbW9aZ3R4Y01EZTYweFN4WXgySmFGWU1kSzM4MmlhcC1POWJUTF9JNGFtcWZWVnlEZUhtNzBZQWFkNVFuVkdXWmNtd2pLTm1PWTAyM0laOEU2YUNQd1dKeVdYS0M3VjF4QWFBckNuME8xS3RoNnpYNHRDWG95WngtRUwzaWJWUVM?oc=5",
-     "date": "Fri, 13 Nov 2026 11:08:02 GMT"
+     "date": "Fri, 13 Nov 2026 18:29:05 GMT"
     }
    ],
    "sentiment": 0.5,
+   "new": false
+  },
+  {
+   "symbol": "CDSL",
+   "name": "Central Depository Services (India) Ltd.",
+   "score": 86.6,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "close": 1455.0,
+   "chg": 3.41,
+   "vol_x": 3.27,
+   "stop": 1408.1,
+   "target": 1484.1,
+   "news": [
+    {
+     "title": "CDSL\u2019s Consol Income, Net Profit Grow 15% YoY - https://www.fintechbiznews.com/",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNR2MwR2J5NFQzNlBIbUZNOWNrMFpBU293YmtzS19WRDZsU2l1WDFNbmcwbU4yZ3dBWk10ZVBmQXI1SUVzaE9PcmM1UTZIRmFab3RidXJwYkR5SkktYV9EeFBqRHg0WWIwRGY3UFdoUGRVZy1KazhOc25KNHNFSEFLM3RjLTF3WUQtSHFRNVg0MTNCWlJjTHpXbVVLQ1FUS0Z3?oc=5",
+     "date": "Sat, 07 Nov 2026 13:28:50 GMT"
+    },
+    {
+     "title": "CDSL Share Price - Upstox",
+     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5YTFFuV3B2bk1CMWdHUW44UEJUaWFvUGVscmNNaGVOeUtWc1Rld3RXZWRUTk5KMDBodUduNkRTUWhMbmpwRnJROWpiajJIWVdQSjVKTXZvWWpqOFo0dnUxdWNubWZWQURoTlpyNkVB?oc=5",
+     "date": "Fri, 13 Nov 2026 10:51:27 GMT"
+    }
+   ],
+   "sentiment": 0.4,
    "new": false
   },
   {
@@ -6698,42 +6691,17 @@
    "target": 1727.78,
    "news": [
     {
-     "title": "Prestige Group targets \u20b91,179.4 crore retail annuity by FY30 - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNalcxLW4xdHhPeHJ6UUhvcmc5SUo2NFA4Y2xtdGFFUHVzd1pIQW5jMmVoVy1rcnNqcVdqOTh2bFRkSFNGY1VXVHA3dS1EZWFRaDZFN0FKeFozRi1WRmdiRTl0aUtnNm1pbEtOTXNSYVRHZC0zMFdDX0d2dTNCdlRhczM1eGVmSkt0QlpHM3JHNFlROUxSTE00dTNld25QRzFVZVNsNGxPY2xhY3Bsa3YwczNwQQ?oc=5",
-     "date": "Sat, 07 Nov 2026 00:28:14 GMT"
-    },
-    {
      "title": "King Stubb & Kasiva advises Prestige Group on \u20b9524 crore acquisition of Allure Developers - Bar and Bench",
      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQaE5vZUJ4Qkh1YkwwTXU4Rl9NU2d4cmJrd09ZQVd2OFlXWnluUlB4eGx3VG5wMGpVUnllUUtUTVNMYnV6SjR3bXplSXhQVEJIX0NfbkZBTkRSUVJUSlJZaEhWT2prTHVPSERrekN2c0IyRGhRQzZjU0NOWVBWcUF2UjM1SFBFN2JyNnpfeGt3TzhfWkhycy1hYVo5dTlDOTlKQWlrUWxlenpQVkR5U0xMU2ZUWGpCanNSNkxjODFiaVVXQTNHN0xrb2FldVdCMkVKNURCSGlVVVZUdzJPUGfSAd4BQVVfeXFMUGhOb2VCeEJIdWJMME11OEZfTVNneHJia3dPWUFXdjhZV1p5blJQeHhsd1RucDBqVVJ5ZVFLVE1TTGJ1eko0d216ZUl4UFRCSF9DX25GQU5EUlFSVEpSWWhIVk9qa0x1T0hEa3pDdnNCMkRoUUM2Y1NDTllQVnFBdlIzNUhQRTdicjZ6X3hrd084X1pIcnMtYWFaOXU5Qzk5SkFpa1FsZXp6UFZEeVNMTFNmVFhqQmpzUjZMYzgxYmlVV0EzRzdMa29hZXVXQjJFSjVEQkhpVVVWVHcyT1Bn?oc=5",
      "date": "Wed, 11 Nov 2026 05:44:10 GMT"
+    },
+    {
+     "title": "Prestige Estates Projects (NSEI:PRESTIGE) Stock Forecast & Analyst Predictions - Simply Wall St",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTWljX2tyVzFqWndHeTF5b09tTzA2dlFja2RXOFRIbXdYRzA1XzlEN2YydmQxLVlYRTUtLWUydm1rM2xHdlBlcmdEd1NuNjQxLTNyY0RLcWczem9Ia1hGN2M1c0hRLXdTbjEyQ3ZUUi1LWmVfdmdLTUp0Mmo1WWl1bzBPVklVZjBaaVI0OFhsUlFUUDN1cUpCWUxhM3hvUmFUZ0JOT0tUSVhWN1FDMFJqdU5iRHpXWEdaY2theUwxVkc?oc=5",
+     "date": "Tue, 10 Nov 2026 08:00:00 GMT"
     }
    ],
    "sentiment": 0.3,
-   "new": false
-  },
-  {
-   "symbol": "OBEROIRLTY",
-   "name": "Oberoi Realty Ltd.",
-   "score": 82.4,
-   "stars": "\u2605\u2605\u2605\u2605\u2605",
-   "close": 1817.0,
-   "chg": 4.17,
-   "vol_x": 2.44,
-   "stop": 1740.6,
-   "target": 1853.34,
-   "news": [
-    {
-     "title": "Oberoi Realty Ltd Sees Significant Open Interest Surge Amid Bullish Market Signals - MarketsMojo",
-     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWmZLd2dpbGF2UlhqMU1lWWVLXzRTSjZzSDJLdFJjbTE4dzZPWGNCMmVpQlotVzM4NWZRX0t5c3BESUFpRDNaVkVKYlotMkMyLTlwbU5lS1ExX0t4cWpDeXhFMHVNODltZGk4M3RmZEtNcG1GXzNocmdHX2hlUUp6d25BYVQ3cEZadTZOOVJLYTBwWFhBTjUtUGNvTFFJU1EtZk9LMVJ4cWM3SW9aV3dNNkdLSTA4OTJUcVVQa1dEWndRbjFFYlVLSkFiVGEySzVydVRhTmxtWQ?oc=5",
-     "date": "Mon, 09 Nov 2026 07:57:07 GMT"
-    },
-    {
-     "title": "Top 45 Real Estate Shares To Watch In November 2026 - Samco",
-     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBLdUphN3JOelNWNU0wOGJ2b3VTQXlrX3RUVHd3Z0pmV1lfb3pnZ091azhqSW5ycldqc2RQb3ZEOC1kRGg3VVBvWE9keFBvV0l3cXlTMWctQnF6ZTE3cWhMNi1NQmxOTGQyZjlGVHZodGZlS0l0c1J3X0ZaVQ?oc=5",
-     "date": "Mon, 09 Nov 2026 06:51:00 GMT"
-    }
-   ],
-   "sentiment": 0.7,
    "new": false
   },
   {
@@ -6778,12 +6746,37 @@
      "date": "Sun, 08 Nov 2026 08:00:00 GMT"
     },
     {
-     "title": "ABCAPITAL Share Price Today - Aditya Birla Capital on NSE/BSE - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51Z2lEY1JvSVo4cy1xd0dnZFZ4VVdrWENQa2c5ZmJkSmt4OFhrVGJNb0k1ZWpIQl9uMWRaUVRrTVpidi1kQVJNVVlzQXdhOVBON0txMlNHQUhTaW1QOFpMT09B?oc=5",
-     "date": "Sun, 08 Nov 2026 21:33:21 GMT"
+     "title": "Aditya Birla Capital to host institutional investor meet on Nov 18 - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVFp4MFhFRThVWmhQQjJodFB4d1hFSUQzeXY0aldRRzFfMnpVd2QtMEpZWFFhYXkycmJwQThJY3JScnJDSHNOSlMxVnQwbTg5d0xTVXJVa3loQ3BBYW5jOGlzWkJ6VWVCM0JpV3RldXhaTzdLcDVvRW1vdERaMjl3dXNCNTNybmZEYlRGTV9Eem5ucWlwTk9WNUJjR21iaE9Gb3E1QlFLVnIxZkpncDlweGVqb0RvSFNQ?oc=5",
+     "date": "Fri, 13 Nov 2026 14:18:54 GMT"
     }
    ],
    "sentiment": 0.0,
+   "new": false
+  },
+  {
+   "symbol": "OBEROIRLTY",
+   "name": "Oberoi Realty Ltd.",
+   "score": 80.4,
+   "stars": "\u2605\u2605\u2605\u2605\u2605",
+   "close": 1817.0,
+   "chg": 4.17,
+   "vol_x": 2.44,
+   "stop": 1740.6,
+   "target": 1853.34,
+   "news": [
+    {
+     "title": "Oberoi Realty Ltd Sees Significant Open Interest Surge Amid Bullish Market Signals - MarketsMojo",
+     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWmZLd2dpbGF2UlhqMU1lWWVLXzRTSjZzSDJLdFJjbTE4dzZPWGNCMmVpQlotVzM4NWZRX0t5c3BESUFpRDNaVkVKYlotMkMyLTlwbU5lS1ExX0t4cWpDeXhFMHVNODltZGk4M3RmZEtNcG1GXzNocmdHX2hlUUp6d25BYVQ3cEZadTZOOVJLYTBwWFhBTjUtUGNvTFFJU1EtZk9LMVJ4cWM3SW9aV3dNNkdLSTA4OTJUcVVQa1dEWndRbjFFYlVLSkFiVGEySzVydVRhTmxtWQ?oc=5",
+     "date": "Mon, 09 Nov 2026 07:57:07 GMT"
+    },
+    {
+     "title": "Built for a private complex, opened for all: Aarey Metro bridge row ends - The Indian Express",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTkJ3emNtcHFHSGpHenRnUmRDOFpWYVNoamZ6dF84N1dVWkNZYnhXaUk4a0taMzN5dHF4MkkwLU1hc0JzT0J3Mjk0cDRCZnBVRU1Zd2FpUnJIR0Y0Q0lGM1k0enpSRWk2QUtTTUhxWWtta2ZibTg5b0V4NXAxQ2ZKaFNnejRoMEpQeHl2dUZjRXhMaDUyWDA0aUQ1MDFaSUlCYXNzd3lVaGJoOW5teHdxV1p4WTFCcHV4QjliZdIBwwFBVV95cUxPNGxtUmFkMHRuWmQ4NEtTYldaSjdCQzFsY1VTZU53aWpjLTRZNFREUjlqN2VyNFhOYzhnNXVidHVwNGQwdkl6bmNialNPOEUxMjJwZ01rUTF0V1F6NUVhSDFldHlObEdMYzk4Z0c2ZS1xemJEdVpYTzFmdW1sU0Z5UnFqQWIxaGtlWVJQdC1FRng1UTZxOWtlZmRITm5MODJmX1FvcnM2QUZlY0JPVGFCSnd4Q0J2Q3JWX1BSbnJ6T1RxRG8?oc=5",
+     "date": "Thu, 12 Nov 2026 06:19:09 GMT"
+    }
+   ],
+   "sentiment": 0.5,
    "new": false
   },
   {
@@ -6800,12 +6793,12 @@
     {
      "title": "SBI Share Price - Live NSE: SBIN Stock Price & Chart - Upstox",
      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBPa0lHTFVCTVBxWVRmVXR6cE5FMDhDc25ublZmbVllcFgyMU0wZF9NZmdZQWVjQmJrd0tPSFN2OUdVRnpfVVBWdDFCMmRPSkZFc1R4cFIyOGdMSmdtNThoam1zNGN6WnFKbGc?oc=5",
-     "date": "Thu, 12 Nov 2026 17:36:41 GMT"
+     "date": "Fri, 13 Nov 2026 08:04:33 GMT"
     },
     {
      "title": "SBIN Share Price Today - State Bank of India on NSE/BSE - scanx.trade",
      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1aWHZ5LXcwV0pmVF9BUW1zdktZM3FabWptN3l2d0RpdXhfSm85ZGhJTWY1T0dOSnFCVjFFc05OcDNTOWo2YUpOR2tNZmdJYzRkQmVXaWNtWm53bUdvSTlVWA?oc=5",
-     "date": "Thu, 12 Nov 2026 01:11:01 GMT"
+     "date": "Thu, 12 Nov 2026 22:16:58 GMT"
     }
    ],
    "sentiment": 0.2,
@@ -6972,19 +6965,6 @@
   },
   {
    "date": "2026-11-12",
-   "symbol": "PETRONET",
-   "setup": "A+ Momentum, 52W High",
-   "score": 83.6,
-   "entry": 335.0,
-   "stop": 315.23,
-   "target1": 351.75,
-   "target2": 368.5,
-   "status": "OPEN",
-   "days": 0,
-   "ret": null
-  },
-  {
-   "date": "2026-11-12",
    "symbol": "PAYTM",
    "setup": "A+ Momentum, Breakout, 52W High",
    "score": 83.1,
@@ -7005,6 +6985,19 @@
    "stop": 229.4,
    "target1": 266.82,
    "target2": 279.52,
+   "status": "OPEN",
+   "days": 0,
+   "ret": null
+  },
+  {
+   "date": "2026-11-12",
+   "symbol": "PETRONET",
+   "setup": "A+ Momentum, 52W High",
+   "score": 83.7,
+   "entry": 335.0,
+   "stop": 315.23,
+   "target1": 351.75,
+   "target2": 368.5,
    "status": "OPEN",
    "days": 0,
    "ret": null
@@ -7039,7 +7032,7 @@
    "date": "2026-11-12",
    "symbol": "BEML",
    "setup": "A+ Momentum, Pullback",
-   "score": 71.1,
+   "score": 71.3,
    "entry": 2125.5,
    "stop": 1913.1,
    "target1": 2231.78,
@@ -7050,26 +7043,26 @@
   },
   {
    "date": "2026-11-12",
-   "symbol": "APLAPOLLO",
-   "setup": "A+ Momentum, Pullback",
-   "score": 85.0,
-   "entry": 2225.7,
-   "stop": 2128.6,
-   "target1": 2336.98,
-   "target2": 2448.27,
+   "symbol": "KALYANKJIL",
+   "setup": "A+ Momentum, 52W High",
+   "score": 84.3,
+   "entry": 710.9,
+   "stop": 640.84,
+   "target1": 746.45,
+   "target2": 781.99,
    "status": "OPEN",
    "days": 0,
    "ret": null
   },
   {
    "date": "2026-11-12",
-   "symbol": "KALYANKJIL",
-   "setup": "A+ Momentum, 52W High",
-   "score": 84.7,
-   "entry": 710.9,
-   "stop": 640.84,
-   "target1": 746.45,
-   "target2": 781.99,
+   "symbol": "APLAPOLLO",
+   "setup": "A+ Momentum, Pullback",
+   "score": 82.8,
+   "entry": 2225.7,
+   "stop": 2128.6,
+   "target1": 2336.98,
+   "target2": 2448.27,
    "status": "OPEN",
    "days": 0,
    "ret": null
