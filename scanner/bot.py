@@ -8,6 +8,7 @@ Only messages from TELEGRAM_CHAT_ID are answered.
   /sell SYMBOL [QTY]     remove (all or part of) a holding
   /half SYMBOL           mark that you booked half at T1
   /portfolio             your holdings with live P&L and what to do
+  /report                latest 90% MODE robustness test (also sent automatically when it changes)
   /help
 """
 import datetime as dt
@@ -149,7 +150,29 @@ def handle(text, holdings):
         return f"✅ {sym}: half booked, SL moved to cost.", holdings
     if cmd == "/portfolio":
         return portfolio_text(holdings), holdings
-    return "Commands: /check SYMBOL · /top · /buy SYMBOL PRICE QTY · /sell SYMBOL [QTY] · /half SYMBOL · /portfolio", holdings
+    if cmd == "/report":
+        return validation_text()[0] or "No test report yet.", holdings
+    return "Commands: /check SYMBOL · /top · /buy SYMBOL PRICE QTY · /sell SYMBOL [QTY] · /half SYMBOL · /portfolio · /report", holdings
+
+
+VALIDATION = os.path.join(ROOT, "reports", "validation_90.md")
+
+
+def validation_text():
+    """reports/validation_90.md as a plain Telegram message."""
+    import hashlib
+    import html
+    try:
+        md = open(VALIDATION).read()
+    except Exception:
+        return None, None
+    t = html.escape(md, quote=False)
+    t = re.sub(r"^# (.*)$", r"📊 <b>\1</b>", t, flags=re.M)
+    t = re.sub(r"^## (.*)$", r"\n<b>\1</b>", t, flags=re.M)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
+    t = re.sub(r"^- ", "• ", t, flags=re.M)
+    t = re.sub(r"\n{3,}", "\n\n", t).strip()
+    return t, hashlib.sha1(md.encode()).hexdigest()
 
 
 def portfolio_text(holdings):
@@ -206,6 +229,12 @@ def main():
         send(chat, reply)
     if json.dumps(holdings) != before:
         portfolio.save(holdings)
+    # New or updated 90% MODE test report -> send it once automatically
+    vt, vh = validation_text()
+    if vt and st.get("validation_sent") != vh:
+        for chat in CHATS:
+            send(chat, vt)
+        st["validation_sent"] = vh
     # morning(st)  # disabled: user wants hourly lists 9:15–3:15 instead of an 8:40 message
     json.dump(st, open(STATE, "w"))
 
