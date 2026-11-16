@@ -2,63 +2,64 @@
  "smart_money": [],
  "early": [],
  "falls": {
-  "Midcap 150": [
-   {
-    "symbol": "LAURUSLABS",
-    "chg": -8.9,
-    "close": 2208.0,
-    "ok": false,
-    "why": [
-     "heavy selling (2.4x volume)"
-    ],
-    "target": 2318.4,
-    "stop": 1876.8,
-    "qty": 3,
-    "news": [
-     {
-      "title": "LAURUS LABS LIMITED Option Chain - Live LAURUS LABS LIMITED Option Chain Data, OI & Price - Upstox",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5YUzBvWXl5aUlkLV9pdHlkVk1Pako1N3lrd1dTQWxzVm4tMXRUQjFBX09UQWRaUDBnZnRQZlhZQVNkVWxyTFg3S1lGXzVaZEU4a2ZWY051X0lCU3MwS1dNeE5R?oc=5",
-      "date": "Fri, 13 Nov 2026 08:00:00 GMT"
-     }
-    ]
-   },
-   {
-    "symbol": "PREMIERENE",
-    "chg": -7.9,
-    "close": 825.45,
-    "ok": false,
-    "why": [
-     "heavy selling (2.5x volume)"
-    ],
-    "target": 866.72,
-    "stop": 701.63,
-    "qty": 8,
-    "news": [
-     {
-      "title": "ONGC, Premier Energies among energy stocks announcing dividends in November; check record dates, payouts - ET EnergyWorld",
-      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRDZiUFNJdmQxMjhhbm8tanFNU1lTNXhwWXRPSkNCLUlTM1lmSUxFSUlGaFV4c3lJMlA0bnZKcE5zRk1LdzRPUWRmNFhjcmFwd3cyYmRXMG4yUFFVeWVzWnlyTnlhdjVQT0t6cnl2eUtmVVFTM0paUzFEYWdPeTlzYUV4bzZ3cjhTcGdqd1V4OEpYaTBFQnduZG9EWm14MGhPWHpZZGEwQkRmenVFS0NOeGJMcFJSWnpSbzBrS3JFMkl3VVM3aW9YUGhnSnE5MmZDTzM3Q1hlZG5sLTh2NGpGQ0NIenhZOUJ6YjZpV1Y2Sk9ZN29lRUxGRDFB0gH_AUFVX3lxTE9aa09UNGNncGEzNGFZMzVpMGRIUEppeUVQMVNISzJEeUxxQWphQ0I5MGNxVGw2aTl6UWpjekFIdHBNVm5zQjlqREItSEQxWW5oRElxd2FUNWYwenh1UEgtdy14Qm1SMzBwU3pmbnpfMGFKcGd5NnlQSTFialhuZ0JKQTYzZUhWZVVRTHR4NWZIWVpfN2ZsZWVqUm9BLVVBUW1DMUpiS2tKT0FwWXF6bG5ZVmRpdGtSS3AzMXliLXVqR1RXVGhWTEsxbTJuYXRtb3NlMDV2MVNQVERSRFh0aXQxUVNXMDhGVDhxU05VZ2t4OFhxRWRmSWNQSUpTYmVzZw?oc=5",
-      "date": "Tue, 10 Nov 2026 06:41:22 GMT"
-     }
-    ]
-   }
-  ],
   "Nifty 50": [
    {
     "symbol": "TMPV",
-    "chg": -8.7,
-    "close": 262.45,
+    "chg": -8.6,
+    "close": 262.8,
     "ok": false,
     "why": [
-     "heavy selling (5.9x volume)"
+     "heavy selling (5.7x volume)",
+     "bad news"
     ],
-    "target": 275.57,
-    "stop": 223.08,
+    "target": 275.94,
+    "stop": 223.38,
     "qty": 25,
     "news": [
      {
       "title": "Tata Motors PV shares plunge 9% after Q2 results; brokerages cut target - Business Standard",
       "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQcEhLZFpmQml1REpCWkJXRUoyVUl4V0d5dWt5ZTg1UGhIUHJtdTFxTEJkZ3QzU1ZTQmEyYjVneGljQXBWZzBHbVRLR0t1ckdyMW81bDRpbVBJRWFnUnlRS3RNR0pIcm5Uei03andMd3AzOTZDaC15VGUwdFZISGRMNzBMUXlTdTdTYzcwclpYVThwQkJ6YmZfUFRaelR6QU5YajBJUEJIbUdqU09CUVFEMHp4eE1qV0NleG1FWkp5dW1LV2FYbS1hRFpnTXIzT1JvRlHSAdcBQVVfeXFMT3ZvWjA2TTgxUVpNNEpKbVNHWk1saUJCaE9CSTRUUldaTFhBVVpJd0FwWlhDZFFsNklod1NUdVJkWWlNQmFzQ1UtMTZVSFBYTGRtSjFlSlpMX1hkbW4xbnFkdEJxRW5hNlRGRkVPeDhua2JDV3N2M0loRUJGZlo2bTl4RzAyX2xsZ0pOdW0wV2doT1NTV3JLODFjVXJzYjcyZXJzTFZsME9MWDhzd1dOSjVVRzB5cFU0c0xMSFZvNTV3YzVXXzZSZ3JERTc5R2hzNWFaNnAyeE0?oc=5",
       "date": "Mon, 16 Nov 2026 04:03:12 GMT"
+     }
+    ]
+   }
+  ],
+  "Midcap 150": [
+   {
+    "symbol": "LAURUSLABS",
+    "chg": -8.4,
+    "close": 2221.3,
+    "ok": false,
+    "why": [
+     "heavy selling (2.6x volume)"
+    ],
+    "target": 2332.37,
+    "stop": 1888.11,
+    "qty": 3,
+    "news": [
+     {
+      "title": "Laurus Labs Share Price - Live NSE: LAURUSLABS Stock Price & Chart - Upstox",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAwUkgyOV9sYnJhNVFYV2RkNkd2TmRHamNNMmV6NF83ajlvdU5QMmViUjI2d3RIbW5QZ01MQ2JMcF96ZnNNVEJhcms2ZHRFWWFPTDd4MnM3WUVFU29SX0lmMUNBTHZ4b0xLMWc?oc=5",
+      "date": "Fri, 13 Nov 2026 08:00:00 GMT"
+     }
+    ]
+   },
+   {
+    "symbol": "PREMIERENE",
+    "chg": -8.2,
+    "close": 822.55,
+    "ok": false,
+    "why": [
+     "heavy selling (2.8x volume)"
+    ],
+    "target": 863.68,
+    "stop": 699.17,
+    "qty": 8,
+    "news": [
+     {
+      "title": "ONGC, Premier Energies among energy stocks announcing dividends in November; check record dates, payouts - ET EnergyWorld",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPRDZiUFNJdmQxMjhhbm8tanFNU1lTNXhwWXRPSkNCLUlTM1lmSUxFSUlGaFV4c3lJMlA0bnZKcE5zRk1LdzRPUWRmNFhjcmFwd3cyYmRXMG4yUFFVeWVzWnlyTnlhdjVQT0t6cnl2eUtmVVFTM0paUzFEYWdPeTlzYUV4bzZ3cjhTcGdqd1V4OEpYaTBFQnduZG9EWm14MGhPWHpZZGEwQkRmenVFS0NOeGJMcFJSWnpSbzBrS3JFMkl3VVM3aW9YUGhnSnE5MmZDTzM3Q1hlZG5sLTh2NGpGQ0NIenhZOUJ6YjZpV1Y2Sk9ZN29lRUxGRDFB0gH_AUFVX3lxTE9aa09UNGNncGEzNGFZMzVpMGRIUEppeUVQMVNISzJEeUxxQWphQ0I5MGNxVGw2aTl6UWpjekFIdHBNVm5zQjlqREItSEQxWW5oRElxd2FUNWYwenh1UEgtdy14Qm1SMzBwU3pmbnpfMGFKcGd5NnlQSTFialhuZ0JKQTYzZUhWZVVRTHR4NWZIWVpfN2ZsZWVqUm9BLVVBUW1DMUpiS2tKT0FwWXF6bG5ZVmRpdGtSS3AzMXliLXVqR1RXVGhWTEsxbTJuYXRtb3NlMDV2MVNQVERSRFh0aXQxUVNXMDhGVDhxU05VZ2t4OFhxRWRmSWNQSUpTYmVzZw?oc=5",
+      "date": "Tue, 10 Nov 2026 06:41:22 GMT"
      }
     ]
    }
@@ -70,15 +71,15 @@
    "Midcap 150": [
     {
      "symbol": "PAGEIND",
-     "chg": -13.0,
-     "close": 31275.0
+     "chg": -12.8,
+     "close": 31320.0
     }
    ],
    "Nifty 50": [
     {
      "symbol": "TMPV",
-     "chg": -10.1,
-     "close": 262.45
+     "chg": -10.0,
+     "close": 262.8
     }
    ]
   },
@@ -87,91 +88,91 @@
     {
      "symbol": "PIIND",
      "chg": -24.3,
-     "close": 1679.0
+     "close": 1679.6
     }
    ]
   }
  },
- "generated": "2026-11-16 14:15 IST",
+ "generated": "2026-11-16 14:45 IST",
  "data_date": "2026-11-16",
  "intraday": true,
- "session_min": 301,
+ "session_min": 331,
  "sectors": [
   {
    "name": "Healthcare",
    "rs": 66,
-   "day": -0.3,
+   "day": -0.11,
    "n": 44
   },
   {
    "name": "Oil Gas & Consumable Fuels",
    "rs": 65,
-   "day": -0.51,
+   "day": -0.33,
    "n": 17
   },
   {
    "name": "Media Entertainment & Publication",
    "rs": 63,
-   "day": -0.46,
+   "day": -0.05,
    "n": 4
   },
   {
    "name": "Services",
    "rs": 59,
-   "day": -1.04,
+   "day": -0.89,
    "n": 13
   },
   {
    "name": "Consumer Services",
    "rs": 58,
-   "day": -0.91,
+   "day": -0.82,
    "n": 23
   },
   {
    "name": "Information Technology",
    "rs": 57,
-   "day": -1.42,
+   "day": -1.18,
    "n": 24
   },
   {
    "name": "Textiles",
    "rs": 56,
-   "day": -0.28,
+   "day": 0.24,
    "n": 5
   },
   {
    "name": "Realty",
    "rs": 55,
-   "day": -1.48,
+   "day": -1.2,
    "n": 13
   }
  ],
  "alerts": [],
  "ml": {
   "enabled": true,
-  "train_n": 8613,
+  "train_n": 8614,
   "test_n": 3018,
   "test_from": "2025-06-13",
   "base_rate": 54.3,
   "auc": 0.563,
-  "top20_win": 62.6,
-  "top20_avg_ret": 0.96,
+  "top20_win": 63.2,
+  "top20_avg_ret": 1.12,
   "all_avg_ret": 0.46,
   "quintiles": [
-   47.7,
-   49.9,
-   53.3,
-   58.2,
-   62.6
+   48.3,
+   48.8,
+   55.0,
+   56.4,
+   63.2
   ],
-  "hc_threshold": 0.678,
+  "hc_threshold": 0.675,
   "m85_threshold": 0.757,
-  "m85_n": 166,
-  "m85_win": 81.9,
-  "m85_avg": 1.45,
-  "m90_n": 135,
-  "m90_win": 86.7,
-  "m90_avg": 1.13,
+  "m85_n": 174,
+  "m85_win": 83.9,
+  "m85_avg": 1.87,
+  "m90_n": 141,
+  "m90_win": 87.9,
+  "m90_avg": 1.46,
   "useful": true
  },
  "config": {
@@ -190,6 +191,7 @@
  "holdings": [],
  "weekly": null,
  "buy_list": [
+  "RADICO",
   "LICHSGFIN"
  ],
  "market": {
@@ -198,10 +200,10 @@
   "slots": 5,
   "points": 4,
   "trend": 2,
-  "nifty50": 25184.6,
-  "sma50": 23354.37,
-  "sma200": 23991.89,
-  "notes": "Nifty 50 25185 (above 50 DMA 23354, above 200 DMA 23992) \u00b7 VIX 15.8 \u00b7 breadth 57% above 50 EMA \u00b7 FII 5-day \u20b9+5,737 Cr"
+  "nifty50": 25205.15,
+  "sma50": 23354.78,
+  "sma200": 23992.0,
+  "notes": "Nifty 50 25205 (above 50 DMA 23355, above 200 DMA 23992) \u00b7 VIX 15.7 \u00b7 breadth 58% above 50 EMA \u00b7 FII 5-day \u20b9+5,737 Cr"
  },
  "fii": {
   "fii_5d": 5737,
@@ -213,7 +215,7 @@
    "buy": [],
    "watch": [
     "APOLLOHOSP",
-    "ETERNAL",
+    "TECHM",
     "ADANIPORTS"
    ]
   },
@@ -225,6 +227,7 @@
   },
   "Midcap 150": {
    "buy": [
+    "RADICO",
     "LICHSGFIN"
    ],
    "watch": [
@@ -287,30 +290,30 @@
   }
  },
  "surveillance_skipped": [],
- "adv": 74,
- "dec": 175,
+ "adv": 86,
+ "dec": 160,
  "regime": {
   "label": "POSITIVE",
   "mult": 1.0,
-  "close": 23644.4,
-  "ret21": 7.29,
-  "rsi": 69.3,
-  "day": -0.38,
-  "vix": 15.8,
+  "close": 23678.45,
+  "ret21": 7.44,
+  "rsi": 70.2,
+  "day": -0.23,
+  "vix": 15.69,
   "vix_note": "calm"
  },
  "breadth": {
   "above_ema50": 64.7,
-  "above_ema200": 52.6,
-  "new_52w_high": 8,
-  "signals": 1
+  "above_ema200": 53.0,
+  "new_52w_high": 10,
+  "signals": 2
  },
  "universe": 249,
  "swing_backtest": {
   "A+ Momentum": {
    "n": 5110,
    "win5": 63.3,
-   "win10": 33.1,
+   "win10": 33.2,
    "avg": 1.44,
    "profit": 63.5,
    "stop_rate": 36.3
@@ -319,22 +322,22 @@
    "n": 221,
    "win5": 74.2,
    "win10": 38.5,
-   "avg": 1.81,
+   "avg": 1.82,
    "profit": 75.1,
    "stop_rate": 24.4
   },
   "Breakout": {
-   "n": 2865,
-   "win5": 66.4,
+   "n": 2867,
+   "win5": 66.3,
    "win10": 34.5,
    "avg": 1.5,
    "profit": 66.7,
    "stop_rate": 33.1
   },
   "52W High": {
-   "n": 3704,
-   "win5": 66.0,
-   "win10": 34.4,
+   "n": 3707,
+   "win5": 65.9,
+   "win10": 34.5,
    "avg": 1.54,
    "profit": 66.2,
    "stop_rate": 33.5
@@ -344,20 +347,20 @@
    "win5": 61.0,
    "win10": 29.9,
    "avg": 0.94,
-   "profit": 61.2,
-   "stop_rate": 38.5
+   "profit": 61.1,
+   "stop_rate": 38.6
   },
   "Pullback": {
-   "n": 9337,
+   "n": 9338,
    "win5": 57.6,
    "win10": 29.8,
    "avg": 1.09,
    "profit": 57.7,
-   "stop_rate": 42.1
+   "stop_rate": 42.2
   }
  },
  "btst_backtest": {
-  "n": 3948,
+  "n": 3949,
   "gap_up": 72.4,
   "hit1": 71.2,
   "avg_open": 0.43,
@@ -365,34 +368,199 @@
  },
  "picks": [
   {
+   "symbol": "RADICO",
+   "name": "Radico Khaitan Ltd",
+   "industry": "Fast Moving Consumer Goods",
+   "segment": "Midcap 150",
+   "smallcap_ok": true,
+   "setup": "Pullback",
+   "score": 77.7,
+   "stars": "\u2605\u2605\u2605\u2605\u2606",
+   "label": "BUY",
+   "entry": 4662.4,
+   "stop": 4313.48,
+   "dip_buy": 4662.4,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 4439.57,
+   "target1": 4895.52,
+   "target2": 5128.64,
+   "risk_pct": 7.5,
+   "rr_t2": 1.34,
+   "hold": "up to 60 days",
+   "qty": 3,
+   "invest": 13987,
+   "max_loss": 1047,
+   "close": 4662.4,
+   "chg": 1.25,
+   "rsi": 60.6,
+   "adx": 20.4,
+   "vol_x": 0.62,
+   "from_high": -1.8,
+   "rs_rank": 78,
+   "hist_win5": 64.3,
+   "parts": {
+    "Technical": 46,
+    "Rel. Strength": 7.8,
+    "Fundamentals": 14.0,
+    "News": 2.5,
+    "Backtest": 4.0,
+    "AI model": 10.0
+   },
+   "ml_prob": 74.2,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": {
+    "vwap": 4653.75,
+    "last": 4664.9,
+    "above_vwap": true,
+    "orb": "above",
+    "day_high": 4689.9
+   },
+   "why": [
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 4848.9,
+   "m90_stop": 3496.8,
+   "m85_target": 4895.52,
+   "m85_stop": 3963.04,
+   "m85_qty": 2,
+   "high_conviction": true,
+   "rule_fails": [
+    "not outperforming Nifty 50 (3M)",
+    "sector not in top half"
+   ],
+   "smart": null,
+   "results_in_days": 66,
+   "fund": {
+    "pe": 78.5,
+    "roe": 24.0,
+    "de": 10.7,
+    "mcap_cr": 62504.6,
+    "sales_yoy": 15.9,
+    "profit_yoy": 78.0,
+    "profit_qoq": 1.2,
+    "eps_growth": 66.5,
+    "results_in_days": 66,
+    "sector": "Consumer Defensive"
+   },
+   "news": [
+    {
+     "title": "Radico Khaitan Ltd. Share Price Today - Radico Khaitan Ltd. Stock Price Live NSE/BSE - CNBC TV18",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUGVGZ0t5N2RUcHR2QUpSR3ZXZlpqcHNTNXJOMWc2ZWRPRi1kbk9jdUlYN1FibFdkc0d2QzVFN3gxNnZtVndoQ0Q4TEJRYm9YMEVHOEZDbHZzUzVHWk95OTg1Wmludmk1d1dQdWUtTU1fN1dyNkVsdlNhX05MamRIRg?oc=5",
+     "date": "Fri, 13 Nov 2026 09:58:00 GMT"
+    },
+    {
+     "title": "Bajaj Finance, Radico, Clean Science top stock ideas by Choice Broking - Business Standard",
+     "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQczUtUHdCLWRKSXN3UUVBQ29xQjVJTDFXWXFTT3dVTnpwSUV3RmVJUWU3aFQ4ZGZvbTJMQjU0SWZFeXR6WTQwRFpDc2VzbEl6SlZiY1RrYXpKQ3JGMGlBeG8wd0h3cDdDWHJLaG5hWEFsem1XVjBKam53VnA1YlRKMm56Z0dSc2pORFRDdDdXcGNkTnNjYTBqc3ZHamJicHpDakx1WFhiSlgzUUo5bHZCRTZnN0RQbFpIMW5wVVdtNmNCTDRNTTlLYVpsaEpfT2NRS1pJZmFmNUJKQWh4bUZ0WVd3d2VFSVNCTUdNUDdqTGw1b0MzV2R3Z9IB_gFBVV95cUxNYlBwLUh5QTNfa2I3SEpKbG00QjdmNzdPTlNHYXJHSTR5VHExT0M1S2xnNWNjU0ctcEhlYk5vWGVsTVVyN1NMcFV3UGtqMjFUTGR3Ny1xcmZSNmlWcTJzZThmZHBSdGNCQzZBZTMwWXdPTlJPRERFWmpvbFZZRzU0OUExb0FqZDZyeFNpQ1dzVGFKZTdzcHZ2cGhzWEh5eEVSQm9mSTR6N2oyZzFfSmRsa19nZU9lQm8tR2RMemdYSzZramg4MzdJVVVERFRGNXg3X3JOdE5TN05iZ2ZwTXBJNjdhWmQ2dkI4dldqSHYxd3laaTJ2azN5d2FsLWN1QQ?oc=5",
+     "date": "Mon, 16 Nov 2026 02:11:26 GMT"
+    },
+    {
+     "title": "RADICO KHAITAN LTD Option Chain - Live RADICO KHAITAN LTD Option Chain Data, OI & Price - Upstox",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5aZHdUSGhXa055TWk5M1pXTFQ1WGFXYmpxX2ZPZzhKUmZUUXBKOTdUSTFNTVoyQm9IUGpRMlNVZFZMcVlPN0JZTkd2bVNhZnotcmFlNUl4aXowZk5BLVJLYw?oc=5",
+     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
+    }
+   ],
+   "sentiment": 0.0,
+   "warnings": [],
+   "spark": [
+    4696.0,
+    4696.0,
+    4639.8,
+    4600.0,
+    4630.0,
+    4614.0,
+    4606.0,
+    4605.0,
+    4485.0,
+    4474.3,
+    4476.2,
+    4559.0,
+    4494.0,
+    4444.0,
+    4485.0,
+    4414.0,
+    4460.0,
+    4368.1,
+    4360.0,
+    4466.0,
+    4380.0,
+    4535.4,
+    4480.0,
+    4448.8,
+    4601.9,
+    4481.3,
+    4557.1,
+    4478.3,
+    4364.0,
+    4366.0,
+    4237.0,
+    4289.1,
+    4460.1,
+    4495.0,
+    4415.0,
+    4550.0,
+    4555.0,
+    4540.0,
+    4554.1,
+    4449.0,
+    4473.4,
+    4435.5,
+    4356.1,
+    4201.3,
+    4157.3,
+    4200.0,
+    4290.0,
+    4135.1,
+    4235.0,
+    4086.7,
+    4100.0,
+    4250.0,
+    4396.5,
+    4525.0,
+    4515.2,
+    4560.8,
+    4440.3,
+    4638.2,
+    4605.0,
+    4662.4
+   ],
+   "size_tier": "high_conviction",
+   "m90_qty": 1,
+   "in_buy_list": true,
+   "new": false
+  },
+  {
    "symbol": "LICHSGFIN",
    "name": "LIC Housing Finance Ltd.",
    "industry": "Financial Services",
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "52W High",
-   "score": 72.0,
+   "score": 72.5,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "BUY",
-   "entry": 600.45,
-   "stop": 556.04,
-   "dip_buy": 592.5,
+   "entry": 601.85,
+   "stop": 556.42,
+   "dip_buy": 592.76,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 542.16,
-   "target1": 630.47,
-   "target2": 660.5,
-   "risk_pct": 7.4,
-   "rr_t2": 1.35,
+   "ema20": 542.29,
+   "target1": 631.94,
+   "target2": 662.03,
+   "risk_pct": 7.5,
+   "rr_t2": 1.32,
    "hold": "up to 60 days",
    "qty": 22,
-   "invest": 13210,
-   "max_loss": 977,
-   "close": 600.45,
-   "chg": 2.62,
-   "rsi": 72.9,
-   "adx": 24.5,
-   "vol_x": 2.07,
-   "from_high": -0.4,
+   "invest": 13241,
+   "max_loss": 999,
+   "close": 601.85,
+   "chg": 2.86,
+   "rsi": 73.1,
+   "adx": 24.7,
+   "vol_x": 2.51,
+   "from_high": -1.1,
    "rs_rank": 92,
    "hist_win5": 75.0,
    "parts": {
@@ -401,30 +569,30 @@
     "Fundamentals": 7.0,
     "News": 2.8,
     "Backtest": 5.0,
-    "AI model": 9.4
+    "AI model": 9.9
    },
-   "ml_prob": 67.5,
+   "ml_prob": 69.0,
    "patterns": [],
    "weekly_up": false,
    "intra": {
-    "vwap": 595.19,
-    "last": 600.65,
+    "vwap": 597.46,
+    "last": 602.75,
     "above_vwap": true,
     "orb": "above",
-    "day_high": 602.8
+    "day_high": 608.4
    },
    "why": [
     "Broke 55-day high",
-    "Volume 2.1x average",
+    "Volume 2.5x average",
     "Price > 50 EMA > 200 EMA (uptrend)",
     "Top 8% relative strength in Nifty 500"
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 624.47,
-   "m90_stop": 450.34,
-   "m85_target": 630.47,
-   "m85_stop": 510.38,
+   "m90_target": 625.92,
+   "m90_stop": 451.39,
+   "m85_target": 631.94,
+   "m85_stop": 511.57,
    "m85_qty": 16,
    "high_conviction": false,
    "rule_fails": [],
@@ -434,7 +602,7 @@
     "pe": 5.6,
     "roe": 14.3,
     "de": 626.8,
-    "mcap_cr": 33056.0,
+    "mcap_cr": 33157.8,
     "sales_yoy": 3.4,
     "profit_yoy": 10.5,
     "profit_qoq": 0.5,
@@ -524,7 +692,7 @@
     565.0,
     579.0,
     585.1,
-    600.45
+    601.85
    ],
    "size_tier": "buy",
    "m90_qty": 9,
@@ -538,44 +706,44 @@
    "segment": "Nifty 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 86.8,
+   "score": 87.4,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "WATCHLIST",
-   "entry": 8725.5,
+   "entry": 8735.0,
    "stop": 8252.0,
    "dip_buy": 8696.0,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 8360.89,
-   "target1": 9161.78,
-   "target2": 9598.05,
-   "risk_pct": 5.4,
-   "rr_t2": 1.84,
+   "ema20": 8361.79,
+   "target1": 9171.75,
+   "target2": 9608.5,
+   "risk_pct": 5.5,
+   "rr_t2": 1.81,
    "hold": "up to 60 days",
    "qty": 1,
-   "invest": 8726,
-   "max_loss": 474,
-   "close": 8725.5,
-   "chg": 2.34,
-   "rsi": 63.1,
+   "invest": 8735,
+   "max_loss": 483,
+   "close": 8735.0,
+   "chg": 2.45,
+   "rsi": 63.3,
    "adx": 25.5,
-   "vol_x": 1.12,
-   "from_high": -3.8,
-   "rs_rank": 74,
+   "vol_x": 1.11,
+   "from_high": -3.7,
+   "rs_rank": 73,
    "hist_win5": 57.1,
    "parts": {
     "Technical": 57,
-    "Rel. Strength": 7.4,
+    "Rel. Strength": 7.3,
     "Fundamentals": 14.0,
     "News": 2.5,
     "Backtest": 2.9,
-    "AI model": 7.4
+    "AI model": 8.1
    },
-   "ml_prob": 61.6,
+   "ml_prob": 63.7,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 8703.31,
-    "last": 8727.0,
+    "vwap": 8706.05,
+    "last": 8734.0,
     "above_vwap": true,
     "orb": "above",
     "day_high": 8786.5
@@ -588,10 +756,10 @@
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 9074.52,
-   "m90_stop": 6544.12,
-   "m85_target": 9161.78,
-   "m85_stop": 7416.68,
+   "m90_target": 9084.4,
+   "m90_stop": 6551.25,
+   "m85_target": 9171.75,
+   "m85_stop": 7424.75,
    "m85_qty": 1,
    "high_conviction": false,
    "rule_fails": [
@@ -604,7 +772,7 @@
     "pe": 55.8,
     "roe": 22.5,
     "de": 73.0,
-    "mcap_cr": 125452.1,
+    "mcap_cr": 125581.5,
     "sales_yoy": 23.0,
     "profit_yoy": 45.5,
     "profit_qoq": 8.5,
@@ -691,7 +859,7 @@
     8604.0,
     8515.0,
     8526.0,
-    8725.5
+    8735.0
    ],
    "size_tier": "other",
    "m90_qty": 0,
@@ -705,28 +873,28 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 81.1,
+   "score": 81.2,
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "label": "WATCHLIST",
-   "entry": 1194.4,
+   "entry": 1203.9,
    "stop": 1111.0,
-   "dip_buy": 1194.4,
+   "dip_buy": 1203.9,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 1130.44,
-   "target1": 1254.12,
-   "target2": 1313.84,
-   "risk_pct": 7.0,
-   "rr_t2": 1.43,
+   "ema20": 1131.34,
+   "target1": 1264.1,
+   "target2": 1324.29,
+   "risk_pct": 7.7,
+   "rr_t2": 1.3,
    "hold": "up to 60 days",
    "qty": 5,
-   "invest": 5972,
-   "max_loss": 417,
-   "close": 1194.4,
-   "chg": 3.11,
-   "rsi": 66.4,
+   "invest": 6020,
+   "max_loss": 465,
+   "close": 1203.9,
+   "chg": 3.93,
+   "rsi": 67.7,
    "adx": 25.2,
-   "vol_x": 1.46,
-   "from_high": -10.3,
+   "vol_x": 1.47,
+   "from_high": -9.6,
    "rs_rank": 90,
    "hist_win5": 50.0,
    "parts": {
@@ -737,15 +905,15 @@
     "Backtest": 1.7,
     "AI model": 10.0
    },
-   "ml_prob": 69.4,
+   "ml_prob": 73.5,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 1192.86,
-    "last": 1194.8,
+    "vwap": 1193.48,
+    "last": 1203.9,
     "above_vwap": true,
     "orb": "above",
-    "day_high": 1203.0
+    "day_high": 1204.3
    },
    "why": [
     "Price > 50 EMA > 200 EMA (uptrend)",
@@ -755,20 +923,20 @@
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 1242.18,
-   "m90_stop": 895.8,
-   "m85_target": 1254.12,
-   "m85_stop": 1015.24,
+   "m90_target": 1252.06,
+   "m90_stop": 902.92,
+   "m85_target": 1264.1,
+   "m85_stop": 1023.32,
    "m85_qty": 8,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
    "results_in_days": null,
    "fund": {
-    "pe": 39.3,
+    "pe": 39.6,
     "roe": 18.0,
     "de": 5.5,
-    "mcap_cr": 40928.0,
+    "mcap_cr": 41246.6,
     "sales_yoy": 11.0,
     "profit_yoy": 62.2,
     "profit_qoq": 33.4,
@@ -778,6 +946,11 @@
    },
    "news": [
     {
+     "title": "KPRMILL.NS (KPRMILL) Share Price Today (NSE), Market News - TechGraph",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAtck54YmVVMmo2Ml9PRXoyQlZDMzV2VHp1S1hRbkpoQV9IaUtkVk0yQTc5alFIbkpLeU9DNHM3dkdkSTlGc0RhTmZGaGp5aFRWeHRNY0ZLV1NVdC1xTjlDSA?oc=5",
+     "date": "Sun, 15 Nov 2026 14:55:30 GMT"
+    },
+    {
      "title": "RAYMONDLSL Share Price Today - Raymond Lifestyle on NSE/BSE - scanx.trade",
      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB4UXZBUmJmVHhRcU9fV1N3TDNRXzlCT1RnR29tWGFfMGpqai1Cbm9wTW1jQnNxWVBvQTdIdVIxbXAwS1RBUkpHZk5HWlJoTUJ0QlFVd1J6OXhfOE9kb0E?oc=5",
      "date": "Thu, 12 Nov 2026 04:24:31 GMT"
@@ -786,11 +959,6 @@
      "title": "Energy Equipment, Textile and Engineering Stocks - Univest",
      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQLW9nYTNjZ1pkMXBTZDlzcVJQOU5CNXJQOGZ2U1hFRGZMaUJBcWpnbkl5UFFRb1JjMmpaS3pXbmgtTkllX2pHTGRiU1JZajJTUzIwYUlIM0xBQlpNVHJVQl9BRVRKc0RwZ1ZBZGRnZzFMX2RTLURJVzJnWFNCV2xRclJvUXpNb2d5cldxZ2tsLV9IWkxhOWdEWUhkSWJjSTJtZFYzOUd2NU5aNU9iSVd3YzdlalJrSGpzbklZNnItRHBXaEVlYXpFUnBXM1pnanhDSk14SlNtZzJKQnpjVUtKcWJRVTRubnF0Y0pz?oc=5",
      "date": "Wed, 11 Nov 2026 05:47:00 GMT"
-    },
-    {
-     "title": "Zee Business. . \u091a\u093e\u0930\u094d\u091f \u091a\u093e\u0932\u0940\u0938\u093e \u0906\u091c KPR Mill \u0915\u0947 \u091a\u093e\u0930\u094d\u091f \u092a\u0930 \u0928\u091c\u0930! \u091a\u093e\u0930\u094d\u091f \u092a\u0930 \u092c\u094d\u0930\u0947\u0915\u0906\u0909\u091f \u092f\u093e \u092c\u094d\u0930\u0947\u0915\u0921\u093e\u0909\u0928? \u0915\u0941\u0923\u093e\u0932 \u0938\u0930\u093e\u0935\u0917\u0940 \u0938\u0947 \u091c\u093e\u0928\u0947\u0902 \u091a\u093e\u0930\u094d\u091f \u092a\u0948\u091f\u0930\u094d\u0928 #ChartChalisa #TechnicalAnalysis #WeeklyChart #ChartPatterns #StockMarket - Facebook",
-     "link": "https://news.google.com/rss/articles/CBMizAZBVV95cUxNOXFsS3BmU2JBUm5vMzNDNDBDOUFBWm50OTZWX0NOb2twUWx2RERBRmFHV041eHZrM1pNYWttZkNuVkw0RWlnUHNlMElrTE9ueUVURDNkYWJ3WU9fWkhSejcwdE1QVFgzbS13Nkp2eFpJcm5iUGY5UmhFRi1uSlRkMjRtQkhkMVpZdjg1blJJUDZneEJmMDZjSHVrQmNWemhMOWEtM2JjVjM1WGQxRzFleGZhMGliSko1LUZUdE1VTlc3TUFXQjhYcXhxOXhwWWE4bHU1WDZVaWFPTGhRVFJnbmJydFdPeDlEZlBPM3RVSGE2SHRoV3VSbnpmNkJuTlh1amczMDBrYS00QU9rQlJVN3M0WkxHaS1adXFkb3k4MXU3R2VodGJDUHZuNEZTNngtMnBXY3YxUlVvYXhpZnVEMmswUmxvcHFUVG9rdVg4YlNvaUh0MVBKTV9pandEWlE3S1ZGRTFtMThwZjdQcXJhaDlOWF9HX09QYkozWnpUUGo5Zk50WEREYWJpR21PVmg1ZGJXbkUxSGl5TXRwekc5WVJ2eEVXeVFPcHFiOEpIUkIzSTVsUVIyTW1iTjl0YnYtNmI0U1JScU51ZHlqWDZ4WmdDMGNMYklYN1RmVVYtMTg0bnUzRWNYMTgzT2lielp0RnVJcmF1Sm9ZM3ZhZC1fc0tpWDZSUEdZd3NwVnFZWE9Xa3MyczA2eDZZcnlrYlhMa0U2NkFmd1ZfLUpacjBKS211RGdJcmJzSi1nUDZhZzVlQ2JSd3J3RW9BVTVhNGs1enNEMUJvUGQ0bUZTVU9adUExdDI0ZThZSk1mTy1SUEZQMDlSTXJ5S00xbFRsUGMwVGctRUE4dnZ6UWYwcEw4VzhJMUh2eEoySTR1bzFtSGJTdk56NjVKZzB3QlhhMHIwa0RMMmZlUDJtc0ZyYlFud1RaTXJPRFhYc1ZwTS1IOEQyOEh4RVU0ZzI4alREa21YY0NpYVB2THpUQnlpTGVpZU8wNm9jVUFaazAxVmJERE1RRWVhSDhZQW0wcVFQa2JqdF93dWZ0QWZXX2J6RWtOVTlGVnRzVjc1SEhFUFNQaFZOZDNlNG9lREJLMmFBdUcxdDhuOC1jd0U3a0lf?oc=5",
-     "date": "Mon, 16 Nov 2026 04:45:50 GMT"
     }
    ],
    "sentiment": 0.0,
@@ -855,10 +1023,10 @@
     1149.0,
     1149.8,
     1158.4,
-    1194.4
+    1203.9
    ],
    "size_tier": "other",
-   "m90_qty": 5,
+   "m90_qty": 4,
    "in_buy_list": false,
    "new": false
   },
@@ -872,25 +1040,25 @@
    "score": 79.8,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
-   "entry": 702.65,
-   "stop": 632.39,
-   "dip_buy": 702.65,
+   "entry": 707.45,
+   "stop": 636.71,
+   "dip_buy": 707.45,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 594.99,
-   "target1": 737.78,
-   "target2": 772.92,
+   "ema20": 595.45,
+   "target1": 742.82,
+   "target2": 778.2,
    "risk_pct": 10.0,
    "rr_t2": 1.0,
    "hold": "up to 60 days",
    "qty": 7,
-   "invest": 4919,
-   "max_loss": 492,
-   "close": 702.65,
-   "chg": 0.81,
-   "rsi": 75.9,
+   "invest": 4952,
+   "max_loss": 495,
+   "close": 707.45,
+   "chg": 1.5,
+   "rsi": 76.4,
    "adx": 35.4,
-   "vol_x": 1.75,
-   "from_high": -3.7,
+   "vol_x": 1.71,
+   "from_high": -3.0,
    "rs_rank": 99,
    "hist_win5": 85.7,
    "parts": {
@@ -901,12 +1069,12 @@
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 76.6,
+   "ml_prob": 77.6,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 714.15,
-    "last": 702.5,
+    "vwap": 713.68,
+    "last": 707.4,
     "above_vwap": false,
     "orb": "inside",
     "day_high": 729.0
@@ -919,10 +1087,10 @@
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 730.76,
-   "m90_stop": 526.99,
-   "m85_target": 737.78,
-   "m85_stop": 597.25,
+   "m90_target": 735.75,
+   "m90_stop": 530.59,
+   "m85_target": 742.82,
+   "m85_stop": 601.33,
    "m85_qty": 14,
    "high_conviction": false,
    "rule_fails": [
@@ -931,10 +1099,10 @@
    "smart": null,
    "results_in_days": null,
    "fund": {
-    "pe": 45.3,
+    "pe": 45.6,
     "roe": 26.7,
     "de": 92.3,
-    "mcap_cr": 72530.1,
+    "mcap_cr": 73015.5,
     "sales_yoy": 31.4,
     "profit_yoy": 63.9,
     "profit_qoq": 22.5,
@@ -1025,7 +1193,7 @@
     663.75,
     710.9,
     697.0,
-    702.65
+    707.45
    ],
    "size_tier": "other",
    "m90_qty": 8,
@@ -1039,44 +1207,44 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 78.2,
+   "score": 78.1,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
-   "entry": 2617.1,
+   "entry": 2620.3,
    "stop": 2457.9,
-   "dip_buy": 2617.1,
+   "dip_buy": 2620.3,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 2519.8,
-   "target1": 2747.96,
-   "target2": 2878.81,
-   "risk_pct": 6.1,
-   "rr_t2": 1.64,
+   "ema20": 2520.1,
+   "target1": 2751.32,
+   "target2": 2882.33,
+   "risk_pct": 6.2,
+   "rr_t2": 1.61,
    "hold": "up to 60 days",
    "qty": 3,
-   "invest": 7851,
-   "max_loss": 478,
-   "close": 2617.1,
-   "chg": -0.87,
-   "rsi": 62.5,
+   "invest": 7861,
+   "max_loss": 487,
+   "close": 2620.3,
+   "chg": -0.75,
+   "rsi": 62.9,
    "adx": 33.7,
-   "vol_x": 0.51,
-   "from_high": -3.2,
-   "rs_rank": 82,
-   "hist_win5": 66.4,
+   "vol_x": 0.49,
+   "from_high": -3.1,
+   "rs_rank": 81,
+   "hist_win5": 66.3,
    "parts": {
     "Technical": 47,
-    "Rel. Strength": 8.2,
+    "Rel. Strength": 8.1,
     "Fundamentals": 14.0,
     "News": 2.5,
     "Backtest": 4.4,
-    "AI model": 10.0
+    "AI model": 9.9
    },
-   "ml_prob": 70.8,
+   "ml_prob": 68.9,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 2660.53,
-    "last": 2617.9,
+    "vwap": 2658.58,
+    "last": 2619.7,
     "above_vwap": false,
     "orb": "below",
     "day_high": 2694.0
@@ -1084,26 +1252,26 @@
    "why": [
     "Price > 50 EMA > 200 EMA (uptrend)",
     "Weekly trend up",
-    "Top 18% relative strength in Nifty 500",
+    "Top 19% relative strength in Nifty 500",
     "Tight base (volatility contraction)",
     "Sector is among market leaders"
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 2721.78,
-   "m90_stop": 1962.82,
-   "m85_target": 2747.96,
-   "m85_stop": 2224.54,
+   "m90_target": 2725.11,
+   "m90_stop": 1965.22,
+   "m85_target": 2751.32,
+   "m85_stop": 2227.26,
    "m85_qty": 3,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
    "results_in_days": 71,
    "fund": {
-    "pe": 48.2,
+    "pe": 48.3,
     "roe": 13.6,
     "de": 30.4,
-    "mcap_cr": 108060.4,
+    "mcap_cr": 108176.5,
     "sales_yoy": 21.5,
     "profit_yoy": 62.3,
     "profit_qoq": 25.2,
@@ -1192,345 +1360,7 @@
     2660.0,
     2638.6,
     2640.0,
-    2617.1
-   ],
-   "size_tier": "other",
-   "m90_qty": 2,
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "ETERNAL",
-   "name": "Eternal Ltd.",
-   "industry": "Consumer Services",
-   "segment": "Nifty 50",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 77.0,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "WATCHLIST",
-   "entry": 367.9,
-   "stop": 343.82,
-   "dip_buy": 367.9,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 347.37,
-   "target1": 386.29,
-   "target2": 404.69,
-   "risk_pct": 6.5,
-   "rr_t2": 1.53,
-   "hold": "up to 60 days",
-   "qty": 20,
-   "invest": 7358,
-   "max_loss": 482,
-   "close": 367.9,
-   "chg": 1.17,
-   "rsi": 69.8,
-   "adx": 25.8,
-   "vol_x": 0.81,
-   "from_high": -1.2,
-   "rs_rank": 95,
-   "hist_win5": 75.0,
-   "parts": {
-    "Technical": 47,
-    "Rel. Strength": 9.5,
-    "Fundamentals": 11.0,
-    "News": 2.8,
-    "Backtest": 5.0,
-    "AI model": 7.3
-   },
-   "ml_prob": 61.2,
-   "patterns": [
-    "Inside-bar breakout",
-    "NR7 breakout"
-   ],
-   "weekly_up": true,
-   "intra": {
-    "vwap": 369.82,
-    "last": 367.85,
-    "above_vwap": false,
-    "orb": "inside",
-    "day_high": 372.5
-   },
-   "why": [
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 5% relative strength in Nifty 500",
-    "Tight base (volatility contraction)",
-    "Sector is among market leaders"
-   ],
-   "mode85": false,
-   "mode90": false,
-   "m90_target": 382.62,
-   "m90_stop": 275.92,
-   "m85_target": 386.29,
-   "m85_stop": 312.71,
-   "m85_qty": 27,
-   "high_conviction": false,
-   "rule_fails": [],
-   "smart": null,
-   "results_in_days": 66,
-   "fund": {
-    "pe": 694.1,
-    "roe": 1.6,
-    "de": 18.4,
-    "mcap_cr": 338891.9,
-    "sales_yoy": 236.8,
-    "profit_yoy": 400.0,
-    "profit_qoq": 35.9,
-    "eps_growth": 92.3,
-    "results_in_days": 66,
-    "sector": "Consumer Cyclical"
-   },
-   "news": [
-    {
-     "title": "Zomato Share Price - Live NSE: ETERNAL Stock Price & Chart - Upstox",
-     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9WQzNEWlBxdEUyRW9HUDYwalMxLXRKX0dLSG1TU1pXbFlfUmxWTW9pVXlBZXhQTHFLWDNOemxxMUdtWWxMekNaNUZqWUhVTlVKR0dEeEh5S3p0dmNhcmFjd0dPMUM?oc=5",
-     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
-    },
-    {
-     "title": "Eternal (Zomato) (ETERNAL) Share Price Today (NSE), Market News - TechGraph",
-     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA0TUNJaWhnNklqN0tjb2Z3X1Z6U0pWWklnZzZCMExHYzd3RGNDYi1zQVViNi1iT2pBbWE2QmpXTjNhU1ZfWGN2QjBHSlpSa2xkeHAwbTR0S05VT0dQR0laLQ?oc=5",
-     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
-    },
-    {
-     "title": "Eternal Limited at \u20b9365: revenue rises, margin stays flat - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSi1GNGtXS211U042TVA4MFdqQVJpbXIwcERTTjdodXRzUU5PNkZycURjYWNBXzFwYWFNS19xelhCY2VFZDR3V0xhOEE2aW5kVVd2LXhxd1UxcUlwM2hacURCQ2N1aFI3akxlSV9EaTJ1WlV4Zl9wOVh3SWI1dzNabUg2dXBNNTI4OG93NG1sMElUU2hmRXNsd3RQMDI3QldOSWtNLXQzamo0UQ?oc=5",
-     "date": "Mon, 09 Nov 2026 12:01:14 GMT"
-    }
-   ],
-   "sentiment": 0.1,
-   "warnings": [
-    "Trading below today's VWAP \u2013 wait"
-   ],
-   "spark": [
-    320.0,
-    327.95,
-    328.0,
-    327.15,
-    331.0,
-    327.0,
-    328.5,
-    328.0,
-    328.1,
-    327.75,
-    327.3,
-    324.8,
-    322.75,
-    320.8,
-    321.6,
-    320.6,
-    322.1,
-    323.5,
-    315.25,
-    317.0,
-    322.35,
-    326.85,
-    335.9,
-    342.0,
-    342.65,
-    335.5,
-    335.0,
-    330.95,
-    327.85,
-    320.0,
-    313.9,
-    320.8,
-    329.0,
-    328.0,
-    319.05,
-    323.45,
-    323.0,
-    320.45,
-    316.0,
-    323.0,
-    325.3,
-    320.2,
-    312.35,
-    304.45,
-    317.4,
-    325.55,
-    331.0,
-    326.0,
-    337.85,
-    343.65,
-    344.0,
-    349.45,
-    344.5,
-    358.3,
-    363.15,
-    363.45,
-    361.1,
-    364.35,
-    363.65,
-    367.9
-   ],
-   "size_tier": "other",
-   "m90_qty": 16,
-   "in_buy_list": false,
-   "new": false
-  },
-  {
-   "symbol": "APLAPOLLO",
-   "name": "APL Apollo Tubes Ltd.",
-   "industry": "Capital Goods",
-   "segment": "Midcap 150",
-   "smallcap_ok": true,
-   "setup": "Uptrend",
-   "score": 76.6,
-   "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "label": "WATCHLIST",
-   "entry": 2247.3,
-   "stop": 2128.6,
-   "dip_buy": 2247.3,
-   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 2183.16,
-   "target1": 2359.67,
-   "target2": 2472.03,
-   "risk_pct": 5.3,
-   "rr_t2": 1.89,
-   "hold": "up to 60 days",
-   "qty": 4,
-   "invest": 8989,
-   "max_loss": 475,
-   "close": 2247.3,
-   "chg": -0.19,
-   "rsi": 60.4,
-   "adx": 17.4,
-   "vol_x": 2.71,
-   "from_high": -2.8,
-   "rs_rank": 84,
-   "hist_win5": 60.0,
-   "parts": {
-    "Technical": 47,
-    "Rel. Strength": 8.4,
-    "Fundamentals": 15.0,
-    "News": 3.8,
-    "Backtest": 3.3,
-    "AI model": 10.0
-   },
-   "ml_prob": 74.7,
-   "patterns": [],
-   "weekly_up": true,
-   "intra": {
-    "vwap": 2280.08,
-    "last": 2247.4,
-    "above_vwap": false,
-    "orb": "below",
-    "day_high": 2312.0
-   },
-   "why": [
-    "Volume 2.7x average",
-    "Price > 50 EMA > 200 EMA (uptrend)",
-    "Weekly trend up",
-    "Top 16% relative strength in Nifty 500"
-   ],
-   "mode85": false,
-   "mode90": false,
-   "m90_target": 2337.19,
-   "m90_stop": 1685.48,
-   "m85_target": 2359.67,
-   "m85_stop": 1910.21,
-   "m85_qty": 4,
-   "high_conviction": false,
-   "rule_fails": [
-    "sector not in top half"
-   ],
-   "smart": null,
-   "results_in_days": 66,
-   "fund": {
-    "pe": 47.7,
-    "roe": 25.3,
-    "de": 16.8,
-    "mcap_cr": 62400.9,
-    "sales_yoy": 26.7,
-    "profit_yoy": 61.2,
-    "profit_qoq": 45.3,
-    "eps_growth": 26.8,
-    "results_in_days": 66,
-    "sector": "Basic Materials"
-   },
-   "news": [
-    {
-     "title": "APL Apollo Tubes (NSEI:APLAPOLLO) - Stock Analysis - Simply Wall St",
-     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaV9iS3NMVTdMSVNkYTBKTXkzcG1XcEhvTUYxRnkyNEcyQ2lJOG9kdUNyU09wU1k2Vk50T20wdVhKREFsMmg5Y3JzbFh4dmJ4eUIweU43LWdIUXZ1TERtMGFGQ25JaURiV1FvRDRpTkNGM0tnWFJhREM2UVFoM2pobktiWWZLUQ?oc=5",
-     "date": "Thu, 12 Nov 2026 08:00:00 GMT"
-    },
-    {
-     "title": "APLAPOLLO.NS (APLAPOLLO) Share Price Today (NSE), Market News - TechGraph",
-     "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5mLWcxcFRXTTRjVmhVMEl6UU9qREhVV3lSUmlEcG82M3Zyd2ZVSGRLZ2JTemFLcVhXWkNSdFQ1ZE5MSG5DMGxaTmdGZXRqZmNER0hkNHlRODQ0Tl9LNThNVTJwcw?oc=5",
-     "date": "Sat, 14 Nov 2026 16:44:44 GMT"
-    },
-    {
-     "title": "Stocks to buy: What's the outlook for Nifty for November 16-November 20 week? Top stock recommendations - The Times of India",
-     "link": "https://news.google.com/rss/articles/CBMixgJBVV95cUxOWVlXaUVIUHlxdVppNUVfQTdySUJubDFEbGlkY1FlQWxfZV91T2VRUkZjalQ0aGxLSnR5bHpNUXBLcm14QU9sSGdlMGw1dDRsUVl1SW82d3UyMVZ3WEZXX0U1MmI2WDBpVTYyZjY1TkRHNmJoRmtMNm5KMnFfYmtrREs4Z3hjUjhGeUhGLUt1OU9KanRfSHF1WXVzaXNmN0tEN293Slloa2xQdjZzOGhMWTBaSzFYMW9iUVpncnNWcEFfMl9xa09jOUFYZDkwLWpSLXM2V09uRHYyWmE0a3NmTHlMbDdvYmlKbWJMVnV4QzZjc011R0VIOEZlbUFzUGdxYk04MlZ6N0oyUFVRaThrWHI3UmJ2MkdlR0tKckV5bnFxZ3pnTjdTanF0bTc2b2RIaTR0V1dLZVFkTzZHbzlVci1iMHpsZw?oc=5",
-     "date": "Sun, 15 Nov 2026 14:14:00 GMT"
-    }
-   ],
-   "sentiment": 0.5,
-   "warnings": [
-    "Trading below today's VWAP \u2013 wait"
-   ],
-   "spark": [
-    2113.66,
-    2131.79,
-    2130.79,
-    2136.77,
-    2131.09,
-    2150.71,
-    2179.6,
-    2256.91,
-    2214.87,
-    2225.43,
-    2201.52,
-    2151.11,
-    2241.37,
-    2206.5,
-    2185.0,
-    2168.0,
-    2194.8,
-    2153.5,
-    2119.3,
-    2120.0,
-    2148.5,
-    2270.1,
-    2181.1,
-    2195.0,
-    2195.0,
-    2184.8,
-    2214.7,
-    2197.0,
-    2188.6,
-    2190.1,
-    2115.7,
-    2099.8,
-    2152.0,
-    2135.0,
-    2040.0,
-    2114.1,
-    2157.4,
-    2185.0,
-    2160.0,
-    2139.0,
-    2152.7,
-    2144.6,
-    2066.8,
-    2052.4,
-    2033.7,
-    2077.9,
-    2213.9,
-    2165.3,
-    2195.0,
-    2165.1,
-    2163.7,
-    2152.8,
-    2199.8,
-    2194.2,
-    2185.3,
-    2181.3,
-    2198.0,
-    2225.7,
-    2251.6,
-    2247.3
+    2620.3
    ],
    "size_tier": "other",
    "m90_qty": 2,
@@ -1544,27 +1374,27 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 76.0,
+   "score": 75.5,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
-   "entry": 358.55,
+   "entry": 358.7,
    "stop": 342.05,
-   "dip_buy": 358.55,
+   "dip_buy": 358.7,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 350.12,
-   "target1": 376.48,
-   "target2": 394.4,
+   "ema20": 350.13,
+   "target1": 376.64,
+   "target2": 394.57,
    "risk_pct": 4.6,
-   "rr_t2": 2.17,
+   "rr_t2": 2.15,
    "hold": "up to 60 days",
    "qty": 30,
-   "invest": 10756,
-   "max_loss": 495,
-   "close": 358.55,
-   "chg": -1.82,
-   "rsi": 58.7,
+   "invest": 10761,
+   "max_loss": 499,
+   "close": 358.7,
+   "chg": -1.78,
+   "rsi": 58.8,
    "adx": 25.1,
-   "vol_x": 0.52,
+   "vol_x": 0.51,
    "from_high": -2.6,
    "rs_rank": 88,
    "hist_win5": 50.0,
@@ -1572,7 +1402,7 @@
     "Technical": 47,
     "Rel. Strength": 8.8,
     "Fundamentals": 13.0,
-    "News": 4.5,
+    "News": 4.0,
     "Backtest": 1.7,
     "AI model": 8.7
    },
@@ -1580,8 +1410,8 @@
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 362.3,
-    "last": 358.4,
+    "vwap": 362.1,
+    "last": 358.7,
     "above_vwap": false,
     "orb": "below",
     "day_high": 367.95
@@ -1595,20 +1425,20 @@
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 372.89,
-   "m90_stop": 268.91,
-   "m85_target": 376.48,
-   "m85_stop": 304.77,
+   "m90_target": 373.05,
+   "m90_stop": 269.02,
+   "m85_target": 376.64,
+   "m85_stop": 304.9,
    "m85_qty": 27,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
    "results_in_days": 80,
    "fund": {
-    "pe": 320.0,
+    "pe": 320.2,
     "roe": 20.8,
     "de": 89.5,
-    "mcap_cr": 102694.1,
+    "mcap_cr": 102751.4,
     "sales_yoy": 28.1,
     "profit_yoy": 192.8,
     "profit_qoq": 25.9,
@@ -1633,7 +1463,7 @@
      "date": "Thu, 12 Nov 2026 09:38:06 GMT"
     }
    ],
-   "sentiment": 0.8,
+   "sentiment": 0.6,
    "warnings": [
     "Trading below today's VWAP \u2013 wait"
    ],
@@ -1697,7 +1527,7 @@
     356.8,
     360.3,
     365.2,
-    358.55
+    358.7
    ],
    "size_tier": "other",
    "m90_qty": 16,
@@ -1714,25 +1544,25 @@
    "score": 73.8,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
-   "entry": 144.05,
-   "stop": 134.62,
-   "dip_buy": 144.05,
+   "entry": 144.28,
+   "stop": 134.85,
+   "dip_buy": 144.28,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 128.74,
-   "target1": 151.25,
-   "target2": 158.46,
+   "ema20": 128.76,
+   "target1": 151.49,
+   "target2": 158.71,
    "risk_pct": 6.5,
    "rr_t2": 1.53,
    "hold": "up to 60 days",
    "qty": 53,
-   "invest": 7635,
+   "invest": 7647,
    "max_loss": 500,
-   "close": 144.05,
-   "chg": 0.87,
-   "rsi": 82.3,
+   "close": 144.28,
+   "chg": 1.03,
+   "rsi": 82.4,
    "adx": 38.6,
-   "vol_x": 1.6,
-   "from_high": -1.9,
+   "vol_x": 1.54,
+   "from_high": -1.8,
    "rs_rank": 96,
    "hist_win5": 64.3,
    "parts": {
@@ -1743,28 +1573,28 @@
     "Backtest": 4.0,
     "AI model": 10.0
    },
-   "ml_prob": 75.2,
+   "ml_prob": 73.2,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 145.03,
-    "last": 144.04,
+    "vwap": 145.0,
+    "last": 144.22,
     "above_vwap": false,
     "orb": "inside",
     "day_high": 146.81
    },
    "why": [
-    "Volume 1.6x average",
+    "Volume 1.5x average",
     "Price > 50 EMA > 200 EMA (uptrend)",
     "Weekly trend up",
     "Top 4% relative strength in Nifty 500"
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 149.81,
-   "m90_stop": 108.04,
-   "m85_target": 151.25,
-   "m85_stop": 122.44,
+   "m90_target": 150.05,
+   "m90_stop": 108.21,
+   "m85_target": 151.49,
+   "m85_stop": 122.64,
    "m85_qty": 69,
    "high_conviction": false,
    "rule_fails": [
@@ -1776,7 +1606,7 @@
     "pe": 7.3,
     "roe": 15.1,
     "de": null,
-    "mcap_cr": 165544.3,
+    "mcap_cr": 165751.2,
     "sales_yoy": -5.2,
     "profit_yoy": 178.2,
     "profit_qoq": 1.4,
@@ -1867,7 +1697,7 @@
     138.48,
     141.79,
     142.81,
-    144.05
+    144.28
    ],
    "size_tier": "other",
    "m90_qty": 41,
@@ -1881,44 +1711,44 @@
    "segment": "Midcap 150",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 73.7,
+   "score": 73.6,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
    "label": "WATCHLIST",
-   "entry": 361.25,
-   "stop": 338.89,
-   "dip_buy": 361.25,
+   "entry": 361.65,
+   "stop": 339.29,
+   "dip_buy": 361.65,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 346.21,
-   "target1": 379.31,
-   "target2": 397.38,
+   "ema20": 346.25,
+   "target1": 379.73,
+   "target2": 397.81,
    "risk_pct": 6.2,
    "rr_t2": 1.62,
    "hold": "up to 60 days",
    "qty": 22,
-   "invest": 7948,
+   "invest": 7956,
    "max_loss": 492,
-   "close": 361.25,
-   "chg": 0.08,
-   "rsi": 66.5,
+   "close": 361.65,
+   "chg": 0.19,
+   "rsi": 66.7,
    "adx": 24.9,
-   "vol_x": 0.63,
-   "from_high": -2.5,
-   "rs_rank": 84,
+   "vol_x": 0.61,
+   "from_high": -2.4,
+   "rs_rank": 83,
    "hist_win5": 80.0,
    "parts": {
     "Technical": 46,
-    "Rel. Strength": 8.4,
+    "Rel. Strength": 8.3,
     "Fundamentals": 12.0,
     "News": 3.0,
     "Backtest": 5.0,
     "AI model": 10.0
    },
-   "ml_prob": 80.0,
+   "ml_prob": 71.1,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 365.06,
-    "last": 361.25,
+    "vwap": 364.88,
+    "last": 361.65,
     "above_vwap": false,
     "orb": "inside",
     "day_high": 368.85
@@ -1926,14 +1756,14 @@
    "why": [
     "Price > 50 EMA > 200 EMA (uptrend)",
     "Weekly trend up",
-    "Top 16% relative strength in Nifty 500"
+    "Top 17% relative strength in Nifty 500"
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 375.7,
-   "m90_stop": 270.94,
-   "m85_target": 379.31,
-   "m85_stop": 307.06,
+   "m90_target": 376.12,
+   "m90_stop": 271.24,
+   "m85_target": 379.73,
+   "m85_stop": 307.4,
    "m85_qty": 27,
    "high_conviction": false,
    "rule_fails": [
@@ -1942,10 +1772,10 @@
    "smart": null,
    "results_in_days": 59,
    "fund": {
-    "pe": 17.6,
+    "pe": 17.7,
     "roe": 13.3,
     "de": null,
-    "mcap_cr": 89255.4,
+    "mcap_cr": 89366.6,
     "sales_yoy": 35.6,
     "profit_yoy": 63.2,
     "profit_qoq": 19.3,
@@ -1955,11 +1785,6 @@
    },
    "news": [
     {
-     "title": "Federal Bank Share Price Today, Federal Bank Stock Price Live NSE/BSE Updates - The Economic Times",
-     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWHQwOGFNeVRJYWEtVldSbURWLUdRLUVtN1NvSE94TkdDMWVHWEZCNnQ4MnhYZVlnLUVaaUtjYzdEMk1wRDBvbllsSFpIMlJfczkzSmszQUVFcGRNYTN3XzdIbkRiU1ZqTnp5aGFUM2VwaEZmSFcwdC1QRzM4WHZkUy1OeXNwQQ?oc=5",
-     "date": "Thu, 12 Nov 2026 20:55:00 GMT"
-    },
-    {
      "title": "FEDERALBNK Outlook for the Week - Equitypandit",
      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8taXdiTldwRGNJdEpOSEdNMUhlREMydE9ZTWZ6cVBTWWVmaEIwUGRfNEhKTmZWaDF0enRva1ZEb0xTczZYY0hlWGFoMWFiS19OQzNTS1dwWUFYOGhzcVU1aFJ0QXZYN05BODNuWUhR?oc=5",
      "date": "Fri, 13 Nov 2026 08:00:00 GMT"
@@ -1968,6 +1793,11 @@
      "title": "NIFTY Bank reclaims 61,000: HDFC Bank, Axis Bank, Federal Bank, other banking stocks rally up to 6%; here's why - Upstox",
      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNa0RvSWFtNF9xTmFKQnNuN2xad3dBWk5vQTBSeGhUYjhDSFhxRks1VTk1eDBFVWNTNlllcGdZazlnQTJYVDNzVlZNNmw5a0JzMGhZWGZtcEhURzVQNGIzNThoSjMxakQ5ZTFEVS1HNXVwbWpQQl9YX0E3RmVjYUlQUWZBVUdBS0hlODcxSmo5NTh1YXVnZjBLMlBrNGR1bkdVM1ZKcTh6ZUg2dXZyTmtUdVFZbjZnSzlnVzFKWXFhem5HalRicXM5RFN6d1VPVEJuMURPYkNjaGpmXzNtOEFBT1RBemZxTUVmelFVZDBJdHJzdmtmWGlF?oc=5",
      "date": "Wed, 11 Nov 2026 06:43:42 GMT"
+    },
+    {
+     "title": "Federal Bank hikes FD interest rates for senior citizens: Check revised rates - CNBC TV18 - LinkedIn",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVzBvM3VXQUltQjU0bTcyY0VkUEV4MVF4ejd3ZTNvVmtBcjRZM090aENRUlBSZnZ4eE1paFNCSVY2N3AzYkl6T3JlVlNhSHJ0YzZPOFRyQ2cwdGFOaklTemdjZkVoOFowSHJaQXBSWi1hQmkxeDhpMzlWcl81Wm9sYklwV2dZbkNfMWRZeTM4QmdqQm9NM29wbFR2MmV5WEN3ekM3dUdGdUhUckVYZi1jS1NJWkJPUQ?oc=5",
+     "date": "Thu, 12 Nov 2026 16:36:58 GMT"
     }
    ],
    "sentiment": 0.2,
@@ -2034,10 +1864,176 @@
     361.6,
     362.5,
     360.95,
-    361.25
+    361.65
    ],
    "size_tier": "other",
    "m90_qty": 16,
+   "in_buy_list": false,
+   "new": false
+  },
+  {
+   "symbol": "TECHM",
+   "name": "Tech Mahindra Ltd.",
+   "industry": "Information Technology",
+   "segment": "Nifty 50",
+   "smallcap_ok": true,
+   "setup": "Uptrend",
+   "score": 68.4,
+   "stars": "\u2605\u2605\u2605\u2606\u2606",
+   "label": "WATCHLIST",
+   "entry": 1770.5,
+   "stop": 1717.38,
+   "dip_buy": 1770.5,
+   "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
+   "ema20": 1754.32,
+   "target1": 1859.02,
+   "target2": 1947.55,
+   "risk_pct": 3.0,
+   "rr_t2": 3.33,
+   "hold": "up to 60 days",
+   "qty": 9,
+   "invest": 15934,
+   "max_loss": 478,
+   "close": 1770.5,
+   "chg": 0.37,
+   "rsi": 57.5,
+   "adx": 32.3,
+   "vol_x": 0.32,
+   "from_high": -4.8,
+   "rs_rank": 91,
+   "hist_win5": 66.7,
+   "parts": {
+    "Technical": 47,
+    "Rel. Strength": 9.1,
+    "Fundamentals": 15.0,
+    "News": 2.5,
+    "Backtest": 4.5,
+    "AI model": 0.5
+   },
+   "ml_prob": 40.9,
+   "patterns": [],
+   "weekly_up": true,
+   "intra": {
+    "vwap": 1771.59,
+    "last": 1770.7,
+    "above_vwap": false,
+    "orb": "inside",
+    "day_high": 1790.7
+   },
+   "why": [
+    "Price > 50 EMA > 200 EMA (uptrend)",
+    "Weekly trend up",
+    "Top 9% relative strength in Nifty 500",
+    "Tight base (volatility contraction)"
+   ],
+   "mode85": false,
+   "mode90": false,
+   "m90_target": 1841.32,
+   "m90_stop": 1327.88,
+   "m85_target": 1859.02,
+   "m85_stop": 1504.92,
+   "m85_qty": 5,
+   "high_conviction": false,
+   "rule_fails": [],
+   "smart": null,
+   "results_in_days": 59,
+   "fund": {
+    "pe": 28.5,
+    "roe": 19.2,
+    "de": 7.2,
+    "mcap_cr": 173564.9,
+    "sales_yoy": 21.2,
+    "profit_yoy": 39.0,
+    "profit_qoq": 8.2,
+    "eps_growth": 32.7,
+    "results_in_days": 59,
+    "sector": "Technology"
+   },
+   "news": [
+    {
+     "title": "TECHM Outlook for the Week - Equitypandit",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE14MTlLbGV6OG5iekRmYmFEQlRzU3VNRTIxZjZrZENiTmRKaWF6OXRJMDBCMEszSkdlemxaU05FWEI4bEVIR3ZnM1NEWTJqUm5TR19SOURaSzFQeEhTNlBKeDkzUXM3cjg?oc=5",
+     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
+    },
+    {
+     "title": "Tech Mahindra (TECHM) Share Price Today (BSE), Market News - TechGraph",
+     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAxSXdVXzR1VUxIa256LUhLYXBrbURhNXZPdVFHQmY2WlFjckhlbEZMOWFfQ0JrV0w4Ml9jeFNWcjZjVHE0UHl2blhBdU5pcXEwUkNodHFESzNLdXVoM0E?oc=5",
+     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
+    },
+    {
+     "title": "Tech Mahindra schedules AI Day 2026 for Dec 7 in Pune - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSEg5T1ZUSk90U01mbHY5NWIyWWlEM0hxMDdscEFVQmh5d2lNNzRYMXdKMEwwQ3ZmYUFvTFpKTC1SNGMtTi00UlhRVTlabjFXQmcySTM1bXNKbVFwTTNidklMZ1Mxc0JYX1JSWWdTaVRwZGdtZHkzQ2dJUVQwN3VEekMxUU5XZEZsYnB5N2xRTzdLOGhKMzl6RjlmVVlPSkJFbHA4VUxn?oc=5",
+     "date": "Fri, 13 Nov 2026 11:53:48 GMT"
+    }
+   ],
+   "sentiment": 0.0,
+   "warnings": [
+    "Trading below today's VWAP \u2013 wait"
+   ],
+   "spark": [
+    1576.76,
+    1579.04,
+    1571.01,
+    1571.01,
+    1586.78,
+    1558.12,
+    1572.0,
+    1627.44,
+    1614.65,
+    1624.57,
+    1609.69,
+    1584.9,
+    1583.8,
+    1551.17,
+    1546.21,
+    1495.63,
+    1513.29,
+    1528.36,
+    1562.98,
+    1545.22,
+    1548.2,
+    1524.49,
+    1545.72,
+    1538.88,
+    1544.23,
+    1530.35,
+    1535.31,
+    1529.55,
+    1498.11,
+    1511.5,
+    1520.43,
+    1523.3,
+    1492.16,
+    1478.87,
+    1483.93,
+    1501.68,
+    1458.94,
+    1530.84,
+    1562.28,
+    1636.47,
+    1775.32,
+    1764.51,
+    1819.65,
+    1814.1,
+    1790.0,
+    1795.0,
+    1811.4,
+    1776.6,
+    1769.6,
+    1790.8,
+    1786.9,
+    1789.1,
+    1783.0,
+    1822.7,
+    1831.0,
+    1805.0,
+    1788.5,
+    1774.0,
+    1764.0,
+    1770.5
+   ],
+   "size_tier": "other",
+   "m90_qty": 3,
    "in_buy_list": false,
    "new": false
   },
@@ -2048,27 +2044,27 @@
    "segment": "Nifty 50",
    "smallcap_ok": true,
    "setup": "Uptrend",
-   "score": 64.7,
+   "score": 65.6,
    "stars": "\u2605\u2605\u2605\u2606\u2606",
    "label": "WATCHLIST",
-   "entry": 1890.0,
+   "entry": 1889.9,
    "stop": 1822.0,
-   "dip_buy": 1890.0,
+   "dip_buy": 1889.9,
    "exit_rule": "At T1 book half + move SL to cost; exit rest on daily close below 20 EMA (max 60 days)",
-   "ema20": 1856.17,
-   "target1": 1984.5,
-   "target2": 2079.0,
+   "ema20": 1856.16,
+   "target1": 1984.4,
+   "target2": 2078.89,
    "risk_pct": 3.6,
    "rr_t2": 2.78,
    "hold": "up to 60 days",
    "qty": 7,
-   "invest": 13230,
-   "max_loss": 476,
-   "close": 1890.0,
+   "invest": 13229,
+   "max_loss": 475,
+   "close": 1889.9,
    "chg": -0.7,
    "rsi": 57.5,
    "adx": 25.1,
-   "vol_x": 0.47,
+   "vol_x": 0.45,
    "from_high": -4.5,
    "rs_rank": 86,
    "hist_win5": 25.0,
@@ -2078,14 +2074,14 @@
     "Fundamentals": 9.0,
     "News": 3.8,
     "Backtest": 0.0,
-    "AI model": 2.8
+    "AI model": 3.8
    },
-   "ml_prob": 47.8,
+   "ml_prob": 50.8,
    "patterns": [],
    "weekly_up": true,
    "intra": {
-    "vwap": 1893.05,
-    "last": 1889.4,
+    "vwap": 1892.96,
+    "last": 1890.2,
     "above_vwap": false,
     "orb": "below",
     "day_high": 1915.5
@@ -2099,20 +2095,20 @@
    ],
    "mode85": false,
    "mode90": false,
-   "m90_target": 1965.6,
-   "m90_stop": 1417.5,
-   "m85_target": 1984.5,
-   "m85_stop": 1606.5,
+   "m90_target": 1965.5,
+   "m90_stop": 1417.43,
+   "m85_target": 1984.4,
+   "m85_stop": 1606.42,
    "m85_qty": 5,
    "high_conviction": false,
    "rule_fails": [],
    "smart": null,
    "results_in_days": 73,
    "fund": {
-    "pe": 31.5,
+    "pe": 31.6,
     "roe": 15.6,
     "de": 62.7,
-    "mcap_cr": 435310.0,
+    "mcap_cr": 435563.4,
     "sales_yoy": 24.3,
     "profit_yoy": 9.3,
     "profit_qoq": 0.0,
@@ -2201,7 +2197,7 @@
     1907.0,
     1930.0,
     1903.3,
-    1890.0
+    1889.9
    ],
    "size_tier": "other",
    "m90_qty": 3,
@@ -2211,40 +2207,40 @@
  ],
  "btst": [
   {
-   "symbol": "LICHSGFIN",
-   "name": "LIC Housing Finance Ltd.",
-   "score": 78.2,
+   "symbol": "ITC",
+   "name": "ITC Ltd.",
+   "score": 78.6,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "close": 600.45,
-   "chg": 2.62,
-   "vol_x": 2.07,
-   "stop": 582.65,
-   "target": 612.46,
+   "close": 294.65,
+   "chg": 3.39,
+   "vol_x": 2.28,
+   "stop": 283.85,
+   "target": 300.54,
    "news": [
     {
-     "title": "LIC Housing Finance shareholders approve Sandeep Kumar as MD & CEO - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSGNkMEdSdk5xcGpJSEYyV3ZmZGdwd2dUZHhhdlpTcThCSHk2UzlIZlVNQVlDTTlsdzV2RlBJTktLSU83REtmZ2d0UDZUNWVXeEs4a3A4dVhEeVNEQ0dwMmNMamg1QWdhSHNQRm5DUHU5d3pJWnR0RXlLWXYyVnB2SU5nQUh3VUM4LVNBNUVEeC1hc3BIekpmTmJiQUxQblhhMGZoWVl6U1VWeGh4Ymh3NlBYQVY4ekZaSWc?oc=5",
-     "date": "Sat, 14 Nov 2026 10:28:03 GMT"
+     "title": "ITC Outlook for the Week - Equitypandit",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA1MHNTYTB5ZzIyY0o3d3JTc2VjQzgwTHJ1LWdBUVRsV05naXFSMFNNQXlhU2tYTmUwT1RvVnhlZFNwdHB4NGlFYXFWVE41b3YtSXJhaXRvdFlxZWQ5czZMNDBlSFc?oc=5",
+     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
     },
     {
-     "title": "LIC Housing Finance ordered to pay over \u20b92 lakh for CIBIL update failure - The Times of India",
-     "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQeFRDWERaTzJPWlpCUk9zWlQ5ODM2MUUzYl94V0ZDajIyV1c4RFozeTljdE81XzJhZ081TVpZanJkSlZpT3JpaXROdVI3LUFGbV9CaldiVWhDcllPRmNGNlpLVXJjZy1tNm5SOFpyLXEzbXRfQWNmYU9UbFVHZjZiU1VFTTYzbUpobEhYd3NCekpCUWF4RGhCWHY0d0ZtOXZqQ1pwZ2tDZE5oR0tTUURUTTBNZk9kMV92TnFUd2xLVVlERWxsMjdSRWxaTUMwUkpKVnZZMDVUbzcya3pyaUpDbmd2TF9xNFHSAecBQVVfeXFMUHhUQ1hEWk8yT1paQlJPc1pUOTgzNjFFM2JfeFdGQ2oyMldXOERaM3k5Y3RPNV8yYWdPNU1aWWpyZEpWaU9yaWl0TnVSNy1BRm1fQmpXYlVoQ3JZT0ZjRjZaS1VyY2ctbTZuUjhaci1xM210X0FjZmFPVGxVR2Y2YlNVRU02M21KaGxIWHdzQnpKQlFheERoQlh2NHdGbTl2akNacGdrQ2ROaEdLU1FEVE0wTWZPZDFfdk5xVHdsS1VZREVsbDI3UkVsWk1DMFJKSlZ2WTA1VG83Mmt6cmlKQ25ndkxfcTRR?oc=5",
-     "date": "Fri, 13 Nov 2026 18:31:00 GMT"
+     "title": "ITC (ITC) Share Price Today (NSE), Market News - TechGraph",
+     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1pREZ2bW1vU3VDQU9pay1XWW1xSzJxRTVFeFBoOERaQW1IMWFqRUJhTzZfcVhDQVNMYjJud0ZMVWJXVjZURkZQQndTRHJtYXkzSmxXYjlBN1VWWlk?oc=5",
+     "date": "Fri, 13 Nov 2026 08:00:00 GMT"
     }
    ],
-   "sentiment": 0.1,
-   "new": true
+   "sentiment": 0.2,
+   "new": false
   },
   {
    "symbol": "MAXHEALTH",
    "name": "Max Healthcare Institute Ltd.",
-   "score": 75.4,
+   "score": 76.1,
    "stars": "\u2605\u2605\u2605\u2605\u2606",
-   "close": 997.2,
-   "chg": 5.29,
-   "vol_x": 2.33,
+   "close": 1000.7,
+   "chg": 5.66,
+   "vol_x": 2.23,
    "stop": 947.15,
-   "target": 1017.14,
+   "target": 1020.71,
    "news": [
     {
      "title": "MAXHEALTH Share Price Today - Max Healthcare Institute on NSE/BSE - scanx.trade",
@@ -2262,7 +2258,7 @@
   }
  ],
  "live": {
-  "open": 21
+  "open": 22
  },
  "tracker": [
   {
@@ -2276,7 +2272,7 @@
    "target2": 846.23,
    "status": "OPEN",
    "days": 2,
-   "ret": -2.37
+   "ret": -2.07
   },
   {
    "date": "2026-11-12",
@@ -2289,7 +2285,7 @@
    "target2": 10965.9,
    "status": "OPEN",
    "days": 2,
-   "ret": -0.21
+   "ret": -0.49
   },
   {
    "date": "2026-11-12",
@@ -2302,7 +2298,7 @@
    "target2": 2117.5,
    "status": "OPEN",
    "days": 2,
-   "ret": -2.65
+   "ret": -2.2
   },
   {
    "date": "2026-11-12",
@@ -2315,7 +2311,7 @@
    "target2": 279.52,
    "status": "OPEN",
    "days": 2,
-   "ret": -0.2
+   "ret": -0.88
   },
   {
    "date": "2026-11-12",
@@ -2328,7 +2324,7 @@
    "target2": 368.5,
    "status": "OPEN",
    "days": 2,
-   "ret": -3.0
+   "ret": -3.1
   },
   {
    "date": "2026-11-12",
@@ -2341,7 +2337,7 @@
    "target2": 1805.32,
    "status": "OPEN",
    "days": 2,
-   "ret": -8.04
+   "ret": -8.45
   },
   {
    "date": "2026-11-12",
@@ -2354,7 +2350,7 @@
    "target2": 1858.34,
    "status": "OPEN",
    "days": 2,
-   "ret": -3.16
+   "ret": -2.88
   },
   {
    "date": "2026-11-12",
@@ -2367,7 +2363,7 @@
    "target2": 2338.05,
    "status": "OPEN",
    "days": 2,
-   "ret": -3.38
+   "ret": -3.03
   },
   {
    "date": "2026-11-12",
@@ -2380,7 +2376,7 @@
    "target2": 781.99,
    "status": "OPEN",
    "days": 2,
-   "ret": -1.16
+   "ret": -0.49
   },
   {
    "date": "2026-11-12",
@@ -2393,7 +2389,7 @@
    "target2": 2448.27,
    "status": "OPEN",
    "days": 2,
-   "ret": 0.97
+   "ret": 0.57
   },
   {
    "date": "2026-11-13",
@@ -2406,7 +2402,7 @@
    "target2": 4092.0,
    "status": "OPEN",
    "days": 1,
-   "ret": -0.29
+   "ret": -0.05
   },
   {
    "date": "2026-11-13",
@@ -2419,7 +2415,7 @@
    "target2": 383.9,
    "status": "OPEN",
    "days": 1,
-   "ret": -0.09
+   "ret": 0.1
   },
   {
    "date": "2026-11-13",
@@ -2432,7 +2428,7 @@
    "target2": 2133.89,
    "status": "OPEN",
    "days": 1,
-   "ret": -3.4
+   "ret": -2.95
   },
   {
    "date": "2026-11-13",
@@ -2445,7 +2441,7 @@
    "target2": 461.45,
    "status": "OPEN",
    "days": 1,
-   "ret": -3.16
+   "ret": -2.91
   },
   {
    "date": "2026-11-13",
@@ -2458,7 +2454,7 @@
    "target2": 4862.0,
    "status": "OPEN",
    "days": 1,
-   "ret": -2.57
+   "ret": -2.24
   },
   {
    "date": "2026-11-13",
@@ -2471,7 +2467,7 @@
    "target2": 5102.02,
    "status": "OPEN",
    "days": 1,
-   "ret": -0.13
+   "ret": 0.52
   },
   {
    "date": "2026-11-13",
@@ -2484,7 +2480,7 @@
    "target2": 23185.8,
    "status": "OPEN",
    "days": 1,
-   "ret": 2.81
+   "ret": 2.89
   },
   {
    "date": "2026-11-13",
@@ -2497,7 +2493,7 @@
    "target2": 878.57,
    "status": "OPEN",
    "days": 1,
-   "ret": 0.2
+   "ret": 0.25
   },
   {
    "date": "2026-11-13",
@@ -2510,7 +2506,7 @@
    "target2": 259.48,
    "status": "OPEN",
    "days": 1,
-   "ret": -1.47
+   "ret": -1.65
   },
   {
    "date": "2026-11-13",
@@ -2523,17 +2519,30 @@
    "target2": 12041.7,
    "status": "OPEN",
    "days": 1,
-   "ret": 2.03
+   "ret": 1.98
+  },
+  {
+   "date": "2026-11-16",
+   "symbol": "RADICO",
+   "setup": "Pullback",
+   "score": 77.7,
+   "entry": 4662.4,
+   "stop": 4313.48,
+   "target1": 4895.52,
+   "target2": 5128.64,
+   "status": "OPEN",
+   "days": 0,
+   "ret": NaN
   },
   {
    "date": "2026-11-16",
    "symbol": "LICHSGFIN",
    "setup": "52W High",
-   "score": 72.0,
-   "entry": 600.45,
-   "stop": 556.04,
-   "target1": 630.47,
-   "target2": 660.5,
+   "score": 72.5,
+   "entry": 601.85,
+   "stop": 556.42,
+   "target1": 631.94,
+   "target2": 662.03,
    "status": "OPEN",
    "days": 0,
    "ret": NaN
