@@ -47,7 +47,8 @@
   "F:LAURUSLABS": "11:15",
   "S:APOLLOHOSP": "12:15",
   "S:LICHSGFIN": "13:15",
-  "B:LICHSGFIN": "14:15"
+  "B:LICHSGFIN": "14:15",
+  "S:FLUOROCHEM": "15:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -77,7 +78,8 @@
   "2026-11-16:BELRISE": "OPEN",
   "2026-11-16:RADICO": "OPEN",
   "2026-11-16:BHARTIARTL": "OPEN",
-  "2026-11-16:LICHSGFIN": "OPEN"
+  "2026-11-16:LICHSGFIN": "OPEN",
+  "2026-11-16:KPRMILL": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-16"
