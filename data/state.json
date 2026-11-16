@@ -44,7 +44,8 @@
   "B:MAXHEALTH": "10:15",
   "B:ITC": "10:15",
   "F:PREMIERENE": "11:15",
-  "F:LAURUSLABS": "11:15"
+  "F:LAURUSLABS": "11:15",
+  "S:APOLLOHOSP": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
