@@ -333,7 +333,7 @@ def falls_text(o):
     return "\n".join(L)
 
 
-SEGMENTS_ORDER = [("Nifty 50", 0), ("Nifty Next 50", 0), ("Midcap 150", 0), ("Smallcap 250", 0)]
+SEGMENTS_ORDER = [("Nifty 50", 0), ("Nifty Next 50", 0), ("Midcap 150", 0)]
 
 
 def big_falls_text(o):

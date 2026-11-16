@@ -380,6 +380,7 @@ def main():
     df["pre"] = df.tech + df.rs_pts + df.edge_pts + 5 * (df.signals.str.len() > 0)
 
     df["segment"] = df.symbol.map(segment).fillna("Other")
+    df = df[df.segment != "Smallcap 250"].reset_index(drop=True)  # small caps have their own repo
     cand = df[(df.signals.str.len() > 0) | (df.trend & (df.tech >= 45))]
     # best candidates overall + the best of EACH segment, so every list gets filled
     per_seg = cand.sort_values("pre", ascending=False).groupby("segment").head(SEG_N)
@@ -599,6 +600,8 @@ def main():
     # Separate lists per index segment (small caps get stricter rules)
     seg_lists = {}
     for name, _ in data.SEGMENTS:
+        if name == "Smallcap 250":
+            continue
         ps = sorted([p for p in picks if p["segment"] == name and p["label"] not in ("WATCHLIST", "AVOID")],
                     key=lambda p: -p["score"])
         ps = ps if not pause_new else []
