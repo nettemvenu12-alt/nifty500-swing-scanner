@@ -31,7 +31,8 @@
   "S:BAJFINANCE": "11:15",
   "S:PRESTIGE": "11:15",
   "B:MOTILALOFS": "11:15",
-  "B:360ONE": "11:15"
+  "B:360ONE": "11:15",
+  "S:BSE": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -70,7 +71,8 @@
   "2026-11-17:TMCV": "OPEN",
   "2026-11-17:GVT&D": "OPEN",
   "2026-11-17:COFORGE": "OPEN",
-  "2026-11-17:DLF": "OPEN"
+  "2026-11-17:DLF": "OPEN",
+  "2026-11-17:BSE": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-16"
