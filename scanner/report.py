@@ -348,3 +348,25 @@ def big_falls_text(o):
                      + (", ".join(f"{_esc(x['symbol'])} {x['chg']:+.0f}%" for x in lst) if lst else f"{lim}%+ down ledu"))
     L.append("\n<i>Information only – padina stock ni konadaniki 2. Stock fallen list lo ✅ BUY OK chudandi.</i>")
     return "\n".join(L)
+
+
+def simple_plan_text(o, amount=50000):
+    """Separate hourly message (user, 17 Nov 2026): only 90%/85% MODE stocks, with the user's own plan in plain words:
+    Rs 50k, sell all at +4%, add Rs 25k at -10% and -20%, sell after 2 months if the target never comes."""
+    when = f"{o['generated'][-9:-4]}" if o.get("intraday") else o["data_date"]
+    picks = [p for p in o["picks"] if p.get("mode90")] + [p for p in o["picks"] if p.get("mode85") and not p.get("mode90")]
+    picks = [p for p in picks if p.get("segment") != "Smallcap 250"
+             and not any("Results in" in w for w in p.get("warnings") or [])][:3]
+    L = [f"🟢 <b>4. EE ROJU KONE STOCK</b> · {when}"]
+    if o.get("pause_new") or not picks:
+        L.append("\n❌ Ippudu 90% / 85% stock ledu. Emi konakandi, wait cheyyandi.")
+        return "\n".join(L)
+    for i, p in enumerate(picks, 1):
+        c = float(p["close"])
+        L += [f"\n{i}. <b>{_esc(p['symbol'])}</b> ({_esc(p.get('name') or '')}) ~₹{c:,.1f} · {'90%' if p.get('mode90') else '85%'}",
+              f"   Konandi: ₹{amount:,} (~{int(amount // c)} shares)",
+              f"   Ammandi: ₹{c * 1.04:,.1f} (+4%) vachinappudu mottam",
+              f"   Padithe: ₹{c * 0.9:,.1f} (-10%) ki +₹{amount // 2:,} · ₹{c * 0.8:,.1f} (-20%) ki +₹{amount // 2:,}",
+              "   2 nelalaina target raakapothe aa roju ammeyandi"]
+    L.append("\nGatha 10 years lo 10 lo 9 sarlu labham. Guarantee kaadu.")
+    return "\n".join(L)
