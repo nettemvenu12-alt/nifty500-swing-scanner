@@ -742,7 +742,8 @@ def main():
         telegram(report.telegram_text(out))
         # separate message every run (hourly): swing list above, 5%+ fall list here
         telegram(report.falls_text(out))
-        telegram(report.simple_plan_text(out))  # 4. simple one-stock plan (user's 50k / +4% / average-down rule)
+        if dt.time(15, 0) <= now.time() <= dt.time(15, 45):  # once a day, ~3:15 PM run: buy before the close (user: hourly changes confused)
+            telegram(report.simple_plan_text(out))  # 4. simple one-stock plan (user's 50k / +4% / average-down rule)
     if send_big:  # once a day after the close: week 10%+ / month 20%+ fallers
         telegram(report.big_falls_text(out))
     print(md[:3000])
