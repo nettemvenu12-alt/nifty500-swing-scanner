@@ -18,7 +18,9 @@
   "S:MEESHO": "10:15",
   "S:GLENMARK": "10:15",
   "S:ETERNAL": "10:15",
-  "S:FEDERALBNK": "10:15"
+  "S:FEDERALBNK": "10:15",
+  "S:MANKIND": "11:15",
+  "S:INDHOTEL": "11:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -61,7 +63,8 @@
   "2026-11-17:BSE": "OPEN",
   "2026-11-17:LICHSGFIN": "OPEN",
   "2026-11-18:MAHABANK": "OPEN",
-  "2026-11-18:COFORGE": "OPEN"
+  "2026-11-18:COFORGE": "OPEN",
+  "2026-11-18:GAIL": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-17"
