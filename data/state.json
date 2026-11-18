@@ -11,7 +11,14 @@
   "S:BSE": "09:15",
   "S:MEDANTA": "09:15",
   "S:ABCAPITAL": "09:15",
-  "S:TVSMOTOR": "09:15"
+  "S:TVSMOTOR": "09:15",
+  "S:MAHABANK": "10:15",
+  "S:COFORGE": "10:15",
+  "S:MCX": "10:15",
+  "S:MEESHO": "10:15",
+  "S:GLENMARK": "10:15",
+  "S:ETERNAL": "10:15",
+  "S:FEDERALBNK": "10:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -52,7 +59,9 @@
   "2026-11-17:COFORGE": "OPEN",
   "2026-11-17:DLF": "OPEN",
   "2026-11-17:BSE": "OPEN",
-  "2026-11-17:LICHSGFIN": "OPEN"
+  "2026-11-17:LICHSGFIN": "OPEN",
+  "2026-11-18:MAHABANK": "OPEN",
+  "2026-11-18:COFORGE": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-17"
