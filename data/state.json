@@ -27,7 +27,10 @@
   "B:CIPLA": "13:15",
   "F:NATIONALUM": "14:45",
   "F:SAIL": "15:15",
-  "F:POLYCAB": "15:15"
+  "F:POLYCAB": "15:15",
+  "S:PHOENIXLTD": "17:00",
+  "S:BOSCHLTD": "17:00",
+  "F:TITAN": "17:00"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
