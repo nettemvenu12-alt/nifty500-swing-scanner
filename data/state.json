@@ -20,11 +20,14 @@
   "S:ETERNAL": "10:15",
   "S:FEDERALBNK": "10:15",
   "S:MANKIND": "11:15",
-  "S:INDHOTEL": "11:15"
+  "S:INDHOTEL": "11:15",
+  "S:PNB": "12:15",
+  "S:KOTAKBANK": "12:15",
+  "F:KALYANKJIL": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
-  "2026-11-13:ANGELONE": "T1 HIT (running)",
+  "2026-11-13:ANGELONE": "T1 + EXIT AT COST",
   "2026-11-13:PAYTM": "OPEN",
   "2026-11-13:GVT&D": "OPEN",
   "2026-11-13:BHEL": "OPEN",
