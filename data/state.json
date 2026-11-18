@@ -25,7 +25,9 @@
   "S:KOTAKBANK": "12:15",
   "F:KALYANKJIL": "12:15",
   "B:CIPLA": "13:15",
-  "F:NATIONALUM": "14:45"
+  "F:NATIONALUM": "14:45",
+  "F:SAIL": "15:15",
+  "F:POLYCAB": "15:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
