@@ -40,7 +40,10 @@
   "B:EICHERMOT": "11:15",
   "S:MOTHERSON": "12:15",
   "B:HYUNDAI": "12:15",
-  "S:LGEINDIA": "13:15"
+  "S:LGEINDIA": "13:15",
+  "S:PETRONET": "14:15",
+  "S:MARICO": "14:15",
+  "B:FLUOROCHEM": "14:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -87,7 +90,8 @@
   "2026-11-18:GAIL": "OPEN",
   "2026-11-19:MAHABANK": "OPEN",
   "2026-11-19:GAIL": "OPEN",
-  "2026-11-19:MOTHERSON": "OPEN"
+  "2026-11-19:MOTHERSON": "OPEN",
+  "2026-11-19:FLUOROCHEM": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-18"
