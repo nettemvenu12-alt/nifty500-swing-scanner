@@ -44,7 +44,9 @@
   "S:PETRONET": "14:15",
   "S:MARICO": "14:15",
   "B:FLUOROCHEM": "14:15",
-  "S:CHOLAFIN": "14:45"
+  "S:CHOLAFIN": "14:45",
+  "S:BHEL": "15:15",
+  "B:ENDURANCE": "15:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -93,7 +95,8 @@
   "2026-11-19:GAIL": "OPEN",
   "2026-11-19:MOTHERSON": "OPEN",
   "2026-11-19:FLUOROCHEM": "OPEN",
-  "2026-11-19:LGEINDIA": "OPEN"
+  "2026-11-19:LGEINDIA": "OPEN",
+  "2026-11-19:BHEL": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-19"
