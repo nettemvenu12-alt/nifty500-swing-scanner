@@ -46,7 +46,9 @@
   "B:FLUOROCHEM": "14:15",
   "S:CHOLAFIN": "14:45",
   "S:BHEL": "15:15",
-  "B:ENDURANCE": "15:15"
+  "B:ENDURANCE": "15:15",
+  "S:ADANIPOWER": "17:00",
+  "B:HEROMOTOCO": "17:00"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
