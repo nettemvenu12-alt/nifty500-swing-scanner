@@ -16,7 +16,27 @@
   "S:BAJFINANCE": "09:15",
   "S:INDIGO": "09:15",
   "S:PRESTIGE": "09:15",
-  "F:PAYTM": "09:15"
+  "F:PAYTM": "09:15",
+  "S:MAHABANK": "10:15",
+  "S:GAIL": "10:15",
+  "S:PNB": "10:15",
+  "S:PHOENIXLTD": "10:15",
+  "S:MCX": "10:15",
+  "S:KALYANKJIL": "10:15",
+  "S:FLUOROCHEM": "10:15",
+  "S:MEESHO": "10:15",
+  "S:BANKINDIA": "10:15",
+  "S:BSE": "10:15",
+  "S:TVSMOTOR": "10:15",
+  "S:MOTILALOFS": "10:15",
+  "B:IREDA": "10:15",
+  "B:BLUESTARCO": "10:15",
+  "B:VOLTAS": "10:15",
+  "B:BANKBARODA": "10:15",
+  "B:IDFCFIRSTB": "10:15",
+  "B:MARUTI": "10:15",
+  "B:MAHABANK": "10:15",
+  "B:ITCHOTELS": "10:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -26,7 +46,7 @@
   "2026-11-13:BHEL": "OPEN",
   "2026-11-13:NEULANDLAB": "OPEN",
   "2026-11-13:GESHIP": "OPEN",
-  "2026-11-13:CRAFTSMAN": "OPEN",
+  "2026-11-13:CRAFTSMAN": "T1 HIT (running)",
   "2026-11-12:PAYTM": "OPEN",
   "2026-11-12:MEESHO": "OPEN",
   "2026-11-12:DLF": "OPEN",
@@ -60,7 +80,9 @@
   "2026-11-17:LICHSGFIN": "OPEN",
   "2026-11-18:MAHABANK": "OPEN",
   "2026-11-18:COFORGE": "OPEN",
-  "2026-11-18:GAIL": "OPEN"
+  "2026-11-18:GAIL": "OPEN",
+  "2026-11-19:MAHABANK": "OPEN",
+  "2026-11-19:GAIL": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-18"
