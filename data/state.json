@@ -37,7 +37,9 @@
   "B:MARUTI": "10:15",
   "B:MAHABANK": "10:15",
   "B:ITCHOTELS": "10:15",
-  "B:EICHERMOT": "11:15"
+  "B:EICHERMOT": "11:15",
+  "S:MOTHERSON": "12:15",
+  "B:HYUNDAI": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -83,7 +85,8 @@
   "2026-11-18:COFORGE": "OPEN",
   "2026-11-18:GAIL": "OPEN",
   "2026-11-19:MAHABANK": "OPEN",
-  "2026-11-19:GAIL": "OPEN"
+  "2026-11-19:GAIL": "OPEN",
+  "2026-11-19:MOTHERSON": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-18"

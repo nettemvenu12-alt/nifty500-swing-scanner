@@ -1,62 +1,65 @@
 # Nifty 500 Swing & BTST Scan — 2026-11-19
 
-_Generated 2026-11-19 11:15 IST_
+_Generated 2026-11-19 12:15 IST_
 
-**Market:** POSITIVE (Nifty 500 23729.7, 1M 7.66%, RSI 68.4) · 63.5% stocks above 50 EMA · 54.6% above 200 EMA · 16 at 52W high
+**Market:** POSITIVE (Nifty 500 23762.15, 1M 7.81%, RSI 68.8) · 63.9% stocks above 50 EMA · 54.6% above 200 EMA · 15 at 52W high
 
 ## ⭐ Top pick (simple answer: buy this one)
 
-**MAHABANK** – Bank of Maharashtra · ★★★★☆ BUY · score 76.5/100
-Setup: A+ Momentum, 52W High · Buy ~₹97.08 · Stop ₹90.4 (-6.9%) · T1 ₹101.93 (+5%) · T2 ₹106.79 (+10%) · up to 60 days
+**MAHABANK** – Bank of Maharashtra · ★★★★★ STRONG BUY · score 86.9/100
+Setup: A+ Momentum, Breakout, 52W High · Buy ~₹97.75 · Stop ₹91.07 (-6.8%) · T1 ₹102.64 (+5%) · T2 ₹107.52 (+10%) · up to 60 days
 
 ## Swing picks (hold up to 60 days, target 5–10%)
 
 | # | Stock | Rating | Score | Setup | Buy | Stop | T1 | T2 | Hist win% | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MAHABANK** | ★★★★☆ BUY | 76.5 | A+ Momentum, 52W High | 97.08 | 90.4 | 101.93 | 106.79 | 73.9 | Trading below today's VWAP – wait; RSI overbought – wait for dip |
-| 2 | **GROWW** | ★★★★★ WATCHLIST | 88.4 | Uptrend | 224.41 | 208.55 | 235.63 | 246.85 | 66.3 |  |
-| 3 | **PNB** | ★★★★★ WATCHLIST | 86.2 | Uptrend | 154.7 | 144.1 | 162.43 | 170.17 | 66.7 | RSI overbought – wait for dip |
-| 4 | **ETERNAL** | ★★★★★ WATCHLIST | 82.0 | Uptrend | 362.0 | 345.5 | 380.1 | 398.2 | 75.0 |  |
-| 5 | **TVSMOTOR** | ★★★★★ WATCHLIST | 81.8 | Uptrend | 4550.0 | 4356.2 | 4777.5 | 5005.0 | 57.1 |  |
-| 6 | **BOSCHLTD** | ★★★★☆ WATCHLIST | 79.5 | Uptrend | 49435.0 | 47951.95 | 51906.75 | 54378.5 | 66.7 |  |
-| 7 | **INDHOTEL** | ★★★★☆ WATCHLIST | 79.3 | Uptrend | 891.15 | 851.05 | 935.71 | 980.27 | 72.7 |  |
-| 8 | **MEESHO** | ★★★★☆ WATCHLIST | 78.7 | Uptrend | 257.83 | 236.09 | 270.72 | 283.61 | 66.3 |  |
-| 9 | **LENSKART** | ★★★★☆ WATCHLIST | 78.1 | Uptrend | 743.95 | 701.5 | 781.15 | 818.35 | 66.3 |  |
-| 10 | **GAIL** | ★★★★☆ WATCHLIST | 77.3 | Uptrend | 190.49 | 183.52 | 200.01 | 209.54 | 62.5 | Trading below today's VWAP – wait |
-| 11 | **ABCAPITAL** | ★★★★☆ WATCHLIST | 75.4 | Uptrend | 417.35 | 388.25 | 438.22 | 459.09 | 66.7 |  |
-| 12 | **BAJFINANCE** | ★★★★☆ WATCHLIST | 73.6 | Uptrend | 1099.0 | 1026.65 | 1153.95 | 1208.9 | 50.0 |  |
-| 13 | **APOLLOHOSP** | ★★★★☆ WATCHLIST | 72.8 | Uptrend | 8696.5 | 8252.0 | 9131.33 | 9566.15 | 50.0 | Trading below today's VWAP – wait |
-| 14 | **MEDANTA** | ★★★★☆ WATCHLIST | 72.4 | Uptrend | 1435.0 | 1328.53 | 1506.75 | 1578.5 | 50.0 | Trading below today's VWAP – wait |
-| 15 | **DLF** | ★★★★☆ WATCHLIST | 71.8 | Uptrend | 764.4 | 725.2 | 802.62 | 840.84 | 54.5 | Trading below today's VWAP – wait |
-| 16 | **BSE** | ★★★★☆ WATCHLIST | 71.2 | Uptrend | 3770.0 | 3651.7 | 3958.5 | 4147.0 | 75.0 | Trading below today's VWAP – wait |
-| 17 | **KPRMILL** | ★★★★☆ WATCHLIST | 71.0 | Uptrend | 1219.1 | 1137.8 | 1280.05 | 1341.01 | 50.0 | Trading below today's VWAP – wait |
-| 18 | **INDIGO** | ★★★☆☆ WATCHLIST | 65.8 | Uptrend | 5556.4 | 5290.6 | 5834.22 | 6112.04 | 75.0 | Trading below today's VWAP – wait |
-| 19 | **PRESTIGE** | ★★★☆☆ WATCHLIST | 62.5 | Uptrend | 1663.7 | 1571.0 | 1746.88 | 1830.07 | 57.1 | Weekly trend not confirmed; Trading below today's VWAP – wait |
+| 1 | **MAHABANK** | ★★★★★ STRONG BUY | 86.9 | A+ Momentum, Breakout, 52W High | 97.75 | 91.07 | 102.64 | 107.52 | 72.6 | RSI overbought – wait for dip |
+| 2 | **MOTHERSON** | ★★★★☆ BUY | 73.5 | Pullback | 163.33 | 152.56 | 171.5 | 179.66 | 70.8 |  |
+| 3 | **PNB** | ★★★★★ WATCHLIST | 85.9 | Uptrend | 154.96 | 144.36 | 162.71 | 170.46 | 66.7 | RSI overbought – wait for dip |
+| 4 | **MANKIND** | ★★★★★ WATCHLIST | 82.8 | Uptrend | 2628.9 | 2489.0 | 2760.34 | 2891.79 | 66.3 |  |
+| 5 | **TVSMOTOR** | ★★★★★ WATCHLIST | 82.0 | Uptrend | 4561.3 | 4356.2 | 4789.36 | 5017.43 | 57.1 |  |
+| 6 | **MEDANTA** | ★★★★★ WATCHLIST | 81.4 | Uptrend | 1465.7 | 1355.52 | 1538.98 | 1612.27 | 50.0 |  |
+| 7 | **BOSCHLTD** | ★★★★☆ WATCHLIST | 78.9 | Uptrend | 49635.0 | 48145.95 | 52116.75 | 54598.5 | 66.7 |  |
+| 8 | **LENSKART** | ★★★★☆ WATCHLIST | 78.7 | Uptrend | 745.25 | 701.5 | 782.51 | 819.78 | 66.3 |  |
+| 9 | **MEESHO** | ★★★★☆ WATCHLIST | 78.7 | Uptrend | 257.97 | 236.23 | 270.87 | 283.77 | 66.3 |  |
+| 10 | **GROWW** | ★★★★☆ WATCHLIST | 78.5 | Uptrend | 220.6 | 208.55 | 231.63 | 242.66 | 66.3 | Trading below today's VWAP – wait |
+| 11 | **BANKINDIA** | ★★★★☆ WATCHLIST | 76.8 | Uptrend | 160.78 | 149.52 | 168.82 | 176.86 | 71.4 | Weekly trend not confirmed |
+| 12 | **APOLLOHOSP** | ★★★★☆ WATCHLIST | 76.3 | Uptrend | 8739.5 | 8257.6 | 9176.48 | 9613.45 | 50.0 |  |
+| 13 | **DLF** | ★★★★☆ WATCHLIST | 76.3 | Uptrend | 766.5 | 725.2 | 804.82 | 843.15 | 54.5 |  |
+| 14 | **KPRMILL** | ★★★★☆ WATCHLIST | 76.0 | Uptrend | 1218.6 | 1137.8 | 1279.53 | 1340.46 | 57.1 |  |
+| 15 | **BSE** | ★★★★☆ WATCHLIST | 75.7 | Uptrend | 3773.4 | 3651.7 | 3962.07 | 4150.74 | 75.0 |  |
+| 16 | **ABCAPITAL** | ★★★★☆ WATCHLIST | 75.6 | Uptrend | 416.25 | 387.15 | 437.06 | 457.88 | 66.7 |  |
+| 17 | **INDHOTEL** | ★★★★☆ WATCHLIST | 75.5 | Uptrend | 887.15 | 851.05 | 931.51 | 975.87 | 72.7 | Trading below today's VWAP – wait |
+| 18 | **BAJFINANCE** | ★★★★☆ WATCHLIST | 75.4 | Uptrend | 1099.75 | 1027.24 | 1154.74 | 1209.73 | 50.0 |  |
+| 19 | **LODHA** | ★★★★☆ WATCHLIST | 74.5 | Uptrend | 1195.7 | 1127.6 | 1255.48 | 1315.27 | 25.0 | Trading below today's VWAP – wait |
+| 20 | **ETERNAL** | ★★★★☆ WATCHLIST | 72.6 | Uptrend | 359.75 | 345.5 | 377.74 | 395.72 | 75.0 | Trading below today's VWAP – wait |
+| 21 | **INDIGO** | ★★★☆☆ WATCHLIST | 64.8 | Uptrend | 5543.9 | 5290.6 | 5821.09 | 6098.29 | 75.0 | Trading below today's VWAP – wait |
+| 22 | **PRESTIGE** | ★★★☆☆ WATCHLIST | 62.2 | Uptrend | 1659.4 | 1571.0 | 1742.37 | 1825.34 | 57.1 | Weekly trend not confirmed; Trading below today's VWAP – wait |
 
 ## BTST (buy near close today, sell tomorrow)
 
 | Stock | Rating | Close | Day % | Vol x | Stop | Target |
 |---|---|---|---|---|---|---|
-| **IREDA** | ★★★★★ | 127.29 | 6.25 | 9.79 | 119.7 | 129.84 |
-| **BLUESTARCO** | ★★★★★ | 1704.0 | 5.07 | 6.94 | 1621.8 | 1738.08 |
-| **EICHERMOT** | ★★★★★ | 8029.0 | 2.57 | 2.17 | 7675.0 | 8189.58 |
-| **VOLTAS** | ★★★★★ | 1211.9 | 6.81 | 5.69 | 1131.0 | 1236.14 |
-| **MARUTI** | ★★★★★ | 13430.0 | 6.32 | 2.93 | 12602.0 | 13698.6 |
-| **IDFCFIRSTB** | ★★★★★ | 85.28 | 3.43 | 2.67 | 82.41 | 86.99 |
+| **BLUESTARCO** | ★★★★★ | 1722.4 | 6.2 | 6.01 | 1621.8 | 1756.85 |
+| **IREDA** | ★★★★★ | 128.04 | 6.88 | 8.77 | 119.7 | 130.6 |
+| **VOLTAS** | ★★★★★ | 1226.8 | 8.13 | 6.08 | 1131.0 | 1251.34 |
+| **MARUTI** | ★★★★★ | 13482.0 | 6.73 | 2.63 | 12602.0 | 13751.64 |
+| **IDFCFIRSTB** | ★★★★☆ | 85.4 | 3.58 | 2.34 | 82.41 | 87.11 |
+| **HYUNDAI** | ★★★★☆ | 2195.0 | 3.47 | 2.09 | 2082.6 | 2238.9 |
 
 ## Backtest (last ~3 years, all Nifty 500)
 
 | Setup | Trades | Hit +5% before stop | Hit +10% | Profitable % | Avg result % | Stopped % |
 |---|---|---|---|---|---|---|
-| A+ Momentum | 5162 | 63.3 | 33.1 | 63.5 | 1.44 | 36.3 |
-| Results Gap | 222 | 74.8 | 38.3 | 75.2 | 1.8 | 24.3 |
-| Breakout | 2907 | 66.3 | 34.3 | 66.7 | 1.52 | 33.0 |
-| 52W High | 3726 | 65.8 | 34.3 | 66.1 | 1.52 | 33.4 |
+| A+ Momentum | 5161 | 63.3 | 33.1 | 63.4 | 1.44 | 36.3 |
+| Results Gap | 223 | 74.9 | 38.1 | 75.3 | 1.81 | 24.2 |
+| Breakout | 2906 | 66.3 | 34.3 | 66.7 | 1.52 | 33.0 |
+| 52W High | 3724 | 65.8 | 34.3 | 66.1 | 1.53 | 33.5 |
 | Squeeze | 2728 | 61.1 | 29.9 | 61.3 | 0.97 | 38.4 |
 | Pullback | 9408 | 57.5 | 29.7 | 57.6 | 1.08 | 42.2 |
 
-BTST: 3946 trades · gap-up next day 72.4% · touched +1% next day 71.2% · avg open 0.42% · avg best 2.4%
+BTST: 3947 trades · gap-up next day 72.3% · touched +1% next day 71.2% · avg open 0.42% · avg best 2.4%
 
-## Live track record: 5 closed picks · win 20.0% · avg -6.88% · 26 open
+## Live track record: 5 closed picks · win 20.0% · avg -6.88% · 27 open
 
 > Educational screener, not investment advice. No system wins 99% of the time; always use the stop-loss and size positions so one loss is small.
