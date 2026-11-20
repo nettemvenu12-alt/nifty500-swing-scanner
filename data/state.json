@@ -53,7 +53,11 @@
   "B:ASTERDM": "13:15",
   "S:MOTHERSON": "14:15",
   "S:ANTHEM": "14:15",
-  "S:AUROPHARMA": "14:15"
+  "S:AUROPHARMA": "14:15",
+  "S:GLAXO": "15:15",
+  "S:ULTRACEMCO": "15:15",
+  "S:TMCV": "15:15",
+  "B:ULTRACEMCO": "15:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -113,7 +117,9 @@
   "2026-11-20:DLF": "OPEN",
   "2026-11-20:LGEINDIA": "OPEN",
   "2026-11-20:MOTHERSON": "OPEN",
-  "2026-11-20:MAHABANK": "OPEN"
+  "2026-11-20:MAHABANK": "OPEN",
+  "2026-11-20:GLAXO": "OPEN",
+  "2026-11-20:ULTRACEMCO": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-20"
