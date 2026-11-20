@@ -45,7 +45,12 @@
   "S:UNIONBANK": "12:15",
   "S:ICICIBANK": "12:15",
   "B:MARUTI": "12:15",
-  "B:AXISBANK": "12:15"
+  "B:AXISBANK": "12:15",
+  "S:JSWINFRA": "13:15",
+  "S:BSE": "13:15",
+  "S:LICHSGFIN": "13:15",
+  "B:NH": "13:15",
+  "B:ASTERDM": "13:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -70,7 +75,7 @@
   "2026-11-13:ABCAPITAL": "OPEN",
   "2026-11-13:RADICO": "OPEN",
   "2026-11-13:GRAPHITE": "OPEN",
-  "2026-11-13:CUB": "OPEN",
+  "2026-11-13:CUB": "T1 HIT (running)",
   "2026-11-16:MRPL": "OPEN",
   "2026-11-16:BELRISE": "OPEN",
   "2026-11-16:RADICO": "OPEN",
@@ -101,7 +106,9 @@
   "2026-11-20:COFORGE": "OPEN",
   "2026-11-20:NYKAA": "OPEN",
   "2026-11-20:AXISBANK": "OPEN",
-  "2026-11-20:MEESHO": "OPEN"
+  "2026-11-20:MEESHO": "OPEN",
+  "2026-11-20:DLF": "OPEN",
+  "2026-11-20:LGEINDIA": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-19"
