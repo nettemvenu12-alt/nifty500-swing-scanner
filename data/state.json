@@ -57,7 +57,8 @@
   "S:GLAXO": "15:15",
   "S:ULTRACEMCO": "15:15",
   "S:TMCV": "15:15",
-  "B:ULTRACEMCO": "15:15"
+  "B:ULTRACEMCO": "15:15",
+  "S:BANKINDIA": "17:00"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -119,8 +120,9 @@
   "2026-11-20:MOTHERSON": "OPEN",
   "2026-11-20:MAHABANK": "OPEN",
   "2026-11-20:GLAXO": "OPEN",
-  "2026-11-20:ULTRACEMCO": "OPEN"
+  "2026-11-20:ULTRACEMCO": "OPEN",
+  "2026-11-20:FEDERALBNK": "OPEN"
  },
- "weekly_sent": "2026-W46",
+ "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-20"
 }
