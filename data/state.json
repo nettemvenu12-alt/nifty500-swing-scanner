@@ -20,7 +20,23 @@
   "S:CHOLAFIN": "09:15",
   "S:BAJFINANCE": "09:15",
   "S:PRESTIGE": "09:15",
-  "S:ADANIGREEN": "09:15"
+  "S:ADANIGREEN": "09:15",
+  "S:TECHM": "10:15",
+  "S:PERSISTENT": "10:15",
+  "S:LGEINDIA": "10:15",
+  "S:KOTAKBANK": "10:15",
+  "S:COFORGE": "10:15",
+  "S:GROWW": "10:15",
+  "S:MAHABANK": "10:15",
+  "S:NYKAA": "10:15",
+  "S:MEESHO": "10:15",
+  "S:360ONE": "10:15",
+  "B:APOLLOHOSP": "10:15",
+  "B:INDUSINDBK": "10:15",
+  "B:BAJAJHLDNG": "10:15",
+  "B:HAVELLS": "10:15",
+  "B:FORTIS": "10:15",
+  "F:KALYANKJIL": "10:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -70,7 +86,9 @@
   "2026-11-19:MOTHERSON": "OPEN",
   "2026-11-19:FLUOROCHEM": "OPEN",
   "2026-11-19:LGEINDIA": "OPEN",
-  "2026-11-19:BHEL": "OPEN"
+  "2026-11-19:BHEL": "OPEN",
+  "2026-11-20:APOLLOHOSP": "OPEN",
+  "2026-11-20:TECHM": "OPEN"
  },
  "weekly_sent": "2026-W46",
  "bigfalls_sent": "2026-11-19"
