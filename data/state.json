@@ -56,7 +56,8 @@
   "S:JSWINFRA": "12:15",
   "S:MCX": "12:15",
   "S:ICICIBANK": "13:15",
-  "B:DABUR": "13:15"
+  "B:DABUR": "13:15",
+  "B:JSWINFRA": "14:45"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -129,5 +130,5 @@
   "2026-11-23:JSWINFRA": "OPEN"
  },
  "weekly_sent": "2026-W47",
- "bigfalls_sent": "2026-11-20"
+ "bigfalls_sent": "2026-11-23"
 }
