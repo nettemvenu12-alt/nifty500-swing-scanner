@@ -54,7 +54,9 @@
   "S:BANKINDIA": "11:15",
   "S:LAURUSLABS": "12:15",
   "S:JSWINFRA": "12:15",
-  "S:MCX": "12:15"
+  "S:MCX": "12:15",
+  "S:ICICIBANK": "13:15",
+  "B:DABUR": "13:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
