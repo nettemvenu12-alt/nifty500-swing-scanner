@@ -49,7 +49,9 @@
   "S:GAIL": "10:15",
   "S:MEESHO": "10:15",
   "B:PERSISTENT": "10:15",
-  "F:TATASTEEL": "10:15"
+  "F:TATASTEEL": "10:15",
+  "S:TORNTPHARM": "11:15",
+  "S:BANKINDIA": "11:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
