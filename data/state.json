@@ -51,7 +51,10 @@
   "B:PERSISTENT": "10:15",
   "F:TATASTEEL": "10:15",
   "S:TORNTPHARM": "11:15",
-  "S:BANKINDIA": "11:15"
+  "S:BANKINDIA": "11:15",
+  "S:LAURUSLABS": "12:15",
+  "S:JSWINFRA": "12:15",
+  "S:MCX": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -119,7 +122,9 @@
   "2026-11-23:APOLLOHOSP": "OPEN",
   "2026-11-23:EICHERMOT": "OPEN",
   "2026-11-23:TECHM": "OPEN",
-  "2026-11-23:PERSISTENT": "OPEN"
+  "2026-11-23:PERSISTENT": "OPEN",
+  "2026-11-23:LAURUSLABS": "OPEN",
+  "2026-11-23:JSWINFRA": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-20"
