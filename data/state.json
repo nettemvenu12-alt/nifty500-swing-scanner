@@ -57,7 +57,9 @@
   "S:MCX": "12:15",
   "S:ICICIBANK": "13:15",
   "B:DABUR": "13:15",
-  "B:JSWINFRA": "14:45"
+  "B:JSWINFRA": "14:45",
+  "S:ULTRACEMCO": "09:15",
+  "S:LICHSGFIN": "09:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -127,7 +129,8 @@
   "2026-11-23:TECHM": "OPEN",
   "2026-11-23:PERSISTENT": "OPEN",
   "2026-11-23:LAURUSLABS": "OPEN",
-  "2026-11-23:JSWINFRA": "OPEN"
+  "2026-11-23:JSWINFRA": "OPEN",
+  "2026-11-23:ULTRACEMCO": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-23"
