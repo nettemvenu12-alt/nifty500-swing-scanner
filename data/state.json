@@ -41,7 +41,14 @@
   "S:360ONE": "09:15",
   "S:PRESTIGE": "09:15",
   "B:LTF": "09:15",
-  "F:APLAPOLLO": "09:15"
+  "F:APLAPOLLO": "09:15",
+  "S:PHOENIXLTD": "10:15",
+  "S:MAHABANK": "10:15",
+  "S:ADANIPORTS": "10:15",
+  "B:DABUR": "10:15",
+  "B:SBILIFE": "10:15",
+  "B:ICICILIFE": "10:15",
+  "B:TATACONSUM": "10:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -115,7 +122,8 @@
   "2026-11-23:ULTRACEMCO": "OPEN",
   "2026-11-25:LGEINDIA": "OPEN",
   "2026-11-25:BAJFINANCE": "OPEN",
-  "2026-11-25:TECHM": "OPEN"
+  "2026-11-25:TECHM": "OPEN",
+  "2026-11-25:ZYDUSLIFE": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-23"
