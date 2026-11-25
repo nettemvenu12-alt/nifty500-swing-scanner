@@ -59,7 +59,12 @@
   "B:HINDUNILVR": "11:15",
   "S:INDHOTEL": "12:15",
   "S:DLF": "12:15",
-  "B:DMART": "12:15"
+  "B:DMART": "12:15",
+  "S:AJANTPHARM": "13:15",
+  "S:KOTAKBANK": "13:15",
+  "S:MOTILALOFS": "13:15",
+  "F:LLOYDSME": "13:15",
+  "F:IREDA": "13:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
