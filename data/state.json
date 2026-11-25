@@ -56,7 +56,10 @@
   "S:TVSMOTOR": "11:15",
   "B:BAJAJFINSV": "11:15",
   "B:ITC": "11:15",
-  "B:HINDUNILVR": "11:15"
+  "B:HINDUNILVR": "11:15",
+  "S:INDHOTEL": "12:15",
+  "S:DLF": "12:15",
+  "B:DMART": "12:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -133,7 +136,8 @@
   "2026-11-25:TECHM": "OPEN",
   "2026-11-25:ZYDUSLIFE": "OPEN",
   "2026-11-25:EICHERMOT": "OPEN",
-  "2026-11-25:ICICIBANK": "OPEN"
+  "2026-11-25:ICICIBANK": "OPEN",
+  "2026-11-25:INDIGO": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-23"
