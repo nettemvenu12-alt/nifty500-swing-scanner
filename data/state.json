@@ -48,7 +48,15 @@
   "B:DABUR": "10:15",
   "B:SBILIFE": "10:15",
   "B:ICICILIFE": "10:15",
-  "B:TATACONSUM": "10:15"
+  "B:TATACONSUM": "10:15",
+  "S:EICHERMOT": "11:15",
+  "S:ABB": "11:15",
+  "S:HAL": "11:15",
+  "S:RADICO": "11:15",
+  "S:TVSMOTOR": "11:15",
+  "B:BAJAJFINSV": "11:15",
+  "B:ITC": "11:15",
+  "B:HINDUNILVR": "11:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -123,7 +131,9 @@
   "2026-11-25:LGEINDIA": "OPEN",
   "2026-11-25:BAJFINANCE": "OPEN",
   "2026-11-25:TECHM": "OPEN",
-  "2026-11-25:ZYDUSLIFE": "OPEN"
+  "2026-11-25:ZYDUSLIFE": "OPEN",
+  "2026-11-25:EICHERMOT": "OPEN",
+  "2026-11-25:ICICIBANK": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-23"
