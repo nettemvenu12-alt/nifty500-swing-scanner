@@ -60,7 +60,8 @@
   "S:PAYTM": "14:15",
   "S:LICHSGFIN": "14:15",
   "S:BAJAJHLDNG": "14:45",
-  "S:FEDERALBNK": "14:45"
+  "S:FEDERALBNK": "14:45",
+  "B:BAJAJHLDNG": "17:00"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
