@@ -56,7 +56,9 @@
   "S:BHEL": "12:15",
   "B:BRITANNIA": "12:15",
   "B:MCX": "12:15",
-  "S:MAHABANK": "13:15"
+  "S:MAHABANK": "13:15",
+  "S:PAYTM": "14:15",
+  "S:LICHSGFIN": "14:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -139,7 +141,8 @@
   "2026-11-26:COFORGE": "OPEN",
   "2026-11-26:LAURUSLABS": "OPEN",
   "2026-11-26:PRESTIGE": "OPEN",
-  "2026-11-26:MCX": "OPEN"
+  "2026-11-26:MCX": "OPEN",
+  "2026-11-26:LODHA": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-25"
