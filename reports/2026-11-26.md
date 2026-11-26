@@ -1,63 +1,65 @@
 # Nifty 500 Swing & BTST Scan — 2026-11-26
 
-_Generated 2026-11-26 10:15 IST_
+_Generated 2026-11-26 11:15 IST_
 
-**Market:** BULLISH (Nifty 500 24096.7, 1M 11.51%, RSI 68.0) · 68.7% stocks above 50 EMA · 59.4% above 200 EMA · 21 at 52W high
+**Market:** BULLISH (Nifty 500 24155.3, 1M 11.78%, RSI 68.7) · 69.1% stocks above 50 EMA · 59.0% above 200 EMA · 20 at 52W high
 
 ## ⭐ Top pick (simple answer: buy this one)
 
-**LAURUSLABS** – Laurus Labs Ltd. · ★★★★★ STRONG BUY · score 85.1/100
-Setup: A+ Momentum, 52W High · Buy ~₹2488.6 · Stop ₹2289.38 (-8.0%) · T1 ₹2613.03 (+5%) · T2 ₹2737.46 (+10%) · up to 60 days
+**PRESTIGE** – Prestige Estates Projects Ltd. · ★★★★★ STRONG BUY · score 85.2/100
+Setup: Breakout · Buy ~₹1753.3 · Stop ₹1620.91 (-7.6%) · T1 ₹1840.97 (+5%) · T2 ₹1928.63 (+10%) · up to 60 days
 
 ## Swing picks (hold up to 60 days, target 5–10%)
 
 | # | Stock | Rating | Score | Setup | Buy | Stop | T1 | T2 | Hist win% | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **LAURUSLABS** | ★★★★★ STRONG BUY | 85.1 | A+ Momentum, 52W High | 2488.6 | 2289.38 | 2613.03 | 2737.46 | 70.8 |  |
-| 2 | **PRESTIGE** | ★★★★★ STRONG BUY | 85.1 | Breakout | 1727.9 | 1601.5 | 1814.3 | 1900.69 | 57.1 |  |
-| 3 | **MOTHERSON** | ★★★★☆ BUY | 71.3 | Pullback | 167.0 | 156.25 | 175.35 | 183.7 | 70.8 | Trading below today's VWAP – wait |
-| 4 | **HAL** | ★★★☆☆ ACCUMULATE | 62.6 | Pullback | 4952.0 | 4657.82 | 5199.6 | 5447.2 | 56.2 | Weekly trend not confirmed |
-| 5 | **MCX** | ★★★★★ WATCHLIST | 90.8 | Uptrend | 3717.0 | 3455.0 | 3902.85 | 4088.7 | 64.3 |  |
-| 6 | **AUROPHARMA** | ★★★★★ WATCHLIST | 87.2 | Uptrend | 1849.4 | 1778.0 | 1941.87 | 2034.34 | 57.1 |  |
-| 7 | **ANTHEM** | ★★★★★ WATCHLIST | 86.8 | Uptrend | 969.65 | 907.55 | 1018.13 | 1066.62 | 66.2 |  |
-| 8 | **PHOENIXLTD** | ★★★★★ WATCHLIST | 85.2 | Uptrend | 2316.6 | 2158.5 | 2432.43 | 2548.26 | 66.7 |  |
-| 9 | **GROWW** | ★★★★★ WATCHLIST | 84.9 | Uptrend | 221.85 | 214.75 | 232.94 | 244.04 | 66.2 |  |
-| 10 | **BSE** | ★★★★★ WATCHLIST | 83.7 | Uptrend | 3889.3 | 3694.0 | 4083.77 | 4278.23 | 75.0 |  |
-| 11 | **TECHM** | ★★★★★ WATCHLIST | 82.9 | Uptrend | 1825.2 | 1710.33 | 1916.46 | 2007.72 | 66.7 |  |
-| 12 | **DIVISLAB** | ★★★★★ WATCHLIST | 82.6 | Uptrend | 11690.5 | 10954.0 | 12275.02 | 12859.55 | 62.5 | Trading below today's VWAP – wait |
-| 13 | **DLF** | ★★★★★ WATCHLIST | 82.1 | Uptrend | 803.5 | 759.12 | 843.68 | 883.85 | 54.5 | RSI overbought – wait for dip |
-| 14 | **GLAXO** | ★★★★★ WATCHLIST | 82.1 | Uptrend | 2762.9 | 2595.9 | 2901.04 | 3039.19 | 75.0 |  |
-| 15 | **GLENMARK** | ★★★★★ WATCHLIST | 82.1 | Uptrend | 2740.4 | 2600.2 | 2877.42 | 3014.44 | 75.0 |  |
-| 16 | **OBEROIRLTY** | ★★★★★ WATCHLIST | 82.1 | Uptrend | 1883.0 | 1762.83 | 1977.15 | 2071.3 | 55.6 |  |
-| 17 | **MANKIND** | ★★★★★ WATCHLIST | 82.0 | Uptrend | 2689.2 | 2584.0 | 2823.66 | 2958.12 | 66.2 | Trading below today's VWAP – wait |
-| 18 | **BANKINDIA** | ★★★★★ WATCHLIST | 80.1 | Uptrend | 163.3 | 150.81 | 171.47 | 179.63 | 71.4 | Weekly trend not confirmed |
-| 19 | **PETRONET** | ★★★★★ WATCHLIST | 80.0 | Uptrend | 330.0 | 320.1 | 346.5 | 363.0 | 60.0 |  |
-| 20 | **JSWINFRA** | ★★★★☆ WATCHLIST | 79.7 | Uptrend | 360.35 | 332.97 | 378.37 | 396.39 | 66.2 |  |
-| 21 | **INDHOTEL** | ★★★★☆ WATCHLIST | 79.6 | Uptrend | 898.3 | 869.4 | 943.21 | 988.13 | 72.7 |  |
-| 22 | **PERSISTENT** | ★★★★☆ WATCHLIST | 79.0 | Uptrend | 6282.0 | 5858.07 | 6596.1 | 6910.2 | 75.0 |  |
-| 23 | **GAIL** | ★★★★☆ WATCHLIST | 77.8 | Uptrend | 188.98 | 183.31 | 198.43 | 207.88 | 62.5 |  |
-| 24 | **UNIONBANK** | ★★★★☆ WATCHLIST | 77.7 | Uptrend | 213.4 | 199.46 | 224.07 | 234.74 | 72.7 |  |
-| 25 | **APOLLOHOSP** | ★★★★☆ WATCHLIST | 77.1 | Uptrend | 9245.0 | 8722.2 | 9707.25 | 10169.5 | 50.0 | Trading below today's VWAP – wait |
+| 1 | **PRESTIGE** | ★★★★★ STRONG BUY | 85.2 | Breakout | 1753.3 | 1620.91 | 1840.97 | 1928.63 | 57.1 |  |
+| 2 | **MOTHERSON** | ★★★★☆ BUY | 70.8 | Pullback | 167.04 | 156.25 | 175.39 | 183.74 | 70.8 | Trading below today's VWAP – wait |
+| 3 | **MCX** | ★★★★★ WATCHLIST | 91.0 | Uptrend | 3754.3 | 3455.0 | 3942.02 | 4129.73 | 64.3 |  |
+| 4 | **LAURUSLABS** | ★★★★★ WATCHLIST | 90.4 | Uptrend | 2494.5 | 2295.28 | 2619.22 | 2743.95 | 63.6 |  |
+| 5 | **ANTHEM** | ★★★★★ WATCHLIST | 86.8 | Uptrend | 971.8 | 907.55 | 1020.39 | 1068.98 | 66.2 |  |
+| 6 | **PHOENIXLTD** | ★★★★★ WATCHLIST | 85.0 | Uptrend | 2317.6 | 2158.5 | 2433.48 | 2549.36 | 66.7 |  |
+| 7 | **BSE** | ★★★★★ WATCHLIST | 84.5 | Uptrend | 3937.8 | 3694.0 | 4134.69 | 4331.58 | 75.0 |  |
+| 8 | **DLF** | ★★★★★ WATCHLIST | 83.5 | Uptrend | 808.85 | 763.56 | 849.29 | 889.73 | 63.6 | RSI overbought – wait for dip |
+| 9 | **TECHM** | ★★★★★ WATCHLIST | 82.8 | Uptrend | 1828.7 | 1713.01 | 1920.13 | 2011.57 | 66.7 |  |
+| 10 | **GLAXO** | ★★★★★ WATCHLIST | 82.4 | Uptrend | 2766.5 | 2595.9 | 2904.82 | 3043.15 | 75.0 |  |
+| 11 | **OBEROIRLTY** | ★★★★★ WATCHLIST | 81.8 | Uptrend | 1885.5 | 1765.33 | 1979.78 | 2074.05 | 55.6 |  |
+| 12 | **AUROPHARMA** | ★★★★★ WATCHLIST | 81.6 | Uptrend | 1827.5 | 1772.68 | 1918.88 | 2010.25 | 57.1 | Trading below today's VWAP – wait |
+| 13 | **MANKIND** | ★★★★★ WATCHLIST | 81.4 | Uptrend | 2685.5 | 2584.0 | 2819.78 | 2954.05 | 66.2 | Trading below today's VWAP – wait |
+| 14 | **JSWINFRA** | ★★★★☆ WATCHLIST | 79.9 | Uptrend | 364.1 | 336.26 | 382.31 | 400.51 | 66.2 |  |
+| 15 | **UNOMINDA** | ★★★★☆ WATCHLIST | 79.4 | Uptrend | 1380.0 | 1335.0 | 1449.0 | 1518.0 | 80.0 |  |
+| 16 | **MEDANTA** | ★★★★☆ WATCHLIST | 79.0 | Uptrend | 1504.0 | 1424.0 | 1579.2 | 1654.4 | 50.0 |  |
+| 17 | **PETRONET** | ★★★★☆ WATCHLIST | 79.0 | Uptrend | 329.2 | 319.32 | 345.66 | 362.12 | 60.0 |  |
+| 18 | **KPRMILL** | ★★★★☆ WATCHLIST | 76.2 | Uptrend | 1192.9 | 1137.8 | 1252.55 | 1312.19 | 44.4 |  |
+| 19 | **APOLLOHOSP** | ★★★★☆ WATCHLIST | 76.0 | Uptrend | 9251.5 | 8728.34 | 9714.08 | 10176.65 | 50.0 | Trading below today's VWAP – wait |
+| 20 | **LODHA** | ★★★★☆ WATCHLIST | 75.5 | Uptrend | 1232.6 | 1170.3 | 1294.23 | 1355.86 | 25.0 |  |
+| 21 | **INDHOTEL** | ★★★★☆ WATCHLIST | 75.2 | Uptrend | 893.7 | 866.89 | 938.39 | 983.07 | 72.7 | Trading below today's VWAP – wait |
+| 22 | **MARICO** | ★★★★☆ WATCHLIST | 74.7 | Uptrend | 930.9 | 895.25 | 977.45 | 1023.99 | 66.2 |  |
+| 23 | **GROWW** | ★★★★☆ WATCHLIST | 74.2 | Uptrend | 220.1 | 213.5 | 231.11 | 242.11 | 66.2 | Trading below today's VWAP – wait |
+| 24 | **PERSISTENT** | ★★★★☆ WATCHLIST | 74.2 | Uptrend | 6235.0 | 5809.73 | 6546.75 | 6858.5 | 75.0 | Trading below today's VWAP – wait |
+| 25 | **UNIONBANK** | ★★★★☆ WATCHLIST | 73.3 | Uptrend | 212.62 | 199.46 | 223.25 | 233.88 | 72.7 | Trading below today's VWAP – wait |
 
 ## BTST (buy near close today, sell tomorrow)
 
 | Stock | Rating | Close | Day % | Vol x | Stop | Target |
 |---|---|---|---|---|---|---|
-| **PRESTIGE** | ★★★★★ | 1727.9 | 2.54 | 3.2 | 1675.0 | 1762.46 |
+| **PRESTIGE** | ★★★★★ | 1753.3 | 4.05 | 4.14 | 1675.0 | 1788.37 |
+| **TORNTPHARM** | ★★★★★ | 5014.6 | 2.43 | 6.09 | 4911.9 | 5114.89 |
+| **HDFCBANK** | ★★★★★ | 869.6 | 2.77 | 2.33 | 844.3 | 886.99 |
 
 ## Backtest (last ~3 years, all Nifty 500)
 
 | Setup | Trades | Hit +5% before stop | Hit +10% | Profitable % | Avg result % | Stopped % |
 |---|---|---|---|---|---|---|
-| A+ Momentum | 5163 | 63.2 | 33.1 | 63.4 | 1.43 | 36.4 |
-| Results Gap | 226 | 74.3 | 38.5 | 74.8 | 1.72 | 24.8 |
-| Breakout | 2915 | 66.2 | 34.2 | 66.7 | 1.51 | 33.1 |
-| 52W High | 3728 | 65.8 | 34.3 | 66.3 | 1.53 | 33.4 |
-| Squeeze | 2719 | 60.9 | 29.8 | 61.1 | 0.94 | 38.6 |
+| A+ Momentum | 5164 | 63.2 | 33.1 | 63.4 | 1.43 | 36.4 |
+| Results Gap | 226 | 74.3 | 38.5 | 74.8 | 1.73 | 24.8 |
+| Breakout | 2914 | 66.2 | 34.2 | 66.7 | 1.51 | 33.1 |
+| 52W High | 3729 | 65.8 | 34.4 | 66.2 | 1.53 | 33.4 |
+| Squeeze | 2720 | 60.9 | 29.7 | 61.1 | 0.94 | 38.6 |
 | Pullback | 9415 | 57.4 | 29.8 | 57.5 | 1.07 | 42.3 |
 
-BTST: 3983 trades · gap-up next day 72.2% · touched +1% next day 71.2% · avg open 0.42% · avg best 2.4%
+BTST: 3983 trades · gap-up next day 72.3% · touched +1% next day 71.2% · avg open 0.42% · avg best 2.4%
 
-## Live track record: 7 closed picks · win 28.6% · avg -5.18% · 44 open
+## Live track record: 7 closed picks · win 28.6% · avg -5.18% · 43 open
 
 > Educational screener, not investment advice. No system wins 99% of the time; always use the stop-loss and size positions so one loss is small.

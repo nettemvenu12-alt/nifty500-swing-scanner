@@ -49,7 +49,10 @@
   "S:GLENMARK": "10:15",
   "S:APOLLOHOSP": "10:15",
   "S:MEDANTA": "10:15",
-  "B:PRESTIGE": "10:15"
+  "B:PRESTIGE": "10:15",
+  "S:MOTILALOFS": "11:15",
+  "B:TORNTPHARM": "11:15",
+  "B:HDFCBANK": "11:15"
  },
  "status": {
   "2026-11-13:MCX": "OPEN",
@@ -62,7 +65,7 @@
   "2026-11-13:CRAFTSMAN": "T1 HIT (running)",
   "2026-11-12:PAYTM": "STOP",
   "2026-11-12:MEESHO": "OPEN",
-  "2026-11-12:DLF": "OPEN",
+  "2026-11-12:DLF": "T1 HIT (running)",
   "2026-11-12:NAVINFLUOR": "OPEN",
   "2026-11-12:GABRIEL": "STOP",
   "2026-11-12:PETRONET": "OPEN",
