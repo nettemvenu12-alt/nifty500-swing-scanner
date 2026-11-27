@@ -41,10 +41,17 @@
   "S:MOTILALOFS": "09:15",
   "S:CHOLAFIN": "09:15",
   "S:INDIGO": "09:15",
-  "S:TORNTPHARM": "09:15"
+  "S:TORNTPHARM": "09:15",
+  "S:GROWW": "10:15",
+  "S:COFORGE": "10:15",
+  "S:DLF": "10:15",
+  "S:PHOENIXLTD": "10:15",
+  "S:APOLLOHOSP": "10:15",
+  "S:LENSKART": "10:15",
+  "B:BANKINDIA": "10:15"
  },
  "status": {
-  "2026-11-13:MCX": "OPEN",
+  "2026-11-13:MCX": "T1 HIT (running)",
   "2026-11-13:ANGELONE": "T1 + EXIT AT COST",
   "2026-11-13:PAYTM": "STOP",
   "2026-11-13:GVT&D": "OPEN",
@@ -127,7 +134,13 @@
   "2026-11-26:MCX": "OPEN",
   "2026-11-26:LODHA": "OPEN",
   "2026-11-26:BAJAJHLDNG": "OPEN",
-  "2026-11-26:DLF": "OPEN"
+  "2026-11-26:DLF": "OPEN",
+  "2026-11-27:MCX": "OPEN",
+  "2026-11-27:BANKINDIA": "OPEN",
+  "2026-11-27:OBEROIRLTY": "OPEN",
+  "2026-11-27:GROWW": "OPEN",
+  "2026-11-27:COFORGE": "OPEN",
+  "2026-11-27:HAL": "OPEN"
  },
  "weekly_sent": "2026-W47",
  "bigfalls_sent": "2026-11-26"
