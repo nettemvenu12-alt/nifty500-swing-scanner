@@ -1,49 +1,47 @@
 # Nifty 500 Swing & BTST Scan — 2026-11-27
 
-_Generated 2026-11-27 11:15 IST_
+_Generated 2026-11-27 12:15 IST_
 
-**Market:** BULLISH (Nifty 500 24055.15, 1M 10.68%, RSI 67.0) · 64.7% stocks above 50 EMA · 54.2% above 200 EMA · 14 at 52W high
+**Market:** BULLISH (Nifty 500 24035.55, 1M 10.59%, RSI 66.5) · 63.9% stocks above 50 EMA · 54.2% above 200 EMA · 14 at 52W high
 
 ## ⭐ Top pick (simple answer: buy this one)
 
-**OBEROIRLTY** – Oberoi Realty Ltd. · ★★★★★ STRONG BUY · score 92.5/100
-Setup: Breakout · Buy ~₹1933.3 · Stop ₹1810.31 (-6.4%) · T1 ₹2029.97 (+5%) · T2 ₹2126.63 (+10%) · up to 60 days
+**MCX** – Multi Commodity Exchange of India Ltd. · ★★★★★ STRONG BUY · score 89.9/100
+Setup: A+ Momentum, 52W High · Buy ~₹3916.3 · Stop ₹3567.12 (-8.9%) · T1 ₹4112.12 (+5%) · T2 ₹4307.93 (+10%) · up to 60 days
 
 ## Swing picks (hold up to 60 days, target 5–10%)
 
 | # | Stock | Rating | Score | Setup | Buy | Stop | T1 | T2 | Hist win% | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **OBEROIRLTY** | ★★★★★ STRONG BUY | 92.5 | Breakout | 1933.3 | 1810.31 | 2029.97 | 2126.63 | 55.6 |  |
-| 2 | **MCX** | ★★★★★ STRONG BUY | 90.4 | A+ Momentum, 52W High | 3895.5 | 3546.32 | 4090.28 | 4285.05 | 73.5 | Trading below today's VWAP – wait |
-| 3 | **COFORGE** | ★★★★☆ BUY | 73.5 | Pullback | 2063.4 | 1945.6 | 2166.57 | 2269.74 | 66.7 | Trading below today's VWAP – wait |
-| 4 | **LGEINDIA** | ★★★☆☆ ACCUMULATE | 69.2 | Pullback | 1788.0 | 1672.0 | 1877.4 | 1966.8 | 57.3 | Big sellers in bulk/block deals (₹2396 Cr net sold, 10 days) |
-| 5 | **SOLARINDS** | ★★★☆☆ ACCUMULATE | 68.7 | Pullback | 19348.0 | 18050.0 | 20315.4 | 21282.8 | 60.0 | Weekly trend not confirmed |
-| 6 | **POWERINDIA** | ★★★☆☆ ACCUMULATE | 68.1 | Pullback | 30925.0 | 29425.0 | 32471.25 | 34017.5 | 60.5 | Weekly trend not confirmed |
-| 7 | **DIVISLAB** | ★★★★★ WATCHLIST | 87.4 | Uptrend | 11675.0 | 10954.0 | 12258.75 | 12842.5 | 62.5 |  |
-| 8 | **LAURUSLABS** | ★★★★★ WATCHLIST | 87.4 | Uptrend | 2524.9 | 2323.33 | 2651.14 | 2777.39 | 63.6 |  |
-| 9 | **LODHA** | ★★★★★ WATCHLIST | 87.4 | Uptrend | 1264.2 | 1174.5 | 1327.41 | 1390.62 | 25.0 | Trading below today's VWAP – wait |
-| 10 | **BSE** | ★★★★★ WATCHLIST | 87.3 | Uptrend | 4005.2 | 3706.47 | 4205.46 | 4405.72 | 75.0 | Trading below today's VWAP – wait |
-| 11 | **BANKINDIA** | ★★★★★ WATCHLIST | 84.5 | Uptrend | 166.25 | 153.05 | 174.56 | 182.88 | 71.4 | Trading below today's VWAP – wait |
-| 12 | **ANTHEM** | ★★★★★ WATCHLIST | 83.4 | Uptrend | 983.05 | 916.42 | 1032.2 | 1081.35 | 66.2 |  |
-| 13 | **MAHABANK** | ★★★★★ WATCHLIST | 83.4 | Uptrend | 95.97 | 90.0 | 100.77 | 105.57 | 63.6 |  |
-| 14 | **MANKIND** | ★★★★★ WATCHLIST | 81.8 | Uptrend | 2689.1 | 2584.0 | 2823.56 | 2958.01 | 66.2 | Trading below today's VWAP – wait |
-| 15 | **GROWW** | ★★★★★ WATCHLIST | 81.4 | Uptrend | 224.6 | 214.75 | 235.83 | 247.06 | 66.2 |  |
-| 16 | **MEESHO** | ★★★★★ WATCHLIST | 80.8 | Uptrend | 259.1 | 248.8 | 272.06 | 285.01 | 66.2 |  |
-| 17 | **GLENMARK** | ★★★★★ WATCHLIST | 80.5 | Uptrend | 2824.1 | 2627.2 | 2965.31 | 3106.51 | 75.0 | RSI overbought – wait for dip |
-| 18 | **HAL** | ★★★★☆ WATCHLIST | 79.9 | Uptrend | 5121.0 | 4801.46 | 5377.05 | 5633.1 | 61.5 | Weekly trend not confirmed |
-| 19 | **GLAXO** | ★★★★☆ WATCHLIST | 77.4 | Uptrend | 2758.0 | 2595.9 | 2895.9 | 3033.8 | 75.0 | Trading below today's VWAP – wait |
-| 20 | **PHOENIXLTD** | ★★★★☆ WATCHLIST | 77.1 | Uptrend | 2270.7 | 2185.0 | 2384.23 | 2497.77 | 66.7 | Trading below today's VWAP – wait |
-| 21 | **TECHM** | ★★★★☆ WATCHLIST | 75.8 | Uptrend | 1844.9 | 1728.68 | 1937.15 | 2029.39 | 66.7 | Trading below today's VWAP – wait |
-| 22 | **MOTILALOFS** | ★★★★☆ WATCHLIST | 75.3 | Uptrend | 1243.8 | 1184.55 | 1305.99 | 1368.18 | 50.0 |  |
-| 23 | **INDHOTEL** | ★★★★☆ WATCHLIST | 74.8 | Uptrend | 888.15 | 861.51 | 932.56 | 976.97 | 72.7 | Trading below today's VWAP – wait |
-| 24 | **PERSISTENT** | ★★★★☆ WATCHLIST | 74.1 | Uptrend | 6214.5 | 5772.4 | 6525.22 | 6835.95 | 66.2 |  |
-| 25 | **PRESTIGE** | ★★★★☆ WATCHLIST | 73.4 | Uptrend | 1803.7 | 1657.77 | 1893.88 | 1984.07 | 50.0 | Trading below today's VWAP – wait |
+| 1 | **MCX** | ★★★★★ STRONG BUY | 89.9 | A+ Momentum, 52W High | 3916.3 | 3567.12 | 4112.12 | 4307.93 | 73.5 |  |
+| 2 | **OBEROIRLTY** | ★★★★★ STRONG BUY | 89.4 | Breakout | 1941.5 | 1817.26 | 2038.58 | 2135.65 | 55.6 |  |
+| 3 | **COFORGE** | ★★★★☆ BUY | 77.9 | Pullback | 2064.5 | 1945.6 | 2167.72 | 2270.95 | 66.7 |  |
+| 4 | **SOLARINDS** | ★★★☆☆ ACCUMULATE | 69.5 | Pullback | 19407.0 | 18050.0 | 20377.35 | 21347.7 | 60.0 | Weekly trend not confirmed |
+| 5 | **POWERINDIA** | ★★★☆☆ ACCUMULATE | 68.7 | Pullback | 31065.0 | 29425.0 | 32618.25 | 34171.5 | 60.5 | Weekly trend not confirmed |
+| 6 | **ABB** | ★★★☆☆ ACCUMULATE | 66.3 | Pullback | 7057.0 | 6750.0 | 7409.85 | 7762.7 | 53.8 |  |
+| 7 | **LGEINDIA** | ★★★☆☆ ACCUMULATE | 63.5 | Pullback | 1780.0 | 1672.0 | 1869.0 | 1958.0 | 57.4 | Trading below today's VWAP – wait; Big sellers in bulk/block deals (₹2396 Cr net sold, 10 days) |
+| 8 | **DIVISLAB** | ★★★★★ WATCHLIST | 88.0 | Uptrend | 11690.0 | 10954.0 | 12274.5 | 12859.0 | 62.5 |  |
+| 9 | **LODHA** | ★★★★★ WATCHLIST | 87.4 | Uptrend | 1262.7 | 1174.5 | 1325.83 | 1388.97 | 25.0 | Trading below today's VWAP – wait |
+| 10 | **BSE** | ★★★★★ WATCHLIST | 86.8 | Uptrend | 3994.1 | 3695.37 | 4193.81 | 4393.51 | 75.0 | Trading below today's VWAP – wait |
+| 11 | **LAURUSLABS** | ★★★★★ WATCHLIST | 85.8 | Uptrend | 2521.5 | 2319.93 | 2647.58 | 2773.65 | 63.6 |  |
+| 12 | **ANTHEM** | ★★★★★ WATCHLIST | 83.4 | Uptrend | 986.3 | 919.67 | 1035.61 | 1084.93 | 66.2 |  |
+| 13 | **GLENMARK** | ★★★★★ WATCHLIST | 80.5 | Uptrend | 2836.7 | 2637.6 | 2978.53 | 3120.37 | 75.0 | RSI overbought – wait for dip |
+| 14 | **MAHABANK** | ★★★★☆ WATCHLIST | 78.7 | Uptrend | 95.98 | 90.0 | 100.78 | 105.58 | 63.6 |  |
+| 15 | **TECHM** | ★★★★☆ WATCHLIST | 78.7 | Uptrend | 1840.8 | 1724.58 | 1932.84 | 2024.88 | 66.7 | Trading below today's VWAP – wait |
+| 16 | **BANKINDIA** | ★★★★☆ WATCHLIST | 78.0 | Uptrend | 165.34 | 152.14 | 173.61 | 181.87 | 71.4 | Trading below today's VWAP – wait |
+| 17 | **PRESTIGE** | ★★★★☆ WATCHLIST | 77.0 | Uptrend | 1796.2 | 1647.68 | 1886.01 | 1975.82 | 50.0 | Trading below today's VWAP – wait |
+| 18 | **PHOENIXLTD** | ★★★★☆ WATCHLIST | 76.3 | Uptrend | 2261.0 | 2185.0 | 2374.05 | 2487.1 | 66.7 | Trading below today's VWAP – wait |
+| 19 | **PERSISTENT** | ★★★★☆ WATCHLIST | 76.0 | Uptrend | 6233.0 | 5790.9 | 6544.65 | 6856.3 | 66.2 |  |
+| 20 | **MEESHO** | ★★★★☆ WATCHLIST | 75.7 | Uptrend | 258.6 | 248.8 | 271.53 | 284.46 | 66.2 | Trading below today's VWAP – wait |
+| 21 | **MARICO** | ★★★★☆ WATCHLIST | 75.6 | Uptrend | 932.2 | 895.25 | 978.81 | 1025.42 | 66.2 |  |
+| 22 | **HAL** | ★★★★☆ WATCHLIST | 75.1 | Uptrend | 5115.2 | 4795.66 | 5370.96 | 5626.72 | 61.5 | Weekly trend not confirmed |
+| 23 | **MANKIND** | ★★★★☆ WATCHLIST | 74.6 | Uptrend | 2686.2 | 2584.0 | 2820.51 | 2954.82 | 66.2 | Trading below today's VWAP – wait |
+| 24 | **MEDANTA** | ★★★★☆ WATCHLIST | 74.5 | Uptrend | 1494.0 | 1424.0 | 1568.7 | 1643.4 | 50.0 | Trading below today's VWAP – wait |
+| 25 | **LENSKART** | ★★★★☆ WATCHLIST | 73.4 | Uptrend | 720.5 | 698.88 | 756.52 | 792.55 | 66.2 |  |
 
 ## BTST (buy near close today, sell tomorrow)
 
-| Stock | Rating | Close | Day % | Vol x | Stop | Target |
-|---|---|---|---|---|---|---|
-| **HAL** | ★★★★★ | 5121.0 | 4.31 | 4.28 | 4905.0 | 5223.42 |
+No BTST setups today.
 
 ## Backtest (last ~3 years, all Nifty 500)
 
@@ -51,12 +49,12 @@ Setup: Breakout · Buy ~₹1933.3 · Stop ₹1810.31 (-6.4%) · T1 ₹2029.97 (+
 |---|---|---|---|---|---|---|
 | A+ Momentum | 5172 | 63.2 | 33.1 | 63.4 | 1.43 | 36.4 |
 | Results Gap | 225 | 74.7 | 37.8 | 74.7 | 1.73 | 24.9 |
-| Breakout | 2921 | 66.2 | 34.3 | 66.7 | 1.51 | 33.1 |
-| 52W High | 3731 | 65.7 | 34.3 | 66.1 | 1.51 | 33.5 |
-| Squeeze | 2727 | 60.9 | 29.8 | 61.2 | 0.95 | 38.5 |
-| Pullback | 9435 | 57.3 | 29.7 | 57.5 | 1.07 | 42.4 |
+| Breakout | 2921 | 66.2 | 34.2 | 66.7 | 1.51 | 33.1 |
+| 52W High | 3731 | 65.7 | 34.2 | 66.1 | 1.51 | 33.5 |
+| Squeeze | 2726 | 60.9 | 29.8 | 61.2 | 0.95 | 38.6 |
+| Pullback | 9435 | 57.4 | 29.7 | 57.5 | 1.07 | 42.3 |
 
-BTST: 3967 trades · gap-up next day 72.0% · touched +1% next day 71.1% · avg open 0.42% · avg best 2.39%
+BTST: 3967 trades · gap-up next day 72.1% · touched +1% next day 71.1% · avg open 0.42% · avg best 2.39%
 
 ## Live track record: 9 closed picks · win 44.4% · avg -3.47% · 46 open
 
